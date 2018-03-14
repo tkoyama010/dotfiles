@@ -39,6 +39,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'vim-scripts/Conque-GDB'
+NeoBundle 'vim-scripts/diffchar.vim'
 
 " Required:
 call neobundle#end()
