@@ -16,31 +16,36 @@ call neobundle#begin(expand('/home/tetsuo/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Add or remove your Bundles here:
-NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'ujihisa/unite-colorscheme'
-
-NeoBundle 'vim-scripts/Conque-GDB'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'Shougo/vimfiler.vim'
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'VimClojure'
 NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'jpalardy/vim-slime'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 't9md/vim-textmanip'
+NeoBundle 'tomasr/molokai'
+NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tyru/open-browser.vim'
-
-" You can specify revision/branch/tag.
-NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'vim-scripts/Conque-GDB'
 
 " Required:
 call neobundle#end()
 
-" Required:
-filetype plugin indent on
+filetype plugin indent on     " required!
+filetype indent on
+syntax on
 
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
