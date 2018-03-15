@@ -16,6 +16,7 @@ call neobundle#begin(expand('/home/tetsuo/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Add or remove your Bundles here:
+NeoBundle 'PProvost/vim-ps1'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
@@ -31,6 +32,8 @@ NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'jpalardy/vim-slime'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'nelstrom/vim-visual-star-search'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 't9md/vim-textmanip'
@@ -40,7 +43,6 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'vim-scripts/Conque-GDB'
 NeoBundle 'vim-scripts/diffchar.vim'
-NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'vim-scripts/vcscommand.vim'
 
 " Required:
@@ -57,5 +59,14 @@ NeoBundleCheck
 
 colorscheme molokai
 set number
+set hlsearch
 set cursorline
 set cursorcolumn
+
+let g:syntastic_python_checkers = ["flake8"]
+
+"set encoding=utf-8
+"set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+"set fileformats=unix,dos,mac
+set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
+
