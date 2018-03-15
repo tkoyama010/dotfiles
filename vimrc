@@ -1,5 +1,3 @@
-"map <C-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-
 "NeoBundle Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
@@ -65,8 +63,5 @@ set cursorcolumn
 
 let g:syntastic_python_checkers = ["flake8"]
 
-"set encoding=utf-8
-"set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
-"set fileformats=unix,dos,mac
 set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
 
