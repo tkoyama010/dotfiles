@@ -41,6 +41,7 @@ NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'vim-scripts/Conque-GDB'
 NeoBundle 'vim-scripts/diffchar.vim'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'vim-scripts/vcscommand.vim'
 
 " Required:
 call neobundle#end()
