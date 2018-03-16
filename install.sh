@@ -1,67 +1,31 @@
-"NeoBundle Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
-
-" Required:
-set runtimepath+=~/.vim/bundle/neobundle.vim/
-
-" Required:
-call neobundle#begin(expand('~/.vim/bundle'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" Add or remove your Bundles here:
-NeoBundle 'PProvost/vim-ps1'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'VimClojure'
-NeoBundle 'Xuyuanp/nerdtree-git-plugin'
-NeoBundle 'Yggdroot/indentLine'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'jpalardy/vim-slime'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'nelstrom/vim-visual-star-search'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 't9md/vim-textmanip'
-NeoBundle 'tomasr/molokai'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'vim-scripts/Conque-GDB'
-NeoBundle 'vim-scripts/diffchar.vim'
-NeoBundle 'vim-scripts/vcscommand.vim'
-
-" Required:
-call neobundle#end()
-
-filetype plugin indent on     " required!
-filetype indent on
-syntax on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-"End NeoBundle Scripts-------------------------
-
-colorscheme molokai
-set number
-set hlsearch
-set cursorline
-set cursorcolumn
-
-let g:syntastic_python_checkers = ["flake8"]
-
-set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
+mkdir -p ~/.vim/pack/mypackage/start/
+cd  ~/.vim/pack/mypackage/start/
+git clone 'https://github.com/PProvost/vim-ps1'
+git clone 'https://github.com/Shougo/neocomplcache'
+git clone 'https://github.com/Shougo/neosnippet'
+git clone 'https://github.com/Shougo/neosnippet-snippets'
+git clone 'https://github.com/Shougo/unite.vim'
+git clone 'https://github.com/Shougo/vimfiler.vim'
+git clone 'https://github.com/Shougo/vimshell'
+git clone 'https://github.com/VimClojure'
+git clone 'https://github.com/Xuyuanp/nerdtree-git-plugin'
+git clone 'https://github.com/Yggdroot/indentLine'
+git clone 'https://github.com/airblade/vim-gitgutter'
+git clone 'https://github.com/airblade/vim-gitgutter'
+git clone 'https://github.com/ctrlpvim/ctrlp.vim'
+git clone 'https://github.com/flazz/vim-colorschemes'
+git clone 'https://github.com/itchyny/lightline.vim'
+git clone 'https://github.com/jpalardy/vim-slime'
+git clone 'https://github.com/nathanaelkane/vim-indent-guides'
+git clone 'https://github.com/nelstrom/vim-visual-star-search'
+git clone 'https://github.com/scrooloose/nerdtree'
+git clone 'https://github.com/scrooloose/syntastic'
+git clone 'https://github.com/t9md/vim-textmanip'
+git clone 'https://github.com/tomasr/molokai'
+git clone 'https://github.com/tpope/vim-fugitive'
+git clone 'https://github.com/tyru/open-browser.vim'
+git clone 'https://github.com/ujihisa/unite-colorscheme'
+git clone 'https://github.com/vim-scripts/Conque-GDB'
+git clone 'https://github.com/vim-scripts/diffchar.vim'
+git clone 'https://github.com/vim-scripts/vcscommand.vim'
 
