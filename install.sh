@@ -2,6 +2,7 @@ mkdir -p ~/.vim/pack/mypackage/start/
 cd  ~/.vim/pack/mypackage/start/
 git clone 'https://github.com/PProvost/vim-ps1'
 git clone 'https://github.com/Shougo/neocomplcache'
+git clone 'https://github.com/Shougo/neocomplete.vim'
 git clone 'https://github.com/Shougo/neosnippet'
 git clone 'https://github.com/Shougo/neosnippet-snippets'
 git clone 'https://github.com/Shougo/unite.vim'
