@@ -1,5 +1,5 @@
 "colorscheme molokai
-colorscheme moonshine
+colorscheme github
 set number
 set hlsearch
 set cursorline
