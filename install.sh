@@ -1,6 +1,12 @@
 mkdir -p ~/.vim/pack/mypackage/start/
 cd  ~/.vim/pack/mypackage/start/
-git clone 'https://github.com/PProvost/vim-ps1'
+if [ -e ./vim-ps1 ]; then
+    cd ./vim-ps1
+    git pull origin master
+    cd ../
+else
+    git clone 'https://github.com/PProvost/vim-ps1'
+fi
 git clone 'https://github.com/Shougo/neocomplcache'
 git clone 'https://github.com/Shougo/neocomplete.vim'
 git clone 'https://github.com/Shougo/neosnippet'
