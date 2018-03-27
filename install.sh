@@ -3,8 +3,8 @@ cd  ~/.vim/pack/mypackage/start/
 
 declare -a packages=(
     'https://github.com/PProvost/vim-ps1'
+    'https://github.com/Shougo/deoplete.nvim.git'
     'https://github.com/Shougo/neocomplcache'
-    'https://github.com/Shougo/neocomplete.vim'
     'https://github.com/Shougo/neosnippet'
     'https://github.com/Shougo/neosnippet-snippets'
     'https://github.com/Shougo/unite.vim'
