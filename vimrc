@@ -1,5 +1,5 @@
-"colorscheme molokai
-colorscheme github
+colorscheme molokai
+"colorscheme github
 set number
 set hlsearch
 set cursorline
