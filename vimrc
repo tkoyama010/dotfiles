@@ -1,4 +1,5 @@
-colorscheme molokai
+colorscheme calmar256-light
+"colorscheme molokai
 "colorscheme github
 set number
 set hlsearch
