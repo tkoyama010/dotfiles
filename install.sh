@@ -31,6 +31,7 @@ declare -a packages=(
     'https://github.com/vim-scripts/VimClojure'
     'https://github.com/vim-scripts/vcscommand.vim'
     'https://github.com/jacoborus/tender.vim'
+    'https://github.com/sudar/vim-arduino-syntax'
 )
 
 for package in ${packages[@]}; do
