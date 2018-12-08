@@ -13,7 +13,6 @@ declare -a packages=(
     'https://github.com/Xuyuanp/nerdtree-git-plugin'
     'https://github.com/Yggdroot/indentLine'
     'https://github.com/airblade/vim-gitgutter'
-    'https://github.com/airblade/vim-gitgutter'
     'https://github.com/ctrlpvim/ctrlp.vim'
     'https://github.com/flazz/vim-colorschemes'
     'https://github.com/itchyny/lightline.vim'
