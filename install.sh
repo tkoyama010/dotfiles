@@ -1,3 +1,5 @@
+cp vimrc ~/.vimrc
+
 mkdir -p ~/.vim/pack/mypackage/start/
 cd  ~/.vim/pack/mypackage/start/
 
@@ -44,6 +46,4 @@ for package in ${packages[@]}; do
         git clone ${package}
     fi
 done
-
-cp vimrc ~/.vimrc
 
