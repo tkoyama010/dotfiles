@@ -1,4 +1,5 @@
 colorscheme material
+colorscheme materialbox
 set t_Co=256
 "colorscheme github
 set number
