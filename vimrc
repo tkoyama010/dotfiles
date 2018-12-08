@@ -1,4 +1,4 @@
-colorscheme molokai
+colorscheme moonshine
 set t_Co=256
 "colorscheme github
 set number
