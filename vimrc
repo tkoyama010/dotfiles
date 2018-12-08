@@ -1,4 +1,4 @@
-colorscheme moonshine
+colorscheme material
 set t_Co=256
 "colorscheme github
 set number
