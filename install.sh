@@ -45,3 +45,5 @@ for package in ${packages[@]}; do
     fi
 done
 
+cp vimrc ~/.vimrc
+
