@@ -28,7 +28,6 @@ declare -a packages=(
     'https://github.com/tpope/vim-fugitive'
     'https://github.com/tyru/open-browser.vim'
     'https://github.com/ujihisa/unite-colorscheme'
-    'https://github.com/vim-scripts/Conque-GDB'
     'https://github.com/vim-scripts/VimClojure'
     'https://github.com/vim-scripts/vcscommand.vim'
     'https://github.com/jacoborus/tender.vim'
