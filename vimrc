@@ -1,7 +1,5 @@
-colorscheme material
-colorscheme materialbox
+colorscheme solarized
 set t_Co=256
-"colorscheme github
 set number
 set hlsearch
 let g:syntastic_python_checkers = ["flake8"]
