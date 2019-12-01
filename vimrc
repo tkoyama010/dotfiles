@@ -1,5 +1,5 @@
 set background=dark
-colorscheme badwolf
+colorscheme github
 set t_Co=256
 set number
 set hlsearch
