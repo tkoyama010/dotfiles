@@ -5,8 +5,8 @@ cd  ~/.vim/pack/mypackage/start/
 
 declare -a packages=(
     'https://github.com/PProvost/vim-ps1'
-    'https://github.com/Shougo/deoplete.nvim'
     'https://github.com/Shougo/dein.vim'
+    'https://github.com/Shougo/deoplete.nvim'
     'https://github.com/Shougo/neocomplcache'
     'https://github.com/Shougo/neosnippet'
     'https://github.com/Shougo/neosnippet-snippets'
@@ -19,11 +19,15 @@ declare -a packages=(
     'https://github.com/ctrlpvim/ctrlp.vim'
     'https://github.com/flazz/vim-colorschemes'
     'https://github.com/itchyny/lightline.vim'
+    'https://github.com/jacoborus/tender.vim'
     'https://github.com/jpalardy/vim-slime'
+    'https://github.com/majutsushi/tagbar'
     'https://github.com/nathanaelkane/vim-indent-guides'
     'https://github.com/nelstrom/vim-visual-star-search'
+    'https://github.com/rickhowe/diffchar.vim'
     'https://github.com/scrooloose/nerdtree'
     'https://github.com/scrooloose/syntastic'
+    'https://github.com/sudar/vim-arduino-syntax'
     'https://github.com/t9md/vim-textmanip'
     'https://github.com/tomasr/molokai'
     'https://github.com/tpope/vim-fugitive'
@@ -31,10 +35,6 @@ declare -a packages=(
     'https://github.com/ujihisa/unite-colorscheme'
     'https://github.com/vim-scripts/VimClojure'
     'https://github.com/vim-scripts/vcscommand.vim'
-    'https://github.com/jacoborus/tender.vim'
-    'https://github.com/sudar/vim-arduino-syntax'
-    'https://github.com/majutsushi/tagbar'
-    'https://github.com/rickhowe/diffchar.vim'
 )
 
 for package in ${packages[@]}; do
