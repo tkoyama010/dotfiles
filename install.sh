@@ -36,12 +36,45 @@ declare -a packages=(
     'https://github.com/vim-scripts/VimClojure'
     'https://github.com/vim-scripts/vcscommand.vim'
 )
+declare -a branches=(
+    'master'
+    'master'
+    'master'
+    'master'
+    'master'
+    'master'
+    'master'
+    'master'
+    'master'
+    'master'
+    'master'
+    'master'
+    'master'
+    'master'
+    'master'
+    'master'
+    'main'
+    'master'
+    'master'
+    'master'
+    'master'
+    'master'
+    'master'
+    'master'
+    'master'
+    'master'
+    'master'
+    'master'
+    'master'
+    'master'
+    'master'
+)
 
-for package in ${packages[@]}; do
-    directory=`basename ${package}`
+for i in ${!packages[@]}; do
+    directory=`basename ${packages[i]}`
     if [ -e ./${directory} ]; then
         cd ./${directory}
-        git pull origin master
+        git pull origin ${branches[i]}
         cd ../
     else
         git clone ${package}
