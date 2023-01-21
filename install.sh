@@ -77,7 +77,7 @@ for i in ${!packages[@]}; do
         git pull origin ${branches[i]}
         cd ../
     else
-        git clone ${package}
+        git clone ${packages[i]}
     fi
 done
 
