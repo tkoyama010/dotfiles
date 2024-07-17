@@ -10,3 +10,4 @@ set number
 set t_Co=256
 set wrap
 colorscheme github
+let g:copilot_filetypes = { 'gitcommit': v:true }
