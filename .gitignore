@@ -1,0 +1,10 @@
+*.swp
+*~
+.aws
+.bash_history
+.emacs.d/history
+.ssh
+.viminfo
+.zcompcache
+.zcompdump
+.zsh_history
