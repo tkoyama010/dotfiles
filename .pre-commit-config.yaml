@@ -34,3 +34,6 @@ repos:
         args: [--branch, main]
       - id: requirements-txt-fixer
       - id: trailing-whitespace
+      - id: file-contents-sorter
+        verbose: true
+        files: ^(\.gitignore)$
