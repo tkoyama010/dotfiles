@@ -82,4 +82,3 @@ for i in ${!packages[@]}; do
         git clone ${packages[i]}
     fi
 done
-
