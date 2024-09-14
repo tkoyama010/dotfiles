@@ -1,6 +1,6 @@
 let g:Coopilot = "enable"
 let g:DiffUnit = "Char"
-let g:syntastic_python_checkers = ["flake8"]
+let g:copilot_filetypes = { 'gitcommit': v:true }
 set background=dark
 set cursorcolumn
 set cursorline
