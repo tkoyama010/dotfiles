@@ -36,6 +36,7 @@ declare -a packages=(
 	'git@github.com:ujihisa/unite-colorscheme'
 	'git@github.com:vim-scripts/VimClojure'
 	'git@github.com:vim-scripts/vcscommand.vim'
+	'git@github.com:will133/vim-dirdiff'
 )
 
 for i in ${!packages[@]}; do
