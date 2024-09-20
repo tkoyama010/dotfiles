@@ -36,47 +36,14 @@ declare -a packages=(
 	'git@github.com:ujihisa/unite-colorscheme'
 	'git@github.com:vim-scripts/VimClojure'
 	'git@github.com:vim-scripts/vcscommand.vim'
-)
-declare -a branches=(
-	'master'
-	'master'
-	'master'
-	'master'
-	'master'
-	'master'
-	'master'
-	'master'
-	'master'
-	'master'
-	'master'
-	'master'
-	'master'
-	'master'
-	'release'
-	'master'
-	'master'
-	'main'
-	'master'
-	'master'
-	'master'
-	'master'
-	'master'
-	'master'
-	'master'
-	'master'
-	'master'
-	'master'
-	'master'
-	'master'
-	'master'
-	'master'
+	'git@github.com:will133/vim-dirdiff'
 )
 
 for i in ${!packages[@]}; do
 	directory=$(basename ${packages[i]})
 	if [ -e ./${directory} ]; then
 		cd ./${directory}
-		git pull origin ${branches[i]}
+		git pull
 		cd ../
 	else
 		git clone ${packages[i]}
