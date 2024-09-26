@@ -4,6 +4,7 @@ mkdir -p ~/.vim/pack/mypackage/start/
 cd ~/.vim/pack/mypackage/start/
 
 declare -a packages=(
+	'git@github.com:EdenEast/nightfox.nvim.git'
 	'git@github.com:PProvost/vim-ps1'
 	'git@github.com:Shougo/dein.vim'
 	'git@github.com:Shougo/deoplete.nvim'
@@ -17,6 +18,7 @@ declare -a packages=(
 	'git@github.com:Yggdroot/indentLine'
 	'git@github.com:airblade/vim-gitgutter'
 	'git@github.com:ctrlpvim/ctrlp.vim'
+	'git@github.com:dracula/vim.git'
 	'git@github.com:flazz/vim-colorschemes'
 	'git@github.com:github/copilot.vim.git'
 	'git@github.com:itchyny/lightline.vim'
@@ -26,6 +28,7 @@ declare -a packages=(
 	'git@github.com:nathanaelkane/vim-indent-guides'
 	'git@github.com:nelstrom/vim-visual-star-search'
 	'git@github.com:rickhowe/diffchar.vim'
+	'git@github.com:sainnhe/edge.git'
 	'git@github.com:scrooloose/nerdtree'
 	'git@github.com:scrooloose/syntastic'
 	'git@github.com:sudar/vim-arduino-syntax'
