@@ -52,3 +52,5 @@ for i in ${!packages[@]}; do
 		git clone ${packages[i]}
 	fi
 done
+
+ln -s .tmux.conf ~/.tmux.conf
