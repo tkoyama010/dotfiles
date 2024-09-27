@@ -53,4 +53,4 @@ for i in ${!packages[@]}; do
 	fi
 done
 
-ln -s .tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/.tmux.conf ~/
