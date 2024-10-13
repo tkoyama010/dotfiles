@@ -10,3 +10,4 @@ set number
 set t_Co=256
 set wrap
 colorscheme edge
+syntax on
