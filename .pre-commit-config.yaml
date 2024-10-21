@@ -4,7 +4,7 @@ ci:
   autoupdate_schedule: weekly
 repos:
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.29.3
+    rev: 0.29.4
     hooks:
       - id: check-github-workflows
   - repo: https://github.com/codespell-project/codespell
@@ -38,6 +38,6 @@ repos:
         verbose: true
         files: ^(\.gitignore)$
   - repo: https://github.com/scop/pre-commit-shfmt
-    rev: v3.9.0-1
+    rev: v3.10.0-1
     hooks:
       - id: shfmt
