@@ -53,7 +53,5 @@ for i in ${!packages[@]}; do
 	fi
 done
 
-cargo install starship
-cp starship.toml ~/.config/starship.toml
-echo 'eval "$(starship init bash)"' >>~/.bashrc
-echo 'ls="lsd"' >>~/.bashrc
+echo 'eval "$(~/.cargo/bin/starship init bash)"' >>~/.bashrc
+echo 'alias ls="lsd"' >>~/.bashrc
