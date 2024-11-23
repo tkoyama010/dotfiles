@@ -52,3 +52,6 @@ for i in ${!packages[@]}; do
 		git clone ${packages[i]}
 	fi
 done
+
+cargo install starship
+cp starship.toml ~/.config/starship.toml
