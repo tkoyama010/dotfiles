@@ -55,3 +55,5 @@ done
 
 cargo install starship
 cp starship.toml ~/.config/starship.toml
+echo 'eval "$(starship init bash)"' >>~/.bashrc
+echo 'ls="lsd"' >>~/.bashrc
