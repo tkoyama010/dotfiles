@@ -1,3 +1,4 @@
+colorscheme edge
 let g:Coopilot = "enable"
 let g:DiffUnit = "Char"
 let g:copilot_filetypes = { 'gitcommit': v:true }
@@ -9,5 +10,4 @@ set hlsearch
 set number
 set t_Co=256
 set wrap
-colorscheme edge
 syntax on
