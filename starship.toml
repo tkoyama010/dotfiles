@@ -5,10 +5,10 @@ disabled = false
 symbol = "🌿 "
 
 [git_commit]
-disabled = true
+disabled = false
 
 [git_status]
-disabled = true
+disabled = false
 modified = "✏️"
 untracked = "?"
 
