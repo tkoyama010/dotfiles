@@ -9,7 +9,7 @@ disabled = false
 
 [git_status]
 disabled = false
-modified = "✏️"
+modified = "!"
 untracked = "?"
 
 [nodejs]
