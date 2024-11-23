@@ -2,6 +2,21 @@
 disabled = false
 
 [git_branch]
-always_show_remote = true
-format = "$symbol $branch"
 symbol = "🌿 "
+
+[git_commit]
+disabled = true
+
+[git_status]
+disabled = true
+modified = "✏️"
+untracked = "?"
+
+[nodejs]
+symbol = "⬢ "
+
+[directory]
+home_symbol = "~"
+style = "bold yellow"
+truncation_length = 5
+truncation_symbol = "📂 "
