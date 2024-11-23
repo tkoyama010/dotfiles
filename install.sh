@@ -55,7 +55,7 @@ done
 
 echo 'eval "$(~/.cargo/bin/starship init bash)"' >>~/.bashrc
 echo 'alias ls="lsd"' >>~/.bashrc
-echo 'alias cat="bat"' >>~/.bashrc
+echo 'alias cat="~/.cargo/bin/bat"' >>~/.bashrc
 cp starship.toml ~/.config/starship.toml
 mkdir -p ~/.config/lsd
 cp lsd/config.yaml ~/.config/lsd/config.yaml
