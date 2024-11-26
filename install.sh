@@ -37,6 +37,7 @@ declare -a packages=(
 	'git@github.com:tpope/vim-fugitive'
 	'git@github.com:tyru/open-browser.vim'
 	'git@github.com:ujihisa/unite-colorscheme'
+	'git@github.com:vim-jp/vimdoc-ja'
 	'git@github.com:vim-scripts/VimClojure'
 	'git@github.com:vim-scripts/vcscommand.vim'
 	'git@github.com:will133/vim-dirdiff'
