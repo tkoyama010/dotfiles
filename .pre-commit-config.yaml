@@ -36,7 +36,7 @@ repos:
       - id: trailing-whitespace
       - id: file-contents-sorter
         verbose: true
-        files: ^(\.gitignore)$
+        files: ^(\.gitignore|vimrc)$
   - repo: https://github.com/scop/pre-commit-shfmt
     rev: v3.10.0-1
     hooks:
