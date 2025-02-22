@@ -1,4 +1,5 @@
 cp vimrc ~/.vimrc
+cp .zshrc ~/.zshrc
 
 mkdir -p ~/.vim/pack/mypackage/start/
 cd ~/.vim/pack/mypackage/start/
