@@ -142,3 +142,23 @@ disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:#33658A"
 format = '[ ♥ $time ]($style)'
+
+[git_branch]
+symbol = "🌿 "
+
+[git_commit]
+disabled = false
+
+[git_status]
+disabled = false
+modified = "!"
+untracked = "?"
+
+[nodejs]
+symbol = "⬢ "
+
+[directory]
+home_symbol = "~"
+style = "bold yellow"
+truncation_length = 5
+truncation_symbol = "📂 "
