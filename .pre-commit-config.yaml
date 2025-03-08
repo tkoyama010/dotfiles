@@ -4,11 +4,11 @@ ci:
   autoupdate_schedule: weekly
 repos:
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.29.4
+    rev: 0.31.2
     hooks:
       - id: check-github-workflows
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.3.0
+    rev: v2.4.1
     hooks:
       - id: codespell
         args: ["-L", ""]
@@ -36,8 +36,13 @@ repos:
       - id: trailing-whitespace
       - id: file-contents-sorter
         verbose: true
-        files: ^(\.gitignore)$
+        files: ^(\.gitignore|vimrc)$
   - repo: https://github.com/scop/pre-commit-shfmt
-    rev: v3.10.0-1
+    rev: v3.10.0-2
     hooks:
       - id: shfmt
+  - repo: https://github.com/ComPWA/taplo-pre-commit
+    rev: v0.9.3
+    hooks:
+      - id: taplo-format
+        args: [--option, "reorder_arrays=true", --option, "reorder_keys=true"]
