@@ -1,5 +1,8 @@
-cp vimrc ~/.vimrc
+mkdir -p ~/.config/lsd
 cp .zshrc ~/.zshrc
+cp lsd/config.yaml ~/.config/lsd/config.yaml
+cp starship.toml ~/.config/starship.toml
+cp vimrc ~/.vimrc
 
 mkdir -p ~/.vim/pack/mypackage/start/
 cd ~/.vim/pack/mypackage/start/
@@ -58,6 +61,3 @@ done
 echo 'eval "$(~/.cargo/bin/starship init bash)"' >>~/.bashrc
 echo 'alias ls="lsd"' >>~/.bashrc
 echo 'alias cat="~/.cargo/bin/bat"' >>~/.bashrc
-cp starship.toml ~/.config/starship.toml
-mkdir -p ~/.config/lsd
-cp lsd/config.yaml ~/.config/lsd/config.yaml
