@@ -2,7 +2,7 @@ colorscheme edge
 let g:Coopilot = "enable"
 let g:DiffUnit = "Char"
 let g:copilot_filetypes = { 'gitcommit': v:true }
-set background=dark
+set background=light
 set cursorcolumn
 set cursorline
 set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
