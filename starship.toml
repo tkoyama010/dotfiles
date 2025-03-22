@@ -68,27 +68,27 @@ truncation_symbol = "…/"
 [c]
 format = '[ $symbol ($version) ]($style)'
 style = "bg:#86BBD8"
-symbol = " "
+symbol = " "
 
 [docker_context]
 format = '[ $symbol $context ]($style)'
 style = "bg:#06969A"
-symbol = " "
+symbol = " "
 
 [elixir]
 format = '[ $symbol ($version) ]($style)'
 style = "bg:#86BBD8"
-symbol = " "
+symbol = " "
 
 [elm]
 format = '[ $symbol ($version) ]($style)'
 style = "bg:#86BBD8"
-symbol = " "
+symbol = " "
 
 [git_branch]
 format = '[ $symbol $branch ]($style)'
 style = "bg:#FCA17D"
-symbol = ""
+symbol = " "
 
 [git_status]
 format = '[$all_status$ahead_behind ]($style)'
@@ -97,7 +97,7 @@ style = "bg:#FCA17D"
 [golang]
 format = '[ $symbol ($version) ]($style)'
 style = "bg:#86BBD8"
-symbol = " "
+symbol = " "
 
 [gradle]
 format = '[ $symbol ($version) ]($style)'
@@ -106,37 +106,37 @@ style = "bg:#86BBD8"
 [haskell]
 format = '[ $symbol ($version) ]($style)'
 style = "bg:#86BBD8"
-symbol = " "
+symbol = " "
 
 [java]
 format = '[ $symbol ($version) ]($style)'
 style = "bg:#86BBD8"
-symbol = " "
+symbol = " "
 
 [julia]
 format = '[ $symbol ($version) ]($style)'
 style = "bg:#86BBD8"
-symbol = " "
+symbol = " "
 
 [nodejs]
 format = '[ $symbol ($version) ]($style)'
 style = "bg:#86BBD8"
-symbol = ""
+symbol = " "
 
 [nim]
 format = '[ $symbol ($version) ]($style)'
 style = "bg:#86BBD8"
-symbol = "󰆥 "
+symbol = " "
 
 [rust]
 format = '[ $symbol ($version) ]($style)'
 style = "bg:#86BBD8"
-symbol = ""
+symbol = " "
 
 [scala]
 format = '[ $symbol ($version) ]($style)'
 style = "bg:#86BBD8"
-symbol = " "
+symbol = " "
 
 [time]
 disabled = false
@@ -147,4 +147,4 @@ time_format = "%R"             # Hour:Minute Format
 [python]
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 style = "bg:#86BBD8"
-symbol = ""
+symbol = " "
