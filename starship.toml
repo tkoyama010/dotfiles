@@ -18,6 +18,7 @@ $java\
 $julia\
 $nodejs\
 $nim\
+$python\
 $rust\
 $scala\
 [](fg:#86BBD8 bg:#06969A)\
@@ -142,3 +143,8 @@ disabled = false
 format = '[ ♥ $time ]($style)'
 style = "bg:#33658A"
 time_format = "%R"             # Hour:Minute Format
+
+[python]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+style = "bg:#86BBD8"
+symbol = ""
