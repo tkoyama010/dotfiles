@@ -1,4 +1,4 @@
-colorscheme gruvbox
+colorscheme edge
 let g:Coopilot = "enable"
 let g:DiffUnit = "Char"
 let g:copilot_filetypes = { 'gitcommit': v:true }
