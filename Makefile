@@ -4,7 +4,6 @@ all: config vim-plugins shell-aliases
 
 config:
 	mkdir -p ~/.config/lsd
-	cp .zshrc ~/.zshrc
 	cp lsd/config.yaml ~/.config/lsd/config.yaml
 	cp starship.toml ~/.config/starship.toml
 	cp vimrc ~/.vimrc
@@ -63,3 +62,4 @@ shell-aliases:
 	echo 'eval "$$($(HOME)/.cargo/bin/starship init bash)"' >> ~/.bashrc
 	echo 'alias ls="lsd"' >> ~/.bashrc
 	echo 'alias cat="$(HOME)/.cargo/bin/bat"' >> ~/.bashrc
+	echo 'eval "$(starship init zsh)"' >> ~/.zshrc
