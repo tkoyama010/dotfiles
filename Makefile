@@ -63,4 +63,4 @@ shell-aliases:
 	echo 'alias ls="lsd"' >> ~/.bashrc
 	echo 'alias cat="$(HOME)/.cargo/bin/bat"' >> ~/.bashrc
 	echo 'eval "$(starship init zsh)"' >> ~/.zshrc
-	echo 'alias eval "$(direnv hook zsh)" >> ~/.zshrc
+	echo 'alias eval "$(direnv hook zsh)"' >> ~/.zshrc
