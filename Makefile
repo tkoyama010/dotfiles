@@ -62,5 +62,6 @@ shell-aliases:
 	echo 'eval "$$($(HOME)/.cargo/bin/starship init bash)"' >> ~/.bashrc
 	echo 'alias ls="lsd"' >> ~/.bashrc
 	echo 'alias cat="$(HOME)/.cargo/bin/bat"' >> ~/.bashrc
-	echo 'eval "$(starship init zsh)"' >> ~/.zshrc
-	echo 'alias eval "$(direnv hook zsh)" >> ~/.zshrc
+	echo 'eval "$$(starship init zsh)"' >> ~/.zshrc
+	echo 'eval "$$(direnv hook zsh)"' >> ~/.zshrc
+	echo 'export EDITOR=vim' >> ~/.zshrc
