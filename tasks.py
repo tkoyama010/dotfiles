@@ -5,8 +5,6 @@ from pathlib import Path
 
 from invoke import Context, task
 
-"""Tasks for automating setup."""
-
 
 @task
 def config(c: Context) -> None:
