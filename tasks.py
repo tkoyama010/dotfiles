@@ -1,4 +1,5 @@
 """Tasks for automating setup."""
+
 import contextlib
 from pathlib import Path
 
