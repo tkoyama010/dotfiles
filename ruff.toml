@@ -6,4 +6,3 @@ extend-select = ["ALL"]
 ignore = []
 
 [format]
-docstring-line-length = true
