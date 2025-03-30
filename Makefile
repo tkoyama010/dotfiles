@@ -65,3 +65,4 @@ shell-aliases:
 	echo 'eval "$$(starship init zsh)"' >> ~/.zshrc
 	echo 'eval "$$(direnv hook zsh)"' >> ~/.zshrc
 	echo 'export EDITOR=vim' >> ~/.zshrc
+	echo 'alias leetcode="$(HOME)/.cargo/bin/leetcode"' >> ~/.zshrc
