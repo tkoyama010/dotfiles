@@ -29,6 +29,7 @@ vim-plugins:
 		git@github.com:dracula/vim \
 		git@github.com:flazz/vim-colorschemes \
 		git@github.com:github/copilot.vim \
+		git@github.com:ianding1/leetcode.vim \
 		git@github.com:itchyny/lightline.vim \
 		git@github.com:jacoborus/tender.vim \
 		git@github.com:jpalardy/vim-slime \
