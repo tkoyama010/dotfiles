@@ -65,3 +65,6 @@ shell-aliases:
 	echo 'eval "$$(starship init zsh)"' >> ~/.zshrc
 	echo 'eval "$$(direnv hook zsh)"' >> ~/.zshrc
 	echo 'export EDITOR=vim' >> ~/.zshrc
+	echo 'eval "$$(starship init bash)"' >> ~/.bashrc
+	echo 'eval "$$(direnv hook bash)"' >> ~/.bashrc
+	echo 'export EDITOR=vim' >> ~/.bashrc
