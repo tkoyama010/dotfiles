@@ -8,7 +8,7 @@ This repository is for managing personal configuration files. It includes settin
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/dotfiles.git
+   git clone https://github.com/tkoyama010/dotfiles.git
    cd dotfiles
    ```
 2. Install the required dependencies:
