@@ -82,10 +82,10 @@ def shell_aliases(c: Context) -> None:
     )
     c.run("echo 'alias ls=\"lsd\"' >> ~/.bashrc")
     c.run("echo 'alias cat=\"/Users/tetsuo.koyama/.cargo/bin/bat\"' >> ~/.bashrc")
-    c.run("echo 'eval \"$$(starship init zsh)\"' >> ~/.zshrc")
-    c.run("echo 'eval \"$$(direnv hook zsh)\"' >> ~/.zshrc")
+    c.run("echo 'eval \"$(starship init zsh)\"' >> ~/.zshrc")
+    c.run("echo 'eval \"$(direnv hook zsh)\"' >> ~/.zshrc")
     c.run("echo 'export EDITOR=vim' >> ~/.zshrc")
-    c.run("echo 'alias leetcode=\"$(HOME)/.cargo/bin/leetcode\"' >> ~/.zshrc")
+    c.run("echo 'alias leetcode=\"$HOME/.cargo/bin/leetcode\"' >> ~/.zshrc")
 
 
 @task(default=True)
