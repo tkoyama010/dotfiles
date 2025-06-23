@@ -1,4 +1,5 @@
 # dotfiles
+# Add Contributor Covenant Code of Conduct AI!
 
 ## Overview
 
