@@ -94,7 +94,7 @@ def shell_aliases(c: Context) -> None:
 def yazi(c: Context) -> None:
     """Install yazi."""
     c.run("mkdir -p ~/.config/yazi")
-    c.run("cp yazi/theme.yaml ~/.config/yazi/theme.yaml")
+    c.run("brew install yazi ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide imagemagick font-symbols-only-nerd-font")
 
 
 @task(default=True)
