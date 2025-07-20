@@ -11,8 +11,10 @@ def config(c: Context) -> None:
     """Copy configuration files."""
     c.run("mkdir -p ~/.config/lsd")
     c.run("cp lsd/config.yaml ~/.config/lsd/config.yaml")
-    c.run("cp starship.toml ~/.config/starship.toml")
     c.run("cp vimrc ~/.vimrc")
+    c.run("starship preset pastel-powerline -o ~/.config/starship.toml")
+    c.run("brew install font-fira-code-nerd-font")
+    c.run("echo Set 'FiraCode Nerd Font Mono' to Editor: Font Family to VSCode")
 
 
 @task
@@ -86,6 +88,13 @@ def shell_aliases(c: Context) -> None:
     c.run("echo 'eval \"$$(direnv hook zsh)\"' >> ~/.zshrc")
     c.run("echo 'export EDITOR=vim' >> ~/.zshrc")
     c.run("echo 'alias leetcode=\"$(HOME)/.cargo/bin/leetcode\"' >> ~/.zshrc")
+
+
+@task
+def yazi(c: Context) -> None:
+    """Install yazi."""
+    c.run("mkdir -p ~/.config/yazi")
+    c.run("cp yazi/theme.yaml ~/.config/yazi/theme.yaml")
 
 
 @task(default=True)
