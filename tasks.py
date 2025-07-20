@@ -94,7 +94,10 @@ def shell_aliases(c: Context) -> None:
 def yazi(c: Context) -> None:
     """Install yazi."""
     c.run("mkdir -p ~/.config/yazi")
-    c.run("brew install yazi ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide imagemagick font-symbols-only-nerd-font")
+    c.run(
+        "brew install yazi ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide "
+        "imagemagick font-symbols-only-nerd-font",
+    )
 
 
 @task(default=True)
