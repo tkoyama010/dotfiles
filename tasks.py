@@ -9,8 +9,7 @@ from invoke import Context, task
 @task
 def config(c: Context) -> None:
     """Copy configuration files."""
-    c.run("mkdir -p ~/.config/lsd")
-    c.run("cp lsd/config.yaml ~/.config/lsd/config.yaml")
+    c.run("mkdir -p ~/.config")
     c.run("cp starship.toml ~/.config/starship.toml")
     c.run("cp vimrc ~/.vimrc")
 
