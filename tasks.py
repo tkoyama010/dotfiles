@@ -10,8 +10,9 @@ from invoke import Context, task
 def config(c: Context) -> None:
     """Copy configuration files."""
     c.run("mkdir -p ~/.config")
-    c.run("cp starship.toml ~/.config/starship.toml")
     c.run("cp vimrc ~/.vimrc")
+    c.run("brew install font-fira-code-nerd-font")
+    c.run("echo Set 'FiraCode Nerd Font Mono' to Editor: Font Family to VSCode")
 
 
 @task
@@ -85,6 +86,16 @@ def shell_aliases(c: Context) -> None:
     c.run("echo 'eval \"$$(direnv hook zsh)\"' >> ~/.zshrc")
     c.run("echo 'export EDITOR=vim' >> ~/.zshrc")
     c.run("echo 'alias leetcode=\"$(HOME)/.cargo/bin/leetcode\"' >> ~/.zshrc")
+
+
+@task
+def yazi(c: Context) -> None:
+    """Install yazi."""
+    c.run("mkdir -p ~/.config/yazi")
+    c.run(
+        "brew install yazi ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide "
+        "imagemagick font-symbols-only-nerd-font",
+    )
 
 
 @task(default=True)
