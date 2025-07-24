@@ -9,10 +9,8 @@ from invoke import Context, task
 @task
 def config(c: Context) -> None:
     """Copy configuration files."""
-    c.run("mkdir -p ~/.config/lsd")
-    c.run("cp lsd/config.yaml ~/.config/lsd/config.yaml")
+    c.run("mkdir -p ~/.config")
     c.run("cp vimrc ~/.vimrc")
-    c.run("starship preset pastel-powerline -o ~/.config/starship.toml")
     c.run("brew install font-fira-code-nerd-font")
     c.run("echo Set 'FiraCode Nerd Font Mono' to Editor: Font Family to VSCode")
 
