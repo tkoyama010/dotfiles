@@ -98,9 +98,16 @@ def yazi(c: Context) -> None:
     )
 
 
+@task
+def byobu(c: Context) -> None:
+    """Set up byobu."""
+    c.run("cp byobu/.byobu ~/.byobu -r")
+
+
 @task(default=True)
 def all_tasks(c: Context) -> None:
     """Run all tasks."""
     config(c)
     vim_plugins(c)
     shell_aliases(c)
+    byobu(c)

@@ -1,0 +1,1 @@
+[ -r /opt/homebrew/Cellar/byobu/6.13/share/byobu/profiles/bashrc ] && . /opt/homebrew/Cellar/byobu/6.13/share/byobu/profiles/bashrc  #byobu-prompt#
