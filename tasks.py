@@ -102,7 +102,7 @@ def yazi(c: Context) -> None:
 def byobu(c: Context) -> None:
     """Set up byobu."""
     c.run("mkdir -p ~/.byobu")
-    c.run("cp -r byobu/.byobu/* ~/.byobu/")
+    c.run("cp byobu/.byobu/.tmux.conf ~/.byobu/")
 
 
 @task(default=True)
