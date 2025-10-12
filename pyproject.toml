@@ -10,6 +10,9 @@ version = "0.1.0"
 build-backend = "hatchling.build"
 requires = ["hatchling"]
 
+[tool.hatch.build.targets.wheel]
+only-include = ["tasks.py"]
+
 [tool.uv]
 dev-dependencies = []
 
