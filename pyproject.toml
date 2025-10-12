@@ -1,0 +1,24 @@
+[project]
+dependencies = ["invoke>=2.2.0"]
+description = "Personal dotfiles configuration"
+name = "dotfiles"
+readme = "README.md"
+requires-python = ">=3.8"
+version = "0.1.0"
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[tool.uv]
+dev-dependencies = []
+
+[tool.ruff]
+indent-width = 4
+line-length = 88
+
+[tool.ruff.lint]
+extend-select = ["ALL"]
+ignore = []
+
+[tool.ruff.format]
