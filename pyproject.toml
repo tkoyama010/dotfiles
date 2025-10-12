@@ -3,7 +3,7 @@ dependencies = ["invoke>=2.2.0"]
 description = "Personal dotfiles configuration"
 name = "dotfiles"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 version = "0.1.0"
 
 [build-system]
@@ -14,7 +14,7 @@ requires = ["hatchling"]
 only-include = ["tasks.py"]
 
 [tool.uv]
-dev-dependencies = []
+dev-dependencies = ["pre-commit>=4.0.0"]
 
 [tool.ruff]
 indent-width = 4
