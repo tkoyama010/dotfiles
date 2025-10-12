@@ -1,16 +1,14 @@
 [project]
-name = "dotfiles"
-version = "0.1.0"
+dependencies = ["invoke>=2.2.0"]
 description = "Personal dotfiles configuration"
+name = "dotfiles"
 readme = "README.md"
 requires-python = ">=3.8"
-dependencies = [
-    "invoke>=2.2.0",
-]
+version = "0.1.0"
 
 [build-system]
-requires = ["hatchling"]
 build-backend = "hatchling.build"
+requires = ["hatchling"]
 
 [tool.uv]
 dev-dependencies = []
