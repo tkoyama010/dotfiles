@@ -1,9 +1,23 @@
 """Tasks for automating setup."""
 
 import contextlib
+import logging
+import platform
 from pathlib import Path
 
 from invoke import Context, task
+
+logger = logging.getLogger(__name__)
+
+
+def is_mac() -> bool:
+    """Check if running on macOS."""
+    return platform.system() == "Darwin"
+
+
+def is_linux() -> bool:
+    """Check if running on Linux."""
+    return platform.system() == "Linux"
 
 
 @task
@@ -11,8 +25,15 @@ def config(c: Context) -> None:
     """Copy configuration files."""
     c.run("mkdir -p ~/.config")
     c.run("cp vimrc ~/.vimrc")
-    c.run("brew install font-fira-code-nerd-font")
-    c.run("echo Set 'FiraCode Nerd Font Mono' to Editor: Font Family to VSCode")
+
+    if is_mac():
+        c.run("brew install font-fira-code-nerd-font")
+    elif is_linux():
+        logger.info(
+            "On Linux: Install FiraCode Nerd Font manually from https://www.nerdfonts.com/",
+        )
+
+    logger.info("Set 'FiraCode Nerd Font Mono' to Editor: Font Family in VSCode")
 
 
 @task
@@ -92,10 +113,27 @@ def shell_aliases(c: Context) -> None:
 def yazi(c: Context) -> None:
     """Install yazi."""
     c.run("mkdir -p ~/.config/yazi")
-    c.run(
-        "brew install yazi ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide "
-        "imagemagick font-symbols-only-nerd-font",
-    )
+
+    if is_mac():
+        c.run(
+            "brew install yazi ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide "
+            "imagemagick font-symbols-only-nerd-font",
+        )
+    elif is_linux():
+        logger.info("Installing yazi dependencies on Linux...")
+        c.run(
+            "sudo apt-get update && sudo apt-get install -y ffmpeg p7zip-full jq "
+            "poppler-utils fd-find ripgrep fzf imagemagick || true",
+        )
+        # Install yazi via cargo if available, or provide instructions
+        result = c.run("which cargo", warn=True, hide=True)
+        if result and result.ok:
+            c.run("cargo install --locked yazi-fm yazi-cli")
+        else:
+            logger.info(
+                "Install yazi manually: cargo install --locked yazi-fm yazi-cli",
+            )
+            logger.info("Or follow instructions at: https://github.com/sxyazi/yazi")
 
 
 @task
