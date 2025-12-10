@@ -4,7 +4,9 @@
 .bash_history
 .emacs.d/history
 .ssh
+.venv/
 .viminfo
 .zcompcache
 .zcompdump
 .zsh_history
+node_modules/
