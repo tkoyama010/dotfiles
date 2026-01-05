@@ -94,9 +94,8 @@ def vim_plugins(c: Context) -> None:
             c.run(f"git clone {repo} {dest_dir}")
 
     with ThreadPoolExecutor(max_workers=8) as executor:
-        futures = {executor.submit(process_repo, repo): repo for repo in repos}
+        futures = [executor.submit(process_repo, repo) for repo in repos]
         for future in as_completed(futures):
-            repo = futures[future]
             with contextlib.suppress(Exception):
                 future.result()
 
