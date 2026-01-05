@@ -41,7 +41,7 @@ def config(c: Context) -> None:
 def vim_plugins(c: Context) -> None:
     """Installs vim plugins."""
     c.run("mkdir -p ~/.vim/pack/mypackage/start/")
-    
+
     repos = [
         "git@github.com:EdenEast/nightfox.nvim",
         "git@github.com:PProvost/vim-ps1",
@@ -81,7 +81,7 @@ def vim_plugins(c: Context) -> None:
         "git@github.com:vim-scripts/vcscommand.vim",
         "git@github.com:will133/vim-dirdiff",
     ]
-    
+
     def process_repo(repo: str) -> None:
         dirname = Path(repo).name.replace(".nvim", "")
         dest_dir = Path("~/.vim/pack/mypackage/start/") / dirname
@@ -92,7 +92,7 @@ def vim_plugins(c: Context) -> None:
                     c.run(f"cd {dest_dir} && git pull && cd ..")
         else:
             c.run(f"git clone {repo} {dest_dir}")
-    
+
     with ThreadPoolExecutor(max_workers=8) as executor:
         futures = {executor.submit(process_repo, repo): repo for repo in repos}
         for future in as_completed(futures):
