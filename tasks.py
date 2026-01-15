@@ -149,6 +149,12 @@ def byobu(c: Context) -> None:
     c.run("cp byobu/.byobu/.tmux.conf ~/.byobu/")
 
 
+@task
+def ttyd(c: Context) -> None:
+    """Start ttyd web terminal."""
+    c.run("ttyd -i 127.0.0.1 -p 7682 -W bash")
+
+
 @task(default=True)
 def all_tasks(c: Context) -> None:
     """Run all tasks."""
