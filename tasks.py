@@ -165,10 +165,9 @@ def copilot_cli(c: Context) -> None:
         logger.info(f"Backing up existing config to {backup_path}")
         c.run(f"mv {config_dst} {backup_path}")
 
-    # Create symlink
-    if not config_dst.is_symlink():
-        c.run(f"ln -sf {config_src} {config_dst}")
-        logger.info(f"Created symlink: {config_dst} -> {config_src}")
+    # Create or update symlink
+    c.run(f"ln -sf {config_src} {config_dst}")
+    logger.info(f"Created symlink: {config_dst} -> {config_src}")
 
 
 @task
