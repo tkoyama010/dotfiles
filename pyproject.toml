@@ -21,7 +21,6 @@ indent-width = 4
 line-length = 88
 
 [tool.ruff.lint]
-extend-select = ["ALL"]
-ignore = []
+select = ["ALL"]
 
 [tool.ruff.format]
