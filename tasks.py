@@ -228,4 +228,3 @@ def all_tasks(c: Context) -> None:
     shell_aliases(c)
     byobu(c)
     copilot_cli(c)
-    ruff_skill(c)
