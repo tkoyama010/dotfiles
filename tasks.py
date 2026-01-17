@@ -208,7 +208,7 @@ def ruff_skill(c: Context, target_dir: str) -> None:
 
     # Backup existing skill if it exists and is not a symlink
     if skill_dst.exists() and not skill_dst.is_symlink():
-        backup_path = skill_dst.with_suffix(".bak")
+        backup_path = skill_dst.parent / f"{skill_dst.name}.bak"
         logger.info("Backing up existing skill to %s", backup_path)
         c.run(f"mv {skill_dst} {backup_path}")
 
