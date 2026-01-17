@@ -1,7 +1,14 @@
+# GitHub Copilot CLI - exclude sensitive data
 *.swp
 *~
 .aws
 .bash_history
+.config/github-copilot/apps.json
+.copilot/command-history-state.json
+.copilot/history-session-state/
+.copilot/logs/
+.copilot/pkg/
+.copilot/session-state/
 .emacs.d/history
 .ssh
 .venv/
@@ -10,12 +17,3 @@
 .zcompdump
 .zsh_history
 node_modules/
-
-# GitHub Copilot CLI - exclude sensitive data
-.config/github-copilot/apps.json
-.copilot/session-state/
-.copilot/history-session-state/
-.copilot/logs/
-.copilot/pkg/
-.copilot/command-history-state.json
-
