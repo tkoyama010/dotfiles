@@ -21,9 +21,6 @@ indent-width = 4
 line-length = 88
 
 [tool.ruff.lint]
-fixable = ["ALL"]
-ignore = ["D203", "D212"]
 select = ["ALL"]
-unfixable = []
 
 [tool.ruff.format]
