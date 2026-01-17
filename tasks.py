@@ -186,6 +186,9 @@ def ruff_skill(c: Context, target_dir: str) -> None:
     dotfiles_dir = Path(__file__).parent
     skill_src = dotfiles_dir / ".github" / "skills" / "ruff-lint"
 
+    if not skill_src.exists():
+        msg = f"Source skill directory does not exist: {skill_src}"
+        raise ValueError(msg)
     # Expand and resolve target directory path
     target_path = Path(target_dir).expanduser().resolve()
 
