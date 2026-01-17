@@ -175,6 +175,7 @@ def ruff_skill(c: Context, target_dir: str) -> None:
     """Set up Ruff linting skill for any project repository.
 
     Args:
+        c: Invoke context
         target_dir: Target repository directory (required)
 
     Example:
