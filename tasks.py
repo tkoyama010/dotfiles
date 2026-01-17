@@ -162,12 +162,12 @@ def copilot_cli(c: Context) -> None:
     # Backup existing config if it exists and is not a symlink
     if config_dst.exists() and not config_dst.is_symlink():
         backup_path = config_dst.with_suffix(".json.bak")
-        logger.info(f"Backing up existing config to {backup_path}")
+        logger.info("Backing up existing config to %s", backup_path)
         c.run(f"mv {config_dst} {backup_path}")
 
     # Create or update symlink
     c.run(f"ln -sf {config_src} {config_dst}")
-    logger.info(f"Created symlink: {config_dst} -> {config_src}")
+    logger.info("Created symlink: %s -> %s", config_dst, config_src)
 
 
 @task
