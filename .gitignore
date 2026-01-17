@@ -1,7 +1,14 @@
+# GitHub Copilot CLI - exclude sensitive data
 *.swp
 *~
 .aws
 .bash_history
+.config/github-copilot/apps.json
+.copilot/command-history-state.json
+.copilot/history-session-state/
+.copilot/logs/
+.copilot/pkg/
+.copilot/session-state/
 .emacs.d/history
 .ssh
 .venv/
