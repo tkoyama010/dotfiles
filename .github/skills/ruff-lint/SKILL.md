@@ -72,17 +72,84 @@ logger.warning("warning message")
 logger.error("error message")
 ```
 
-### Other important rules
+### Path Operations
 
-- Use `pathlib.Path` instead of `os.path` operations
-- Prefer f-strings over `.format()` or `%` formatting
-- Add type hints to function signatures
-- Use explicit exception types instead of bare `except:`
+Always use `pathlib.Path` instead of `os.path` operations:
+
+```python
+from pathlib import Path
+
+# Good
+path = Path(__file__).parent / "config.json"
+if path.exists():
+    content = path.read_text()
+
+# Avoid
+import os
+path = os.path.join(os.path.dirname(__file__), "config.json")
+```
+
+### String Formatting
+
+Prefer f-strings over `.format()` or `%` formatting:
+
+```python
+# Good
+message = f"Hello, {name}!"
+
+# Avoid
+message = "Hello, {}!".format(name)
+message = "Hello, %s!" % name
+```
+
+### Type Hints
+
+Add type hints to all function signatures:
+
+```python
+from pathlib import Path
+
+def process_data(input_file: Path, output_dir: Path) -> bool:
+    """Process data from input file."""
+    ...
+```
+
+### Exception Handling
+
+Use explicit exception types instead of bare `except:`:
+
+```python
+# Good
+try:
+    result = risky_operation()
+except ValueError as e:
+    logger.error("Invalid value: %s", e)
+except FileNotFoundError as e:
+    logger.error("File not found: %s", e)
+
+# Avoid
+try:
+    result = risky_operation()
+except:
+    pass
+```
+
+## Workflow
+
+When making any Python code changes, follow this workflow:
+
+1. Write or modify Python code
+2. Run `ruff check . --select ALL --fix` to auto-fix issues
+3. Run `ruff format .` to format code
+4. Address any remaining linting errors manually
+5. Commit only when all Ruff checks pass
 
 ## Notes
 
-- Ruff is extremely fast (10-100x faster than traditional Python linters)
-- It enforces all Python code quality rules by default in this project
+- Ruff is 10-100x faster than traditional Python linters
+- All code must pass Ruff checks before committing
+- Zero tolerance for linting violations
+- This ensures consistent, high-quality Python code across the project
 - Always run `ruff check` before committing to ensure code quality
 - Use `--fix` to automatically resolve fixable violations
 - For print statement errors (T201), replace with logger calls
