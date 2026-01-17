@@ -173,29 +173,30 @@ def copilot_cli(c: Context) -> None:
 @task
 def ruff_skill(c: Context, target_dir: str) -> None:
     """Set up Ruff linting skill for any project repository.
-    
+
     Args:
         target_dir: Target repository directory (required)
-    
+
     Example:
         invoke ruff-skill --target-dir ~/repository
         invoke ruff-skill -t /path/to/project
+
     """
     dotfiles_dir = Path(__file__).parent
     skill_src = dotfiles_dir / ".github" / "skills" / "ruff-lint"
-    
+
     # Expand and resolve target directory path
     target_path = Path(target_dir).expanduser().resolve()
-    
+
     # Validate target directory exists
     if not target_path.exists():
         msg = f"Target directory does not exist: {target_path}"
         raise ValueError(msg)
-    
+
     if not target_path.is_dir():
         msg = f"Target path is not a directory: {target_path}"
         raise ValueError(msg)
-    
+
     skill_dst = target_path / ".github" / "skills" / "ruff-lint"
 
     # Create skills directory if it doesn't exist
