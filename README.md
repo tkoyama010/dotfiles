@@ -27,8 +27,7 @@ This repository is for managing personal configuration files. It includes settin
 - `lsd/config.yaml`: Configuration for the LSD command.
 - `zellij/config.kdl`: Configuration for the Zellij terminal manager.
 - `copilot/config.json`: Configuration for GitHub Copilot CLI.
-- `.github/skills/ruff-lint/`: Ruff linting skill for GitHub Copilot CLI.
-- `CLAUDE.md`: Custom instructions for Claude Code with Ruff standards.
+- `.github/skills/ruff-lint/`: Ruff linting skill for GitHub Copilot CLI and Claude Code.
 - `tasks.py`: Script to automate various setup tasks.
 
 ## Usage Example
@@ -45,17 +44,19 @@ You can set up GitHub Copilot CLI configuration with the following command:
 invoke copilot-cli
 ```
 
-You can install Ruff linting skill to your home directory with the following command:
+You can install the Ruff linting skill to any project repository:
 
 ```bash
-invoke ruff-skill
+# From anywhere
+invoke ruff-skill --target-dir ~/repository
+invoke ruff-skill -t /path/to/your/project
+
+# From dotfiles directory
+cd ~/dotfiles
+invoke ruff-skill --target-dir ~/my-python-project
 ```
 
-This will create symlinks:
-- `~/.copilot/skills/ruff-lint/` → dotfiles (for GitHub Copilot CLI)
-- `~/CLAUDE.md` → dotfiles (for Claude Code)
-
-Making the Ruff linting standards available globally across all projects in both Copilot CLI and Claude Code.
+This creates a symlink `.github/skills/ruff-lint/` in the target project, making the skill available via `/skill ruff-lint` in both GitHub Copilot CLI and Claude Code.
 
 **Note**: Authentication tokens are NOT stored in this repository for security reasons.
 

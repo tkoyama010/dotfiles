@@ -171,16 +171,35 @@ def copilot_cli(c: Context) -> None:
 
 
 @task
-def ruff_skill(c: Context) -> None:
-    """Set up Ruff linting skill for GitHub Copilot CLI and Claude Code."""
-    dotfiles_dir = Path(__file__).parent
+def ruff_skill(c: Context, target_dir: str) -> None:
+    """Set up Ruff linting skill for any project repository.
     
-    # Set up for Copilot CLI
+    Args:
+        target_dir: Target repository directory (required)
+    
+    Example:
+        invoke ruff-skill --target-dir ~/repository
+        invoke ruff-skill -t /path/to/project
+    """
+    dotfiles_dir = Path(__file__).parent
     skill_src = dotfiles_dir / ".github" / "skills" / "ruff-lint"
-    skill_dst = Path.home() / ".copilot" / "skills" / "ruff-lint"
+    
+    # Expand and resolve target directory path
+    target_path = Path(target_dir).expanduser().resolve()
+    
+    # Validate target directory exists
+    if not target_path.exists():
+        msg = f"Target directory does not exist: {target_path}"
+        raise ValueError(msg)
+    
+    if not target_path.is_dir():
+        msg = f"Target path is not a directory: {target_path}"
+        raise ValueError(msg)
+    
+    skill_dst = target_path / ".github" / "skills" / "ruff-lint"
 
     # Create skills directory if it doesn't exist
-    c.run("mkdir -p ~/.copilot/skills")
+    c.run(f"mkdir -p {skill_dst.parent}")
 
     # Backup existing skill if it exists and is not a symlink
     if skill_dst.exists() and not skill_dst.is_symlink():
@@ -188,23 +207,10 @@ def ruff_skill(c: Context) -> None:
         logger.info("Backing up existing skill to %s", backup_path)
         c.run(f"mv {skill_dst} {backup_path}")
 
-    # Create or update symlink for Copilot CLI
+    # Create or update symlink
     c.run(f"ln -sf {skill_src} {skill_dst}")
     logger.info("Created symlink: %s -> %s", skill_dst, skill_src)
-    
-    # Set up for Claude Code
-    claude_src = dotfiles_dir / "CLAUDE.md"
-    claude_dst = Path.home() / "CLAUDE.md"
-    
-    # Backup existing CLAUDE.md if it exists and is not a symlink
-    if claude_dst.exists() and not claude_dst.is_symlink():
-        backup_path = claude_dst.with_suffix(".md.bak")
-        logger.info("Backing up existing CLAUDE.md to %s", backup_path)
-        c.run(f"mv {claude_dst} {backup_path}")
-    
-    # Create or update symlink for Claude Code
-    c.run(f"ln -sf {claude_src} {claude_dst}")
-    logger.info("Created symlink: %s -> %s", claude_dst, claude_src)
+    logger.info("ruff-lint skill is now available via /skill ruff-lint")
 
 
 @task
