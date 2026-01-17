@@ -171,6 +171,27 @@ def copilot_cli(c: Context) -> None:
 
 
 @task
+def ruff_skill(c: Context) -> None:
+    """Set up Ruff linting skill for GitHub Copilot CLI."""
+    dotfiles_dir = Path(__file__).parent
+    skill_src = dotfiles_dir / ".github" / "skills" / "ruff-lint"
+    skill_dst = Path.home() / ".copilot" / "skills" / "ruff-lint"
+
+    # Create skills directory if it doesn't exist
+    c.run("mkdir -p ~/.copilot/skills")
+
+    # Backup existing skill if it exists and is not a symlink
+    if skill_dst.exists() and not skill_dst.is_symlink():
+        backup_path = skill_dst.with_suffix(".bak")
+        logger.info("Backing up existing skill to %s", backup_path)
+        c.run(f"mv {skill_dst} {backup_path}")
+
+    # Create or update symlink
+    c.run(f"ln -sf {skill_src} {skill_dst}")
+    logger.info("Created symlink: %s -> %s", skill_dst, skill_src)
+
+
+@task
 def ttyd(c: Context) -> None:
     """Start ttyd web terminal."""
     c.run("ttyd -i 127.0.0.1 -p 7682 -W bash")
@@ -184,3 +205,4 @@ def all_tasks(c: Context) -> None:
     shell_aliases(c)
     byobu(c)
     copilot_cli(c)
+    ruff_skill(c)
