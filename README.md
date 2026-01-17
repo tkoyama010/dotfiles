@@ -28,6 +28,7 @@ This repository is for managing personal configuration files. It includes settin
 - `zellij/config.kdl`: Configuration for the Zellij terminal manager.
 - `copilot/config.json`: Configuration for GitHub Copilot CLI.
 - `.github/skills/ruff-lint/`: Ruff linting skill for GitHub Copilot CLI.
+- `CLAUDE.md`: Custom instructions for Claude Code with Ruff standards.
 - `tasks.py`: Script to automate various setup tasks.
 
 ## Usage Example
@@ -50,7 +51,11 @@ You can install Ruff linting skill to your home directory with the following com
 invoke ruff-skill
 ```
 
-This will create a symlink from `~/.copilot/skills/ruff-lint/` to the dotfiles repository, making the skill available globally across all projects.
+This will create symlinks:
+- `~/.copilot/skills/ruff-lint/` → dotfiles (for GitHub Copilot CLI)
+- `~/CLAUDE.md` → dotfiles (for Claude Code)
+
+Making the Ruff linting standards available globally across all projects in both Copilot CLI and Claude Code.
 
 **Note**: Authentication tokens are NOT stored in this repository for security reasons.
 
