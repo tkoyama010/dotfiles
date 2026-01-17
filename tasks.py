@@ -204,16 +204,16 @@ def ruff_skill(c: Context, target_dir: str) -> None:
     skill_dst = target_path / ".github" / "skills" / "ruff-lint"
 
     # Create skills directory if it doesn't exist
-    c.run(f"mkdir -p {skill_dst.parent}")
+    c.run(f'mkdir -p "{skill_dst.parent}"')
 
     # Backup existing skill if it exists and is not a symlink
     if skill_dst.exists() and not skill_dst.is_symlink():
-        backup_path = skill_dst.parent / f"{skill_dst.name}.bak"
+        backup_path = skill_dst.with_suffix(".bak")
         logger.info("Backing up existing skill to %s", backup_path)
-        c.run(f"mv {skill_dst} {backup_path}")
+        c.run(f'mv "{skill_dst}" "{backup_path}"')
 
     # Create or update symlink
-    c.run(f"ln -sf {skill_src} {skill_dst}")
+    c.run(f'ln -sf "{skill_src}" "{skill_dst}"')
     logger.info("Created symlink: %s -> %s", skill_dst, skill_src)
     logger.info("ruff-lint skill is now available via /skill ruff-lint")
 
