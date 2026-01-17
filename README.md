@@ -26,6 +26,7 @@ This repository is for managing personal configuration files. It includes settin
 - `starship.toml`: Configuration for the Starship prompt.
 - `lsd/config.yaml`: Configuration for the LSD command.
 - `zellij/config.kdl`: Configuration for the Zellij terminal manager.
+- `copilot/config.json`: Configuration for GitHub Copilot CLI.
 - `tasks.py`: Script to automate various setup tasks.
 
 ## Usage Example
@@ -35,6 +36,14 @@ You can install Vim plugins with the following command:
 ```bash
 invoke vim-plugins
 ```
+
+You can set up GitHub Copilot CLI configuration with the following command:
+
+```bash
+invoke copilot-cli
+```
+
+**Note**: Authentication tokens are NOT stored in this repository for security reasons.
 
 ## License
 

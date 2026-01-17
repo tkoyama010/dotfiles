@@ -150,6 +150,28 @@ def byobu(c: Context) -> None:
 
 
 @task
+def copilot_cli(c: Context) -> None:
+    """Set up GitHub Copilot CLI configuration."""
+    dotfiles_dir = Path(__file__).parent
+    config_src = dotfiles_dir / "copilot" / "config.json"
+    config_dst = Path.home() / ".copilot" / "config.json"
+
+    # Create directory if it doesn't exist
+    c.run("mkdir -p ~/.copilot")
+
+    # Backup existing config if it exists and is not a symlink
+    if config_dst.exists() and not config_dst.is_symlink():
+        backup_path = config_dst.with_suffix(".json.bak")
+        logger.info(f"Backing up existing config to {backup_path}")
+        c.run(f"mv {config_dst} {backup_path}")
+
+    # Create symlink
+    if not config_dst.is_symlink():
+        c.run(f"ln -sf {config_src} {config_dst}")
+        logger.info(f"Created symlink: {config_dst} -> {config_src}")
+
+
+@task
 def ttyd(c: Context) -> None:
     """Start ttyd web terminal."""
     c.run("ttyd -i 127.0.0.1 -p 7682 -W bash")
@@ -162,3 +184,4 @@ def all_tasks(c: Context) -> None:
     vim_plugins(c)
     shell_aliases(c)
     byobu(c)
+    copilot_cli(c)

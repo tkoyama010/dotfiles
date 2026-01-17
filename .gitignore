@@ -10,3 +10,12 @@
 .zcompdump
 .zsh_history
 node_modules/
+
+# GitHub Copilot CLI - exclude sensitive data
+.config/github-copilot/apps.json
+.copilot/session-state/
+.copilot/history-session-state/
+.copilot/logs/
+.copilot/pkg/
+.copilot/command-history-state.json
+
