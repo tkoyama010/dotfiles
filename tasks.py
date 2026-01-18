@@ -26,6 +26,7 @@ def config(c: Context) -> None:
     """Copy configuration files."""
     c.run("mkdir -p ~/.config")
     c.run("cp vimrc ~/.vimrc")
+    c.run("cp .profile ~/.profile")
 
     if is_mac():
         c.run("brew install font-fira-code-nerd-font")
@@ -221,7 +222,7 @@ def ruff_skill(c: Context, target_dir: str) -> None:
 @task
 def ttyd(c: Context) -> None:
     """Start ttyd web terminal."""
-    c.run("ttyd -i 127.0.0.1 -p 7682 -W bash")
+    c.run("ttyd -i 127.0.0.1 -p 7681 -W bash")
 
 
 @task(default=True)
