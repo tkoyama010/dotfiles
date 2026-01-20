@@ -1,0 +1,26 @@
+[project]
+dependencies = ["invoke>=2.2.0"]
+description = "Personal dotfiles configuration"
+name = "dotfiles"
+readme = "README.md"
+requires-python = ">=3.9"
+version = "0.1.0"
+
+[dependency-groups]
+dev = ["pre-commit>=4.0.0"]
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[tool.hatch.build.targets.wheel]
+only-include = ["tasks.py"]
+
+[tool.ruff]
+indent-width = 4
+line-length = 88
+
+[tool.ruff.lint]
+select = ["ALL"]
+
+[tool.ruff.format]

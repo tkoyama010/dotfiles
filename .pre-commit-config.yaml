@@ -4,7 +4,7 @@ ci:
   autoupdate_schedule: weekly
 repos:
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.33.2
+    rev: 0.36.0
     hooks:
       - id: check-github-workflows
   - repo: https://github.com/codespell-project/codespell
@@ -18,7 +18,7 @@ repos:
       - id: prettier
         types_or: [yaml, markdown, html, css, scss, javascript, json]
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+    rev: v6.0.0
     hooks:
       - id: check-added-large-files
       - id: check-case-conflict
@@ -38,7 +38,7 @@ repos:
         verbose: true
         files: ^(\.gitignore|vimrc)$
   - repo: https://github.com/scop/pre-commit-shfmt
-    rev: v3.12.0-1
+    rev: v3.12.0-2
     hooks:
       - id: shfmt
   - repo: https://github.com/ComPWA/taplo-pre-commit
@@ -47,7 +47,7 @@ repos:
       - id: taplo-format
         args: [--option, "reorder_arrays=true", --option, "reorder_keys=true"]
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.12.3
+    rev: v0.14.13
     hooks:
       - id: ruff
         args: ["--fix", "--exit-non-zero-on-fix"]

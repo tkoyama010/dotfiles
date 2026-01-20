@@ -28,6 +28,8 @@ This repository is for managing personal configuration files. It includes settin
 - `starship.toml`: Configuration for the Starship prompt.
 - `lsd/config.yaml`: Configuration for the LSD command.
 - `zellij/config.kdl`: Configuration for the Zellij terminal manager.
+- `copilot/config.json`: Configuration for GitHub Copilot CLI.
+- `.github/skills/ruff-lint/`: Ruff linting skill for GitHub Copilot CLI and Claude Code.
 - `tasks.py`: Script to automate various setup tasks.
 
 ## Usage Example
@@ -41,6 +43,27 @@ invoke vim-plugins
 ## Code of Conduct
 
 This project adheres to the Contributor Covenant [code of conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to the project maintainers.
+You can set up GitHub Copilot CLI configuration with the following command:
+
+```bash
+invoke copilot-cli
+```
+
+You can install the Ruff linting skill to any project repository:
+
+```bash
+# From anywhere
+invoke ruff-skill --target-dir ~/repository
+invoke ruff-skill -t /path/to/your/project
+
+# From dotfiles directory
+cd ~/dotfiles
+invoke ruff-skill --target-dir ~/my-python-project
+```
+
+This creates a symlink `.github/skills/ruff-lint/` in the target project, making the skill available via `/skill ruff-lint` in both GitHub Copilot CLI and Claude Code.
+
+**Note**: Authentication tokens are NOT stored in this repository for security reasons.
 
 ## License
 

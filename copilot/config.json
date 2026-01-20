@@ -1,0 +1,7 @@
+{
+  "banner": "never",
+  "render_markdown": true,
+  "screen_reader": false,
+  "theme": "auto",
+  "asked_setup_terminals": ["vscode"]
+}
