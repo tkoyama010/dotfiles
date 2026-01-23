@@ -220,6 +220,54 @@ def ruff_skill(c: Context, target_dir: str) -> None:
 
 
 @task
+def claude_statusline(c: Context) -> None:
+    """Set up Claude Code custom status line.
+
+    This task:
+    - Copies statusline.sh to ~/.claude/statusline.sh with executable permissions
+    - Updates ~/.claude/settings.json to use the custom status line
+
+    The status line displays:
+    - Model name (e.g., "Claude Sonnet 4.5")
+    - Token usage with visual progress bar (max 155k tokens)
+    - Current directory and git branch/commit info
+    """
+    import json
+
+    dotfiles_dir = Path(__file__).parent
+    statusline_src = dotfiles_dir / ".claude" / "statusline.sh"
+    statusline_dst = Path.home() / ".claude" / "statusline.sh"
+    settings_path = Path.home() / ".claude" / "settings.json"
+
+    # Create directory if it doesn't exist
+    c.run("mkdir -p ~/.claude")
+
+    # Copy statusline.sh
+    c.run(f"cp {statusline_src} {statusline_dst}")
+    c.run(f"chmod +x {statusline_dst}")
+    logger.info("Copied statusline.sh to %s", statusline_dst)
+
+    # Update settings.json
+    if settings_path.exists():
+        with settings_path.open() as f:
+            settings = json.load(f)
+
+        settings["statusLine"] = {
+            "type": "command",
+            "command": "~/.claude/statusline.sh",
+        }
+
+        with settings_path.open("w") as f:
+            json.dump(settings, f, indent=2)
+            f.write("\n")
+
+        logger.info("Updated settings.json with statusLine configuration")
+    else:
+        logger.warning("settings.json not found at %s", settings_path)
+        logger.info("Run Claude Code once to generate settings.json, then run this task again")
+
+
+@task
 def claude_code_plugin(c: Context) -> None:
     """Install everything-claude-code plugin for Claude Code.
 
@@ -252,4 +300,5 @@ def all_tasks(c: Context) -> None:
     shell_aliases(c)
     byobu(c)
     copilot_cli(c)
+    claude_statusline(c)
     claude_code_plugin(c)

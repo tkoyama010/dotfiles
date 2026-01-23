@@ -27,6 +27,9 @@ This repository is for managing personal configuration files. It includes settin
 - `lsd/config.yaml`: Configuration for the LSD command.
 - `zellij/config.kdl`: Configuration for the Zellij terminal manager.
 - `copilot/config.json`: Configuration for GitHub Copilot CLI.
+- `.claude/`: Configuration for Claude Code CLI.
+  - `statusline.sh`: Custom status line script showing model, token usage, git info.
+  - `settings.local.json`: Local settings including permissions and statusLine configuration.
 - `.github/skills/ruff-lint/`: Ruff linting skill for GitHub Copilot CLI and Claude Code.
 - `tasks.py`: Script to automate various setup tasks.
 
@@ -43,6 +46,21 @@ You can set up GitHub Copilot CLI configuration with the following command:
 ```bash
 invoke copilot-cli
 ```
+
+You can set up Claude Code custom status line with the following command:
+
+```bash
+invoke claude-statusline
+```
+
+This will:
+- Copy `statusline.sh` to `~/.claude/statusline.sh` with executable permissions
+- Update `~/.claude/settings.json` to use the custom status line
+
+The status line displays:
+- Model name (e.g., "Claude Sonnet 4.5")
+- Token usage with visual progress bar (max 155k tokens)
+- Current directory and git branch/commit info
 
 You can install the Ruff linting skill to any project repository:
 
