@@ -220,6 +220,74 @@ def ruff_skill(c: Context, target_dir: str) -> None:
 
 
 @task
+def claude_config(c: Context) -> None:
+    """Set up Claude Code configuration files.
+
+    This task:
+    - Copies AppleScript for window focus to ~/.claude/scripts/
+    - Copies notification icon to ~/.claude/
+    - Merges settings from template into ~/.claude/settings.json
+
+    The configuration includes:
+    - Hooks for Stop and Notification events with terminal-notifier
+    - Window focus script for VS Code
+    - Notification icon
+    - Japanese language setting
+    - Enabled plugins configuration
+    """
+    import json
+
+    dotfiles_dir = Path(__file__).parent
+    scripts_src = dotfiles_dir / ".claude" / "scripts"
+    scripts_dst = Path.home() / ".claude" / "scripts"
+    icon_src = dotfiles_dir / ".claude" / "claude.png"
+    icon_dst = Path.home() / ".claude" / "claude.png"
+    settings_template = dotfiles_dir / ".claude" / "settings.json.template"
+    settings_path = Path.home() / ".claude" / "settings.json"
+
+    # Create directories
+    c.run("mkdir -p ~/.claude/scripts")
+
+    # Copy scripts
+    if scripts_src.exists():
+        c.run(f"cp -r {scripts_src}/* {scripts_dst}/")
+        logger.info("Copied scripts to %s", scripts_dst)
+
+    # Copy icon
+    if icon_src.exists():
+        c.run(f"cp {icon_src} {icon_dst}")
+        logger.info("Copied claude.png to %s", icon_dst)
+
+    # Load template
+    with settings_template.open() as f:
+        template_config = json.load(f)
+
+    # Update or create settings.json
+    if settings_path.exists():
+        with settings_path.open() as f:
+            settings = json.load(f)
+
+        # Merge template settings (preserve feedbackSurveyState if exists)
+        feedback_state = settings.get("feedbackSurveyState")
+        settings.update(template_config)
+        if feedback_state:
+            settings["feedbackSurveyState"] = feedback_state
+
+        with settings_path.open("w") as f:
+            json.dump(settings, f, indent=2)
+            f.write("\n")
+
+        logger.info("Updated settings.json with configuration from template")
+    else:
+        # Create new settings.json from template
+        with settings_path.open("w") as f:
+            json.dump(template_config, f, indent=2)
+            f.write("\n")
+
+        logger.info("Created settings.json from template")
+
+
+@task
 def claude_code_plugin(c: Context) -> None:
     """Install everything-claude-code plugin for Claude Code.
 
@@ -252,4 +320,5 @@ def all_tasks(c: Context) -> None:
     shell_aliases(c)
     byobu(c)
     copilot_cli(c)
+    claude_config(c)
     claude_code_plugin(c)

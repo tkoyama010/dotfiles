@@ -27,6 +27,10 @@ This repository is for managing personal configuration files. It includes settin
 - `lsd/config.yaml`: Configuration for the LSD command.
 - `zellij/config.kdl`: Configuration for the Zellij terminal manager.
 - `copilot/config.json`: Configuration for GitHub Copilot CLI.
+- `.claude/`: Configuration for Claude Code CLI.
+  - `settings.json.template`: Template for Claude Code settings with hooks and plugins.
+  - `scripts/focus_window.scpt`: AppleScript for focusing VS Code windows.
+  - `claude.png`: Notification icon for Claude Code alerts.
 - `.github/skills/ruff-lint/`: Ruff linting skill for GitHub Copilot CLI and Claude Code.
 - `tasks.py`: Script to automate various setup tasks.
 
@@ -43,6 +47,26 @@ You can set up GitHub Copilot CLI configuration with the following command:
 ```bash
 invoke copilot-cli
 ```
+
+You can set up Claude Code configuration with the following command:
+
+```bash
+invoke claude-config
+```
+
+This will:
+
+- Copy notification scripts and icon to `~/.claude/`
+- Set up hooks for Stop and Notification events with terminal-notifier
+- Configure window focus script for VS Code
+- Merge settings into `~/.claude/settings.json` (preserving existing state)
+
+The configuration includes:
+
+- Japanese language setting
+- Custom hooks for task completion and question notifications
+- Window focus automation for better workflow
+- Plugin configuration
 
 You can install the Ruff linting skill to any project repository:
 
