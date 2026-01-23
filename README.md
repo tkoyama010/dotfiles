@@ -55,12 +55,14 @@ invoke claude-config
 ```
 
 This will:
+
 - Copy notification scripts and icon to `~/.claude/`
 - Set up hooks for Stop and Notification events with terminal-notifier
 - Configure window focus script for VS Code
 - Merge settings into `~/.claude/settings.json` (preserving existing state)
 
 The configuration includes:
+
 - Japanese language setting
 - Custom hooks for task completion and question notifications
 - Window focus automation for better workflow
