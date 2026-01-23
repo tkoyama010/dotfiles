@@ -44,6 +44,22 @@ You can set up GitHub Copilot CLI configuration with the following command:
 invoke copilot-cli
 ```
 
+You can install Claude Code plugins with the following commands:
+
+```bash
+# Install everything-claude-code plugin (comprehensive feature set)
+invoke claude-code-plugin
+
+# Install code-review plugin (automated PR and code reviews)
+invoke claude-code-review-plugin
+```
+
+The code-review plugin provides:
+- Automated code review capabilities
+- Pull request review features
+- Code quality analysis
+- Best practices suggestions
+
 You can install the Ruff linting skill to any project repository:
 
 ```bash

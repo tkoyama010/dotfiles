@@ -239,6 +239,23 @@ def claude_code_plugin(c: Context) -> None:
 
 
 @task
+def claude_code_review_plugin(c: Context) -> None:
+    """Install code-review plugin for Claude Code.
+
+    This installs the code-review plugin that provides:
+    - Automated code review capabilities
+    - Pull request review features
+    - Code quality analysis
+    - Best practices suggestions
+
+    The plugin enhances Claude Code with specialized code review workflows.
+    """
+    logger.info("Installing code-review plugin...")
+    c.run("claude plugin install code-review")
+    logger.info("Installation complete! code-review plugin is now available in Claude Code.")
+
+
+@task
 def ttyd(c: Context) -> None:
     """Start ttyd web terminal."""
     c.run("ttyd -i 127.0.0.1 -p 7681 -W bash")
@@ -253,3 +270,4 @@ def all_tasks(c: Context) -> None:
     byobu(c)
     copilot_cli(c)
     claude_code_plugin(c)
+    claude_code_review_plugin(c)
