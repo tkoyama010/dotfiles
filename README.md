@@ -55,6 +55,7 @@ invoke claude-code-simplifier-plugin
 ```
 
 The code-simplifier plugin provides:
+
 - Code simplification and refactoring suggestions
 - Complexity reduction recommendations
 - Readability improvements

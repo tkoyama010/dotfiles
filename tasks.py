@@ -252,7 +252,9 @@ def claude_code_simplifier_plugin(c: Context) -> None:
     """
     logger.info("Installing code-simplifier plugin...")
     c.run("claude plugin install code-simplifier")
-    logger.info("Installation complete! code-simplifier plugin is now available in Claude Code.")
+    logger.info(
+        "Installation complete! code-simplifier plugin is now available in Claude Code."
+    )
 
 
 @task
