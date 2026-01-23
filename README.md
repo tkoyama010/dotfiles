@@ -55,6 +55,7 @@ invoke claude-code-review-plugin
 ```
 
 The code-review plugin provides:
+
 - Automated code review capabilities
 - Pull request review features
 - Code quality analysis

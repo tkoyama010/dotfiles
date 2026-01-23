@@ -252,7 +252,9 @@ def claude_code_review_plugin(c: Context) -> None:
     """
     logger.info("Installing code-review plugin...")
     c.run("claude plugin install code-review")
-    logger.info("Installation complete! code-review plugin is now available in Claude Code.")
+    logger.info(
+        "Installation complete! code-review plugin is now available in Claude Code."
+    )
 
 
 @task
