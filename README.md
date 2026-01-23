@@ -29,7 +29,7 @@ This repository is for managing personal configuration files. It includes settin
 - `copilot/config.json`: Configuration for GitHub Copilot CLI.
 - `.claude/`: Configuration for Claude Code CLI.
   - `statusline.sh`: Custom status line script showing model, token usage, git info.
-  - `settings.local.json`: Local settings including permissions and statusLine configuration.
+  - `settings.local.json.template`: Template for local settings with statusLine configuration.
 - `.github/skills/ruff-lint/`: Ruff linting skill for GitHub Copilot CLI and Claude Code.
 - `tasks.py`: Script to automate various setup tasks.
 
@@ -57,6 +57,7 @@ This will:
 
 - Copy `statusline.sh` to `~/.claude/statusline.sh` with executable permissions
 - Update `~/.claude/settings.json` to use the custom status line
+- Merge statusLine configuration into `~/.claude/settings.local.json` (preserving existing settings)
 
 The status line displays:
 

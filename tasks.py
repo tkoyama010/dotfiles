@@ -226,6 +226,7 @@ def claude_statusline(c: Context) -> None:
     This task:
     - Copies statusline.sh to ~/.claude/statusline.sh with executable permissions
     - Updates ~/.claude/settings.json to use the custom status line
+    - Merges statusLine configuration into ~/.claude/settings.local.json
 
     The status line displays:
     - Model name (e.g., "Claude Sonnet 4.5")
@@ -237,7 +238,9 @@ def claude_statusline(c: Context) -> None:
     dotfiles_dir = Path(__file__).parent
     statusline_src = dotfiles_dir / ".claude" / "statusline.sh"
     statusline_dst = Path.home() / ".claude" / "statusline.sh"
+    template_src = dotfiles_dir / ".claude" / "settings.local.json.template"
     settings_path = Path.home() / ".claude" / "settings.json"
+    settings_local_path = Path.home() / ".claude" / "settings.local.json"
 
     # Create directory if it doesn't exist
     c.run("mkdir -p ~/.claude")
@@ -247,15 +250,16 @@ def claude_statusline(c: Context) -> None:
     c.run(f"chmod +x {statusline_dst}")
     logger.info("Copied statusline.sh to %s", statusline_dst)
 
+    # Load template configuration
+    with template_src.open() as f:
+        template_config = json.load(f)
+
     # Update settings.json
     if settings_path.exists():
         with settings_path.open() as f:
             settings = json.load(f)
 
-        settings["statusLine"] = {
-            "type": "command",
-            "command": "~/.claude/statusline.sh",
-        }
+        settings["statusLine"] = template_config["statusLine"]
 
         with settings_path.open("w") as f:
             json.dump(settings, f, indent=2)
@@ -267,6 +271,27 @@ def claude_statusline(c: Context) -> None:
         logger.info(
             "Run Claude Code once to generate settings.json, then run this task again"
         )
+
+    # Update or create settings.local.json
+    if settings_local_path.exists():
+        with settings_local_path.open() as f:
+            local_settings = json.load(f)
+
+        # Merge statusLine configuration
+        local_settings["statusLine"] = template_config["statusLine"]
+
+        with settings_local_path.open("w") as f:
+            json.dump(local_settings, f, indent=2)
+            f.write("\n")
+
+        logger.info("Updated settings.local.json with statusLine configuration")
+    else:
+        # Create new settings.local.json from template
+        with settings_local_path.open("w") as f:
+            json.dump(template_config, f, indent=2)
+            f.write("\n")
+
+        logger.info("Created settings.local.json with statusLine configuration")
 
 
 @task
