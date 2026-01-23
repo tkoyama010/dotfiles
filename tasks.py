@@ -239,6 +239,26 @@ def claude_code_plugin(c: Context) -> None:
 
 
 @task
+def claude_code_simplifier_plugin(c: Context) -> None:
+    """Install code-simplifier plugin for Claude Code.
+
+    This installs the code-simplifier plugin that provides:
+    - Code simplification and refactoring suggestions
+    - Complexity reduction recommendations
+    - Readability improvements
+    - Pattern extraction and abstraction
+
+    The plugin helps reduce technical debt and improve code maintainability.
+    """
+    logger.info("Installing code-simplifier plugin...")
+    c.run("claude plugin install code-simplifier")
+    logger.info(
+        "Installation complete! code-simplifier plugin is now available in "
+        "Claude Code.",
+    )
+
+
+@task
 def ttyd(c: Context) -> None:
     """Start ttyd web terminal."""
     c.run("ttyd -i 127.0.0.1 -p 7681 -W bash")
@@ -253,3 +273,4 @@ def all_tasks(c: Context) -> None:
     byobu(c)
     copilot_cli(c)
     claude_code_plugin(c)
+    claude_code_simplifier_plugin(c)
