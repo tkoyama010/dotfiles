@@ -54,10 +54,12 @@ invoke claude-statusline
 ```
 
 This will:
+
 - Copy `statusline.sh` to `~/.claude/statusline.sh` with executable permissions
 - Update `~/.claude/settings.json` to use the custom status line
 
 The status line displays:
+
 - Model name (e.g., "Claude Sonnet 4.5")
 - Token usage with visual progress bar (max 155k tokens)
 - Current directory and git branch/commit info
