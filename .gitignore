@@ -17,3 +17,4 @@
 .zcompdump
 .zsh_history
 node_modules/
+__pycache__/
