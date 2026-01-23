@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "model": "sonnet[1m]",
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -lc 'repo=$(basename \"$CLAUDE_PROJECT_DIR\"); terminal-notifier -title \"Claude Code\" -message \"${repo:-(no name)} のタスクが完了しました。\" -contentImage ~/.claude/claude.png -execute \"osascript ~/.claude/scripts/focus_window.scpt \\\"${repo}\\\"\"'"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -lc 'repo=$(basename \"$CLAUDE_PROJECT_DIR\"); terminal-notifier -title \"Claude Code\" -message \"${repo:-(no name)} について質問があります。\" -contentImage ~/.claude/claude.png -execute \"osascript ~/.claude/scripts/focus_window.scpt \\\"${repo}\\\"\"'"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  },
+  "enabledPlugins": {
+    "everything-claude-code@everything-claude-code": true
+  },
+  "language": "Japanese"
+}
