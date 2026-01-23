@@ -221,9 +221,9 @@ def ruff_skill(c: Context, target_dir: str) -> None:
 
 @task
 def claude_code_plugin(c: Context) -> None:
-    """Install everything-claude-code plugin for Claude Code.
+    """Display installation instructions for everything-claude-code plugin.
 
-    This installs the comprehensive Claude Code plugin that includes:
+    This plugin provides comprehensive features for Claude Code including:
     - 9 specialized agents
     - 11 skills
     - 11 commands
@@ -231,11 +231,19 @@ def claude_code_plugin(c: Context) -> None:
 
     Installation enables features like memory persistence, strategic context
     compaction, automatic pattern learning, and verification checkpoints.
+    
+    Note: These commands must be run directly in Claude Code's chat interface,
+    not as shell commands.
     """
-    logger.info("Installing everything-claude-code plugin...")
-    c.run("claude-code /plugin marketplace add affaan-m/everything-claude-code")
-    c.run("claude-code /plugin install everything-claude-code@everything-claude-code")
-    logger.info("Installation complete! Plugin is now available in Claude Code.")
+    print("\n" + "=" * 70)
+    print("Everything Claude Code Plugin Installation Instructions")
+    print("=" * 70)
+    print("\nTo install the everything-claude-code plugin, run these commands")
+    print("in your Claude Code chat interface:\n")
+    print("  /plugin marketplace add affaan-m/everything-claude-code")
+    print("  /plugin install everything-claude-code@everything-claude-code")
+    print("\nReference: https://github.com/affaan-m/everything-claude-code/discussions/14")
+    print("=" * 70 + "\n")
 
 
 @task
