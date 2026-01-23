@@ -233,8 +233,8 @@ def claude_code_plugin(c: Context) -> None:
     compaction, automatic pattern learning, and verification checkpoints.
     """
     logger.info("Installing everything-claude-code plugin...")
-    c.run("claude-code /plugin marketplace add affaan-m/everything-claude-code")
-    c.run("claude-code /plugin install everything-claude-code@everything-claude-code")
+    c.run("claude plugin marketplace add affaan-m/everything-claude-code")
+    c.run("claude plugin install everything-claude-code@everything-claude-code")
     logger.info("Installation complete! Plugin is now available in Claude Code.")
 
 
@@ -252,3 +252,4 @@ def all_tasks(c: Context) -> None:
     shell_aliases(c)
     byobu(c)
     copilot_cli(c)
+    claude_code_plugin(c)
