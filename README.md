@@ -44,6 +44,22 @@ You can set up GitHub Copilot CLI configuration with the following command:
 invoke copilot-cli
 ```
 
+You can install Claude Code plugins with the following commands:
+
+```bash
+# Install everything-claude-code plugin (comprehensive feature set)
+invoke claude-code-plugin
+
+# Install code-simplifier plugin (code refactoring and complexity reduction)
+invoke claude-code-simplifier-plugin
+```
+
+The code-simplifier plugin provides:
+- Code simplification and refactoring suggestions
+- Complexity reduction recommendations
+- Readability improvements
+- Pattern extraction and abstraction
+
 You can install the Ruff linting skill to any project repository:
 
 ```bash
