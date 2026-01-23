@@ -269,7 +269,7 @@ def claude_statusline(c: Context) -> None:
     else:
         logger.warning("settings.json not found at %s", settings_path)
         logger.info(
-            "Run Claude Code once to generate settings.json, then run this task again"
+            "Run Claude Code once to generate settings.json, then run this task again",
         )
 
     # Update or create settings.local.json
