@@ -220,6 +220,45 @@ def ruff_skill(c: Context, target_dir: str) -> None:
 
 
 @task
+def claude_code_plugin(c: Context) -> None:
+    """Install everything-claude-code plugin for Claude Code.
+
+    This installs the comprehensive Claude Code plugin that includes:
+    - 9 specialized agents
+    - 11 skills
+    - 11 commands
+    - 10 hooks
+
+    Installation enables features like memory persistence, strategic context
+    compaction, automatic pattern learning, and verification checkpoints.
+    """
+    logger.info("Installing everything-claude-code plugin...")
+    c.run("claude plugin marketplace add affaan-m/everything-claude-code", warn=True)
+    c.run("claude plugin install everything-claude-code@everything-claude-code")
+    logger.info("Installation complete! Plugin is now available in Claude Code.")
+
+
+@task
+def claude_code_simplifier_plugin(c: Context) -> None:
+    """Install code-simplifier plugin for Claude Code.
+
+    This installs the code-simplifier plugin that provides:
+    - Code simplification and refactoring suggestions
+    - Complexity reduction recommendations
+    - Readability improvements
+    - Pattern extraction and abstraction
+
+    The plugin helps reduce technical debt and improve code maintainability.
+    """
+    logger.info("Installing code-simplifier plugin...")
+    c.run("claude plugin install code-simplifier")
+    logger.info(
+        "Installation complete! code-simplifier plugin is now available in "
+        "Claude Code.",
+    )
+
+
+@task
 def ttyd(c: Context) -> None:
     """Start ttyd web terminal."""
     c.run("ttyd -i 127.0.0.1 -p 7681 -W bash")
@@ -233,3 +272,5 @@ def all_tasks(c: Context) -> None:
     shell_aliases(c)
     byobu(c)
     copilot_cli(c)
+    claude_code_plugin(c)
+    claude_code_simplifier_plugin(c)
