@@ -6,7 +6,20 @@ This repository is for managing personal configuration files. It includes settin
 
 ## Setup Instructions
 
-### Using Nix Flakes (Recommended)
+### Quick Install (Nix Flakes)
+
+Install directly from GitHub repository:
+
+```bash
+nix run github:tkoyama010/dotfiles
+```
+
+This will:
+- Install Python dependencies with uv
+- Copy configuration files
+- Install Vim plugins
+
+### Using Nix Flakes (Development)
 
 1. Clone the repository:
 
@@ -22,8 +35,12 @@ This repository is for managing personal configuration files. It includes settin
    echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
    ```
 
-3. Enter the development environment:
-
+3. Run setup:
+   ```bash
+   nix run .#setup
+   ```
+   
+   Or enter the development environment:
    ```bash
    nix develop
    ```
@@ -34,7 +51,7 @@ This repository is for managing personal configuration files. It includes settin
    direnv allow
    ```
 
-4. Install Python dependencies with uv:
+4. Install Python dependencies manually:
    ```bash
    uv sync
    ```
