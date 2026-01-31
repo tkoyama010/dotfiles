@@ -14,6 +14,7 @@
 .copilot/session-state/
 .direnv
 .emacs.d/history
+.python-version
 .ruff_cache/
 .ssh
 .venv/
@@ -25,4 +26,3 @@ __pycache__/
 node_modules/
 result
 result-*
-.python-version

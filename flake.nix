@@ -16,12 +16,12 @@
 
           echo "🚀 Setting up dotfiles..."
           echo ""
-          
+
           # Install Python via uv
           echo "🐍 Installing Python..."
           ${pkgs.uv}/bin/uv python install 3.12
           ${pkgs.uv}/bin/uv python pin 3.12
-          
+
           # Sync Python dependencies
           echo "📦 Installing Python dependencies..."
           ${pkgs.uv}/bin/uv sync
