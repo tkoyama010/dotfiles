@@ -22,14 +22,20 @@
           ${pkgs.uv}/bin/uv python install 3.12
           ${pkgs.uv}/bin/uv python pin 3.12
 
-          # Sync Python dependencies
-          echo "📦 Installing Python dependencies..."
-          ${pkgs.uv}/bin/uv sync
+          # Sync Python dependencies if pyproject.toml exists
+          if [ -f "pyproject.toml" ]; then
+            echo "📦 Installing Python dependencies..."
+            ${pkgs.uv}/bin/uv sync
+          else
+            echo "⚠️  No pyproject.toml found, skipping dependency installation"
+          fi
 
-          # Run invoke tasks
-          echo "⚙️  Running setup tasks..."
-          ${pkgs.uv}/bin/uv run invoke config
-          ${pkgs.uv}/bin/uv run invoke vim-plugins
+          # Run invoke tasks if pyproject.toml exists
+          if [ -f "pyproject.toml" ]; then
+            echo "⚙️  Running setup tasks..."
+            ${pkgs.uv}/bin/uv run invoke config
+            ${pkgs.uv}/bin/uv run invoke vim-plugins
+          fi
 
           echo ""
           echo "✅ Dotfiles setup complete!"
