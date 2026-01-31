@@ -6,6 +6,105 @@ This repository is for managing personal configuration files. It includes settin
 
 ## Setup Instructions
 
+### Prerequisites
+
+Install Nix package manager if you haven't already:
+
+**Official installer (recommended):**
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+```
+
+Or use the official Nix installer:
+
+```bash
+sh <(curl -L https://nixos.org/nix/install) --daemon
+```
+
+For more details, see:
+
+- **Determinate Systems Nix Installer**: https://github.com/DeterminateSystems/nix-installer
+- **Official Nix Installation Guide**: https://nixos.org/download.html
+
+### Quick Install (Nix Flakes)
+
+Install directly from GitHub repository:
+
+```bash
+nix run github:tkoyama010/dotfiles
+```
+
+This will:
+
+- Install Python 3.12 via uv
+- Install Python dependencies with uv
+- Copy configuration files
+- Install Vim plugins
+
+You can change the Python version:
+
+```bash
+# Install a different Python version
+uv python install 3.11
+uv python pin 3.11
+```
+
+### Using Nix Flakes (Development)
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/tkoyama010/dotfiles.git
+   cd dotfiles
+   ```
+
+2. Enable Nix flakes (if not already enabled):
+
+   ```bash
+   mkdir -p ~/.config/nix
+   echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
+   ```
+
+3. Run setup:
+
+   ```bash
+   nix run .#setup
+   ```
+
+   Or enter the development environment:
+
+   ```bash
+   nix develop
+   ```
+
+   Or use direnv for automatic environment activation:
+
+   ```bash
+   direnv allow
+   ```
+
+4. Install Python and dependencies:
+
+   ```bash
+   # Install Python (uv manages Python versions)
+   uv python install 3.12
+   uv python pin 3.12
+
+   # Install Python packages
+   uv sync
+   ```
+
+   To use a different Python version:
+
+   ```bash
+   uv python install 3.11  # or 3.13, etc.
+   uv python pin 3.11
+   uv sync
+   ```
+
+### Traditional Setup
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/tkoyama010/dotfiles.git
