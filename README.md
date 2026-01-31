@@ -11,16 +11,19 @@ This repository is for managing personal configuration files. It includes settin
 Install Nix package manager if you haven't already:
 
 **Official installer (recommended):**
+
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 ```
 
 Or use the official Nix installer:
+
 ```bash
 sh <(curl -L https://nixos.org/nix/install) --daemon
 ```
 
 For more details, see:
+
 - **Determinate Systems Nix Installer**: https://github.com/DeterminateSystems/nix-installer
 - **Official Nix Installation Guide**: https://nixos.org/download.html
 
@@ -33,6 +36,7 @@ nix run github:tkoyama010/dotfiles
 ```
 
 This will:
+
 - Install Python 3.12 via uv
 - Install Python dependencies with uv
 - Copy configuration files
