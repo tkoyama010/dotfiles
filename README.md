@@ -6,6 +6,24 @@ This repository is for managing personal configuration files. It includes settin
 
 ## Setup Instructions
 
+### Prerequisites
+
+Install Nix package manager if you haven't already:
+
+**Official installer (recommended):**
+```bash
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+```
+
+Or use the official Nix installer:
+```bash
+sh <(curl -L https://nixos.org/nix/install) --daemon
+```
+
+For more details, see:
+- **Determinate Systems Nix Installer**: https://github.com/DeterminateSystems/nix-installer
+- **Official Nix Installation Guide**: https://nixos.org/download.html
+
 ### Quick Install (Nix Flakes)
 
 Install directly from GitHub repository:
@@ -15,12 +33,7 @@ nix run github:tkoyama010/dotfiles
 ```
 
 This will:
-<<<<<<< HEAD
-
-=======
-
 - Install Python 3.12 via uv
-  > > > > > > > b034e91 (feat: use uv for Python version management)
 - Install Python dependencies with uv
 - Copy configuration files
 - Install Vim plugins
