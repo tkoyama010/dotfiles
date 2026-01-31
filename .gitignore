@@ -17,3 +17,13 @@
 .zcompdump
 .zsh_history
 node_modules/
+
+# Nix
+.direnv
+result
+result-*
+
+# Python cache
+__pycache__/
+*.pyc
+.ruff_cache/

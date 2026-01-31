@@ -6,6 +6,37 @@ This repository is for managing personal configuration files. It includes settin
 
 ## Setup Instructions
 
+### Using Nix Flakes (Recommended)
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/tkoyama010/dotfiles.git
+   cd dotfiles
+   ```
+
+2. Enable Nix flakes (if not already enabled):
+   ```bash
+   mkdir -p ~/.config/nix
+   echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
+   ```
+
+3. Enter the development environment:
+   ```bash
+   nix develop
+   ```
+   
+   Or use direnv for automatic environment activation:
+   ```bash
+   direnv allow
+   ```
+
+4. Install Python dependencies with uv:
+   ```bash
+   uv sync
+   ```
+
+### Traditional Setup
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/tkoyama010/dotfiles.git
