@@ -30,11 +30,13 @@
             echo "⚠️  No pyproject.toml found, skipping dependency installation"
           fi
 
-          # Run invoke tasks if pyproject.toml exists
-          if [ -f "pyproject.toml" ]; then
+          # Run invoke tasks if both pyproject.toml and tasks.py exist
+          if [ -f "pyproject.toml" ] && [ -f "tasks.py" ]; then
             echo "⚙️  Running setup tasks..."
             ${pkgs.uv}/bin/uv run invoke config
             ${pkgs.uv}/bin/uv run invoke vim-plugins
+          elif [ -f "pyproject.toml" ]; then
+            echo "⚠️  No tasks.py found, skipping invoke tasks"
           fi
 
           echo ""
