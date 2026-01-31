@@ -10,28 +10,28 @@
     flake-utils.lib.eachDefaultSystem (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
-        
+
         setupScript = pkgs.writeShellScriptBin "dotfiles-setup" ''
           set -e
-          
+
           echo "🚀 Setting up dotfiles..."
           echo ""
-          
+
           # Install uv if not available in PATH
           if ! command -v uv &> /dev/null; then
             echo "📦 Installing uv..."
             ${pkgs.uv}/bin/uv --version
           fi
-          
+
           # Sync Python dependencies
           echo "📦 Installing Python dependencies..."
           ${pkgs.uv}/bin/uv sync
-          
+
           # Run invoke tasks
           echo "⚙️  Running setup tasks..."
           ${pkgs.uv}/bin/uv run invoke config
           ${pkgs.uv}/bin/uv run invoke vim-plugins
-          
+
           echo ""
           echo "✅ Dotfiles setup complete!"
           echo ""

@@ -15,6 +15,7 @@ nix run github:tkoyama010/dotfiles
 ```
 
 This will:
+
 - Install Python dependencies with uv
 - Copy configuration files
 - Install Vim plugins
@@ -36,11 +37,13 @@ This will:
    ```
 
 3. Run setup:
+
    ```bash
    nix run .#setup
    ```
-   
+
    Or enter the development environment:
+
    ```bash
    nix develop
    ```
