@@ -16,13 +16,12 @@
 
           echo "🚀 Setting up dotfiles..."
           echo ""
-
-          # Install uv if not available in PATH
-          if ! command -v uv &> /dev/null; then
-            echo "📦 Installing uv..."
-            ${pkgs.uv}/bin/uv --version
-          fi
-
+          
+          # Install Python via uv
+          echo "🐍 Installing Python..."
+          ${pkgs.uv}/bin/uv python install 3.12
+          ${pkgs.uv}/bin/uv python pin 3.12
+          
           # Sync Python dependencies
           echo "📦 Installing Python dependencies..."
           ${pkgs.uv}/bin/uv sync
@@ -37,6 +36,7 @@
           echo ""
           echo "💡 Next steps:"
           echo "  - Run 'direnv allow' to enable automatic environment loading"
+          echo "  - Change Python version: uv python install <version> && uv python pin <version>"
           echo "  - Run 'uv run invoke --list' to see available tasks"
         '';
       in {
@@ -50,9 +50,8 @@
             # Environment management
             direnv
 
-            # Python tooling (use uv for packages)
+            # Python tooling (uv manages Python versions)
             uv
-            python312
 
             # Other development tools
             nodejs_22
@@ -63,11 +62,13 @@
             echo "🚀 Development environment loaded"
             echo ""
             echo "📦 Available tools:"
-            echo "  - Python: $(python --version)"
             echo "  - uv: $(uv --version)"
             echo "  - Node: $(node --version)"
             echo ""
-            echo "💡 Use 'uv sync' to install Python packages from pyproject.toml"
+            echo "💡 Python version management:"
+            echo "  - Install Python: uv python install 3.12"
+            echo "  - Pin version: uv python pin 3.12"
+            echo "  - Install packages: uv sync"
           '';
         };
 

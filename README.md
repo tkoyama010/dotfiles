@@ -15,10 +15,21 @@ nix run github:tkoyama010/dotfiles
 ```
 
 This will:
+<<<<<<< HEAD
 
+=======
+- Install Python 3.12 via uv
+>>>>>>> b034e91 (feat: use uv for Python version management)
 - Install Python dependencies with uv
 - Copy configuration files
 - Install Vim plugins
+
+You can change the Python version:
+```bash
+# Install a different Python version
+uv python install 3.11
+uv python pin 3.11
+```
 
 ### Using Nix Flakes (Development)
 
@@ -54,8 +65,20 @@ This will:
    direnv allow
    ```
 
-4. Install Python dependencies manually:
+4. Install Python and dependencies:
    ```bash
+   # Install Python (uv manages Python versions)
+   uv python install 3.12
+   uv python pin 3.12
+   
+   # Install Python packages
+   uv sync
+   ```
+
+   To use a different Python version:
+   ```bash
+   uv python install 3.11  # or 3.13, etc.
+   uv python pin 3.11
    uv sync
    ```
 
