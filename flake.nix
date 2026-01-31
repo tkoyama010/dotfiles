@@ -19,7 +19,7 @@
 
             # Environment management
             direnv
-            
+
             # Python tooling (use uv for packages)
             uv
             python312
@@ -48,7 +48,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    
+
     flake-utils.url = "github:numtide/flake-utils";
   };
 }
