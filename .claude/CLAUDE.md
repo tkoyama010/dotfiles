@@ -21,7 +21,9 @@ For this project, integrate new scripts into `__main__.py` as CLI subcommands ra
 ## Git / PR Workflow
 
 ### PR Creation
+
 When creating a PR on a branch that may have no diff from the base, check for commits first. If there are none, ask the user whether to make an empty commit or start implementation before opening the PR — don't just fail.
 
 ### Data Files
+
 Never commit data files (e.g., CSVs, large binaries) unless explicitly asked. When in doubt, ask before staging data files.
