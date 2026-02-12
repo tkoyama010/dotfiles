@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "model": "sonnet[1m]",
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -lc 'repo=$(basename \"$CLAUDE_PROJECT_DIR\"); terminal-notifier -title \"Claude Code\" -message \"${repo:-(no name)} のタスクが完了しました。\" -contentImage ~/.claude/claude.png -execute \"osascript ~/.claude/scripts/focus_code.scpt \\\"${repo}\\\"\"'"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -lc 'repo=$(basename \"$CLAUDE_PROJECT_DIR\"); terminal-notifier -title \"Claude Code\" -message \"${repo:-(no name)} について質問があります。\" -contentImage ~/.claude/claude.png -execute \"osascript ~/.claude/scripts/focus_code.scpt \\\"${repo}\\\"\"'"
+          }
+        ]
+      }
+    ],
+    "preCommit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "git diff --cached --name-only | grep -E '\\.(csv|dat|pdf|stl|zip)$' && echo 'ERROR: Data file staged — unstage it or get explicit approval' && exit 1 || true"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  },
+  "enabledPlugins": {
+    "everything-claude-code@everything-claude-code": true,
+    "code-review@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true
+  },
+  "language": "Japanese",
+  "customInstructions": "## Global Project Guidelines\n\nSee ~/.claude/CLAUDE.md for complete global guidelines.\n\n### Key Rules:\n- Always use `uv` for Python (e.g., `uv run python`, `uv pip install`)\n- Use `logger` instead of `print()` in production code\n- Integrate new scripts into `__main__.py` as CLI subcommands\n- Stop and ask for guidance when stuck in error loops (2+ same errors)\n- Never commit data files without explicit approval",
+  "feedbackSurveyState": {
+    "lastShownTime": 1754272799713
+  }
+}
