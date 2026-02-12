@@ -24,7 +24,7 @@
         ]
       }
     ],
-    "preCommit": [
+    "PreCommit": [
       {
         "matcher": "",
         "hooks": [
