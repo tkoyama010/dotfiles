@@ -23,17 +23,6 @@
           }
         ]
       }
-    ],
-    "PreCommit": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "git diff --cached --name-only | grep -E '\\.(csv|dat|pdf|stl|zip)$' && echo 'ERROR: Data file staged — unstage it or get explicit approval' && exit 1 || true"
-          }
-        ]
-      }
     ]
   },
   "statusLine": {
