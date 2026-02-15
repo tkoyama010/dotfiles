@@ -1,5 +1,7 @@
 # dotfiles
 
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+
 ## Overview
 
 This repository is for managing personal configuration files. It includes settings to streamline development and work in a Linux environment.
@@ -137,6 +139,9 @@ You can install Vim plugins with the following command:
 invoke vim-plugins
 ```
 
+## Code of Conduct
+
+This project adheres to the Contributor Covenant [code of conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to the project maintainers.
 You can set up GitHub Copilot CLI configuration with the following command:
 
 ```bash
