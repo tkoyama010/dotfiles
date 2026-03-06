@@ -100,6 +100,12 @@ def vim_plugins(c: Context) -> None:
             with contextlib.suppress(Exception):
                 future.result()
 
+    c.run("mkdir -p ~/.vim/pack/plugins/start")
+    c.run("cd ~/.vim/pack/plugins/start")
+    c.run(
+        "git clone --branch v1.1.0 https://github.com/rishi-opensource/vim-claude-code.git",
+    )
+
 
 @task
 def shell_aliases(c: Context) -> None:
