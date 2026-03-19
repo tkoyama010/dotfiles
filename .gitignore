@@ -1,4 +1,7 @@
 # GitHub Copilot CLI - exclude sensitive data
+# Nix
+# Python cache
+*.pyc
 *.swp
 *~
 .aws
@@ -9,11 +12,17 @@
 .copilot/logs/
 .copilot/pkg/
 .copilot/session-state/
+.direnv
 .emacs.d/history
+.python-version
+.ruff_cache/
 .ssh
 .venv/
 .viminfo
 .zcompcache
 .zcompdump
 .zsh_history
+__pycache__/
 node_modules/
+result
+result-*
