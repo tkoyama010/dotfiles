@@ -163,7 +163,7 @@ The status line displays:
 - Model name (e.g., "Claude Sonnet 4.5")
 - Token usage with visual progress bar (max 155k tokens)
 - Current directory and git branch/commit info
-You can install Claude Code plugins with the following commands:
+  You can install Claude Code plugins with the following commands:
 
 ```bash
 # Install everything-claude-code plugin (comprehensive feature set)
