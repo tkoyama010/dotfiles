@@ -234,7 +234,6 @@ def claude_statusline(c: Context) -> None:
     - Token usage with visual progress bar (max 155k tokens)
     - Current directory and git branch/commit info
     """
-
     dotfiles_dir = Path(__file__).parent
     statusline_src = dotfiles_dir / ".claude" / "statusline.sh"
     statusline_dst = Path.home() / ".claude" / "statusline.sh"
