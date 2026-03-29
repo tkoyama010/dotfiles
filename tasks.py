@@ -174,6 +174,24 @@ def copilot_cli(c: Context) -> None:
 
 
 @task
+def aider(c: Context) -> None:
+    """Set up aider configuration."""
+    dotfiles_dir = Path(__file__).parent
+    config_src = dotfiles_dir / "aider" / ".aider.conf.yml"
+    config_dst = Path.home() / ".aider.conf.yml"
+
+    # Backup existing config if it exists and is not a symlink
+    if config_dst.exists() and not config_dst.is_symlink():
+        backup_path = config_dst.with_suffix(".yml.bak")
+        logger.info("Backing up existing config to %s", backup_path)
+        c.run(f"mv {config_dst} {backup_path}")
+
+    # Create or update symlink
+    c.run(f"ln -sf {config_src} {config_dst}")
+    logger.info("Created symlink: %s -> %s", config_dst, config_src)
+
+
+@task
 def ruff_skill(c: Context, target_dir: str) -> None:
     """Set up Ruff linting skill for any project repository.
 
@@ -347,6 +365,7 @@ def all_tasks(c: Context) -> None:
     shell_aliases(c)
     byobu(c)
     copilot_cli(c)
+    aider(c)
     claude_statusline(c)
     claude_code_plugin(c)
     claude_code_simplifier_plugin(c)
