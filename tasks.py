@@ -28,6 +28,7 @@ def config(c: Context) -> None:
     c.run("mkdir -p ~/.config")
     c.run("cp vimrc ~/.vimrc")
     c.run("cp .profile ~/.profile")
+    c.run("cp starship.toml ~/.config/starship.toml")
 
     if is_mac():
         c.run("brew install font-fira-code-nerd-font")
