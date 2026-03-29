@@ -1,6 +1,6 @@
 # Aider configuration
 # https://aider.chat/docs/config/aider_conf.html
-model: openai/deepseek-ai/DeepSeek-V3-0324
+# model: openai/deepseek-ai/DeepSeek-V3-0324
+model: openai/Qwen/Qwen3-Coder-Next
 openai-api-base: https://router.huggingface.co/v1
-openai-api-key: ${HF_TOKEN}
 show-model-warnings: false
