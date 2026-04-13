@@ -1,5 +1,5 @@
 [project]
-dependencies = ["invoke>=2.2.0"]
+dependencies = ["invoke>=3.0.3"]
 description = "Personal dotfiles configuration"
 name = "dotfiles"
 readme = "README.md"
