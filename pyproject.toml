@@ -1,5 +1,5 @@
 [project]
-dependencies = ["invoke>=2.2.0"]
+dependencies = ["invoke>=3.0.3"]
 description = "Personal dotfiles configuration"
 name = "dotfiles"
 readme = "README.md"
@@ -7,7 +7,7 @@ requires-python = ">=3.9"
 version = "0.1.0"
 
 [dependency-groups]
-dev = ["pre-commit>=4.0.0"]
+dev = ["pre-commit>=4.3.0"]
 
 [build-system]
 build-backend = "hatchling.build"
