@@ -26,20 +26,10 @@
 
           echo "Setting up dotfiles..."
 
-          ${pkgs.uv}/bin/uv python install 3.12
-          ${pkgs.uv}/bin/uv python pin 3.12
-
-          if [ -f "pyproject.toml" ]; then
-            ${pkgs.uv}/bin/uv sync
-          fi
-
-          if [ -f "pyproject.toml" ] && [ -f "tasks.py" ]; then
-            ${pkgs.uv}/bin/uv run invoke config
-            ${pkgs.uv}/bin/uv run invoke vim-plugins
-          fi
+          nix run nixpkgs#home-manager -- switch --flake .#TetsuonoMacBook-Pro
 
           echo "Dotfiles setup complete!"
-          echo "Next: run 'nix run .#update-home-manager' to apply home-manager config"
+          echo "Run 'just --list' to see available tasks"
         '';
 
         updateHomeManagerScript = pkgs.writeShellScript "update-home-manager" ''
@@ -55,6 +45,7 @@
             git
             gh
             direnv
+            just
             uv
             nodejs_22
             curl
@@ -62,9 +53,7 @@
 
           shellHook = ''
             echo "Development environment loaded"
-            echo "  - uv: $(uv --version)"
-            echo "  - Node: $(node --version)"
-            echo "Run 'nix run .#update-home-manager' to apply home-manager config"
+            echo "Run 'just --list' to see available tasks"
           '';
         };
 
