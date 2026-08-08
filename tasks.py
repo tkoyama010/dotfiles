@@ -352,6 +352,35 @@ def claude_code_simplifier_plugin(c: Context) -> None:
 
 
 @task
+def opencode_rtd_skills(c: Context) -> None:
+    """Install latest Read the Docs skills for opencode from GitHub.
+
+    Clones readthedocs/skills and copies skill directories into
+    ~/.config/opencode/skills/, keeping them up to date on each run.
+    """
+    import tempfile
+
+    skills_dest = Path.home() / ".config" / "opencode" / "skills"
+    c.run(f"mkdir -p {skills_dest}")
+
+    with tempfile.TemporaryDirectory() as tmp:
+        c.run(
+            f"git clone --depth 1 https://github.com/readthedocs/skills.git {tmp}",
+            hide=True,
+        )
+        src = Path(tmp) / "skills"
+        for skill_dir in src.iterdir():
+            if skill_dir.is_dir() and (skill_dir / "SKILL.md").exists():
+                dest = skills_dest / skill_dir.name
+                if dest.exists():
+                    c.run(f"rm -rf {dest}")
+                c.run(f"cp -r {skill_dir} {dest}")
+                logger.info("Installed RTD skill: %s", skill_dir.name)
+
+    logger.info("Read the Docs skills installed to %s", skills_dest)
+
+
+@task
 def ttyd(c: Context) -> None:
     """Start ttyd web terminal."""
     c.run("ttyd -i 127.0.0.1 -p 7681 -W bash")
