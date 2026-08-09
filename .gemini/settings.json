@@ -1,0 +1,9 @@
+{
+  "selectedAuthType": "oauth-personal",
+  "theme": "Default",
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    }
+  }
+}

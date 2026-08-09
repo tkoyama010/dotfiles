@@ -39,10 +39,10 @@ Multiple alerts may share the same fix (e.g. GitPython in `uv.lock`). Group by `
 
 ### 3. Identify the fix
 
-| Ecosystem | Manifest | Fix approach |
-|-----------|----------|-------------|
-| pip / PyPI | `pyproject.toml` + `uv.lock` | Bump version constraint in `pyproject.toml`, run `uv lock` |
-| npm | `package.json` + `package-lock.json` | Add/raise version in `overrides` block, run `npm install` |
+| Ecosystem  | Manifest                             | Fix approach                                               |
+| ---------- | ------------------------------------ | ---------------------------------------------------------- |
+| pip / PyPI | `pyproject.toml` + `uv.lock`         | Bump version constraint in `pyproject.toml`, run `uv lock` |
+| npm        | `package.json` + `package-lock.json` | Add/raise version in `overrides` block, run `npm install`  |
 
 **npm convention:** Use the `overrides` block in `package.json` for transitive dependency security bumps, NOT `npm install <pkg> --save` (which adds it as a direct dependency). Match the existing `overrides` pattern in the repo.
 

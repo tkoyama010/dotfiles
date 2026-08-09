@@ -22,6 +22,7 @@ gh pr view <PR_NUMBER> --json title,headRefName,baseRefName,mergeable,mergeState
 ```
 
 Key fields:
+
 - `headRefName` — the PR branch name
 - `baseRefName` — the target branch (usually `main`)
 - `mergeable` — should be `CONFLICTING`

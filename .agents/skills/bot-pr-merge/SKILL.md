@@ -30,6 +30,7 @@ A PR is eligible when **all three** are true:
 - `mergeable` == `"MERGEABLE"` and `mergeStateStatus` == `"CLEAN"`
 
 Common bot authors:
+
 - `app/dependabot` — dependency bumps
 - `app/pre-commit-ci` — pre-commit hook updates
 - `app/renovate` — dependency updates
