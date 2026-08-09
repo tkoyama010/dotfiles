@@ -2,6 +2,7 @@ ci:
   autoupdate_commit_msg: "chore: update pre-commit hooks"
   autofix_prs: true
   autoupdate_schedule: weekly
+  skip: [alejandra-system]
 repos:
   - repo: https://github.com/python-jsonschema/check-jsonschema
     rev: 0.37.4
@@ -46,6 +47,10 @@ repos:
     hooks:
       - id: taplo-format
         args: [--option, "reorder_arrays=true", --option, "reorder_keys=true"]
+  - repo: https://github.com/kamadorueda/alejandra
+    rev: 4.0.0
+    hooks:
+      - id: alejandra-system
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.16.1
     hooks:

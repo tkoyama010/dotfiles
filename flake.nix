@@ -21,58 +21,52 @@
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
 
-        setupScript = pkgs.writeShellScriptBin "dotfiles-setup" ''
-          set -e
+        setupScript = pkgs.writeShellApplication {
+          name = "dotfiles-setup";
+          text = ''
+            echo "Setting up dotfiles..."
 
-          echo "Setting up dotfiles..."
+            nix run nixpkgs#home-manager -- switch --flake .#TetsuonoMacBook-Pro
 
-          nix run nixpkgs#home-manager -- switch --flake .#TetsuonoMacBook-Pro
-
-          echo "Dotfiles setup complete!"
-          echo "Run 'just --list' to see available tasks"
-        '';
-
-        updateHomeManagerScript = pkgs.writeShellScript "update-home-manager" ''
-          set -e
-          HOST="TetsuonoMacBook-Pro"
-          echo "Updating home-manager for host: $HOST..."
-          nix run nixpkgs#home-manager -- switch --flake .#"$HOST" --show-trace
-          echo "Home-manager update complete!"
-        '';
+            echo "Dotfiles setup complete!"
+            echo "Run 'nix flake show' to see available apps"
+          '';
+        };
       in {
         devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
             git
             gh
             direnv
-            just
             uv
             nodejs_22
             curl
+            alejandra
           ];
 
           shellHook = ''
             echo "Development environment loaded"
-            echo "Run 'just --list' to see available tasks"
+            echo "Run 'nix flake show' to see available apps"
           '';
         };
 
         packages.setup = setupScript;
         packages.default = setupScript;
 
-        apps.setup = {
-          type = "app";
-          program = "${setupScript}/bin/dotfiles-setup";
-        };
-        apps.default = self.outputs.apps.${system}.setup;
-        apps.update-home-manager = {
-          type = "app";
-          program = toString updateHomeManagerScript;
-        };
+        apps =
+          (import ./apps {inherit pkgs;})
+          // {
+            setup = {
+              type = "app";
+              program = "${setupScript}/bin/dotfiles-setup";
+            };
+            default = self.outputs.apps.${system}.setup;
+          };
 
         formatter = pkgs.alejandra;
       }
-    )) // {
+    ))
+    // {
       homeConfigurations = {
         "TetsuonoMacBook-Pro" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."aarch64-darwin";
