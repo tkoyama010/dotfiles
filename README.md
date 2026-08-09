@@ -132,11 +132,9 @@ uv python pin 3.11
 - `.github/skills/ruff-lint/`: Ruff linting skill for GitHub Copilot CLI and Claude Code.
 - `opencode/`: Configuration for [OpenCode](https://opencode.ai) CLI.
   - `opencode.jsonc`: Main config (provider, MCP, plugins, GLM-5.2 image input).
-  - `AGENTS.md`: Agent instructions (caveman/ponytail modes).
-  - `agents/`: Subagent definitions (cavecrew builder/investigator/reviewer).
-  - `commands/`: Slash commands (caveman, caveman-commit, caveman-review, etc.).
-  - `plugins/`: Local plugins (caveman, rtk).
-  - `skills/`: Agent skills (caveman, cavecrew, caveman-commit, etc.).
+  - `caveman.json`: Config for [caveman-opencode-plugin](https://www.npmjs.com/package/caveman-opencode-plugin) (npm).
+  - `plugins/rtk.ts`: Custom local plugin (RTK command rewriting).
+  - Plugins installed from npm: `@dietrichgebert/ponytail`, `caveman-opencode-plugin`.
 - `justfile`: Task runner for setup and automation commands.
 
 ## Usage Example
@@ -216,8 +214,8 @@ just opencode
 This symlinks the tracked config files from `opencode/` into `~/.config/opencode/`:
 
 - Backs up any existing files that are not already symlinks (`.bak` suffix)
-- Symlinks `AGENTS.md`, `opencode.jsonc`, `agents/`, `commands/`, `plugins/`, `skills/`
-- Runs `npm install` in `~/.config/opencode/` if `package.json` exists but `node_modules/` does not
+- Symlinks `opencode.jsonc`, `caveman.json`, `plugins/rtk.ts`
+- npm plugins (`@dietrichgebert/ponytail`, `caveman-opencode-plugin`) are installed automatically by opencode on startup
 
 Untracked items (`node_modules/`, `package.json`, lockfiles) are left untouched.
 

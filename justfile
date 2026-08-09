@@ -68,10 +68,6 @@ opencode:
         ln -sf "$entry" "$target"
         echo "Linked $name"
     done
-    if [ -f "$dest/package.json" ] && [ ! -d "$dest/node_modules" ]; then
-        echo "Installing plugin dependencies..."
-        (cd "$dest" && npm install)
-    fi
 
 # Start ttyd web terminal
 ttyd:

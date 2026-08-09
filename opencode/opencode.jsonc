@@ -1,6 +1,10 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugin": ["@dietrichgebert/ponytail", "./plugins/caveman/plugin.js"],
+  "plugin": [
+    "@dietrichgebert/ponytail",
+    "caveman-opencode-plugin",
+    "./plugins/rtk.ts"
+  ],
   "provider": {
     "opencode": {
       "models": {

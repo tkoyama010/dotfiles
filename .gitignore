@@ -26,9 +26,14 @@
 __pycache__/
 node_modules/
 opencode/.caveman-active
+opencode/.caveman-active
+opencode/.ponytail-active
 opencode/.ponytail-active
 opencode/bun.lock
+opencode/bun.lock
 opencode/package-lock.json
+opencode/package-lock.json
+opencode/package.json
 opencode/package.json
 result
 result-*
