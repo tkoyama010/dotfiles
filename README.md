@@ -3,6 +3,12 @@
 [![Built with Nix](https://img.shields.io/badge/built%20with-Nix-5277C3?logo=nixos&logoColor=white)](https://nixos.org)
 [![Nix Flakes](https://img.shields.io/badge/flakes-enabled-blue)](https://nixos.wiki/wiki/Flakes)
 
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=nix,vim,py,git,bash,linux" alt="My Skills" />
+  </a>
+</p>
+
 ## Overview
 
 This repository is for managing personal configuration files. It includes settings to streamline development and work in a Linux environment. All tasks and configuration are managed with [Nix Flakes](https://nixos.wiki/wiki/Flakes) and [home-manager](https://nix-community.github.io/home-manager/) — there is no `justfile` or `invoke` task runner.
