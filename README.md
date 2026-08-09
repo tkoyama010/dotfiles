@@ -1,8 +1,11 @@
 # dotfiles
 
+[![Built with Nix](https://img.shields.io/badge/built%20with-Nix-5277C3?logo=nixos&logoColor=white)](https://nixos.org)
+[![Nix Flakes](https://img.shields.io/badge/flakes-enabled-blue)](https://nixos.wiki/wiki/Flakes)
+
 ## Overview
 
-This repository is for managing personal configuration files. It includes settings to streamline development and work in a Linux environment.
+This repository is for managing personal configuration files. It includes settings to streamline development and work in a Linux environment. All tasks and configuration are managed with [Nix Flakes](https://nixos.wiki/wiki/Flakes) and [home-manager](https://nix-community.github.io/home-manager/) — there is no `justfile` or `invoke` task runner.
 
 ## Setup Instructions
 
@@ -35,20 +38,7 @@ Install directly from GitHub repository:
 nix run github:tkoyama010/dotfiles
 ```
 
-This will:
-
-- Install Python 3.12 via uv
-- Install Python dependencies with uv
-- Copy configuration files
-- Install Vim plugins
-
-You can change the Python version:
-
-```bash
-# Install a different Python version
-uv python install 3.11
-uv python pin 3.11
-```
+This applies the home-manager configuration for `TetsuonoMacBook-Pro`, which deploys all tracked config files (vimrc, starship, opencode, Claude status line, Copilot, byobu, aider, git) via Nix-managed symlinks. If existing real files conflict, home-manager will report them — run `nix run .#opencode` first to back them up and migrate.
 
 ### Using Nix Flakes (Development)
 
@@ -103,22 +93,6 @@ uv python pin 3.11
    uv sync
    ```
 
-### Traditional Setup
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/tkoyama010/dotfiles.git
-   cd dotfiles
-   ```
-2. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Apply the configurations using `tasks.py`:
-   ```bash
-   invoke all-tasks
-   ```
-
 ## Key Contents
 
 - `vimrc`: Configuration file for Vim.
@@ -135,26 +109,36 @@ uv python pin 3.11
   - `caveman.json`: Config for [caveman-opencode-plugin](https://www.npmjs.com/package/caveman-opencode-plugin) (npm).
   - `plugins/rtk.ts`: Custom local plugin (RTK command rewriting).
   - Plugins installed from npm: `@dietrichgebert/ponytail`, `caveman-opencode-plugin`.
-- `justfile`: Task runner for setup and automation commands.
+- `apps/`: Nix flake apps — the task runner, replacing the former `justfile`. Run any task with `nix run .#<name>`.
+
+## Available Nix Apps
+
+All tasks are exposed as Nix flake apps. Run them with `nix run .#<name>` (or `nix run github:tkoyama010/dotfiles#<name>`):
+
+| App                      | Description                                                                                    |
+| ------------------------ | ---------------------------------------------------------------------------------------------- |
+| `home-manager`           | Apply the home-manager configuration                                                           |
+| `setup` (default)        | Same as `home-manager`, the `nix run .` default                                                |
+| `install-claude-plugins` | Install Claude Code plugins (everything-claude-code, code-simplifier)                          |
+| `claude-statusline`      | Configure the Claude Code custom status line                                                   |
+| `ruff-skill`             | Symlink the ruff-lint skill into a target project (`nix run .#ruff-skill -- /path/to/project`) |
+| `opencode`               | Migrate existing opencode config: back up real files, then symlink tracked config              |
+| `opencode-rtd-skills`    | Install the latest Read the Docs skills for opencode                                           |
+| `vim-plugins`            | Install or update Vim plugins                                                                  |
+| `ttyd`                   | Start a ttyd web terminal on `127.0.0.1:7681`                                                  |
 
 ## Usage Example
 
 You can install Vim plugins with the following command:
 
 ```bash
-invoke vim-plugins
-```
-
-You can set up GitHub Copilot CLI configuration with the following command:
-
-```bash
-invoke copilot-cli
+nix run .#vim-plugins
 ```
 
 You can set up Claude Code custom status line with the following command:
 
 ```bash
-invoke claude-statusline
+nix run .#claude-statusline
 ```
 
 This will:
@@ -168,17 +152,14 @@ The status line displays:
 - Model name (e.g., "Claude Sonnet 4.5")
 - Token usage with visual progress bar (max 155k tokens)
 - Current directory and git branch/commit info
-  You can install Claude Code plugins with the following commands:
 
-You can install Claude Code plugins with the following commands:
+You can install Claude Code plugins with the following command:
 
 ```bash
-# Install everything-claude-code plugin (comprehensive feature set)
-invoke claude-code-plugin
-
-# Install code-simplifier plugin (code refactoring and complexity reduction)
-invoke claude-code-simplifier-plugin
+nix run .#install-claude-plugins
 ```
+
+This installs both the `everything-claude-code` (comprehensive feature set) and `code-simplifier` plugins.
 
 The code-simplifier plugin provides:
 
@@ -190,13 +171,11 @@ The code-simplifier plugin provides:
 You can install the Ruff linting skill to any project repository:
 
 ```bash
-# From anywhere
-invoke ruff-skill --target-dir ~/repository
-invoke ruff-skill -t /path/to/your/project
+# From anywhere (path is passed after `--`)
+nix run github:tkoyama010/dotfiles#ruff-skill -- /path/to/your/project
 
-# From dotfiles directory
-cd ~/dotfiles
-invoke ruff-skill --target-dir ~/my-python-project
+# From the dotfiles directory
+nix run .#ruff-skill -- ~/my-python-project
 ```
 
 This creates a symlink `.github/skills/ruff-lint/` in the target project, making the skill available via `/skill ruff-lint` in both GitHub Copilot CLI and Claude Code.
@@ -205,26 +184,24 @@ This creates a symlink `.github/skills/ruff-lint/` in the target project, making
 
 ## opencode
 
-You can set up [OpenCode](https://opencode.ai) configuration with the following command:
+The [OpenCode](https://opencode.ai) configuration is deployed by home-manager. Running `nix run .#home-manager` symlinks the tracked config files from `opencode/` into `~/.config/opencode/`:
 
-```bash
-just opencode
-```
-
-This symlinks the tracked config files from `opencode/` into `~/.config/opencode/`:
-
-- Backs up any existing files that are not already symlinks (`.bak` suffix)
-- Symlinks `opencode.jsonc`, `caveman.json`, `plugins/rtk.ts`
+- `opencode.jsonc`, `caveman.json`, `plugins/rtk.ts`
 - npm plugins (`@dietrichgebert/ponytail`, `caveman-opencode-plugin`) are installed automatically by opencode on startup
 
-Untracked items (`node_modules/`, `package.json`, lockfiles) are left untouched.
+If you have existing **real files** (not symlinks) in `~/.config/opencode/`, home-manager will refuse to overwrite them. Run the one-time migration helper first, which backs up each conflicting file with a `.bak` suffix and replaces it with a symlink:
 
-The opencode config is also managed by home-manager. Running `just home-manager` deploys the same files via Nix symlinks. If you have existing real files in `~/.config/opencode/`, run `just opencode` first to migrate them, then `just home-manager` will work.
+```bash
+nix run .#opencode
+nix run .#home-manager
+```
+
+Untracked items (`node_modules/`, `package.json`, lockfiles) are left untouched.
 
 You can install the Read the Docs skills for opencode separately:
 
 ```bash
-just opencode-rtd-skills
+nix run .#opencode-rtd-skills
 ```
 
 ## License

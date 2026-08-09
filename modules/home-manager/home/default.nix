@@ -1,5 +1,4 @@
-{ profile, ... }:
-{
+{profile, ...}: {
   home = {
     username = profile.username;
     homeDirectory = profile.homeDirectory;
