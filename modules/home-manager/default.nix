@@ -6,6 +6,7 @@
     ./claude
     ./copilot
     ./files
+    ./opencode
     ./git
     ./home
     ./shell
