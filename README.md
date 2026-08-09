@@ -130,7 +130,12 @@ uv python pin 3.11
   - `statusline.sh`: Custom status line script showing model, token usage, git info.
   - `settings.local.json.template`: Template for local settings with statusLine configuration.
 - `.github/skills/ruff-lint/`: Ruff linting skill for GitHub Copilot CLI and Claude Code.
-- `tasks.py`: Script to automate various setup tasks.
+- `opencode/`: Configuration for [OpenCode](https://opencode.ai) CLI.
+  - `opencode.jsonc`: Main config (provider, MCP, plugins, GLM-5.2 image input).
+  - `caveman.json`: Config for [caveman-opencode-plugin](https://www.npmjs.com/package/caveman-opencode-plugin) (npm).
+  - `plugins/rtk.ts`: Custom local plugin (RTK command rewriting).
+  - Plugins installed from npm: `@dietrichgebert/ponytail`, `caveman-opencode-plugin`.
+- `justfile`: Task runner for setup and automation commands.
 
 ## Usage Example
 
@@ -197,6 +202,30 @@ invoke ruff-skill --target-dir ~/my-python-project
 This creates a symlink `.github/skills/ruff-lint/` in the target project, making the skill available via `/skill ruff-lint` in both GitHub Copilot CLI and Claude Code.
 
 **Note**: Authentication tokens are NOT stored in this repository for security reasons.
+
+## opencode
+
+You can set up [OpenCode](https://opencode.ai) configuration with the following command:
+
+```bash
+just opencode
+```
+
+This symlinks the tracked config files from `opencode/` into `~/.config/opencode/`:
+
+- Backs up any existing files that are not already symlinks (`.bak` suffix)
+- Symlinks `opencode.jsonc`, `caveman.json`, `plugins/rtk.ts`
+- npm plugins (`@dietrichgebert/ponytail`, `caveman-opencode-plugin`) are installed automatically by opencode on startup
+
+Untracked items (`node_modules/`, `package.json`, lockfiles) are left untouched.
+
+The opencode config is also managed by home-manager. Running `just home-manager` deploys the same files via Nix symlinks. If you have existing real files in `~/.config/opencode/`, run `just opencode` first to migrate them, then `just home-manager` will work.
+
+You can install the Read the Docs skills for opencode separately:
+
+```bash
+just opencode-rtd-skills
+```
 
 ## License
 

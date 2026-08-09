@@ -1,6 +1,7 @@
 # GitHub Copilot CLI - exclude sensitive data
 # Nix
 # Python cache
+# opencode - exclude generated/local artifacts
 *.pyc
 *.swp
 *~
@@ -24,5 +25,15 @@
 .zsh_history
 __pycache__/
 node_modules/
+opencode/.caveman-active
+opencode/.caveman-active
+opencode/.ponytail-active
+opencode/.ponytail-active
+opencode/bun.lock
+opencode/bun.lock
+opencode/package-lock.json
+opencode/package-lock.json
+opencode/package.json
+opencode/package.json
 result
 result-*

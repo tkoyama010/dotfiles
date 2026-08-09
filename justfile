@@ -51,6 +51,24 @@ opencode-rtd-skills:
         fi
     done
 
+# Set up opencode configuration via symlinks from this repo
+opencode:
+    #!/usr/bin/env bash
+    set -e
+    src="$(pwd)/opencode"
+    dest="$HOME/.config/opencode"
+    mkdir -p "$dest"
+    for entry in "$src"/*; do
+        name=$(basename "$entry")
+        target="$dest/$name"
+        if [ -e "$target" ] && [ ! -L "$target" ]; then
+            mv "$target" "$target.bak"
+            echo "Backed up existing $name to $name.bak"
+        fi
+        ln -sf "$entry" "$target"
+        echo "Linked $name"
+    done
+
 # Start ttyd web terminal
 ttyd:
     ttyd -i 127.0.0.1 -p 7681 -W bash
