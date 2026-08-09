@@ -42,6 +42,7 @@
             nodejs_22
             curl
             alejandra
+            opencode
           ];
 
           shellHook = ''
