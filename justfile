@@ -33,6 +33,24 @@ ruff-skill target_dir:
     ln -sf "$(pwd)/.claude/skills/ruff-lint" "{{target_dir}}/.github/skills/ruff-lint"
     @echo "ruff-lint skill linked to {{target_dir}}"
 
+# Install latest Read the Docs skills for opencode from GitHub
+opencode-rtd-skills:
+    #!/usr/bin/env bash
+    set -e
+    skills_dest=~/.config/opencode/skills
+    mkdir -p "$skills_dest"
+    tmp=$(mktemp -d)
+    trap 'rm -rf "$tmp"' EXIT
+    git clone --depth 1 https://github.com/readthedocs/skills.git "$tmp"
+    for skill_dir in "$tmp"/skills/*/; do
+        if [ -f "$skill_dir/SKILL.md" ]; then
+            name=$(basename "$skill_dir")
+            rm -rf "$skills_dest/$name"
+            cp -r "$skill_dir" "$skills_dest/$name"
+            echo "Installed RTD skill: $name"
+        fi
+    done
+
 # Start ttyd web terminal
 ttyd:
     ttyd -i 127.0.0.1 -p 7681 -W bash
