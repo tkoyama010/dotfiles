@@ -26,7 +26,7 @@
           text = ''
             echo "Setting up dotfiles..."
 
-            nix run nixpkgs#home-manager -- switch --flake .#TetsuonoMacBook-Pro
+            nix run nixpkgs#home-manager -- switch --flake "${self}#TetsuonoMacBook-Pro"
 
             echo "Dotfiles setup complete!"
             echo "Run 'nix flake show' to see available apps"
@@ -55,7 +55,7 @@
         packages.default = setupScript;
 
         apps =
-          (import ./apps {inherit pkgs;})
+          (import ./apps {inherit pkgs self;})
           // {
             setup = {
               type = "app";
@@ -70,7 +70,7 @@
     // {
       homeConfigurations = {
         "TetsuonoMacBook-Pro" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."aarch64-darwin";
+          pkgs = nixpkgs.legacyPackages."${builtins.currentSystem}";
           extraSpecialArgs = {
             profile = import ./hosts/TetsuonoMacBook-Pro/profile.nix;
           };
