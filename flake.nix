@@ -26,7 +26,12 @@
           inherit system;
           profile = import ./hosts/${host}/profile.nix {inherit system;};
         };
-        modules = [./modules/home-manager];
+        modules = [
+          {
+            nixpkgs.config.allowUnfree = true;
+          }
+          ./modules/home-manager
+        ];
       };
   in
     (flake-utils.lib.eachDefaultSystem (
