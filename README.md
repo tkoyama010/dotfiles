@@ -44,7 +44,7 @@ Install directly from GitHub repository:
 nix run github:tkoyama010/dotfiles
 ```
 
-This applies the home-manager configuration for the current system (e.g. `TetsuonoMacBook-Pro-aarch64-darwin` on macOS, `TetsuonoMacBook-Pro-x86_64-linux` on Linux), which deploys all tracked config files (vimrc, starship, opencode, Claude status line, Copilot, byobu, aider, git) via Nix-managed symlinks. If existing real files conflict, home-manager will report them — run `nix run .#opencode` first to back them up and migrate.
+This applies the home-manager configuration for the current system (e.g. `TetsuonoMacBook-Pro-aarch64-darwin` on macOS, `TetsuonoMacBook-Pro-x86_64-linux` on Linux), which deploys all tracked config files (vimrc, starship, opencode, Claude status line, Copilot, byobu, aider, git) via Nix-managed symlinks. If existing real files conflict, they are automatically backed up with a `.backup` suffix before linking.
 
 ### Using Nix Flakes (Development)
 
@@ -59,7 +59,7 @@ This applies the home-manager configuration for the current system (e.g. `Tetsuo
 
    ```bash
    mkdir -p ~/.config/nix
-   echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
+   echo "extra-experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
    ```
 
 3. Run setup:
