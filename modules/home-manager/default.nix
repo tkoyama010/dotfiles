@@ -9,6 +9,7 @@
     ./opencode
     ./git
     ./home
+    ./python
     ./shell
     ./starship
   ];
