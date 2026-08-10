@@ -3,11 +3,12 @@
   self,
 }: let
   host = "TetsuonoMacBook-Pro";
+  configName = "${host}-${pkgs.system}";
 
   homeManagerSwitch = pkgs.writeShellApplication {
     name = "home-manager-switch";
     text = ''
-      nix run nixpkgs#home-manager -- switch --flake "${self}#${host}"
+      nix run nixpkgs#home-manager -- switch --flake "${self}#${configName}"
     '';
   };
 
