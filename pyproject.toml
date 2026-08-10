@@ -13,9 +13,7 @@ dev = ["pre-commit>=4.6.1"]
 package = false
 
 [tool.uv.workspace]
-members = [
-    "myproject",
-]
+members = ["myproject"]
 
 [tool.ruff]
 indent-width = 4
