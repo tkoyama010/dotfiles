@@ -1,10 +1,14 @@
-{pkgs}: let
-  host = "TetsuonoMacBook-Pro";
+{
+  pkgs,
+  self,
+  system,
+}: let
+  host = "TetsuonoMacBook-Pro-${system}";
 
   homeManagerSwitch = pkgs.writeShellApplication {
     name = "home-manager-switch";
     text = ''
-      nix run nixpkgs#home-manager -- switch --flake .#${host}
+      nix run nixpkgs#home-manager -- switch --flake "${self}#${host}"
     '';
   };
 
