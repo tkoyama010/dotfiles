@@ -38,7 +38,8 @@
           text = ''
             echo "Setting up dotfiles..."
 
-            nix run nixpkgs#home-manager -- switch --flake "${self}#${host}-${system}"
+            export NIX_CONFIG="extra-experimental-features = nix-command flakes"
+            nix run nixpkgs#home-manager -- switch -b backup --flake "${self}#${host}-${system}"
 
             echo "Dotfiles setup complete!"
             echo "Run 'nix flake show' to see available apps"
