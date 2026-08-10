@@ -8,6 +8,7 @@
   homeManagerSwitch = pkgs.writeShellApplication {
     name = "home-manager-switch";
     text = ''
+      export NIX_CONFIG="extra-experimental-features = nix-command flakes"
       nix run nixpkgs#home-manager -- switch --flake "${self}#${configName}"
     '';
   };
