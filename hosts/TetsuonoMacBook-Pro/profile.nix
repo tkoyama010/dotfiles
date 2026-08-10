@@ -1,5 +1,5 @@
-let
-  isDarwin = builtins.match ".*-darwin" builtins.currentSystem != null;
+{system}: let
+  isDarwin = builtins.match ".*-darwin" system != null;
 in {
   username =
     if isDarwin

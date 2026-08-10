@@ -16,7 +16,9 @@
     home-manager,
     flake-utils,
     ...
-  }:
+  }: let
+    system = "aarch64-darwin";
+  in
     (flake-utils.lib.eachDefaultSystem (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
@@ -70,9 +72,10 @@
     // {
       homeConfigurations = {
         "TetsuonoMacBook-Pro" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."${builtins.currentSystem}";
+          pkgs = nixpkgs.legacyPackages.${system};
           extraSpecialArgs = {
-            profile = import ./hosts/TetsuonoMacBook-Pro/profile.nix;
+            inherit system;
+            profile = import ./hosts/TetsuonoMacBook-Pro/profile.nix {inherit system;};
           };
           modules = [./modules/home-manager];
         };
