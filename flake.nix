@@ -16,7 +16,24 @@
     home-manager,
     flake-utils,
     ...
-  }:
+  }: let
+    host = "TetsuonoMacBook-Pro";
+    systems = flake-utils.lib.defaultSystems;
+    mkHomeConfig = system:
+      home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
+        extraSpecialArgs = {
+          inherit system;
+          profile = import ./hosts/${host}/profile.nix {inherit system;};
+        };
+        modules = [
+          {
+            nixpkgs.config.allowUnfree = true;
+          }
+          ./modules/home-manager
+        ];
+      };
+  in
     (flake-utils.lib.eachDefaultSystem (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
@@ -26,7 +43,8 @@
           text = ''
             echo "Setting up dotfiles..."
 
-            nix run nixpkgs#home-manager -- switch --flake .#TetsuonoMacBook-Pro
+            export NIX_CONFIG="extra-experimental-features = nix-command flakes"
+            nix run --refresh nixpkgs#home-manager -- switch -b backup --flake "${self}#${host}-${system}"
 
             echo "Dotfiles setup complete!"
             echo "Run 'nix flake show' to see available apps"
@@ -55,7 +73,7 @@
         packages.default = setupScript;
 
         apps =
-          (import ./apps {inherit pkgs;})
+          (import ./apps {inherit pkgs self;})
           // {
             setup = {
               type = "app";
@@ -68,14 +86,12 @@
       }
     ))
     // {
-      homeConfigurations = {
-        "TetsuonoMacBook-Pro" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."aarch64-darwin";
-          extraSpecialArgs = {
-            profile = import ./hosts/TetsuonoMacBook-Pro/profile.nix;
-          };
-          modules = [./modules/home-manager];
-        };
-      };
+      homeConfigurations =
+        builtins.listToAttrs
+        (map (system: {
+            name = "${host}-${system}";
+            value = mkHomeConfig system;
+          })
+          systems);
     };
 }
