@@ -57,6 +57,7 @@
             gh
             direnv
             uv
+            python3
             nodejs_22
             curl
             alejandra
