@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=nix,vim,py,git,bash,linux,aws,terraform" alt="My Skills" />
+    <img src="https://skillicons.dev/icons?i=nix,vim,py,git,bash,linux,aws,terraform,fastapi,fortran,github,githubactions,latex,md,notion,npm,react,svg,sklearn,ts" alt="My Skills" />
   </a>
 </p>
 
