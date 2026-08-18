@@ -9,6 +9,7 @@
     ./opencode
     ./git
     ./home
+    ./neovim
     ./shell
     ./starship
   ];
