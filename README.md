@@ -44,7 +44,7 @@ Install directly from GitHub repository:
 nix run github:tkoyama010/dotfiles
 ```
 
-This applies the home-manager configuration for the current system (e.g. `TetsuonoMacBook-Pro-aarch64-darwin` on macOS, `TetsuonoMacBook-Pro-x86_64-linux` on Linux), which deploys all tracked config files (vimrc, starship, opencode, Claude status line, Copilot, byobu, aider, git) via Nix-managed symlinks. If existing real files conflict, they are automatically backed up with a `.backup` suffix before linking.
+This applies the home-manager configuration for the current system (e.g. `TetsuonoMacBook-Pro-aarch64-darwin` on macOS, `TetsuonoMacBook-Pro-x86_64-linux` on Linux), which deploys all tracked config files (vimrc, `.profile`, `nix.conf`, starship, opencode, Claude status line, Copilot, byobu, aider, git) via Nix-managed symlinks. If existing real files conflict, they are automatically backed up with a `.backup` suffix before linking.
 
 ### Using Nix Flakes (Development)
 
@@ -61,6 +61,9 @@ This applies the home-manager configuration for the current system (e.g. `Tetsuo
    mkdir -p ~/.config/nix
    echo "extra-experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
    ```
+
+   Only needed for the first run: after the setup below, home-manager manages
+   `~/.config/nix/nix.conf` and keeps this setting in place.
 
 3. Run setup:
 
@@ -109,7 +112,7 @@ This applies the home-manager configuration for the current system (e.g. `Tetsuo
 - `.claude/`: Configuration for Claude Code CLI.
   - `statusline.sh`: Custom status line script showing model, token usage, git info.
   - `settings.local.json.template`: Template for local settings with statusLine configuration.
-- `.github/skills/ruff-lint/`: Ruff linting skill for GitHub Copilot CLI and Claude Code.
+- `.claude/skills/ruff-lint/`: Ruff linting skill for GitHub Copilot CLI and Claude Code.
 - `opencode/`: Configuration for [OpenCode](https://opencode.ai) CLI.
   - `opencode.jsonc`: Main config (provider, MCP, plugins, GLM-5.2 image input).
   - `caveman.json`: Config for [caveman-opencode-plugin](https://www.npmjs.com/package/caveman-opencode-plugin) (npm).
