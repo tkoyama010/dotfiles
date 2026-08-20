@@ -6,9 +6,9 @@
     "./plugins/rtk.ts"
   ],
   "provider": {
-    "openrouter": {
+    "opencode": {
       "models": {
-        "z-ai/glm-4.6v": {
+        "glm-5.2": {
           "attachment": true,
           "modalities": {
             "input": ["text", "image"],
