@@ -3,7 +3,7 @@ dependencies = []
 description = "Personal dotfiles configuration"
 name = "dotfiles"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 version = "0.1.0"
 
 [dependency-groups]
