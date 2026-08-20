@@ -5,19 +5,6 @@
     "caveman-opencode-plugin",
     "./plugins/rtk.ts"
   ],
-  "provider": {
-    "opencode": {
-      "models": {
-        "glm-5.2": {
-          "attachment": true,
-          "modalities": {
-            "input": ["text", "image"],
-            "output": ["text"]
-          }
-        }
-      }
-    }
-  },
   "mcp": {
     "playwright": {
       "type": "local",
@@ -28,6 +15,15 @@
       "type": "remote",
       "url": "https://mcp.notion.com/mcp",
       "enabled": true
+    },
+    "openrouter-image": {
+      "type": "local",
+      "command": ["npx", "-y", "openrouter-image-mcp"],
+      "enabled": true,
+      "environment": {
+        "OPENROUTER_API_KEY": "{env:OPENROUTER_API_KEY}",
+        "OPENROUTER_MODEL": "z-ai/glm-4.6v"
+      }
     }
   }
 }
