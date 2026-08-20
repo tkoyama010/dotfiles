@@ -19,17 +19,6 @@
     }
   },
   "mcp": {
-    "discord": {
-      "type": "local",
-      "command": ["npx", "-y", "@iqai/mcp-discord"],
-      "enabled": true,
-      "environment": {
-        "DISCORD_TOKEN": "{env:DISCORD_TOKEN}",
-        "SAMPLING_ENABLED": "false",
-        "RESPOND_TO_MENTIONS_ONLY": "false",
-        "BLOCK_DMS": "true"
-      }
-    },
     "playwright": {
       "type": "local",
       "command": ["npx", "-y", "@playwright/mcp@latest"],
