@@ -1,7 +1,7 @@
 {
   "theme": "tkoyama010",
   "defaultProvider": "opencode",
-  "defaultModel": "glm-5.2",
+  "defaultModel": "deepseek-v4-pro",
   "defaultThinkingLevel": "high",
   "tuiMode": "regular",
   "steeringMode": "one-at-a-time",
