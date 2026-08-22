@@ -1,7 +1,8 @@
 {...}: {
   home.file = {
-    ".pi/agent/extensions/gemini-input.ts".source = ./gemini-input.ts;
-    ".pi/agent/extensions/gemini-header.ts".source = ./gemini-header.ts;
-    ".pi/agent/themes/gemini.json".source = ./gemini-theme.json;
+    ".pi/agent/extensions/tkoyama010-input.ts".source = ./tkoyama010-input.ts;
+    ".pi/agent/extensions/tkoyama010-header.ts".source = ./tkoyama010-header.ts;
+    ".pi/agent/themes/tkoyama010.json".source = ./tkoyama010-theme.json;
+    ".pi/agent/settings.json".source = ./settings.json;
   };
 }
