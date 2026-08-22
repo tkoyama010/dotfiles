@@ -9,7 +9,10 @@
     "blockImages": false
   },
   "showHardwareCursor": true,
-  "packages": ["git:github.com/DietrichGebert/ponytail"],
+  "packages": [
+    "git:github.com/DietrichGebert/ponytail",
+    "git:github.com/JuliusBrussee/caveman"
+  ],
   "compaction": {
     "enabled": true
   }
