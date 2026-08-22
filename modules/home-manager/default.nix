@@ -10,6 +10,7 @@
     ./git
     ./home
     ./neovim
+    ./pi
     ./shell
     ./starship
   ];
