@@ -1,0 +1,21 @@
+{
+  "name": "tkoyama010-dotfiles",
+  "version": "0.1.0",
+  "description": "pi extensions, theme, and skills from tkoyama010's dotfiles",
+  "keywords": [
+    "pi-package"
+  ],
+  "license": "MIT",
+  "pi": {
+    "extensions": [
+      "modules/home-manager/pi/*.ts"
+    ],
+    "themes": [
+      "modules/home-manager/pi/tkoyama010-theme.json"
+    ],
+    "skills": [
+      ".agents/skills",
+      ".claude/skills"
+    ]
+  }
+}
