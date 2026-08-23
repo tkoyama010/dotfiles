@@ -1,4 +1,8 @@
-{profile, pkgs, ...}: {
+{
+  profile,
+  pkgs,
+  ...
+}: {
   home = {
     username = profile.username;
     homeDirectory = profile.homeDirectory;
@@ -6,6 +10,7 @@
     packages = with pkgs; [
       awscli2
       terraform
+      rtk
     ];
   };
 
