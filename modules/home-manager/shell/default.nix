@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
@@ -14,6 +13,7 @@
     };
     sessionVariables = {
       EDITOR = "vim";
+      CAVEMAN_DEFAULT_MODE = "full";
     };
   };
 }
