@@ -14,7 +14,8 @@
     "git:github.com/JuliusBrussee/caveman",
     "npm:pi-zentui",
     "npm:@josephyoung/pi-exit",
-    "npm:@pi-kaush/pi-welcome-screen"
+    "npm:@pi-kaush/pi-welcome-screen",
+    "npm:pi-vision-handoff"
   ],
   "compaction": {
     "enabled": true

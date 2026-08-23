@@ -1,0 +1,11 @@
+{
+  "enabled": true,
+  "visionModel": "ollama/qwen2.5vl:7b",
+  "autoHandoff": true,
+  "handoffModels": [],
+  "prewarmPastedImages": false,
+  "asyncClipboardHandoff": false,
+  "maxTokens": null,
+  "cacheMax": 50,
+  "maxDescriptionLines": 0
+}
