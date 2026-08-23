@@ -4,5 +4,6 @@
     ".pi/agent/settings.json".source = ./settings.json;
     ".pi/agent/extensions/caveman-auto.ts".source = ./caveman-auto.ts;
     ".pi/agent/extensions/pi-vision-handoff.json".source = ./pi-vision-handoff.json;
+    ".pi/agent/models.json".source = ./models.json;
   };
 }
