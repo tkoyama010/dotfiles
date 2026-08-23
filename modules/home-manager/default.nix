@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   imports = [
     ./aider
     ./byobu
@@ -10,6 +9,7 @@
     ./git
     ./home
     ./neovim
+    ./ollama
     ./pi
     ./shell
     ./starship
