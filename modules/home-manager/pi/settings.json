@@ -13,7 +13,8 @@
     "git:github.com/DietrichGebert/ponytail",
     "git:github.com/JuliusBrussee/caveman",
     "npm:pi-zentui",
-    "npm:@josephyoung/pi-exit"
+    "npm:@josephyoung/pi-exit",
+    "npm:@pi-kaush/pi-welcome-screen"
   ],
   "compaction": {
     "enabled": true
