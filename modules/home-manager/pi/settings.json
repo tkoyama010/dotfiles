@@ -11,7 +11,8 @@
   "showHardwareCursor": true,
   "packages": [
     "git:github.com/DietrichGebert/ponytail",
-    "git:github.com/JuliusBrussee/caveman"
+    "git:github.com/JuliusBrussee/caveman",
+    "npm:pi-zentui"
   ],
   "compaction": {
     "enabled": true
