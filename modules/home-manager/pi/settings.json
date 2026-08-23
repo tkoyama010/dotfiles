@@ -12,7 +12,8 @@
   "packages": [
     "git:github.com/DietrichGebert/ponytail",
     "git:github.com/JuliusBrussee/caveman",
-    "npm:pi-zentui"
+    "npm:pi-zentui",
+    "npm:@pi-kaush/pi-welcome-screen"
   ],
   "compaction": {
     "enabled": true
