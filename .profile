@@ -32,6 +32,6 @@ export PATH="$HOME/snap/code/194/.local/share/../bin:$PATH"
 # Auto-run ttyd
 if command -v ttyd > /dev/null 2>&1; then
     if ! pgrep -f "ttyd -i 127.0.0.1 -p 7681" > /dev/null; then
-        ttyd -i 127.0.0.1 -p 7681 -W bash > /dev/null 2>&1 &
+        ttyd -i 127.0.0.1 -p 7681 -W -t fontFamily='FiraCode Nerd Font Mono' bash > /dev/null 2>&1 &
     fi
 fi
