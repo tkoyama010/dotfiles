@@ -2,6 +2,7 @@
 # Nix
 # Python cache
 # opencode - exclude generated/local artifacts
+# pi local install artifacts (.pi/settings.json is covered by global home-manager settings)
 *.pyc
 *.swp
 *~
@@ -15,6 +16,7 @@
 .copilot/session-state/
 .direnv
 .emacs.d/history
+.pi/
 .python-version
 .ruff_cache/
 .ssh
