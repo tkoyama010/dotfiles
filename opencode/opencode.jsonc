@@ -1,29 +1,29 @@
 {
-  "$schema": "https://opencode.ai/config.json",
-  "plugin": [
-    "@dietrichgebert/ponytail",
-    "caveman-opencode-plugin",
-    "./plugins/rtk.ts"
-  ],
-  "mcp": {
-    "playwright": {
-      "type": "local",
-      "command": ["npx", "-y", "@playwright/mcp@latest"],
-      "enabled": true
-    },
-    "notion": {
-      "type": "remote",
-      "url": "https://mcp.notion.com/mcp",
-      "enabled": true
-    },
-    "openrouter-image": {
-      "type": "local",
-      "command": ["npx", "-y", "openrouter-image-mcp"],
-      "enabled": true,
-      "environment": {
-        "OPENROUTER_API_KEY": "{env:OPENROUTER_API_KEY}",
-        "OPENROUTER_MODEL": "z-ai/glm-4.6v"
-      }
-    }
-  }
+	"$schema": "https://opencode.ai/config.json",
+	"plugin": [
+		"@dietrichgebert/ponytail",
+		"caveman-opencode-plugin",
+		"./plugins/rtk.ts"
+	],
+	"mcp": {
+		"playwright": {
+			"type": "local",
+			"command": ["npx", "-y", "@playwright/mcp@latest"],
+			"enabled": true
+		},
+		"notion": {
+			"type": "remote",
+			"url": "https://mcp.notion.com/mcp",
+			"enabled": true
+		},
+		"openrouter-image": {
+			"type": "local",
+			"command": ["npx", "-y", "openrouter-image-mcp"],
+			"enabled": true,
+			"environment": {
+				"OPENROUTER_API_KEY": "{env:OPENROUTER_API_KEY}",
+				"OPENROUTER_MODEL": "z-ai/glm-4.6v"
+			}
+		}
+	}
 }
