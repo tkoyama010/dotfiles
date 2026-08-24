@@ -22,6 +22,15 @@
     '';
   };
 
+  installCodeReviewGraph = pkgs.writeShellApplication {
+    name = "install-code-review-graph";
+    runtimeInputs = with pkgs; [uv];
+    text = ''
+      uv tool install code-review-graph
+      claude mcp add --scope project code-review-graph -- uvx code-review-graph serve
+    '';
+  };
+
   claudeStatusline = pkgs.writeShellApplication {
     name = "claude-statusline";
     runtimeInputs = with pkgs; [jq];
@@ -163,6 +172,10 @@ in {
   install-claude-plugins = {
     type = "app";
     program = "${installClaudePlugins}/bin/install-claude-plugins";
+  };
+  install-code-review-graph = {
+    type = "app";
+    program = "${installCodeReviewGraph}/bin/install-code-review-graph";
   };
   claude-statusline = {
     type = "app";
