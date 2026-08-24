@@ -15,7 +15,8 @@
     "npm:pi-zentui",
     "npm:@josephyoung/pi-exit",
     "npm:@pi-kaush/pi-welcome-screen",
-    "npm:pi-vision-handoff"
+    "npm:pi-vision-handoff",
+    "npm:pi-code-review-graph"
   ],
   "compaction": {
     "enabled": true
