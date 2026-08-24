@@ -2,7 +2,7 @@ ci:
   autoupdate_commit_msg: "chore: update pre-commit hooks"
   autofix_prs: true
   autoupdate_schedule: weekly
-  skip: [alejandra-system]
+  skip: [alejandra-system, nixfmt]
 repos:
   - repo: https://github.com/python-jsonschema/check-jsonschema
     rev: 0.38.0
@@ -57,6 +57,10 @@ repos:
     rev: 4.0.0
     hooks:
       - id: alejandra-system
+  - repo: https://github.com/NixOS/nixfmt
+    rev: v1.4.0
+    hooks:
+      - id: nixfmt
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.16.3
     hooks:
