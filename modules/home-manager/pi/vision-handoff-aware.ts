@@ -32,7 +32,9 @@ interface VisionHandoffConfig {
 }
 
 function readAwareConfig(): AwareConfig {
-	if (!existsSync(CONFIG_PATH)) return { enabled: false };
+	if (!existsSync(CONFIG_PATH)) {
+		return { enabled: false };
+	}
 	try {
 		const raw = JSON.parse(
 			readFileSync(CONFIG_PATH, "utf8"),
@@ -44,11 +46,13 @@ function readAwareConfig(): AwareConfig {
 }
 
 function writeAwareConfig(cfg: AwareConfig): void {
-	writeFileSync(CONFIG_PATH, JSON.stringify(cfg, null, 2) + "\n", "utf8");
+	writeFileSync(CONFIG_PATH, `${JSON.stringify(cfg, null, 2)}\n`, "utf8");
 }
 
 function readHandoffConfig(): VisionHandoffConfig | null {
-	if (!existsSync(HANDOFF_CONFIG_PATH)) return null;
+	if (!existsSync(HANDOFF_CONFIG_PATH)) {
+		return null;
+	}
 	try {
 		const raw = JSON.parse(
 			readFileSync(HANDOFF_CONFIG_PATH, "utf8"),
@@ -76,10 +80,16 @@ function isHandoffTarget(
 		| undefined,
 	cfg: VisionHandoffConfig,
 ): boolean {
-	if (!(model && model.provider && model.id)) return false;
+	if (!(model?.provider && model.id)) {
+		return false;
+	}
 	const ref = `${model.provider}/${model.id}`;
-	if (cfg.handoffModels.includes(ref)) return true;
-	if (cfg.autoHandoff && !isVisionModel(model)) return true;
+	if (cfg.handoffModels.includes(ref)) {
+		return true;
+	}
+	if (cfg.autoHandoff && !isVisionModel(model)) {
+		return true;
+	}
 	return false;
 }
 
@@ -93,11 +103,19 @@ export default function (pi: ExtensionAPI) {
 	let aware = readAwareConfig();
 
 	pi.on("before_agent_start", async (event, ctx) => {
-		if (!aware.enabled) return;
+		if (!aware.enabled) {
+			return;
+		}
 		const cfg = readHandoffConfig();
-		if (!(cfg && cfg.enabled && cfg.visionModel)) return;
-		if (!isHandoffTarget(ctx.model, cfg)) return;
-		if (event.systemPrompt.includes(MARKER)) return;
+		if (!(cfg?.enabled && cfg.visionModel)) {
+			return;
+		}
+		if (!isHandoffTarget(ctx.model, cfg)) {
+			return;
+		}
+		if (event.systemPrompt.includes(MARKER)) {
+			return;
+		}
 		return {
 			systemPrompt:
 				event.systemPrompt +

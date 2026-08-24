@@ -127,8 +127,12 @@ function ajaxHeaders(csrf: string, json = false): Record<string, string> {
 		Accept: "application/json",
 		"X-Requested-With": "XMLHttpRequest",
 	};
-	if (csrf) headers["X-CSRFToken"] = csrf;
-	if (json) headers["Content-Type"] = "application/json";
+	if (csrf) {
+		headers["X-CSRFToken"] = csrf;
+	}
+	if (json) {
+		headers["Content-Type"] = "application/json";
+	}
 	return headers;
 }
 
@@ -192,9 +196,13 @@ async function fetchStrings(
 					}),
 				},
 			);
-			if (!idsResp.ok) continue;
+			if (!idsResp.ok) {
+				continue;
+			}
 			const ids: number[] = await idsResp.json();
-			if (ids.length === 0) continue;
+			if (ids.length === 0) {
+				continue;
+			}
 
 			const segResp = await fetch(
 				`/_/editor/ajax/${org}/${project}/string/${slug}/${lang}/segment/`,
@@ -208,7 +216,9 @@ async function fetchStrings(
 					}),
 				},
 			);
-			if (!segResp.ok) continue;
+			if (!segResp.ok) {
+				continue;
+			}
 			const strings: StringSegment[] = await segResp.json();
 			for (const s of strings) {
 				all.push({ id: s.id, source: s.source, resource: slug });
@@ -250,7 +260,7 @@ async function saveBatch(
 				{
 					method: "POST",
 					headers: ajaxHeaders(csrf, true),
-					body: "data=" + encodeURIComponent(JSON.stringify(body)),
+					body: `data=${encodeURIComponent(JSON.stringify(body))}`,
 				},
 			);
 			results.push(resp.status);

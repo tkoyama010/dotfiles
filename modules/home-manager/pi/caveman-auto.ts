@@ -13,7 +13,9 @@ const SKILL_PATH = join(
 let cached: string | undefined;
 
 function skillBody(): string {
-	if (cached !== undefined) return cached;
+	if (cached !== undefined) {
+		return cached;
+	}
 	try {
 		const raw = readFileSync(SKILL_PATH, "utf8");
 		// strip frontmatter so only instructions enter the system prompt
@@ -27,11 +29,14 @@ function skillBody(): string {
 export default function (pi: ExtensionAPI) {
 	pi.on("before_agent_start", async (event, _ctx) => {
 		const body = skillBody();
-		if (!body) return;
-		if (event.systemPrompt.includes("# Caveman (always active)")) return;
+		if (!body) {
+			return;
+		}
+		if (event.systemPrompt.includes("# Caveman (always active)")) {
+			return;
+		}
 		return {
-			systemPrompt:
-				event.systemPrompt + "\n\n# Caveman (always active)\n\n" + body,
+			systemPrompt: `${event.systemPrompt}\n\n# Caveman (always active)\n\n${body}`,
 		};
 	});
 }

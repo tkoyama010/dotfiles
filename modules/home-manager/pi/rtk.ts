@@ -20,7 +20,9 @@ const MIN_SUPPORTED_RTK_MINOR = 23;
 // Parse "X.Y.Z" semver, return [major, minor, patch] or null.
 function parseSemver(raw: string): [number, number, number] | null {
 	const m = raw.trim().match(/(\d+)\.(\d+)\.(\d+)/);
-	if (!m) return null;
+	if (!m) {
+		return null;
+	}
 	return [
 		Number.parseInt(m[1], 10),
 		Number.parseInt(m[2], 10),
@@ -38,8 +40,12 @@ async function rewriteCommand(
 		timeout: REWRITE_TIMEOUT_MS,
 		signal,
 	});
-	if (result.killed) return null;
-	if (result.code !== 0 && result.code !== 3) return null;
+	if (result.killed) {
+		return null;
+	}
+	if (result.code !== 0 && result.code !== 3) {
+		return null;
+	}
 	return result.stdout.trim() || null;
 }
 
@@ -49,7 +55,6 @@ export default async function (pi: ExtensionAPI) {
 		timeout: REWRITE_TIMEOUT_MS,
 	});
 	if (ver.code !== 0) {
-		console.warn("[rtk] rtk binary not found in PATH — extension disabled");
 		return;
 	}
 
@@ -58,34 +63,33 @@ export default async function (pi: ExtensionAPI) {
 	if (parsed) {
 		const [major, minor] = parsed;
 		if (major === 0 && minor < MIN_SUPPORTED_RTK_MINOR) {
-			console.warn(
-				`[rtk] rtk ${ver.stdout.trim()} is too old (need >= 0.23.0) — extension disabled`,
-			);
 			return;
 		}
 	}
 
 	pi.on("tool_call", async (event, ctx) => {
 		try {
-			if (!isToolCallEventType("bash", event)) return;
+			if (!isToolCallEventType("bash", event)) {
+				return;
+			}
 
 			const cmd = event.input.command;
-			if (typeof cmd !== "string" || cmd.trim() === "") return;
+			if (typeof cmd !== "string" || cmd.trim() === "") {
+				return;
+			}
 
-			if (cmd.startsWith("rtk ")) return;
-			if (process.env.RTK_DISABLED === "1") return;
+			if (cmd.startsWith("rtk ")) {
+				return;
+			}
+			if (process.env.RTK_DISABLED === "1") {
+				return;
+			}
 
 			// Delegate to RTK.
 			const rewritten = await rewriteCommand(pi, cmd, ctx.signal);
 			if (rewritten && rewritten !== cmd) {
 				event.input.command = rewritten;
 			}
-		} catch (err) {
-			// Fail open: never block execution on an unexpected error.
-			console.warn(
-				"[rtk] unexpected error in tool_call handler; passing through command",
-				err,
-			);
-		}
+		} catch {}
 	});
 }
