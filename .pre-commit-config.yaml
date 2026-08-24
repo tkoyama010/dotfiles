@@ -51,6 +51,10 @@ repos:
     rev: 4.0.0
     hooks:
       - id: alejandra-system
+  - repo: https://github.com/NixOS/nixfmt
+    rev: v1.4.0
+    hooks:
+      - id: nixfmt
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.16.3
     hooks:
