@@ -1,24 +1,24 @@
 {
-  "theme": "tkoyama010",
-  "defaultProvider": "opencode",
-  "defaultModel": "glm-5.2",
-  "defaultThinkingLevel": "high",
-  "tuiMode": "regular",
-  "steeringMode": "one-at-a-time",
-  "images": {
-    "blockImages": false
-  },
-  "showHardwareCursor": true,
-  "packages": [
-    "git:github.com/DietrichGebert/ponytail",
-    "git:github.com/JuliusBrussee/caveman",
-    "npm:pi-zentui",
-    "npm:@josephyoung/pi-exit",
-    "npm:@pi-kaush/pi-welcome-screen",
-    "npm:pi-vision-handoff",
-    "npm:pi-code-review-graph"
-  ],
-  "compaction": {
-    "enabled": true
-  }
+	"theme": "tkoyama010",
+	"defaultProvider": "opencode",
+	"defaultModel": "glm-5.2",
+	"defaultThinkingLevel": "high",
+	"tuiMode": "regular",
+	"steeringMode": "one-at-a-time",
+	"images": {
+		"blockImages": false
+	},
+	"showHardwareCursor": true,
+	"packages": [
+		"git:github.com/DietrichGebert/ponytail",
+		"git:github.com/JuliusBrussee/caveman",
+		"npm:pi-zentui",
+		"npm:@josephyoung/pi-exit",
+		"npm:@pi-kaush/pi-welcome-screen",
+		"npm:pi-vision-handoff",
+		"npm:pi-code-review-graph"
+	],
+	"compaction": {
+		"enabled": true
+	}
 }
