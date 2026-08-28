@@ -38,6 +38,12 @@
       if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
         . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
       fi
+      # Put the home-manager profile ahead of /opt/homebrew/bin and /usr/bin so
+      # nix-installed tools actually win. nix-daemon.sh will not do this on its
+      # own: it is guarded and skips when nix is already in the environment,
+      # which left ~/.nix-profile/bin at position 54. Done last so it takes
+      # effect whatever the block above decides.
+      export PATH="$HOME/.nix-profile/bin:$PATH"
     '';
   };
 }
