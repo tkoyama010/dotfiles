@@ -11,6 +11,7 @@
       awscli2
       terraform
       rtk
+      vim
     ];
   };
 
