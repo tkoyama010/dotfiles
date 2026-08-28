@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  home.packages = [pkgs.neovim];
+
   xdg.configFile = {
     "nvim/init.vim".source = ../../../nvim/init.vim;
     "nvim/pack/hm/start/markdown-preview-nvim".source =
