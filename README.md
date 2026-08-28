@@ -114,7 +114,6 @@ This applies the home-manager configuration for the current system (e.g. `Tetsuo
 ## Key Contents
 
 - `vimrc`: Configuration file for Vim.
-- `starship.toml`: Configuration for the Starship prompt.
 - `lsd/config.yaml`: Configuration for the LSD command.
 - `zellij/config.kdl`: Configuration for the Zellij terminal manager.
 - `copilot/config.json`: Configuration for GitHub Copilot CLI.
