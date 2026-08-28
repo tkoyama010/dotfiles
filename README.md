@@ -44,6 +44,15 @@ Install directly from GitHub repository:
 nix run github:tkoyama010/dotfiles
 ```
 
+If Nix flakes are not enabled yet, this fails with
+`error: experimental Nix feature 'nix-command' is disabled`. Either enable them
+once (see [Using Nix Flakes (Development)](#using-nix-flakes-development) step 2)
+or pass the flags inline:
+
+```bash
+nix --extra-experimental-features 'nix-command flakes' run github:tkoyama010/dotfiles
+```
+
 This applies the home-manager configuration for the current system (e.g. `TetsuonoMacBook-Pro-aarch64-darwin` on macOS, `TetsuonoMacBook-Pro-x86_64-linux` on Linux), which deploys all tracked config files (vimrc, `.profile`, `nix.conf`, starship, opencode, Claude status line, Copilot, byobu, aider, git) via Nix-managed symlinks. If existing real files conflict, they are automatically backed up with a `.backup` suffix before linking.
 
 ### Using Nix Flakes (Development)
@@ -188,6 +197,17 @@ nix run .#ruff-skill -- ~/my-python-project
 ```
 
 This creates a symlink `.github/skills/ruff-lint/` in the target project, making the skill available via `/skill ruff-lint` in both GitHub Copilot CLI and Claude Code.
+
+You can start a web terminal in the browser with the following command:
+
+```bash
+nix run .#ttyd
+```
+
+This starts [ttyd](https://github.com/tsl0922/ttyd) on `127.0.0.1:7681` running
+`bash`, with client write access enabled (`-W`) and the FiraCode Nerd Font Mono
+font. Open <http://127.0.0.1:7681> to use it. It listens on loopback only, so it
+is not reachable from other machines. Stop it with `Ctrl-C`.
 
 **Note**: Authentication tokens are NOT stored in this repository for security reasons.
 
