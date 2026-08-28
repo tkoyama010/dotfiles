@@ -27,7 +27,7 @@ in {
     enable = true;
   };
 
-  systemd.user.services.ollama-pull-qwen2_5vl = lib.mkIf pkgs.stdenv.isLinux {
+  systemd.user.services.ollama-pull-qwen2_5vl = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
     Unit = {
       Description = "Pull ${visionModel} vision model for ollama";
       After = ["ollama.service"];
@@ -44,7 +44,7 @@ in {
 
   # systemd.user.services is silently ignored on darwin, which left the model
   # unpulled on macOS. launchd is the equivalent there.
-  launchd.agents.ollama-pull-qwen2_5vl = lib.mkIf pkgs.stdenv.isDarwin {
+  launchd.agents.ollama-pull-qwen2_5vl = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
     enable = true;
     config = {
       ProgramArguments = ["${pullVisionModel}"];
