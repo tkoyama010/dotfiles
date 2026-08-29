@@ -18,7 +18,12 @@
     ...
   }: let
     host = "TetsuonoMacBook-Pro";
-    systems = flake-utils.lib.defaultSystems;
+    # Nixpkgs 26.11 dropped x86_64-darwin, so it is excluded here.
+    systems = [
+      "aarch64-darwin"
+      "aarch64-linux"
+      "x86_64-linux"
+    ];
     mkHomeConfig = system:
       home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
@@ -34,7 +39,7 @@
         ];
       };
   in
-    (flake-utils.lib.eachDefaultSystem (
+    (flake-utils.lib.eachSystem systems (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
 
