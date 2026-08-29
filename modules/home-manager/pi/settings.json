@@ -18,7 +18,7 @@
 		"npm:pi-vision-handoff",
 		"npm:pi-code-review-graph",
 		"git:github.com/tkoyama010/pi-webcam",
-        "npm:@tkoyama010/pi-zulip"
+		"npm:@tkoyama010/pi-zulip"
 	],
 	"compaction": {
 		"enabled": true
