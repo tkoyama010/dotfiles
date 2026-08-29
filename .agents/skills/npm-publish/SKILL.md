@@ -78,6 +78,7 @@ npm view @scope/package-name version
 ```
 
 If 404, wait 30-60s for CDN propagation. Or open:
+
 ```
 https://www.npmjs.com/package/@scope/package-name
 ```
@@ -88,20 +89,21 @@ https://www.npmjs.com/package/@scope/package-name
 - **Scoped** (`@user/package-name`): No 2FA requirement if account setting allows it.
 
 If unscoped publish fails with E403 even after 2FA setup, switch to scoped:
+
 ```json
 { "name": "@username/package-name" }
 ```
 
 ## Troubleshooting
 
-| Error | Cause | Fix |
-|-------|-------|-----|
-| `ENEEDAUTH` | Not logged in | `npm login --auth-type=web` |
-| `E403` bypass 2FA required | "Require 2FA for write actions" is ON | Turn it OFF in npm settings |
-| `E403` cannot publish over | Version already published | Bump version in package.json |
-| `EOTP` with masked URL | No TTY (running from pi bash) | Use `script -q /dev/null` wrapper |
-| URL shows `%0D` (404) | Carriage return appended | `tr -d '\r'` when extracting URL |
-| `npm view` returns 404 after publish | CDN propagation delay | Wait 30-60s, or check browser |
+| Error                                | Cause                                 | Fix                               |
+| ------------------------------------ | ------------------------------------- | --------------------------------- |
+| `ENEEDAUTH`                          | Not logged in                         | `npm login --auth-type=web`       |
+| `E403` bypass 2FA required           | "Require 2FA for write actions" is ON | Turn it OFF in npm settings       |
+| `E403` cannot publish over           | Version already published             | Bump version in package.json      |
+| `EOTP` with masked URL               | No TTY (running from pi bash)         | Use `script -q /dev/null` wrapper |
+| URL shows `%0D` (404)                | Carriage return appended              | `tr -d '\r'` when extracting URL  |
+| `npm view` returns 404 after publish | CDN propagation delay                 | Wait 30-60s, or check browser     |
 
 ## One-liner
 
