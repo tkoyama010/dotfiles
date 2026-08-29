@@ -121,6 +121,7 @@ This applies the home-manager configuration for the current system (e.g. `Tetsuo
   - `statusline.sh`: Custom status line script showing model, token usage, git info.
   - `settings.local.json.template`: Template for local settings with statusLine configuration.
 - `.claude/skills/ruff-lint/`: Ruff linting skill for GitHub Copilot CLI and Claude Code.
+- `claude/skills/`: Agent skills vendored from [cursor/plugins](https://github.com/cursor/plugins) (MIT). Not auto-loaded; copy the ones you want into `~/.claude/skills/`. See `claude/NOTICE.md` for attribution and the pinned upstream commit.
 - `opencode/`: Configuration for [OpenCode](https://opencode.ai) CLI.
   - `opencode.jsonc`: Main config (provider, MCP, plugins, GLM-5.2 image input).
   - `caveman.json`: Config for [caveman-opencode-plugin](https://www.npmjs.com/package/caveman-opencode-plugin) (npm).
