@@ -121,6 +121,7 @@ This applies the home-manager configuration for the current system (e.g. `Tetsuo
   - `statusline.sh`: Custom status line script showing model, token usage, git info.
   - `settings.local.json.template`: Template for local settings with statusLine configuration.
 - `.claude/skills/ruff-lint/`: Ruff linting skill for GitHub Copilot CLI and Claude Code.
+- `claude/skills/`: Agent skills vendored from [cursor/plugins](https://github.com/cursor/plugins) (MIT), linked into `~/.claude/skills/` by home-manager. Refresh them from upstream with `nix run .#cursor-plugin-skills`. See `claude/NOTICE.md` for attribution and the pinned upstream commit.
 - `opencode/`: Configuration for [OpenCode](https://opencode.ai) CLI.
   - `opencode.jsonc`: Main config (provider, MCP, plugins, GLM-5.2 image input).
   - `caveman.json`: Config for [caveman-opencode-plugin](https://www.npmjs.com/package/caveman-opencode-plugin) (npm).
@@ -141,6 +142,7 @@ All tasks are exposed as Nix flake apps. Run them with `nix run .#<name>` (or `n
 | `ruff-skill`             | Symlink the ruff-lint skill into a target project (`nix run .#ruff-skill -- /path/to/project`) |
 | `opencode`               | Migrate existing opencode config: back up real files, then symlink tracked config              |
 | `opencode-rtd-skills`    | Install the latest Read the Docs skills for opencode                                           |
+| `cursor-plugin-skills`   | Re-sync `claude/skills/` from cursor/plugins (`nix run .#cursor-plugin-skills -- [commit]`)    |
 | `vim-plugins`            | Install or update Vim plugins                                                                  |
 | `ttyd`                   | Start a ttyd web terminal on `127.0.0.1:7681`                                                  |
 

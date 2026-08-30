@@ -98,6 +98,32 @@
     '';
   };
 
+  cursorPluginSkills = pkgs.writeShellApplication {
+    name = "cursor-plugin-skills";
+    runtimeInputs = with pkgs; [git];
+    text = ''
+      rev="''${1:-68836ddaf5697224520f1847d90cdb90ca8babaa}"
+      dest="$(pwd)/claude/skills"
+      if [ ! -d "$dest" ]; then
+        echo "run this from the dotfiles repository root" >&2
+        exit 1
+      fi
+      tmp=$(mktemp -d)
+      trap 'rm -rf "$tmp"' EXIT
+      git clone --quiet https://github.com/cursor/plugins.git "$tmp"
+      git -C "$tmp" checkout --quiet "$rev"
+      for plugin in pstack cursor-team-kit thermos teaching ralph-loop continual-learning cli-for-agent; do
+        for skill_dir in "$tmp/$plugin"/skills/*/; do
+          name=$(basename "$skill_dir")
+          rm -rf "''${dest:?}/$name"
+          cp -R "$skill_dir" "$dest/$name"
+          echo "Synced skill: $name"
+        done
+      done
+      echo "Synced from cursor/plugins@$rev - update the pinned commit in claude/NOTICE.md if it changed"
+    '';
+  };
+
   ttydApp = pkgs.writeShellApplication {
     name = "ttyd-web";
     runtimeInputs = with pkgs; [ttyd bash];
@@ -192,6 +218,10 @@ in {
   opencode-rtd-skills = {
     type = "app";
     program = "${opencodeRtdSkills}/bin/opencode-rtd-skills";
+  };
+  cursor-plugin-skills = {
+    type = "app";
+    program = "${cursorPluginSkills}/bin/cursor-plugin-skills";
   };
   ttyd = {
     type = "app";
