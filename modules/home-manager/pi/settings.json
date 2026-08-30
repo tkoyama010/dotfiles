@@ -19,6 +19,8 @@
 		"npm:pi-code-review-graph",
 		"git:github.com/tkoyama010/pi-webcam",
 		"npm:@tkoyama010/pi-zulip",
+		"npm:@e9n/pi-gmail",
+		"../../projects/pi-discord",
 		"npm:remote-pi"
 	],
 	"compaction": {
