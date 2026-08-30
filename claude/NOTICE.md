@@ -7,6 +7,11 @@
 - Pinned commit: 68836ddaf5697224520f1847d90cdb90ca8babaa
 - License: MIT
 
+These directories are linked into `~/.claude/skills/` by
+`modules/home-manager/claude/default.nix`, and can be re-synced from upstream
+with `nix run .#cursor-plugin-skills -- [commit]` (the pinned commit above is
+the default; update it here when it changes).
+
 Only the `skills/` directories of the plugins listed below were copied. Cursor
 rules (`.mdc`) and `mcp.json` from those plugins were not.
 
