@@ -86,6 +86,7 @@ if path.exists():
 
 # Avoid
 import os
+
 path = os.path.join(os.path.dirname(__file__), "config.json")
 ```
 
@@ -108,6 +109,7 @@ Add type hints to all function signatures:
 
 ```python
 from pathlib import Path
+
 
 def process_data(input_file: Path, output_dir: Path) -> bool:
     """Process data from input file."""
