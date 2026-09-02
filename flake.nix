@@ -74,6 +74,18 @@
           '';
         };
 
+        devShells.aws = pkgs.mkShell {
+          buildInputs = with pkgs; [
+            awscli2
+            terraform
+            jq
+          ];
+
+          shellHook = ''
+            echo "AWS environment loaded (awscli2, terraform, jq)"
+          '';
+        };
+
         packages.setup = setupScript;
         packages.default = setupScript;
 

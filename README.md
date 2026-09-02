@@ -92,6 +92,16 @@ This applies the home-manager configuration for the current system (e.g. `Tetsuo
    direnv allow
    ```
 
+   AWS tooling (`awscli2`, `terraform`, `jq`) lives in a separate shell so it
+   stays out of the global profile:
+
+   ```bash
+   nix develop .#aws
+   ```
+
+   In an AWS project, add an `.envrc` with `use flake <path-to-dotfiles>#aws`
+   to load it automatically.
+
 4. Install Python and dependencies:
 
    ```bash
