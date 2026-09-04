@@ -9,6 +9,7 @@
 				"supportsReasoningEffort": false
 			},
 			"models": [
+				{ "id": "qwen3:8b" },
 				{ "id": "qwen2.5vl:3b", "input": ["text", "image"] },
 				{ "id": "qwen2.5vl:7b", "input": ["text", "image"] }
 			]
