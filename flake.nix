@@ -15,7 +15,6 @@
     nixpkgs,
     home-manager,
     flake-utils,
-    overlays,
     ...
   }: let
     host = "TetsuonoMacBook-Pro";
