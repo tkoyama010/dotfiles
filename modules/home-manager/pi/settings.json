@@ -1,7 +1,7 @@
 {
 	"theme": "tkoyama010",
 	"defaultProvider": "opencode",
-	"defaultModel": "qwen3.6-plus",
+	"defaultModel": "qwen3:8b",
 	"defaultThinkingLevel": "high",
 	"tuiMode": "regular",
 	"steeringMode": "one-at-a-time",
