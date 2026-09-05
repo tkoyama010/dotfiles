@@ -102,7 +102,12 @@
     name = "ttyd-web";
     runtimeInputs = with pkgs; [ttyd bash];
     text = ''
-      ttyd -i 127.0.0.1 -p 7681 -W -t fontFamily='FiraCode Nerd Font Mono' bash
+      ttyd -i 127.0.0.1 -p 7681 -W \
+        -t fontFamily='FiraCode Nerd Font Mono' \
+        -t fontSize=18 \
+        -t cursorBlink=true \
+        -t 'theme={"background":"#1e1e2e","foreground":"#cdd6f4"}' \
+        bash
     '';
   };
 
