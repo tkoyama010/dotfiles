@@ -100,8 +100,14 @@
 
   ttydApp = pkgs.writeShellApplication {
     name = "ttyd-web";
-    runtimeInputs = with pkgs; [ttyd bash];
+    runtimeInputs = with pkgs; [ttyd bash fontconfig];
     text = ''
+      if ! fc-match -f "%{file}" "FiraCode Nerd Font Mono" | grep -q "^/usr/"; then
+        echo "Warning: FiraCode Nerd Font Mono is not installed system-wide." >&2
+        echo "Snap Chromium cannot see ~/.local/share/fonts, so ttyd would fall" >&2
+        echo "back to a proportional font with uneven spacing. Install it:" >&2
+        echo "  sudo mkdir -p /usr/local/share/fonts && sudo cp ~/.local/share/fonts/FiraCode/*.ttf /usr/local/share/fonts/ && sudo fc-cache -f" >&2
+      fi
       ttyd -i 127.0.0.1 -p 7681 -W \
         -t 'fontFamily=FiraCode Nerd Font Mono, DejaVu Sans Mono, monospace' \
         -t fontSize=20 \

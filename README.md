@@ -208,6 +208,18 @@ This starts [ttyd](https://github.com/tsl0922/ttyd) on `127.0.0.1:7681` running
 font. Open <http://127.0.0.1:7681> to use it. It listens on loopback only, so it
 is not reachable from other machines. Stop it with `Ctrl-C`.
 
+**Note on fonts**: Snap Chromium cannot see fonts installed in
+`~/.local/share/fonts`, so FiraCode Nerd Font Mono must also be installed
+system-wide for correct rendering in the browser:
+
+```bash
+sudo mkdir -p /usr/local/share/fonts && sudo cp ~/.local/share/fonts/FiraCode/*.ttf /usr/local/share/fonts/ && sudo fc-cache -f
+```
+
+Without this, the terminal falls back to a proportional font and character
+spacing becomes uneven. `nix run .#ttyd` prints a warning when the font is
+missing.
+
 **Note**: Authentication tokens are NOT stored in this repository for security reasons.
 
 ## opencode
