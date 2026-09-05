@@ -17,10 +17,6 @@ in
     };
 
     nativeBuildInputs = [pkgs.ruby];
-    buildInputs = lib.optionals pkgs.stdenv.isDarwin [
-      pkgs.darwin.apple_sdk.frameworks.IOKit
-      pkgs.darwin.apple_sdk.frameworks.CoreFoundation
-    ];
 
     NIX_LDFLAGS = lib.optionalString pkgs.stdenv.isDarwin "-framework IOKit -framework CoreFoundation";
 
