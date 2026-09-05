@@ -26,6 +26,24 @@
 					"contextWindow": 32768,
 					"maxTokens": 8192,
 					"cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
+				},
+				{
+					"id": "qwen2.5vl:7b",
+					"name": "Qwen 2.5 VL 7B",
+					"reasoning": false,
+					"input": ["text", "image"],
+					"contextWindow": 32768,
+					"maxTokens": 8192,
+					"cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
+				},
+				{
+					"id": "qwen2.5vl:3b",
+					"name": "Qwen 2.5 VL 3B",
+					"reasoning": false,
+					"input": ["text", "image"],
+					"contextWindow": 32768,
+					"maxTokens": 8192,
+					"cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
 				}
 			]
 		}
