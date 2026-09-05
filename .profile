@@ -33,8 +33,8 @@ export PATH="$HOME/snap/code/194/.local/share/../bin:$PATH"
 if command -v ttyd > /dev/null 2>&1; then
     if ! pgrep -f "ttyd -i 127.0.0.1 -p 7681" > /dev/null; then
         ttyd -i 127.0.0.1 -p 7681 -W \
-            -t fontFamily='FiraCode Nerd Font Mono' \
-            -t fontSize=18 \
+            -t 'fontFamily=FiraCode Nerd Font Mono, DejaVu Sans Mono, monospace' \
+            -t fontSize=20 \
             -t cursorBlink=true \
             -t 'theme={"background":"#1e1e2e","foreground":"#cdd6f4"}' \
             bash > /dev/null 2>&1 &
