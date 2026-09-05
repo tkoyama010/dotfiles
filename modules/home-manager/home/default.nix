@@ -18,7 +18,7 @@ in {
         rtk
         vim
       ]
-      ++ pkgs.lib.optionals isDarwin [istats];
+      ++ pkgs.lib.optionals isDarwin [ruby istats];
   };
 
   programs.home-manager.enable = true;

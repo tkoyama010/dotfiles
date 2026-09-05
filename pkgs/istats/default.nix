@@ -16,7 +16,7 @@ in
       sha256 = "sha256-00arr5w2i8lin0ls6d7511dl373hv78ak59ba31sihnii41z21jd";
     };
 
-    nativeBuildInputs = [pkgs.ruby];
+    nativeBuildInputs = [pkgs.ruby pkgs.makeWrapper];
 
     NIX_LDFLAGS = lib.optionalString pkgs.stdenv.isDarwin "-framework IOKit -framework CoreFoundation";
 
