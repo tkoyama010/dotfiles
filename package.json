@@ -3,7 +3,8 @@
 	"private": true,
 	"version": "0.0.0",
 	"devDependencies": {
-		"@biomejs/biome": "2.5.10"
+		"@biomejs/biome": "2.5.10",
+		"superpowers": "github:obra/superpowers"
 	},
 	"scripts": {
 		"check": "biome check",
