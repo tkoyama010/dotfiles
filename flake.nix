@@ -26,7 +26,14 @@
     ];
     mkHomeConfig = system:
       home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system};
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = [
+            (self: super: {
+              istats = super.callPackage ./pkgs/istats {};
+            })
+          ];
+        };
         extraSpecialArgs = {
           inherit system;
           profile = import ./hosts/${host}/profile.nix {inherit system;};
@@ -76,6 +83,7 @@
 
         packages.setup = setupScript;
         packages.default = setupScript;
+        packages.istats = pkgs.callPackage ./pkgs/istats {};
 
         apps =
           (import ./apps {inherit pkgs self;})
