@@ -1,7 +1,7 @@
 {
 	"theme": "tkoyama010",
 	"defaultProvider": "opencode",
-	"defaultModel": "qwen3.6-plus",
+	"defaultModel": "qwen3:8b",
 	"defaultThinkingLevel": "high",
 	"tuiMode": "regular",
 	"steeringMode": "one-at-a-time",
@@ -19,7 +19,8 @@
 		"npm:pi-code-review-graph",
 		"git:github.com/tkoyama010/pi-webcam",
 		"npm:@tkoyama010/pi-zulip",
-		"npm:remote-pi"
+		"npm:remote-pi",
+		"npm:pi-ollama"
 	],
 	"compaction": {
 		"enabled": true
