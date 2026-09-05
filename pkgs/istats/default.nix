@@ -4,6 +4,16 @@
 }: let
   version = "1.6.2";
   commit = "15813fe211e31425f7d0ad0e1018ef3102d16664";
+
+  sparkrGem = pkgs.fetchurl {
+    url = "https://rubygems.org/downloads/sparkr-0.4.1.gem";
+    sha256 = "sha256-KBaszofm+Np4OXbA4New+TyNZ6n+KOHxXxQTO7IsVrc=";
+  };
+
+  parseconfigGem = pkgs.fetchurl {
+    url = "https://rubygems.org/downloads/parseconfig-1.1.2.gem";
+    sha256 = "sha256-5SJH0VBw+0f55Y9E94iNHn9ld1J0zWD5q0t6zXlDspE=";
+  };
 in
   pkgs.stdenv.mkDerivation {
     pname = "istats";
@@ -13,28 +23,39 @@ in
       owner = "Chris911";
       repo = "iStats";
       rev = commit;
-      sha256 = "sha256-00arr5w2i8lin0ls6d7511dl373hv78ak59ba31sihnii41z21jd";
+      sha256 = "sha256-TQbxA4nRwqjDUCuVqdDZcJxBWwjlNKMpsJGiKHjJWQE=";
     };
 
     nativeBuildInputs = [pkgs.ruby pkgs.makeWrapper];
 
-    NIX_LDFLAGS = lib.optionalString pkgs.stdenv.isDarwin "-framework IOKit -framework CoreFoundation";
+    NIX_LDFLAGS = lib.optionalString pkgs.stdenv.hostPlatform.isDarwin "-framework IOKit -framework CoreFoundation";
 
     buildPhase = ''
-      cd ext/osx_stats
-      ruby extconf.rb
-      make
+      (
+        cd ext/osx_stats
+        ruby extconf.rb
+        make
+      )
+
+      # Unpack gem dependencies
+      mkdir -p _gems
+      ${pkgs.ruby}/bin/gem unpack ${sparkrGem} --target _gems
+      ${pkgs.ruby}/bin/gem unpack ${parseconfigGem} --target _gems
     '';
 
     installPhase = ''
       mkdir -p $out/bin $out/lib/ruby
 
       # Install Ruby library files
-      cp -r lib/* $out/lib/ruby/
+      cp -r lib/. $out/lib/ruby/
 
       # Install the native extension
-      mkdir -p $out/lib/ruby/osx_stats
-      cp ext/osx_stats/osx_stats.bundle $out/lib/ruby/osx_stats/
+      cp ext/osx_stats/osx_stats.bundle $out/lib/ruby/
+
+      # Install gem dependency lib files
+      for gem_dir in _gems/*; do
+        [ -d "''${gem_dir}/lib" ] && cp -r "''${gem_dir}/lib/." $out/lib/ruby/
+      done
 
       # Install the bin script with correct load path
       cp bin/istats $out/bin/istats
