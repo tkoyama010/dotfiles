@@ -69,8 +69,12 @@
 
         setupScript = pkgs.writeShellApplication {
           name = "dotfiles-setup";
+          runtimeInputs = [ pkgs.coreutils ];
           text = ''
             echo "Setting up dotfiles..."
+
+            # Clean up conflicting backup files from previous attempts
+            rm -f "$HOME/.pi/agent/models.json.backup"
 
             export NIX_CONFIG="extra-experimental-features = nix-command flakes"
             nix run --refresh nixpkgs#home-manager -- switch -b .pre-hm-backup --flake "${self}#${host}-${system}"
