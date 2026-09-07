@@ -15,4 +15,8 @@
       core.hooksPath = "${config.home.homeDirectory}/.local/share/git/hooks";
     };
   };
+
+  programs.gh = {
+    enable = true;
+  };
 }
