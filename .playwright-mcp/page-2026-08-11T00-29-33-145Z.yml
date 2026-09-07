@@ -1,1162 +1,1161 @@
 - generic [active] [ref=f24e1]:
-  - generic:
-    - img:
-      - generic:
-        - generic "project_team_deleted"
-        - generic "project_maintainer_added"
-        - generic "project_joined_team"
-        - generic "language_added"
-        - generic "language_removed"
-        - generic "project_language_requested"
-        - generic "project_changed"
-        - generic "project_changed_team"
-        - generic "project_resource_changed"
-        - generic "project_resource_deleted"
-        - generic "announcements"
-        - generic "project_announcement_added"
-        - generic "resource_language_translated"
-        - generic "project_team_join_requested"
-        - generic "recommendation"
-        - generic "inbox"
-        - generic "project_archived"
-        - generic "organizations"
-        - generic "project_updates"
-        - generic "team_updates"
-        - generic "team_discussions"
-        - generic "tts_order_created_admins"
-        - generic "order_created"
-        - generic "tts_tts_order_cancelled_admins"
-        - generic "tts_order_other_error"
-        - generic "autofetch_failed"
-        - generic "canceled_because_of_failed_payments"
-        - generic "order_failed"
-        - generic "invoice_failed"
-        - generic "overquota"
-        - generic "locked"
-        - generic "locked_reminder"
-        - generic "old_client_used"
-        - generic "comment_received"
-        - generic "order_delivered"
-        - generic "lionbridge_order_delivered"
-        - generic "order_price_discrepancy"
-        - generic "organization_added"
-        - generic "organization_member_removed"
-        - generic "project_added"
-        - generic "project_removed"
-        - generic "project_announcement_posted"
-        - generic "project_left_team"
-        - generic "project_join_team"
-        - generic "project_deleted"
-        - generic "project_invitation_accepted"
-        - generic "language_deleted"
-        - generic "language_requested"
-        - generic "maintainer_added"
-        - generic "resource_added"
-        - generic "resource_removed"
-        - generic "team_join_request_approved"
-        - generic "team_join_request_denied"
-        - generic "team_join_requested"
-        - generic "user_left_team"
-        - generic "collaborator_added"
-        - generic "team_added"
-        - generic "team_deleted"
-        - generic "team_message_posted"
-        - generic "manager_added"
-        - generic "manager_removed"
-        - generic "e2f_order_accepted"
-        - generic "e2f_order_created"
-        - generic "e2f_order_canceled"
-        - generic "e2f_order_delivered"
-        - generic "e2f_order_delivery_time_changed"
-        - generic "e2f_order_edited"
-        - generic "recommentation_given"
-        - generic "recommentation_updated"
-        - generic "project_unarchived"
-        - generic "outgoing_project_transfer_rejected"
-        - generic "incoming_project_transfer_rejected"
-        - generic "project_left_organization"
-        - generic "project_join_organization"
-        - generic "project_transfer_accepted"
-        - generic "credit_card_expire_notify"
-        - generic "live_content_detected"
-        - generic "live_content_updated"
-        - generic "project_language_request_accepted"
-        - generic "project_language_request_rejected"
-        - generic "project_tranfser_request_received"
-        - generic "project_transfer_request_sent"
-        - generic "source_file_updated"
-        - generic "discussion_issue"
-        - generic "glossary_discussion_issue"
-        - generic "tasks_created"
-        - generic "language_tasks_created"
-        - generic "task_assigned"
-        - generic "task_delivered"
-  - generic:
-    - img:
-      - generic:
-        - generic "open_in_other_window"
-        - generic "slack_icon"
-        - generic "lexiqa_icon"
-        - generic "blocker_issue_type"
-        - generic "task-settings"
-        - generic "chart"
-        - generic "words-completed"
-        - generic "words-total"
-        - generic "sort"
-        - generic "task"
-        - generic "explore-full"
-        - generic "help-full"
-        - generic "slim-arrow-down"
-        - generic "slim-arrow-up"
-        - generic "status"
-        - generic "fit-screen"
-        - generic "add-widget"
-        - generic "symbol"
-        - generic "compare"
-        - generic "sidebar-toggler"
-        - generic "screen"
-        - generic "resize-marker"
-        - generic "drag-handle"
-        - generic "pan-arrows"
-        - generic "list-view"
-        - generic "grid-view"
-        - generic "priority-urgent"
-        - generic "priority-high"
-        - generic "priority-normal"
-        - generic "unwatch"
-        - generic "watch"
-        - generic "more-outline"
-        - generic "message-sent"
-        - generic "message-inbox"
-        - generic "save"
-        - generic "concordance"
-        - generic "view-online"
-        - generic "rigi-preview"
-        - generic "rigi-preview-off"
-        - generic "news"
-        - generic "bubble"
-        - generic "blog"
-        - generic "advanced"
-        - generic "word"
-        - generic "lock-open"
-        - generic "lock"
-        - generic "mail"
-        - generic "file-reviewed"
-        - generic "file"
-        - generic "location"
-        - generic "url"
-        - generic "clock"
-        - generic "tag"
-        - generic "release"
-        - generic "code"
-        - generic "stats"
-        - generic "trash"
-        - generic "project-list"
-        - generic "project-add"
-        - generic "project-remove"
-        - generic "minus"
-        - generic "tick"
-        - generic "remove"
-        - generic "add"
-        - generic "tick-outline"
-        - generic "edit-outline"
-        - generic "remove-outline"
-        - generic "add-outline"
-        - generic "add-filled"
-        - generic "facebook"
-        - generic "google"
-        - generic "linkedin"
-        - generic "feed"
-        - generic "trash"
-        - generic "infomsg"
-        - generic "error"
-        - generic "help"
-        - generic "alert"
-        - generic "license"
-        - generic "string-untrans"
-        - generic "arrow-left"
-        - generic "arrow-right"
-        - generic "arrow-right-long"
-        - generic "arrow-up"
-        - generic "arrow-down"
-        - generic "chevron-down"
-        - generic "chevron-up"
-        - generic "thumbs-up"
-        - generic "thumbs-down"
-        - generic "full-arrow-down"
-        - generic "full-arrow-up"
-        - generic "arrow-left-small"
-        - generic "arrow-right-small"
-        - generic "arrow-up-small"
-        - generic "arrow-down-small"
-        - generic "copy-source"
-        - generic "copy-translation"
-        - generic "edit"
-        - generic "bullet"
-        - generic "search"
-        - generic "menu"
-        - generic "more"
-        - generic "burger-menu"
-        - generic "replace"
-        - generic "update"
-        - generic "undo"
-        - generic "autotranslate"
-        - generic "autotranslate"
-        - generic "review"
-        - generic "details"
-        - generic "filter-outline"
-        - generic "filter-filled"
-        - generic "editor-trans"
-        - generic "glossary"
-        - generic "send_file"
-        - generic "get_file"
-        - generic "language"
-        - generic "tmx-file"
-        - generic "language-delete"
-        - generic "language-add"
-        - generic "lock-add"
-        - generic "lock-remove"
-        - generic "txicon"
-        - generic "share"
-        - generic "source-download"
-        - generic "child"
-        - generic "permission"
-        - generic "door"
-        - generic "shortcut"
-        - generic "emit"
-        - generic "project_resource_translated"
-        - generic "resource-add"
-        - generic "resource-remove"
-        - generic "omega"
-        - generic "clone"
-        - generic "empty_team"
-        - generic "modal_error"
-        - generic "user_reviewer"
-        - generic "user_translator"
-        - generic "user"
-        - generic "user_manager"
-        - generic "user_maintainer"
-        - generic "team-join"
-        - generic "user-remove"
-        - generic "users"
-        - generic "key"
-        - generic "success-filled"
-        - generic "icon-star-outline"
-        - generic "icon-star"
-        - generic "download-line"
-        - generic "team-users"
-        - generic "no-user-assigned"
-        - generic "tag-locked"
-        - generic "copy-variant"
-  - generic [ref=f24e2]:
-    - generic [ref=f24e3]:
-      - text:  
-      - generic [ref=f24e6]:
-        - generic [ref=f24e7]:
-          - generic [ref=f24e10]:
-            - generic [ref=f24e13]:
-              - checkbox [ref=f24e14] [cursor=pointer]
-              - link [ref=f24e19] [cursor=pointer]:
-                - /url: /home/
-            - link "geovista-doc" [ref=f24e25] [cursor=pointer]:
-              - /url: "#navigation-projects-dropdown"
-            - generic [ref=f24e28]: /
-            - link "リソースを選択" [ref=f24e33] [cursor=pointer]:
-              - /url: "#navigation-resources-dropdown"
-          - generic [ref=f24e36]:
-            - generic [ref=f24e37]: English (en)
-            - generic [ref=f24e40]: →
-          - generic [ref=f24e41]:
-            - generic [ref=f24e42]: Japanese (ja)
-            - generic [ref=f24e49]: 原文の編集
-        - generic [ref=f24e50]:
-          - button "新しい文字列" [ref=f24e52] [cursor=pointer]
-          - link "品質チェック" [ref=f24e59] [cursor=pointer]:
-            - /url: javascript:;
-          - button [ref=f24e61] [cursor=pointer]
-          - button [ref=f24e65] [cursor=pointer]
-          - button [ref=f24e69] [cursor=pointer]
-    - generic [ref=f24e76]:
-      - generic [ref=f24e79]:
-        - generic [ref=f24e81]:
-          - generic [ref=f24e82]: リソースの概要
-          - generic [ref=f24e86]:
-            - textbox "リソース名で検索" [ref=f24e93]
-            - generic [ref=f24e96]:
-              - generic [ref=f24e97] [cursor=pointer]: 名前（昇順）
-              - generic [ref=f24e102]:
-                - generic [ref=f24e103]: 名前（昇順）
-                - generic [ref=f24e104]: 名前（降順）
-                - generic [ref=f24e105]: 最も古い未翻訳から
-                - generic [ref=f24e106]: 最も古い未翻訳から
-                - generic [ref=f24e107]: 優先度（昇順）
-                - generic [ref=f24e108]: 優先度（降順）
-                - generic [ref=f24e109]: 原文の更新日（昇順）
-                - generic [ref=f24e110]: 原文の更新日（降順）
-                - generic [ref=f24e111]: 未翻訳（昇順）
-                - generic [ref=f24e112]: 未翻訳（降順）
-                - generic [ref=f24e113]: レビュー待ち（昇順）
-                - generic [ref=f24e114]: レビュー待ち（降順）
-          - generic [ref=f24e115]:
-            - generic [ref=f24e118] [cursor=pointer]
-            - generic [ref=f24e123]:
-              - button "PO developer 2024年7月2日 0 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e1722] [cursor=pointer]:
-                - generic [ref=f24e1727]:
-                  - generic [ref=f24e1728]:
-                    - generic [ref=f24e1729]:
-                      - generic [ref=f24e1730]: PO
-                      - text: developer
-                    - generic [ref=f24e1732]: 2024年7月2日
-                  - generic [ref=f24e1733]: 0 件の未翻訳の文字列 3 件のレビュー待ちの文字列
-              - button "PO developer--changelog 2026年1月25日 55 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e1739] [cursor=pointer]:
-                - generic [ref=f24e1744]:
-                  - generic [ref=f24e1745]:
-                    - generic [ref=f24e1746]:
-                      - generic [ref=f24e1747]: PO
-                      - text: developer--changelog
-                    - generic [ref=f24e1749]: 2026年1月25日
-                  - generic [ref=f24e1750]: 55 件の未翻訳の文字列 0 件のレビュー待ちの文字列
-              - button "PO developer--codecraft 2026年2月16日 36 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e1755] [cursor=pointer]:
-                - generic [ref=f24e1760]:
-                  - generic [ref=f24e1761]:
-                    - generic [ref=f24e1762]:
-                      - generic [ref=f24e1763]: PO
-                      - text: developer--codecraft
-                    - generic [ref=f24e1765]: 2026年2月16日
-                  - generic [ref=f24e1766]: 36 件の未翻訳の文字列 0 件のレビュー待ちの文字列
-              - button "PO developer--documentation 2026年6月9日 189 件の未翻訳の文字列 1 件のレビュー待ちの文字列" [ref=f24e1771] [cursor=pointer]:
-                - generic [ref=f24e1776]:
-                  - generic [ref=f24e1777]:
-                    - generic [ref=f24e1778]:
-                      - generic [ref=f24e1779]: PO
-                      - text: developer--documentation
-                    - generic [ref=f24e1781]: 2026年6月9日
-                  - generic [ref=f24e1782]: 189 件の未翻訳の文字列 1 件のレビュー待ちの文字列
-              - button "PO developer--index 2026年2月1日 13 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e1788] [cursor=pointer]:
-                - generic [ref=f24e1793]:
-                  - generic [ref=f24e1794]:
-                    - generic [ref=f24e1795]:
-                      - generic [ref=f24e1796]: PO
-                      - text: developer--index
-                    - generic [ref=f24e1798]: 2026年2月1日
-                  - generic [ref=f24e1799]: 13 件の未翻訳の文字列 2 件のレビュー待ちの文字列
-              - button "PO developer--packaging 2026年4月10日 157 件の未翻訳の文字列 1 件のレビュー待ちの文字列" [ref=f24e1805] [cursor=pointer]:
-                - generic [ref=f24e1810]:
-                  - generic [ref=f24e1811]:
-                    - generic [ref=f24e1812]:
-                      - generic [ref=f24e1813]: PO
-                      - text: developer--packaging
-                    - generic [ref=f24e1815]: 2026年4月10日
-                  - generic [ref=f24e1816]: 157 件の未翻訳の文字列 1 件のレビュー待ちの文字列
-              - button "PO developer--testing 2026年3月9日 134 件の未翻訳の文字列 1 件のレビュー待ちの文字列" [ref=f24e1822] [cursor=pointer]:
-                - generic [ref=f24e1827]:
-                  - generic [ref=f24e1828]:
-                    - generic [ref=f24e1829]:
-                      - generic [ref=f24e1830]: PO
-                      - text: developer--testing
-                    - generic [ref=f24e1832]: 2026年3月9日
-                  - generic [ref=f24e1833]: 134 件の未翻訳の文字列 1 件のレビュー待ちの文字列
-              - button "PO developer--towncrier 2026年1月25日 55 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e1839] [cursor=pointer]:
-                - generic [ref=f24e1844]:
-                  - generic [ref=f24e1845]:
-                    - generic [ref=f24e1846]:
-                      - generic [ref=f24e1847]: PO
-                      - text: developer--towncrier
-                    - generic [ref=f24e1849]: 2026年1月25日
-                  - generic [ref=f24e1850]: 55 件の未翻訳の文字列 0 件のレビュー待ちの文字列
-              - button "PO explanation 2024年7月2日 0 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e1855] [cursor=pointer]:
-                - generic [ref=f24e1860]:
-                  - generic [ref=f24e1861]:
-                    - generic [ref=f24e1862]:
-                      - generic [ref=f24e1863]: PO
-                      - text: explanation
-                    - generic [ref=f24e1865]: 2024年7月2日
-                  - generic [ref=f24e1866]: 0 件の未翻訳の文字列 3 件のレビュー待ちの文字列
-              - button "PO explanation--index 2025年3月19日 0 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e1872] [cursor=pointer]:
-                - generic [ref=f24e1877]:
-                  - generic [ref=f24e1878]:
-                    - generic [ref=f24e1879]:
-                      - generic [ref=f24e1880]: PO
-                      - text: explanation--index
-                    - generic [ref=f24e1882]: 2025年3月19日
-                  - generic [ref=f24e1883]: 0 件の未翻訳の文字列 3 件のレビュー待ちの文字列
-              - button "PO generated 2024年7月2日 145 件の未翻訳の文字列 216 件のレビュー待ちの文字列" [ref=f24e1889] [cursor=pointer]:
-                - generic [ref=f24e1894]:
-                  - generic [ref=f24e1895]:
-                    - generic [ref=f24e1896]:
-                      - generic [ref=f24e1897]: PO
-                      - text: generated
-                    - generic [ref=f24e1899]: 2024年7月2日
-                  - generic [ref=f24e1900]: 145 件の未翻訳の文字列 216 件のレビュー待ちの文字列
-              - button "PO generated--gallery--contour--banded_contour 2026年5月2日 12 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e1906] [cursor=pointer]:
-                - generic [ref=f24e1911]:
-                  - generic [ref=f24e1912]:
-                    - generic [ref=f24e1913]:
-                      - generic [ref=f24e1914]: PO
-                      - text: generated--gallery--contour--banded_contour
-                    - generic [ref=f24e1916]: 2026年5月2日
-                  - generic [ref=f24e1917]: 12 件の未翻訳の文字列 2 件のレビュー待ちの文字列
-              - button "PO generated--gallery--contour--index 2026年1月12日 4 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e1923] [cursor=pointer]:
-                - generic [ref=f24e1928]:
-                  - generic [ref=f24e1929]:
-                    - generic [ref=f24e1930]:
-                      - generic [ref=f24e1931]: PO
-                      - text: generated--gallery--contour--index
-                    - generic [ref=f24e1933]: 2026年1月12日
-                  - generic [ref=f24e1934]: 4 件の未翻訳の文字列 0 件のレビュー待ちの文字列
-              - button "PO generated--gallery--contour--sg_execution_times 2025年2月1日 2 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e1939] [cursor=pointer]:
-                - generic [ref=f24e1944]:
-                  - generic [ref=f24e1945]:
-                    - generic [ref=f24e1946]:
-                      - generic [ref=f24e1947]: PO
-                      - text: generated--gallery--contour--sg_execution_times
-                    - generic [ref=f24e1949]: 2025年2月1日
-                  - generic [ref=f24e1950]: 2 件の未翻訳の文字列 6 件のレビュー待ちの文字列
-              - button "PO generated--gallery--curvilinear--from_2d__orca 2026年5月2日 6 件の未翻訳の文字列 7 件のレビュー待ちの文字列" [ref=f24e1956] [cursor=pointer]:
-                - generic [ref=f24e1961]:
-                  - generic [ref=f24e1962]:
-                    - generic [ref=f24e1963]:
-                      - generic [ref=f24e1964]: PO
-                      - text: generated--gallery--curvilinear--from_2d__orca
-                    - generic [ref=f24e1966]: 2026年5月2日
-                  - generic [ref=f24e1967]: 6 件の未翻訳の文字列 7 件のレビュー待ちの文字列
-              - button "PO generated--gallery--curvilinear--from_2d__orca_moll 2026年5月2日 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e1973] [cursor=pointer]:
-                - generic [ref=f24e1978]:
-                  - generic [ref=f24e1979]:
-                    - generic [ref=f24e1980]:
-                      - generic [ref=f24e1981]: PO
-                      - text: generated--gallery--curvilinear--from_2d__orca_moll
-                    - generic [ref=f24e1983]: 2026年5月2日
-                  - generic [ref=f24e1984]: 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列
-              - button "PO generated--gallery--curvilinear--index 2026年3月23日 4 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e1990] [cursor=pointer]:
-                - generic [ref=f24e1995]:
-                  - generic [ref=f24e1996]:
-                    - generic [ref=f24e1997]:
-                      - generic [ref=f24e1998]: PO
-                      - text: generated--gallery--curvilinear--index
-                    - generic [ref=f24e2000]: 2026年3月23日
-                  - generic [ref=f24e2001]: 4 件の未翻訳の文字列 0 件のレビュー待ちの文字列
-              - button "PO generated--gallery--curvilinear--sg_execution_times 2024年7月17日 0 件の未翻訳の文字列 9 件のレビュー待ちの文字列" [ref=f24e2006] [cursor=pointer]:
-                - generic [ref=f24e2011]:
-                  - generic [ref=f24e2012]:
-                    - generic [ref=f24e2013]:
-                      - generic [ref=f24e2014]: PO
-                      - text: generated--gallery--curvilinear--sg_execution_times
-                    - generic [ref=f24e2016]: 2024年7月17日
-                  - generic [ref=f24e2017]: 0 件の未翻訳の文字列 9 件のレビュー待ちの文字列
-              - button "PO generated--gallery--domain--clouds 2026年5月2日 11 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e2023] [cursor=pointer]:
-                - generic [ref=f24e2028]:
-                  - generic [ref=f24e2029]:
-                    - generic [ref=f24e2030]:
-                      - generic [ref=f24e2031]: PO
-                      - text: generated--gallery--domain--clouds
-                    - generic [ref=f24e2033]: 2026年5月2日
-                  - generic [ref=f24e2034]: 11 件の未翻訳の文字列 3 件のレビュー待ちの文字列
-              - button "PO generated--gallery--domain--clouds_robin 2026年5月2日 11 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e2040] [cursor=pointer]:
-                - generic [ref=f24e2045]:
-                  - generic [ref=f24e2046]:
-                    - generic [ref=f24e2047]:
-                      - generic [ref=f24e2048]: PO
-                      - text: generated--gallery--domain--clouds_robin
-                    - generic [ref=f24e2050]: 2026年5月2日
-                  - generic [ref=f24e2051]: 11 件の未翻訳の文字列 3 件のレビュー待ちの文字列
-              - button "PO generated--gallery--domain--index 2026年1月12日 4 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e2057] [cursor=pointer]:
-                - generic [ref=f24e2062]:
-                  - generic [ref=f24e2063]:
-                    - generic [ref=f24e2064]:
-                      - generic [ref=f24e2065]: PO
-                      - text: generated--gallery--domain--index
-                    - generic [ref=f24e2067]: 2026年1月12日
-                  - generic [ref=f24e2068]: 4 件の未翻訳の文字列 0 件のレビュー待ちの文字列
-              - button "PO generated--gallery--domain--sg_execution_times 2025年3月24日 3 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2073] [cursor=pointer]:
-                - generic [ref=f24e2078]:
-                  - generic [ref=f24e2079]:
-                    - generic [ref=f24e2080]:
-                      - generic [ref=f24e2081]: PO
-                      - text: generated--gallery--domain--sg_execution_times
-                    - generic [ref=f24e2083]: 2025年3月24日
-                  - generic [ref=f24e2084]: 3 件の未翻訳の文字列 6 件のレビュー待ちの文字列
-              - button "PO generated--gallery--extraction--index 2026年2月4日 5 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e2090] [cursor=pointer]:
-                - generic [ref=f24e2095]:
-                  - generic [ref=f24e2096]:
-                    - generic [ref=f24e2097]:
-                      - generic [ref=f24e2098]: PO
-                      - text: generated--gallery--extraction--index
-                    - generic [ref=f24e2100]: 2026年2月4日
-                  - generic [ref=f24e2101]: 5 件の未翻訳の文字列 0 件のレビュー待ちの文字列
-              - button "PO generated--gallery--extraction--panel_manifold 2026年5月2日 11 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e2106] [cursor=pointer]:
-                - generic [ref=f24e2111]:
-                  - generic [ref=f24e2112]:
-                    - generic [ref=f24e2113]:
-                      - generic [ref=f24e2114]: PO
-                      - text: generated--gallery--extraction--panel_manifold
-                    - generic [ref=f24e2116]: 2026年5月2日
-                  - generic [ref=f24e2117]: 11 件の未翻訳の文字列 2 件のレビュー待ちの文字列
-              - button "PO generated--gallery--extraction--plotter_manifold 2026年5月2日 13 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e2123] [cursor=pointer]:
-                - generic [ref=f24e2128]:
-                  - generic [ref=f24e2129]:
-                    - generic [ref=f24e2130]:
-                      - generic [ref=f24e2131]: PO
-                      - text: generated--gallery--extraction--plotter_manifold
-                    - generic [ref=f24e2133]: 2026年5月2日
-                  - generic [ref=f24e2134]: 13 件の未翻訳の文字列 2 件のレビュー待ちの文字列
-              - button "PO generated--gallery--extraction--sg_execution_times 2026年2月4日 4 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2140] [cursor=pointer]:
-                - generic [ref=f24e2145]:
-                  - generic [ref=f24e2146]:
-                    - generic [ref=f24e2147]:
-                      - generic [ref=f24e2148]: PO
-                      - text: generated--gallery--extraction--sg_execution_times
-                    - generic [ref=f24e2150]: 2026年2月4日
-                  - generic [ref=f24e2151]: 4 件の未翻訳の文字列 6 件のレビュー待ちの文字列
-              - button "PO generated--gallery--extraction--wedge_manifold 2026年5月2日 14 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e2157] [cursor=pointer]:
-                - generic [ref=f24e2162]:
-                  - generic [ref=f24e2163]:
-                    - generic [ref=f24e2164]:
-                      - generic [ref=f24e2165]: PO
-                      - text: generated--gallery--extraction--wedge_manifold
-                    - generic [ref=f24e2167]: 2026年5月2日
-                  - generic [ref=f24e2168]: 14 件の未翻訳の文字列 2 件のレビュー待ちの文字列
-              - button "PO generated--gallery--grid--index 2026年3月28日 4 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e2174] [cursor=pointer]:
-                - generic [ref=f24e2179]:
-                  - generic [ref=f24e2180]:
-                    - generic [ref=f24e2181]:
-                      - generic [ref=f24e2182]: PO
-                      - text: generated--gallery--grid--index
-                    - generic [ref=f24e2184]: 2026年3月28日
-                  - generic [ref=f24e2185]: 4 件の未翻訳の文字列 0 件のレビュー待ちの文字列
-              - button "PO generated--gallery--grid--reykjanes 2026年5月2日 12 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e2190] [cursor=pointer]:
-                - generic [ref=f24e2195]:
-                  - generic [ref=f24e2196]:
-                    - generic [ref=f24e2197]:
-                      - generic [ref=f24e2198]: PO
-                      - text: generated--gallery--grid--reykjanes
-                    - generic [ref=f24e2200]: 2026年5月2日
-                  - generic [ref=f24e2201]: 12 件の未翻訳の文字列 2 件のレビュー待ちの文字列
-              - button "PO generated--gallery--grid--reykjanes_contour 2026年5月2日 12 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e2207] [cursor=pointer]:
-                - generic [ref=f24e2212]:
-                  - generic [ref=f24e2213]:
-                    - generic [ref=f24e2214]:
-                      - generic [ref=f24e2215]: PO
-                      - text: generated--gallery--grid--reykjanes_contour
-                    - generic [ref=f24e2217]: 2026年5月2日
-                  - generic [ref=f24e2218]: 12 件の未翻訳の文字列 2 件のレビュー待ちの文字列
-              - button "PO generated--gallery--grid--sg_execution_times 2026年3月28日 3 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2224] [cursor=pointer]:
-                - generic [ref=f24e2229]:
-                  - generic [ref=f24e2230]:
-                    - generic [ref=f24e2231]:
-                      - generic [ref=f24e2232]: PO
-                      - text: generated--gallery--grid--sg_execution_times
-                    - generic [ref=f24e2234]: 2026年3月28日
-                  - generic [ref=f24e2235]: 3 件の未翻訳の文字列 6 件のレビュー待ちの文字列
-              - button "PO generated--gallery--index 2026年3月28日 64 件の未翻訳の文字列 5 件のレビュー待ちの文字列" [ref=f24e2241] [cursor=pointer]:
-                - generic [ref=f24e2246]:
-                  - generic [ref=f24e2247]:
-                    - generic [ref=f24e2248]:
-                      - generic [ref=f24e2249]: PO
-                      - text: generated--gallery--index
-                    - generic [ref=f24e2251]: 2026年3月28日
-                  - generic [ref=f24e2252]: 64 件の未翻訳の文字列 5 件のレビュー待ちの文字列
-              - button "PO generated--gallery--point_cloud--from_points__orca_cloud 2026年5月2日 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列" [ref=f24e2258] [cursor=pointer]:
-                - generic [ref=f24e2263]:
-                  - generic [ref=f24e2264]:
-                    - generic [ref=f24e2265]:
-                      - generic [ref=f24e2266]: PO
-                      - text: generated--gallery--point_cloud--from_points__orca_cloud
-                    - generic [ref=f24e2268]: 2026年5月2日
-                  - generic [ref=f24e2269]: 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列
-              - button "PO generated--gallery--point_cloud--from_points__orca_cloud_eqc 2026年5月2日 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列" [ref=f24e2275] [cursor=pointer]:
-                - generic [ref=f24e2280]:
-                  - generic [ref=f24e2281]:
-                    - generic [ref=f24e2282]:
-                      - generic [ref=f24e2283]: PO
-                      - text: generated--gallery--point_cloud--from_points__orca_cloud_eqc
-                    - generic [ref=f24e2285]: 2026年5月2日
-                  - generic [ref=f24e2286]: 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列
-              - button "PO generated--gallery--point_cloud--index 2026年1月12日 4 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e2292] [cursor=pointer]:
-                - generic [ref=f24e2297]:
-                  - generic [ref=f24e2298]:
-                    - generic [ref=f24e2299]:
-                      - generic [ref=f24e2300]: PO
-                      - text: generated--gallery--point_cloud--index
-                    - generic [ref=f24e2302]: 2026年1月12日
-                  - generic [ref=f24e2303]: 4 件の未翻訳の文字列 0 件のレビュー待ちの文字列
-              - button "PO generated--gallery--point_cloud--sg_execution_times 2024年7月17日 0 件の未翻訳の文字列 9 件のレビュー待ちの文字列" [ref=f24e2308] [cursor=pointer]:
-                - generic [ref=f24e2313]:
-                  - generic [ref=f24e2314]:
-                    - generic [ref=f24e2315]:
-                      - generic [ref=f24e2316]: PO
-                      - text: generated--gallery--point_cloud--sg_execution_times
-                    - generic [ref=f24e2318]: 2024年7月17日
-                  - generic [ref=f24e2319]: 0 件の未翻訳の文字列 9 件のレビュー待ちの文字列
-              - button "PO generated--gallery--rectilinear--from_1d__oisst 2026年5月2日 6 件の未翻訳の文字列 7 件のレビュー待ちの文字列" [ref=f24e2325] [cursor=pointer]:
-                - generic [ref=f24e2330]:
-                  - generic [ref=f24e2331]:
-                    - generic [ref=f24e2332]:
-                      - generic [ref=f24e2333]: PO
-                      - text: generated--gallery--rectilinear--from_1d__oisst
-                    - generic [ref=f24e2335]: 2026年5月2日
-                  - generic [ref=f24e2336]: 6 件の未翻訳の文字列 7 件のレビュー待ちの文字列
-              - button "PO generated--gallery--rectilinear--from_1d__oisst_eqc 2026年5月2日 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2342] [cursor=pointer]:
-                - generic [ref=f24e2347]:
-                  - generic [ref=f24e2348]:
-                    - generic [ref=f24e2349]:
-                      - generic [ref=f24e2350]: PO
-                      - text: generated--gallery--rectilinear--from_1d__oisst_eqc
-                    - generic [ref=f24e2352]: 2026年5月2日
-                  - generic [ref=f24e2353]: 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列
-              - button "PO generated--gallery--rectilinear--index 2026年3月23日 4 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e2359] [cursor=pointer]:
-                - generic [ref=f24e2364]:
-                  - generic [ref=f24e2365]:
-                    - generic [ref=f24e2366]:
-                      - generic [ref=f24e2367]: PO
-                      - text: generated--gallery--rectilinear--index
-                    - generic [ref=f24e2369]: 2026年3月23日
-                  - generic [ref=f24e2370]: 4 件の未翻訳の文字列 0 件のレビュー待ちの文字列
-              - button "PO generated--gallery--rectilinear--sg_execution_times 2024年7月17日 0 件の未翻訳の文字列 9 件のレビュー待ちの文字列" [ref=f24e2375] [cursor=pointer]:
-                - generic [ref=f24e2380]:
-                  - generic [ref=f24e2381]:
-                    - generic [ref=f24e2382]:
-                      - generic [ref=f24e2383]: PO
-                      - text: generated--gallery--rectilinear--sg_execution_times
-                    - generic [ref=f24e2385]: 2024年7月17日
-                  - generic [ref=f24e2386]: 0 件の未翻訳の文字列 9 件のレビュー待ちの文字列
-              - button "PO generated--gallery--scalar_data--earthquakes 2026年5月2日 2 件の未翻訳の文字列 33 件のレビュー待ちの文字列" [ref=f24e2392] [cursor=pointer]:
-                - generic [ref=f24e2397]:
-                  - generic [ref=f24e2398]:
-                    - generic [ref=f24e2399]:
-                      - generic [ref=f24e2400]: PO
-                      - text: generated--gallery--scalar_data--earthquakes
-                    - generic [ref=f24e2402]: 2026年5月2日
-                  - generic [ref=f24e2403]: 2 件の未翻訳の文字列 33 件のレビュー待ちの文字列
-              - button "PO generated--gallery--scalar_data--earthquakes_wink1 2026年5月2日 2 件の未翻訳の文字列 33 件のレビュー待ちの文字列" [ref=f24e2409] [cursor=pointer]:
-                - generic [ref=f24e2414]:
-                  - generic [ref=f24e2415]:
-                    - generic [ref=f24e2416]:
-                      - generic [ref=f24e2417]: PO
-                      - text: generated--gallery--scalar_data--earthquakes_wink1
-                    - generic [ref=f24e2419]: 2026年5月2日
-                  - generic [ref=f24e2420]: 2 件の未翻訳の文字列 33 件のレビュー待ちの文字列
-              - button "PO generated--gallery--scalar_data--from_tiff__dem 2026年5月2日 12 件の未翻訳の文字列 5 件のレビュー待ちの文字列" [ref=f24e2426] [cursor=pointer]:
-                - generic [ref=f24e2431]:
-                  - generic [ref=f24e2432]:
-                    - generic [ref=f24e2433]:
-                      - generic [ref=f24e2434]: PO
-                      - text: generated--gallery--scalar_data--from_tiff__dem
-                    - generic [ref=f24e2436]: 2026年5月2日
-                  - generic [ref=f24e2437]: 12 件の未翻訳の文字列 5 件のレビュー待ちの文字列
-              - button "PO generated--gallery--scalar_data--from_tiff__rgb 2026年5月2日 9 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2443] [cursor=pointer]:
-                - generic [ref=f24e2448]:
-                  - generic [ref=f24e2449]:
-                    - generic [ref=f24e2450]:
-                      - generic [ref=f24e2451]: PO
-                      - text: generated--gallery--scalar_data--from_tiff__rgb
-                    - generic [ref=f24e2453]: 2026年5月2日
-                  - generic [ref=f24e2454]: 9 件の未翻訳の文字列 6 件のレビュー待ちの文字列
-              - button "PO generated--gallery--scalar_data--index 2026年1月12日 6 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e2460] [cursor=pointer]:
-                - generic [ref=f24e2465]:
-                  - generic [ref=f24e2466]:
-                    - generic [ref=f24e2467]:
-                      - generic [ref=f24e2468]: PO
-                      - text: generated--gallery--scalar_data--index
-                    - generic [ref=f24e2470]: 2026年1月12日
-                  - generic [ref=f24e2471]: 6 件の未翻訳の文字列 0 件のレビュー待ちの文字列
-              - button "PO generated--gallery--scalar_data--sg_execution_times 2024年7月17日 0 件の未翻訳の文字列 11 件のレビュー待ちの文字列" [ref=f24e2476] [cursor=pointer]:
-                - generic [ref=f24e2481]:
-                  - generic [ref=f24e2482]:
-                    - generic [ref=f24e2483]:
-                      - generic [ref=f24e2484]: PO
-                      - text: generated--gallery--scalar_data--sg_execution_times
-                    - generic [ref=f24e2486]: 2024年7月17日
-                  - generic [ref=f24e2487]: 0 件の未翻訳の文字列 11 件のレビュー待ちの文字列
-              - button "PO generated--gallery--sg_execution_times 2024年7月17日 0 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2493] [cursor=pointer]:
-                - generic [ref=f24e2498]:
-                  - generic [ref=f24e2499]:
-                    - generic [ref=f24e2500]:
-                      - generic [ref=f24e2501]: PO
-                      - text: generated--gallery--sg_execution_times
-                    - generic [ref=f24e2503]: 2024年7月17日
-                  - generic [ref=f24e2504]: 0 件の未翻訳の文字列 6 件のレビュー待ちの文字列
-              - button "PO generated--gallery--spatial_index--index 2026年1月12日 3 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e2510] [cursor=pointer]:
-                - generic [ref=f24e2515]:
-                  - generic [ref=f24e2516]:
-                    - generic [ref=f24e2517]:
-                      - generic [ref=f24e2518]: PO
-                      - text: generated--gallery--spatial_index--index
-                    - generic [ref=f24e2520]: 2026年1月12日
-                  - generic [ref=f24e2521]: 3 件の未翻訳の文字列 0 件のレビュー待ちの文字列
-              - button "PO generated--gallery--spatial_index--sg_execution_times 2024年7月17日 0 件の未翻訳の文字列 8 件のレビュー待ちの文字列" [ref=f24e2526] [cursor=pointer]:
-                - generic [ref=f24e2531]:
-                  - generic [ref=f24e2532]:
-                    - generic [ref=f24e2533]:
-                      - generic [ref=f24e2534]: PO
-                      - text: generated--gallery--spatial_index--sg_execution_times
-                    - generic [ref=f24e2536]: 2024年7月17日
-                  - generic [ref=f24e2537]: 0 件の未翻訳の文字列 8 件のレビュー待ちの文字列
-              - button "PO generated--gallery--spatial_index--uber_h3 2026年5月2日 37 件の未翻訳の文字列 4 件のレビュー待ちの文字列" [ref=f24e2543] [cursor=pointer]:
-                - generic [ref=f24e2548]:
-                  - generic [ref=f24e2549]:
-                    - generic [ref=f24e2550]:
-                      - generic [ref=f24e2551]: PO
-                      - text: generated--gallery--spatial_index--uber_h3
-                    - generic [ref=f24e2553]: 2026年5月2日
-                  - generic [ref=f24e2554]: 37 件の未翻訳の文字列 4 件のレビュー待ちの文字列
-              - button "PO generated--gallery--unstructured--dynamico 2026年5月2日 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2560] [cursor=pointer]:
-                - generic [ref=f24e2565]:
-                  - generic [ref=f24e2566]:
-                    - generic [ref=f24e2567]:
-                      - generic [ref=f24e2568]: PO
-                      - text: generated--gallery--unstructured--dynamico
-                    - generic [ref=f24e2570]: 2026年5月2日
-                  - generic [ref=f24e2571]: 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列
-              - button "PO generated--gallery--unstructured--dynamico_poly 2026年5月2日 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列" [ref=f24e2577] [cursor=pointer]:
-                - generic [ref=f24e2582]:
-                  - generic [ref=f24e2583]:
-                    - generic [ref=f24e2584]:
-                      - generic [ref=f24e2585]: PO
-                      - text: generated--gallery--unstructured--dynamico_poly
-                    - generic [ref=f24e2587]: 2026年5月2日
-                  - generic [ref=f24e2588]: 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列
-              - button "PO generated--gallery--unstructured--icon 2026年5月2日 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2594] [cursor=pointer]:
-                - generic [ref=f24e2599]:
-                  - generic [ref=f24e2600]:
-                    - generic [ref=f24e2601]:
-                      - generic [ref=f24e2602]: PO
-                      - text: generated--gallery--unstructured--icon
-                    - generic [ref=f24e2604]: 2026年5月2日
-                  - generic [ref=f24e2605]: 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列
-              - button "PO generated--gallery--unstructured--icon_eqc 2026年5月2日 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列" [ref=f24e2611] [cursor=pointer]:
-                - generic [ref=f24e2616]:
-                  - generic [ref=f24e2617]:
-                    - generic [ref=f24e2618]:
-                      - generic [ref=f24e2619]: PO
-                      - text: generated--gallery--unstructured--icon_eqc
-                    - generic [ref=f24e2621]: 2026年5月2日
-                  - generic [ref=f24e2622]: 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列
-              - button "PO generated--gallery--unstructured--index 2026年3月23日 14 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e2628] [cursor=pointer]:
-                - generic [ref=f24e2633]:
-                  - generic [ref=f24e2634]:
-                    - generic [ref=f24e2635]:
-                      - generic [ref=f24e2636]: PO
-                      - text: generated--gallery--unstructured--index
-                    - generic [ref=f24e2638]: 2026年3月23日
-                  - generic [ref=f24e2639]: 14 件の未翻訳の文字列 0 件のレビュー待ちの文字列
-              - button "PO generated--gallery--unstructured--lam_pacific 2026年5月2日 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2644] [cursor=pointer]:
-                - generic [ref=f24e2649]:
-                  - generic [ref=f24e2650]:
-                    - generic [ref=f24e2651]:
-                      - generic [ref=f24e2652]: PO
-                      - text: generated--gallery--unstructured--lam_pacific
-                    - generic [ref=f24e2654]: 2026年5月2日
-                  - generic [ref=f24e2655]: 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列
-              - button "PO generated--gallery--unstructured--lam_pacific_moll 2026年5月2日 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列" [ref=f24e2661] [cursor=pointer]:
-                - generic [ref=f24e2666]:
-                  - generic [ref=f24e2667]:
-                    - generic [ref=f24e2668]:
-                      - generic [ref=f24e2669]: PO
-                      - text: generated--gallery--unstructured--lam_pacific_moll
-                    - generic [ref=f24e2671]: 2026年5月2日
-                  - generic [ref=f24e2672]: 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列
-              - button "PO generated--gallery--unstructured--lfric_sst 2026年5月2日 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列" [ref=f24e2678] [cursor=pointer]:
-                - generic [ref=f24e2683]:
-                  - generic [ref=f24e2684]:
-                    - generic [ref=f24e2685]:
-                      - generic [ref=f24e2686]: PO
-                      - text: generated--gallery--unstructured--lfric_sst
-                    - generic [ref=f24e2688]: 2026年5月2日
-                  - generic [ref=f24e2689]: 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列
-              - button "PO generated--gallery--unstructured--lfric_sst_bonne 2026年5月2日 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列" [ref=f24e2695] [cursor=pointer]:
-                - generic [ref=f24e2700]:
-                  - generic [ref=f24e2701]:
-                    - generic [ref=f24e2702]:
-                      - generic [ref=f24e2703]: PO
-                      - text: generated--gallery--unstructured--lfric_sst_bonne
-                    - generic [ref=f24e2705]: 2026年5月2日
-                  - generic [ref=f24e2706]: 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列
-              - button "PO generated--gallery--unstructured--sg_execution_times 2024年7月17日 0 件の未翻訳の文字列 19 件のレビュー待ちの文字列" [ref=f24e2712] [cursor=pointer]:
-                - generic [ref=f24e2717]:
-                  - generic [ref=f24e2718]:
-                    - generic [ref=f24e2719]:
-                      - generic [ref=f24e2720]: PO
-                      - text: generated--gallery--unstructured--sg_execution_times
-                    - generic [ref=f24e2722]: 2024年7月17日
-                  - generic [ref=f24e2723]: 0 件の未翻訳の文字列 19 件のレビュー待ちの文字列
-              - button "PO generated--gallery--unstructured--smc 2026年5月2日 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2729] [cursor=pointer]:
-                - generic [ref=f24e2734]:
-                  - generic [ref=f24e2735]:
-                    - generic [ref=f24e2736]:
-                      - generic [ref=f24e2737]: PO
-                      - text: generated--gallery--unstructured--smc
-                    - generic [ref=f24e2739]: 2026年5月2日
-                  - generic [ref=f24e2740]: 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列
-              - button "PO generated--gallery--unstructured--smc_sinu 2026年5月2日 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2746] [cursor=pointer]:
-                - generic [ref=f24e2751]:
-                  - generic [ref=f24e2752]:
-                    - generic [ref=f24e2753]:
-                      - generic [ref=f24e2754]: PO
-                      - text: generated--gallery--unstructured--smc_sinu
-                    - generic [ref=f24e2756]: 2026年5月2日
-                  - generic [ref=f24e2757]: 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列
-              - button "PO generated--gallery--unstructured--tri 2026年5月2日 2 件の未翻訳の文字列 11 件のレビュー待ちの文字列" [ref=f24e2763] [cursor=pointer]:
-                - generic [ref=f24e2768]:
-                  - generic [ref=f24e2769]:
-                    - generic [ref=f24e2770]:
-                      - generic [ref=f24e2771]: PO
-                      - text: generated--gallery--unstructured--tri
-                    - generic [ref=f24e2773]: 2026年5月2日
-                  - generic [ref=f24e2774]: 2 件の未翻訳の文字列 11 件のレビュー待ちの文字列
-              - button "PO generated--gallery--unstructured--tri_hammer 2026年5月2日 6 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2780] [cursor=pointer]:
-                - generic [ref=f24e2785]:
-                  - generic [ref=f24e2786]:
-                    - generic [ref=f24e2787]:
-                      - generic [ref=f24e2788]: PO
-                      - text: generated--gallery--unstructured--tri_hammer
-                    - generic [ref=f24e2790]: 2026年5月2日
-                  - generic [ref=f24e2791]: 6 件の未翻訳の文字列 6 件のレビュー待ちの文字列
-              - button "PO generated--gallery--vector_data--index 2026年3月23日 6 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e2797] [cursor=pointer]:
-                - generic [ref=f24e2802]:
-                  - generic [ref=f24e2803]:
-                    - generic [ref=f24e2804]:
-                      - generic [ref=f24e2805]: PO
-                      - text: generated--gallery--vector_data--index
-                    - generic [ref=f24e2807]: 2026年3月23日
-                  - generic [ref=f24e2808]: 6 件の未翻訳の文字列 0 件のレビュー待ちの文字列
-              - button "PO generated--gallery--vector_data--sg_execution_times 2026年3月23日 5 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2813] [cursor=pointer]:
-                - generic [ref=f24e2818]:
-                  - generic [ref=f24e2819]:
-                    - generic [ref=f24e2820]:
-                      - generic [ref=f24e2821]: PO
-                      - text: generated--gallery--vector_data--sg_execution_times
-                    - generic [ref=f24e2823]: 2026年3月23日
-                  - generic [ref=f24e2824]: 5 件の未翻訳の文字列 6 件のレビュー待ちの文字列
-              - button "PO generated--gallery--vector_data--true_winds 2026年5月2日 10 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e2830] [cursor=pointer]:
-                - generic [ref=f24e2835]:
-                  - generic [ref=f24e2836]:
-                    - generic [ref=f24e2837]:
-                      - generic [ref=f24e2838]: PO
-                      - text: generated--gallery--vector_data--true_winds
-                    - generic [ref=f24e2840]: 2026年5月2日
-                  - generic [ref=f24e2841]: 10 件の未翻訳の文字列 2 件のレビュー待ちの文字列
-              - button "PO generated--gallery--vector_data--vectors 2026年3月20日 6 件の未翻訳の文字列 5 件のレビュー待ちの文字列" [ref=f24e2847] [cursor=pointer]:
-                - generic [ref=f24e2852]:
-                  - generic [ref=f24e2853]:
-                    - generic [ref=f24e2854]:
-                      - generic [ref=f24e2855]: PO
-                      - text: generated--gallery--vector_data--vectors
-                    - generic [ref=f24e2857]: 2026年3月20日
-                  - generic [ref=f24e2858]: 6 件の未翻訳の文字列 5 件のレビュー待ちの文字列
-              - button "PO generated--gallery--vector_data--wind_arrows 2026年5月2日 13 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e2864] [cursor=pointer]:
-                - generic [ref=f24e2869]:
-                  - generic [ref=f24e2870]:
-                    - generic [ref=f24e2871]:
-                      - generic [ref=f24e2872]: PO
-                      - text: generated--gallery--vector_data--wind_arrows
-                    - generic [ref=f24e2874]: 2026年5月2日
-                  - generic [ref=f24e2875]: 13 件の未翻訳の文字列 2 件のレビュー待ちの文字列
-              - button "PO generated--gallery--vector_data--wind_arrows_flow 2026年5月2日 14 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e2881] [cursor=pointer]:
-                - generic [ref=f24e2886]:
-                  - generic [ref=f24e2887]:
-                    - generic [ref=f24e2888]:
-                      - generic [ref=f24e2889]: PO
-                      - text: generated--gallery--vector_data--wind_arrows_flow
-                    - generic [ref=f24e2891]: 2026年5月2日
-                  - generic [ref=f24e2892]: 14 件の未翻訳の文字列 2 件のレビュー待ちの文字列
-              - button "PO generated--gallery--vector_data--wind_arrows_uvw 2026年5月2日 12 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e2898] [cursor=pointer]:
-                - generic [ref=f24e2903]:
-                  - generic [ref=f24e2904]:
-                    - generic [ref=f24e2905]:
-                      - generic [ref=f24e2906]: PO
-                      - text: generated--gallery--vector_data--wind_arrows_uvw
-                    - generic [ref=f24e2908]: 2026年5月2日
-                  - generic [ref=f24e2909]: 12 件の未翻訳の文字列 2 件のレビュー待ちの文字列
-              - button "PO generated--gallery--warp--from_unstructured__fvcom 2026年5月2日 10 件の未翻訳の文字列 5 件のレビュー待ちの文字列" [ref=f24e2915] [cursor=pointer]:
-                - generic [ref=f24e2920]:
-                  - generic [ref=f24e2921]:
-                    - generic [ref=f24e2922]:
-                      - generic [ref=f24e2923]: PO
-                      - text: generated--gallery--warp--from_unstructured__fvcom
-                    - generic [ref=f24e2925]: 2026年5月2日
-                  - generic [ref=f24e2926]: 10 件の未翻訳の文字列 5 件のレビュー待ちの文字列
-              - button "PO generated--gallery--warp--from_unstructured__lfric_orog 2026年5月2日 4 件の未翻訳の文字列 9 件のレビュー待ちの文字列" [ref=f24e2932] [cursor=pointer]:
-                - generic [ref=f24e2937]:
-                  - generic [ref=f24e2938]:
-                    - generic [ref=f24e2939]:
-                      - generic [ref=f24e2940]: PO
-                      - text: generated--gallery--warp--from_unstructured__lfric_orog
-                    - generic [ref=f24e2942]: 2026年5月2日
-                  - generic [ref=f24e2943]: 4 件の未翻訳の文字列 9 件のレビュー待ちの文字列
-              - button "PO generated--gallery--warp--from_unstructured__lfric_orog_eqc 2026年5月2日 8 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2949] [cursor=pointer]:
-                - generic [ref=f24e2954]:
-                  - generic [ref=f24e2955]:
-                    - generic [ref=f24e2956]:
-                      - generic [ref=f24e2957]: PO
-                      - text: generated--gallery--warp--from_unstructured__lfric_orog_eqc
-                    - generic [ref=f24e2959]: 2026年5月2日
-                  - generic [ref=f24e2960]: 8 件の未翻訳の文字列 6 件のレビュー待ちの文字列
-              - button "PO generated--gallery--warp--index 2026年1月12日 5 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e2966] [cursor=pointer]:
-                - generic [ref=f24e2971]:
-                  - generic [ref=f24e2972]:
-                    - generic [ref=f24e2973]:
-                      - generic [ref=f24e2974]: PO
-                      - text: generated--gallery--warp--index
-                    - generic [ref=f24e2976]: 2026年1月12日
-                  - generic [ref=f24e2977]: 5 件の未翻訳の文字列 0 件のレビュー待ちの文字列
-              - button "PO generated--gallery--warp--sg_execution_times 2024年7月17日 0 件の未翻訳の文字列 10 件のレビュー待ちの文字列" [ref=f24e2982] [cursor=pointer]:
-                - generic [ref=f24e2987]:
-                  - generic [ref=f24e2988]:
-                    - generic [ref=f24e2989]:
-                      - generic [ref=f24e2990]: PO
-                      - text: generated--gallery--warp--sg_execution_times
-                    - generic [ref=f24e2992]: 2024年7月17日
-                  - generic [ref=f24e2993]: 0 件の未翻訳の文字列 10 件のレビュー待ちの文字列
-              - button "PO howtos 2024年7月2日 0 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e2999] [cursor=pointer]:
-                - generic [ref=f24e3004]:
-                  - generic [ref=f24e3005]:
-                    - generic [ref=f24e3006]:
-                      - generic [ref=f24e3007]: PO
-                      - text: howtos
-                    - generic [ref=f24e3009]: 2024年7月2日
-                  - generic [ref=f24e3010]: 0 件の未翻訳の文字列 3 件のレビュー待ちの文字列
-              - button "PO howtos--index 2025年3月19日 0 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e3016] [cursor=pointer]:
-                - generic [ref=f24e3021]:
-                  - generic [ref=f24e3022]:
-                    - generic [ref=f24e3023]:
-                      - generic [ref=f24e3024]: PO
-                      - text: howtos--index
-                    - generic [ref=f24e3026]: 2025年3月19日
-                  - generic [ref=f24e3027]: 0 件の未翻訳の文字列 3 件のレビュー待ちの文字列
-              - button "PO index 2026年4月10日 6 件の未翻訳の文字列 14 件のレビュー待ちの文字列" [ref=f24e3033] [cursor=pointer]:
-                - generic [ref=f24e3038]:
-                  - generic [ref=f24e3039]:
-                    - generic [ref=f24e3040]:
-                      - generic [ref=f24e3041]: PO
-                      - text: index
-                    - generic [ref=f24e3043]: 2026年4月10日
-                  - generic [ref=f24e3044]: 6 件の未翻訳の文字列 14 件のレビュー待ちの文字列
-              - button "PO installation 2026年4月10日 17 件の未翻訳の文字列 4 件のレビュー待ちの文字列" [ref=f24e3050] [cursor=pointer]:
-                - generic [ref=f24e3055]:
-                  - generic [ref=f24e3056]:
-                    - generic [ref=f24e3057]:
-                      - generic [ref=f24e3058]: PO
-                      - text: installation
-                    - generic [ref=f24e3060]: 2026年4月10日
-                  - generic [ref=f24e3061]: 17 件の未翻訳の文字列 4 件のレビュー待ちの文字列
-              - button "PO next_steps 2025年11月27日 16 件の未翻訳の文字列 15 件のレビュー待ちの文字列" [ref=f24e3067] [cursor=pointer]:
-                - generic [ref=f24e3072]:
-                  - generic [ref=f24e3073]:
-                    - generic [ref=f24e3074]:
-                      - generic [ref=f24e3075]: PO
-                      - text: next_steps
-                    - generic [ref=f24e3077]: 2025年11月27日
-                  - generic [ref=f24e3078]: 16 件の未翻訳の文字列 15 件のレビュー待ちの文字列
-              - button "PO overview 2026年2月7日 9 件の未翻訳の文字列 22 件のレビュー待ちの文字列" [ref=f24e3084] [cursor=pointer]:
-                - generic [ref=f24e3089]:
-                  - generic [ref=f24e3090]:
-                    - generic [ref=f24e3091]:
-                      - generic [ref=f24e3092]: PO
-                      - text: overview
-                    - generic [ref=f24e3094]: 2026年2月7日
-                  - generic [ref=f24e3095]: 9 件の未翻訳の文字列 22 件のレビュー待ちの文字列
-              - button "PO quick_start 2026年1月13日 34 件の未翻訳の文字列 7 件のレビュー待ちの文字列" [ref=f24e3101] [cursor=pointer]:
-                - generic [ref=f24e3106]:
-                  - generic [ref=f24e3107]:
-                    - generic [ref=f24e3108]:
-                      - generic [ref=f24e3109]: PO
-                      - text: quick_start
-                    - generic [ref=f24e3111]: 2026年1月13日
-                  - generic [ref=f24e3112]: 34 件の未翻訳の文字列 7 件のレビュー待ちの文字列
-              - button "PO reference 2024年7月15日 1323 件の未翻訳の文字列 87 件のレビュー待ちの文字列" [ref=f24e3118] [cursor=pointer]:
-                - generic [ref=f24e3123]:
-                  - generic [ref=f24e3124]:
-                    - generic [ref=f24e3125]:
-                      - generic [ref=f24e3126]: PO
-                      - text: reference
-                    - generic [ref=f24e3128]: 2024年7月15日
-                  - generic [ref=f24e3129]: 1323 件の未翻訳の文字列 87 件のレビュー待ちの文字列
-              - button "PO reference--about 2026年3月18日 42 件の未翻訳の文字列 8 件のレビュー待ちの文字列" [ref=f24e3135] [cursor=pointer]:
-                - generic [ref=f24e3140]:
-                  - generic [ref=f24e3141]:
-                    - generic [ref=f24e3142]:
-                      - generic [ref=f24e3143]: PO
-                      - text: reference--about
-                    - generic [ref=f24e3145]: 2026年3月18日
-                  - generic [ref=f24e3146]: 42 件の未翻訳の文字列 8 件のレビュー待ちの文字列
-              - button "PO reference--bindings 2026年1月11日 29 件の未翻訳の文字列 24 件のレビュー待ちの文字列" [ref=f24e3152] [cursor=pointer]:
-                - generic [ref=f24e3157]:
-                  - generic [ref=f24e3158]:
-                    - generic [ref=f24e3159]:
-                      - generic [ref=f24e3160]: PO
-                      - text: reference--bindings
-                    - generic [ref=f24e3162]: 2026年1月11日
-                  - generic [ref=f24e3163]: 29 件の未翻訳の文字列 24 件のレビュー待ちの文字列
-              - button "PO reference--changelog 2026年6月22日 3 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e3169] [cursor=pointer]:
-                - generic [ref=f24e3174]:
-                  - generic [ref=f24e3175]:
-                    - generic [ref=f24e3176]:
-                      - generic [ref=f24e3177]: PO
-                      - text: reference--changelog
-                    - generic [ref=f24e3179]: 2026年6月22日
-                  - generic [ref=f24e3180]: 3 件の未翻訳の文字列 2 件のレビュー待ちの文字列
-              - button "PO reference--cli--download 2026年5月24日 18 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e3186] [cursor=pointer]:
-                - generic [ref=f24e3191]:
-                  - generic [ref=f24e3192]:
-                    - generic [ref=f24e3193]:
-                      - generic [ref=f24e3194]: PO
-                      - text: reference--cli--download
-                    - generic [ref=f24e3196]: 2026年5月24日
-                  - generic [ref=f24e3197]: 18 件の未翻訳の文字列 0 件のレビュー待ちの文字列
-              - button "PO reference--cli--examples 2026年3月28日 9 件の未翻訳の文字列 1 件のレビュー待ちの文字列" [ref=f24e3202] [cursor=pointer]:
-                - generic [ref=f24e3207]:
-                  - generic [ref=f24e3208]:
-                    - generic [ref=f24e3209]:
-                      - generic [ref=f24e3210]: PO
-                      - text: reference--cli--examples
-                    - generic [ref=f24e3212]: 2026年3月28日
-                  - generic [ref=f24e3213]: 9 件の未翻訳の文字列 1 件のレビュー待ちの文字列
-              - button "PO reference--cli--index 2025年12月13日 12 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e3219] [cursor=pointer]:
-                - generic [ref=f24e3224]:
-                  - generic [ref=f24e3225]:
-                    - generic [ref=f24e3226]:
-                      - generic [ref=f24e3227]: PO
-                      - text: reference--cli--index
-                    - generic [ref=f24e3229]: 2025年12月13日
-                  - generic [ref=f24e3230]: 12 件の未翻訳の文字列 0 件のレビュー待ちの文字列
-              - button "PO reference--cli--plot 2024年7月17日 0 件の未翻訳の文字列 4 件のレビュー待ちの文字列" [ref=f24e3235] [cursor=pointer]:
-                - generic [ref=f24e3240]:
-                  - generic [ref=f24e3241]:
-                    - generic [ref=f24e3242]:
-                      - generic [ref=f24e3243]: PO
-                      - text: reference--cli--plot
-                    - generic [ref=f24e3245]: 2024年7月17日
-                  - generic [ref=f24e3246]: 0 件の未翻訳の文字列 4 件のレビュー待ちの文字列
-              - button "PO reference--environment 2026年5月24日 29 件の未翻訳の文字列 25 件のレビュー待ちの文字列" [ref=f24e3252] [cursor=pointer]:
-                - generic [ref=f24e3257]:
-                  - generic [ref=f24e3258]:
-                    - generic [ref=f24e3259]:
-                      - generic [ref=f24e3260]: PO
-                      - text: reference--environment
-                    - generic [ref=f24e3262]: 2026年5月24日
-                  - generic [ref=f24e3263]: 29 件の未翻訳の文字列 25 件のレビュー待ちの文字列
-              - button "PO reference--generated--api--geovista--bridge--index 2026年4月29日 141 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e3269] [cursor=pointer]:
-                - generic [ref=f24e3274]:
-                  - generic [ref=f24e3275]:
-                    - generic [ref=f24e3276]:
-                      - generic [ref=f24e3277]: PO
-                      - text: reference--generated--api--geovista--bridge--index
-                    - generic [ref=f24e3279]: 2026年4月29日
-                  - generic [ref=f24e3280]: 141 件の未翻訳の文字列 3 件のレビュー待ちの文字列
-              - button "PO reference--generated--api--geovista--cache--index 2026年4月29日 34 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e3286] [cursor=pointer]:
-                - generic [ref=f24e3291]:
-                  - generic [ref=f24e3292]:
-                    - generic [ref=f24e3293]:
-                      - generic [ref=f24e3294]: PO
-                      - text: reference--generated--api--geovista--cache--index
-                    - generic [ref=f24e3296]: 2026年4月29日
-                  - generic [ref=f24e3297]: 34 件の未翻訳の文字列 2 件のレビュー待ちの文字列
-              - button "PO reference--generated--api--geovista--common--index 2026年4月29日 229 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e3303] [cursor=pointer]:
-                - generic [ref=f24e3308]:
-                  - generic [ref=f24e3309]:
-                    - generic [ref=f24e3310]:
-                      - generic [ref=f24e3311]: PO
-                      - text: reference--generated--api--geovista--common--index
-                    - generic [ref=f24e3313]: 2026年4月29日
-                  - generic [ref=f24e3314]: 229 件の未翻訳の文字列 3 件のレビュー待ちの文字列
-              - button "PO reference--generated--api--geovista--config--index 2026年5月24日 13 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e3320] [cursor=pointer]:
-                - generic [ref=f24e3325]:
-                  - generic [ref=f24e3326]:
-                    - generic [ref=f24e3327]:
-                      - generic [ref=f24e3328]: PO
-                      - text: reference--generated--api--geovista--config--index
-                    - generic [ref=f24e3330]: 2026年5月24日
-                  - generic [ref=f24e3331]: 13 件の未翻訳の文字列 3 件のレビュー待ちの文字列
-              - button "PO reference--generated--api--geovista--core--index 2026年4月29日 113 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e3337] [cursor=pointer]:
-                - generic [ref=f24e3342]:
-                  - generic [ref=f24e3343]:
-                    - generic [ref=f24e3344]:
-                      - generic [ref=f24e3345]: PO
-                      - text: reference--generated--api--geovista--core--index
-                    - generic [ref=f24e3347]: 2026年4月29日
-                  - generic [ref=f24e3348]: 113 件の未翻訳の文字列 3 件のレビュー待ちの文字列
-              - button "PO reference--generated--api--geovista--crs--index 2026年4月29日 49 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e3354] [cursor=pointer]:
-                - generic [ref=f24e3359]:
-                  - generic [ref=f24e3360]:
-                    - generic [ref=f24e3361]:
-                      - generic [ref=f24e3362]: PO
-                      - text: reference--generated--api--geovista--crs--index
-                    - generic [ref=f24e3364]: 2026年4月29日
-                  - generic [ref=f24e3365]: 49 件の未翻訳の文字列 3 件のレビュー待ちの文字列
-              - button "PO reference--generated--api--geovista--filters--index 2026年4月29日 35 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e3371] [cursor=pointer]:
-                - generic [ref=f24e3376]:
-                  - generic [ref=f24e3377]:
-                    - generic [ref=f24e3378]:
-                      - generic [ref=f24e3379]: PO
-                      - text: reference--generated--api--geovista--filters--index
-                    - generic [ref=f24e3381]: 2026年4月29日
-                  - generic [ref=f24e3382]: 35 件の未翻訳の文字列 3 件のレビュー待ちの文字列
-              - button "PO reference--generated--api--geovista--geodesic--index 2026年4月29日 210 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e3388] [cursor=pointer]:
-                - generic [ref=f24e3393]:
-                  - generic [ref=f24e3394]:
-                    - generic [ref=f24e3395]:
-                      - generic [ref=f24e3396]: PO
-                      - text: reference--generated--api--geovista--geodesic--index
-                    - generic [ref=f24e3398]: 2026年4月29日
-                  - generic [ref=f24e3399]: 210 件の未翻訳の文字列 3 件のレビュー待ちの文字列
-            - button "全リソース" [ref=f24e1625] [cursor=pointer]
-        - generic [ref=f24e1630]:
-          - generic [ref=f24e1633]:
-            - text: 始めるには
-            - strong [ref=f24e1634]: リソース
-            - text: を選択してください
-          - generic [ref=f24e1638]:
-            - generic [ref=f24e1639]:
-              - generic [ref=f24e1640]:
-                - generic:           
-                - generic [ref=f24e1641]:
-                  - generic [ref=f24e1642]: 未翻訳の文字列
-                  - generic:
-                    - list
-                    - list
-              - generic [ref=f24e1646]:
-                - generic [ref=f24e1647]:
-                  - list [ref=f24e1648]:
-                    - listitem [ref=f24e1649]:
-                      - button
-                    - listitem [ref=f24e1650]:
-                      - button
-                    - listitem [ref=f24e1651]:
-                      - button
-                    - listitem [ref=f24e1652]:
-                      - button
-                    - listitem [ref=f24e1653]:
-                      - button
-                    - listitem [ref=f24e1654]:
-                      - button
-                  - list [ref=f24e1655]
-                - generic [ref=f24e1666]:
-                  - button "翻訳を保存" [ref=f24e1667] [cursor=pointer]
-                  - generic [ref=f24e1668] [cursor=pointer]
-            - generic [ref=f24e1673]:
-              - generic [ref=f24e1674]:
-                - button "文脈" [ref=f24e1675] [cursor=pointer]
-                - button "提案" [ref=f24e1678] [cursor=pointer]
-                - button "履歴" [ref=f24e1681] [cursor=pointer]
-                - button "用語集" [ref=f24e1684] [cursor=pointer]
-                - button "TQI" [ref=f24e1687] [cursor=pointer]
-                - button "コメント" [ref=f24e1690] [cursor=pointer]
-              - generic [ref=f24e1696]:
-                - button "メモリ検索" [ref=f24e1698] [cursor=pointer]
-                - generic [ref=f24e1699]: 提案はありません
-          - text:  
-      - generic:
-        - generic:
-          - generic [ref=f24e1704]:
-            - generic [ref=f24e1705]:
-              - checkbox "すべての対応付けされた文字列を見る" [ref=f24e1706]
-              - generic [ref=f24e1707] [cursor=pointer]
-            - generic [ref=f24e1708]: すべての対応付けされた文字列を見る
-          - generic:
+    - generic:
+        - img:
             - generic:
-              - generic [ref=f24e1715] [cursor=pointer]
-              - generic: 画像を取得中
-  - textbox [ref=f24e1721]
-  - iframe [ref=f24e3405]:
-    
+                - generic "project_team_deleted"
+                - generic "project_maintainer_added"
+                - generic "project_joined_team"
+                - generic "language_added"
+                - generic "language_removed"
+                - generic "project_language_requested"
+                - generic "project_changed"
+                - generic "project_changed_team"
+                - generic "project_resource_changed"
+                - generic "project_resource_deleted"
+                - generic "announcements"
+                - generic "project_announcement_added"
+                - generic "resource_language_translated"
+                - generic "project_team_join_requested"
+                - generic "recommendation"
+                - generic "inbox"
+                - generic "project_archived"
+                - generic "organizations"
+                - generic "project_updates"
+                - generic "team_updates"
+                - generic "team_discussions"
+                - generic "tts_order_created_admins"
+                - generic "order_created"
+                - generic "tts_tts_order_cancelled_admins"
+                - generic "tts_order_other_error"
+                - generic "autofetch_failed"
+                - generic "canceled_because_of_failed_payments"
+                - generic "order_failed"
+                - generic "invoice_failed"
+                - generic "overquota"
+                - generic "locked"
+                - generic "locked_reminder"
+                - generic "old_client_used"
+                - generic "comment_received"
+                - generic "order_delivered"
+                - generic "lionbridge_order_delivered"
+                - generic "order_price_discrepancy"
+                - generic "organization_added"
+                - generic "organization_member_removed"
+                - generic "project_added"
+                - generic "project_removed"
+                - generic "project_announcement_posted"
+                - generic "project_left_team"
+                - generic "project_join_team"
+                - generic "project_deleted"
+                - generic "project_invitation_accepted"
+                - generic "language_deleted"
+                - generic "language_requested"
+                - generic "maintainer_added"
+                - generic "resource_added"
+                - generic "resource_removed"
+                - generic "team_join_request_approved"
+                - generic "team_join_request_denied"
+                - generic "team_join_requested"
+                - generic "user_left_team"
+                - generic "collaborator_added"
+                - generic "team_added"
+                - generic "team_deleted"
+                - generic "team_message_posted"
+                - generic "manager_added"
+                - generic "manager_removed"
+                - generic "e2f_order_accepted"
+                - generic "e2f_order_created"
+                - generic "e2f_order_canceled"
+                - generic "e2f_order_delivered"
+                - generic "e2f_order_delivery_time_changed"
+                - generic "e2f_order_edited"
+                - generic "recommentation_given"
+                - generic "recommentation_updated"
+                - generic "project_unarchived"
+                - generic "outgoing_project_transfer_rejected"
+                - generic "incoming_project_transfer_rejected"
+                - generic "project_left_organization"
+                - generic "project_join_organization"
+                - generic "project_transfer_accepted"
+                - generic "credit_card_expire_notify"
+                - generic "live_content_detected"
+                - generic "live_content_updated"
+                - generic "project_language_request_accepted"
+                - generic "project_language_request_rejected"
+                - generic "project_tranfser_request_received"
+                - generic "project_transfer_request_sent"
+                - generic "source_file_updated"
+                - generic "discussion_issue"
+                - generic "glossary_discussion_issue"
+                - generic "tasks_created"
+                - generic "language_tasks_created"
+                - generic "task_assigned"
+                - generic "task_delivered"
+    - generic:
+        - img:
+            - generic:
+                - generic "open_in_other_window"
+                - generic "slack_icon"
+                - generic "lexiqa_icon"
+                - generic "blocker_issue_type"
+                - generic "task-settings"
+                - generic "chart"
+                - generic "words-completed"
+                - generic "words-total"
+                - generic "sort"
+                - generic "task"
+                - generic "explore-full"
+                - generic "help-full"
+                - generic "slim-arrow-down"
+                - generic "slim-arrow-up"
+                - generic "status"
+                - generic "fit-screen"
+                - generic "add-widget"
+                - generic "symbol"
+                - generic "compare"
+                - generic "sidebar-toggler"
+                - generic "screen"
+                - generic "resize-marker"
+                - generic "drag-handle"
+                - generic "pan-arrows"
+                - generic "list-view"
+                - generic "grid-view"
+                - generic "priority-urgent"
+                - generic "priority-high"
+                - generic "priority-normal"
+                - generic "unwatch"
+                - generic "watch"
+                - generic "more-outline"
+                - generic "message-sent"
+                - generic "message-inbox"
+                - generic "save"
+                - generic "concordance"
+                - generic "view-online"
+                - generic "rigi-preview"
+                - generic "rigi-preview-off"
+                - generic "news"
+                - generic "bubble"
+                - generic "blog"
+                - generic "advanced"
+                - generic "word"
+                - generic "lock-open"
+                - generic "lock"
+                - generic "mail"
+                - generic "file-reviewed"
+                - generic "file"
+                - generic "location"
+                - generic "url"
+                - generic "clock"
+                - generic "tag"
+                - generic "release"
+                - generic "code"
+                - generic "stats"
+                - generic "trash"
+                - generic "project-list"
+                - generic "project-add"
+                - generic "project-remove"
+                - generic "minus"
+                - generic "tick"
+                - generic "remove"
+                - generic "add"
+                - generic "tick-outline"
+                - generic "edit-outline"
+                - generic "remove-outline"
+                - generic "add-outline"
+                - generic "add-filled"
+                - generic "facebook"
+                - generic "google"
+                - generic "linkedin"
+                - generic "feed"
+                - generic "trash"
+                - generic "infomsg"
+                - generic "error"
+                - generic "help"
+                - generic "alert"
+                - generic "license"
+                - generic "string-untrans"
+                - generic "arrow-left"
+                - generic "arrow-right"
+                - generic "arrow-right-long"
+                - generic "arrow-up"
+                - generic "arrow-down"
+                - generic "chevron-down"
+                - generic "chevron-up"
+                - generic "thumbs-up"
+                - generic "thumbs-down"
+                - generic "full-arrow-down"
+                - generic "full-arrow-up"
+                - generic "arrow-left-small"
+                - generic "arrow-right-small"
+                - generic "arrow-up-small"
+                - generic "arrow-down-small"
+                - generic "copy-source"
+                - generic "copy-translation"
+                - generic "edit"
+                - generic "bullet"
+                - generic "search"
+                - generic "menu"
+                - generic "more"
+                - generic "burger-menu"
+                - generic "replace"
+                - generic "update"
+                - generic "undo"
+                - generic "autotranslate"
+                - generic "autotranslate"
+                - generic "review"
+                - generic "details"
+                - generic "filter-outline"
+                - generic "filter-filled"
+                - generic "editor-trans"
+                - generic "glossary"
+                - generic "send_file"
+                - generic "get_file"
+                - generic "language"
+                - generic "tmx-file"
+                - generic "language-delete"
+                - generic "language-add"
+                - generic "lock-add"
+                - generic "lock-remove"
+                - generic "txicon"
+                - generic "share"
+                - generic "source-download"
+                - generic "child"
+                - generic "permission"
+                - generic "door"
+                - generic "shortcut"
+                - generic "emit"
+                - generic "project_resource_translated"
+                - generic "resource-add"
+                - generic "resource-remove"
+                - generic "omega"
+                - generic "clone"
+                - generic "empty_team"
+                - generic "modal_error"
+                - generic "user_reviewer"
+                - generic "user_translator"
+                - generic "user"
+                - generic "user_manager"
+                - generic "user_maintainer"
+                - generic "team-join"
+                - generic "user-remove"
+                - generic "users"
+                - generic "key"
+                - generic "success-filled"
+                - generic "icon-star-outline"
+                - generic "icon-star"
+                - generic "download-line"
+                - generic "team-users"
+                - generic "no-user-assigned"
+                - generic "tag-locked"
+                - generic "copy-variant"
+    - generic [ref=f24e2]:
+        - generic [ref=f24e3]:
+            - text:  
+            - generic [ref=f24e6]:
+                - generic [ref=f24e7]:
+                    - generic [ref=f24e10]:
+                        - generic [ref=f24e13]:
+                            - checkbox [ref=f24e14] [cursor=pointer]
+                            - link [ref=f24e19] [cursor=pointer]:
+                                - /url: /home/
+                        - link "geovista-doc" [ref=f24e25] [cursor=pointer]:
+                            - /url: "#navigation-projects-dropdown"
+                        - generic [ref=f24e28]: /
+                        - link "リソースを選択" [ref=f24e33] [cursor=pointer]:
+                            - /url: "#navigation-resources-dropdown"
+                    - generic [ref=f24e36]:
+                        - generic [ref=f24e37]: English (en)
+                        - generic [ref=f24e40]: →
+                    - generic [ref=f24e41]:
+                        - generic [ref=f24e42]: Japanese (ja)
+                        - generic [ref=f24e49]: 原文の編集
+                - generic [ref=f24e50]:
+                    - button "新しい文字列" [ref=f24e52] [cursor=pointer]
+                    - link "品質チェック" [ref=f24e59] [cursor=pointer]:
+                        - /url: javascript:;
+                    - button [ref=f24e61] [cursor=pointer]
+                    - button [ref=f24e65] [cursor=pointer]
+                    - button [ref=f24e69] [cursor=pointer]
+        - generic [ref=f24e76]:
+            - generic [ref=f24e79]:
+                - generic [ref=f24e81]:
+                    - generic [ref=f24e82]: リソースの概要
+                    - generic [ref=f24e86]:
+                        - textbox "リソース名で検索" [ref=f24e93]
+                        - generic [ref=f24e96]:
+                            - generic [ref=f24e97] [cursor=pointer]: 名前（昇順）
+                            - generic [ref=f24e102]:
+                                - generic [ref=f24e103]: 名前（昇順）
+                                - generic [ref=f24e104]: 名前（降順）
+                                - generic [ref=f24e105]: 最も古い未翻訳から
+                                - generic [ref=f24e106]: 最も古い未翻訳から
+                                - generic [ref=f24e107]: 優先度（昇順）
+                                - generic [ref=f24e108]: 優先度（降順）
+                                - generic [ref=f24e109]: 原文の更新日（昇順）
+                                - generic [ref=f24e110]: 原文の更新日（降順）
+                                - generic [ref=f24e111]: 未翻訳（昇順）
+                                - generic [ref=f24e112]: 未翻訳（降順）
+                                - generic [ref=f24e113]: レビュー待ち（昇順）
+                                - generic [ref=f24e114]: レビュー待ち（降順）
+                    - generic [ref=f24e115]:
+                        - generic [ref=f24e118] [cursor=pointer]
+                        - generic [ref=f24e123]:
+                            - button "PO developer 2024年7月2日 0 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e1722] [cursor=pointer]:
+                                - generic [ref=f24e1727]:
+                                    - generic [ref=f24e1728]:
+                                        - generic [ref=f24e1729]:
+                                            - generic [ref=f24e1730]: PO
+                                            - text: developer
+                                        - generic [ref=f24e1732]: 2024年7月2日
+                                    - generic [ref=f24e1733]: 0 件の未翻訳の文字列 3 件のレビュー待ちの文字列
+                            - button "PO developer--changelog 2026年1月25日 55 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e1739] [cursor=pointer]:
+                                - generic [ref=f24e1744]:
+                                    - generic [ref=f24e1745]:
+                                        - generic [ref=f24e1746]:
+                                            - generic [ref=f24e1747]: PO
+                                            - text: developer--changelog
+                                        - generic [ref=f24e1749]: 2026年1月25日
+                                    - generic [ref=f24e1750]: 55 件の未翻訳の文字列 0 件のレビュー待ちの文字列
+                            - button "PO developer--codecraft 2026年2月16日 36 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e1755] [cursor=pointer]:
+                                - generic [ref=f24e1760]:
+                                    - generic [ref=f24e1761]:
+                                        - generic [ref=f24e1762]:
+                                            - generic [ref=f24e1763]: PO
+                                            - text: developer--codecraft
+                                        - generic [ref=f24e1765]: 2026年2月16日
+                                    - generic [ref=f24e1766]: 36 件の未翻訳の文字列 0 件のレビュー待ちの文字列
+                            - button "PO developer--documentation 2026年6月9日 189 件の未翻訳の文字列 1 件のレビュー待ちの文字列" [ref=f24e1771] [cursor=pointer]:
+                                - generic [ref=f24e1776]:
+                                    - generic [ref=f24e1777]:
+                                        - generic [ref=f24e1778]:
+                                            - generic [ref=f24e1779]: PO
+                                            - text: developer--documentation
+                                        - generic [ref=f24e1781]: 2026年6月9日
+                                    - generic [ref=f24e1782]: 189 件の未翻訳の文字列 1 件のレビュー待ちの文字列
+                            - button "PO developer--index 2026年2月1日 13 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e1788] [cursor=pointer]:
+                                - generic [ref=f24e1793]:
+                                    - generic [ref=f24e1794]:
+                                        - generic [ref=f24e1795]:
+                                            - generic [ref=f24e1796]: PO
+                                            - text: developer--index
+                                        - generic [ref=f24e1798]: 2026年2月1日
+                                    - generic [ref=f24e1799]: 13 件の未翻訳の文字列 2 件のレビュー待ちの文字列
+                            - button "PO developer--packaging 2026年4月10日 157 件の未翻訳の文字列 1 件のレビュー待ちの文字列" [ref=f24e1805] [cursor=pointer]:
+                                - generic [ref=f24e1810]:
+                                    - generic [ref=f24e1811]:
+                                        - generic [ref=f24e1812]:
+                                            - generic [ref=f24e1813]: PO
+                                            - text: developer--packaging
+                                        - generic [ref=f24e1815]: 2026年4月10日
+                                    - generic [ref=f24e1816]: 157 件の未翻訳の文字列 1 件のレビュー待ちの文字列
+                            - button "PO developer--testing 2026年3月9日 134 件の未翻訳の文字列 1 件のレビュー待ちの文字列" [ref=f24e1822] [cursor=pointer]:
+                                - generic [ref=f24e1827]:
+                                    - generic [ref=f24e1828]:
+                                        - generic [ref=f24e1829]:
+                                            - generic [ref=f24e1830]: PO
+                                            - text: developer--testing
+                                        - generic [ref=f24e1832]: 2026年3月9日
+                                    - generic [ref=f24e1833]: 134 件の未翻訳の文字列 1 件のレビュー待ちの文字列
+                            - button "PO developer--towncrier 2026年1月25日 55 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e1839] [cursor=pointer]:
+                                - generic [ref=f24e1844]:
+                                    - generic [ref=f24e1845]:
+                                        - generic [ref=f24e1846]:
+                                            - generic [ref=f24e1847]: PO
+                                            - text: developer--towncrier
+                                        - generic [ref=f24e1849]: 2026年1月25日
+                                    - generic [ref=f24e1850]: 55 件の未翻訳の文字列 0 件のレビュー待ちの文字列
+                            - button "PO explanation 2024年7月2日 0 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e1855] [cursor=pointer]:
+                                - generic [ref=f24e1860]:
+                                    - generic [ref=f24e1861]:
+                                        - generic [ref=f24e1862]:
+                                            - generic [ref=f24e1863]: PO
+                                            - text: explanation
+                                        - generic [ref=f24e1865]: 2024年7月2日
+                                    - generic [ref=f24e1866]: 0 件の未翻訳の文字列 3 件のレビュー待ちの文字列
+                            - button "PO explanation--index 2025年3月19日 0 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e1872] [cursor=pointer]:
+                                - generic [ref=f24e1877]:
+                                    - generic [ref=f24e1878]:
+                                        - generic [ref=f24e1879]:
+                                            - generic [ref=f24e1880]: PO
+                                            - text: explanation--index
+                                        - generic [ref=f24e1882]: 2025年3月19日
+                                    - generic [ref=f24e1883]: 0 件の未翻訳の文字列 3 件のレビュー待ちの文字列
+                            - button "PO generated 2024年7月2日 145 件の未翻訳の文字列 216 件のレビュー待ちの文字列" [ref=f24e1889] [cursor=pointer]:
+                                - generic [ref=f24e1894]:
+                                    - generic [ref=f24e1895]:
+                                        - generic [ref=f24e1896]:
+                                            - generic [ref=f24e1897]: PO
+                                            - text: generated
+                                        - generic [ref=f24e1899]: 2024年7月2日
+                                    - generic [ref=f24e1900]: 145 件の未翻訳の文字列 216 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--contour--banded_contour 2026年5月2日 12 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e1906] [cursor=pointer]:
+                                - generic [ref=f24e1911]:
+                                    - generic [ref=f24e1912]:
+                                        - generic [ref=f24e1913]:
+                                            - generic [ref=f24e1914]: PO
+                                            - text: generated--gallery--contour--banded_contour
+                                        - generic [ref=f24e1916]: 2026年5月2日
+                                    - generic [ref=f24e1917]: 12 件の未翻訳の文字列 2 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--contour--index 2026年1月12日 4 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e1923] [cursor=pointer]:
+                                - generic [ref=f24e1928]:
+                                    - generic [ref=f24e1929]:
+                                        - generic [ref=f24e1930]:
+                                            - generic [ref=f24e1931]: PO
+                                            - text: generated--gallery--contour--index
+                                        - generic [ref=f24e1933]: 2026年1月12日
+                                    - generic [ref=f24e1934]: 4 件の未翻訳の文字列 0 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--contour--sg_execution_times 2025年2月1日 2 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e1939] [cursor=pointer]:
+                                - generic [ref=f24e1944]:
+                                    - generic [ref=f24e1945]:
+                                        - generic [ref=f24e1946]:
+                                            - generic [ref=f24e1947]: PO
+                                            - text: generated--gallery--contour--sg_execution_times
+                                        - generic [ref=f24e1949]: 2025年2月1日
+                                    - generic [ref=f24e1950]: 2 件の未翻訳の文字列 6 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--curvilinear--from_2d__orca 2026年5月2日 6 件の未翻訳の文字列 7 件のレビュー待ちの文字列" [ref=f24e1956] [cursor=pointer]:
+                                - generic [ref=f24e1961]:
+                                    - generic [ref=f24e1962]:
+                                        - generic [ref=f24e1963]:
+                                            - generic [ref=f24e1964]: PO
+                                            - text: generated--gallery--curvilinear--from_2d__orca
+                                        - generic [ref=f24e1966]: 2026年5月2日
+                                    - generic [ref=f24e1967]: 6 件の未翻訳の文字列 7 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--curvilinear--from_2d__orca_moll 2026年5月2日 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e1973] [cursor=pointer]:
+                                - generic [ref=f24e1978]:
+                                    - generic [ref=f24e1979]:
+                                        - generic [ref=f24e1980]:
+                                            - generic [ref=f24e1981]: PO
+                                            - text: generated--gallery--curvilinear--from_2d__orca_moll
+                                        - generic [ref=f24e1983]: 2026年5月2日
+                                    - generic [ref=f24e1984]: 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--curvilinear--index 2026年3月23日 4 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e1990] [cursor=pointer]:
+                                - generic [ref=f24e1995]:
+                                    - generic [ref=f24e1996]:
+                                        - generic [ref=f24e1997]:
+                                            - generic [ref=f24e1998]: PO
+                                            - text: generated--gallery--curvilinear--index
+                                        - generic [ref=f24e2000]: 2026年3月23日
+                                    - generic [ref=f24e2001]: 4 件の未翻訳の文字列 0 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--curvilinear--sg_execution_times 2024年7月17日 0 件の未翻訳の文字列 9 件のレビュー待ちの文字列" [ref=f24e2006] [cursor=pointer]:
+                                - generic [ref=f24e2011]:
+                                    - generic [ref=f24e2012]:
+                                        - generic [ref=f24e2013]:
+                                            - generic [ref=f24e2014]: PO
+                                            - text: generated--gallery--curvilinear--sg_execution_times
+                                        - generic [ref=f24e2016]: 2024年7月17日
+                                    - generic [ref=f24e2017]: 0 件の未翻訳の文字列 9 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--domain--clouds 2026年5月2日 11 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e2023] [cursor=pointer]:
+                                - generic [ref=f24e2028]:
+                                    - generic [ref=f24e2029]:
+                                        - generic [ref=f24e2030]:
+                                            - generic [ref=f24e2031]: PO
+                                            - text: generated--gallery--domain--clouds
+                                        - generic [ref=f24e2033]: 2026年5月2日
+                                    - generic [ref=f24e2034]: 11 件の未翻訳の文字列 3 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--domain--clouds_robin 2026年5月2日 11 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e2040] [cursor=pointer]:
+                                - generic [ref=f24e2045]:
+                                    - generic [ref=f24e2046]:
+                                        - generic [ref=f24e2047]:
+                                            - generic [ref=f24e2048]: PO
+                                            - text: generated--gallery--domain--clouds_robin
+                                        - generic [ref=f24e2050]: 2026年5月2日
+                                    - generic [ref=f24e2051]: 11 件の未翻訳の文字列 3 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--domain--index 2026年1月12日 4 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e2057] [cursor=pointer]:
+                                - generic [ref=f24e2062]:
+                                    - generic [ref=f24e2063]:
+                                        - generic [ref=f24e2064]:
+                                            - generic [ref=f24e2065]: PO
+                                            - text: generated--gallery--domain--index
+                                        - generic [ref=f24e2067]: 2026年1月12日
+                                    - generic [ref=f24e2068]: 4 件の未翻訳の文字列 0 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--domain--sg_execution_times 2025年3月24日 3 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2073] [cursor=pointer]:
+                                - generic [ref=f24e2078]:
+                                    - generic [ref=f24e2079]:
+                                        - generic [ref=f24e2080]:
+                                            - generic [ref=f24e2081]: PO
+                                            - text: generated--gallery--domain--sg_execution_times
+                                        - generic [ref=f24e2083]: 2025年3月24日
+                                    - generic [ref=f24e2084]: 3 件の未翻訳の文字列 6 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--extraction--index 2026年2月4日 5 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e2090] [cursor=pointer]:
+                                - generic [ref=f24e2095]:
+                                    - generic [ref=f24e2096]:
+                                        - generic [ref=f24e2097]:
+                                            - generic [ref=f24e2098]: PO
+                                            - text: generated--gallery--extraction--index
+                                        - generic [ref=f24e2100]: 2026年2月4日
+                                    - generic [ref=f24e2101]: 5 件の未翻訳の文字列 0 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--extraction--panel_manifold 2026年5月2日 11 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e2106] [cursor=pointer]:
+                                - generic [ref=f24e2111]:
+                                    - generic [ref=f24e2112]:
+                                        - generic [ref=f24e2113]:
+                                            - generic [ref=f24e2114]: PO
+                                            - text: generated--gallery--extraction--panel_manifold
+                                        - generic [ref=f24e2116]: 2026年5月2日
+                                    - generic [ref=f24e2117]: 11 件の未翻訳の文字列 2 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--extraction--plotter_manifold 2026年5月2日 13 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e2123] [cursor=pointer]:
+                                - generic [ref=f24e2128]:
+                                    - generic [ref=f24e2129]:
+                                        - generic [ref=f24e2130]:
+                                            - generic [ref=f24e2131]: PO
+                                            - text: generated--gallery--extraction--plotter_manifold
+                                        - generic [ref=f24e2133]: 2026年5月2日
+                                    - generic [ref=f24e2134]: 13 件の未翻訳の文字列 2 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--extraction--sg_execution_times 2026年2月4日 4 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2140] [cursor=pointer]:
+                                - generic [ref=f24e2145]:
+                                    - generic [ref=f24e2146]:
+                                        - generic [ref=f24e2147]:
+                                            - generic [ref=f24e2148]: PO
+                                            - text: generated--gallery--extraction--sg_execution_times
+                                        - generic [ref=f24e2150]: 2026年2月4日
+                                    - generic [ref=f24e2151]: 4 件の未翻訳の文字列 6 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--extraction--wedge_manifold 2026年5月2日 14 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e2157] [cursor=pointer]:
+                                - generic [ref=f24e2162]:
+                                    - generic [ref=f24e2163]:
+                                        - generic [ref=f24e2164]:
+                                            - generic [ref=f24e2165]: PO
+                                            - text: generated--gallery--extraction--wedge_manifold
+                                        - generic [ref=f24e2167]: 2026年5月2日
+                                    - generic [ref=f24e2168]: 14 件の未翻訳の文字列 2 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--grid--index 2026年3月28日 4 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e2174] [cursor=pointer]:
+                                - generic [ref=f24e2179]:
+                                    - generic [ref=f24e2180]:
+                                        - generic [ref=f24e2181]:
+                                            - generic [ref=f24e2182]: PO
+                                            - text: generated--gallery--grid--index
+                                        - generic [ref=f24e2184]: 2026年3月28日
+                                    - generic [ref=f24e2185]: 4 件の未翻訳の文字列 0 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--grid--reykjanes 2026年5月2日 12 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e2190] [cursor=pointer]:
+                                - generic [ref=f24e2195]:
+                                    - generic [ref=f24e2196]:
+                                        - generic [ref=f24e2197]:
+                                            - generic [ref=f24e2198]: PO
+                                            - text: generated--gallery--grid--reykjanes
+                                        - generic [ref=f24e2200]: 2026年5月2日
+                                    - generic [ref=f24e2201]: 12 件の未翻訳の文字列 2 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--grid--reykjanes_contour 2026年5月2日 12 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e2207] [cursor=pointer]:
+                                - generic [ref=f24e2212]:
+                                    - generic [ref=f24e2213]:
+                                        - generic [ref=f24e2214]:
+                                            - generic [ref=f24e2215]: PO
+                                            - text: generated--gallery--grid--reykjanes_contour
+                                        - generic [ref=f24e2217]: 2026年5月2日
+                                    - generic [ref=f24e2218]: 12 件の未翻訳の文字列 2 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--grid--sg_execution_times 2026年3月28日 3 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2224] [cursor=pointer]:
+                                - generic [ref=f24e2229]:
+                                    - generic [ref=f24e2230]:
+                                        - generic [ref=f24e2231]:
+                                            - generic [ref=f24e2232]: PO
+                                            - text: generated--gallery--grid--sg_execution_times
+                                        - generic [ref=f24e2234]: 2026年3月28日
+                                    - generic [ref=f24e2235]: 3 件の未翻訳の文字列 6 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--index 2026年3月28日 64 件の未翻訳の文字列 5 件のレビュー待ちの文字列" [ref=f24e2241] [cursor=pointer]:
+                                - generic [ref=f24e2246]:
+                                    - generic [ref=f24e2247]:
+                                        - generic [ref=f24e2248]:
+                                            - generic [ref=f24e2249]: PO
+                                            - text: generated--gallery--index
+                                        - generic [ref=f24e2251]: 2026年3月28日
+                                    - generic [ref=f24e2252]: 64 件の未翻訳の文字列 5 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--point_cloud--from_points__orca_cloud 2026年5月2日 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列" [ref=f24e2258] [cursor=pointer]:
+                                - generic [ref=f24e2263]:
+                                    - generic [ref=f24e2264]:
+                                        - generic [ref=f24e2265]:
+                                            - generic [ref=f24e2266]: PO
+                                            - text: generated--gallery--point_cloud--from_points__orca_cloud
+                                        - generic [ref=f24e2268]: 2026年5月2日
+                                    - generic [ref=f24e2269]: 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--point_cloud--from_points__orca_cloud_eqc 2026年5月2日 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列" [ref=f24e2275] [cursor=pointer]:
+                                - generic [ref=f24e2280]:
+                                    - generic [ref=f24e2281]:
+                                        - generic [ref=f24e2282]:
+                                            - generic [ref=f24e2283]: PO
+                                            - text: generated--gallery--point_cloud--from_points__orca_cloud_eqc
+                                        - generic [ref=f24e2285]: 2026年5月2日
+                                    - generic [ref=f24e2286]: 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--point_cloud--index 2026年1月12日 4 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e2292] [cursor=pointer]:
+                                - generic [ref=f24e2297]:
+                                    - generic [ref=f24e2298]:
+                                        - generic [ref=f24e2299]:
+                                            - generic [ref=f24e2300]: PO
+                                            - text: generated--gallery--point_cloud--index
+                                        - generic [ref=f24e2302]: 2026年1月12日
+                                    - generic [ref=f24e2303]: 4 件の未翻訳の文字列 0 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--point_cloud--sg_execution_times 2024年7月17日 0 件の未翻訳の文字列 9 件のレビュー待ちの文字列" [ref=f24e2308] [cursor=pointer]:
+                                - generic [ref=f24e2313]:
+                                    - generic [ref=f24e2314]:
+                                        - generic [ref=f24e2315]:
+                                            - generic [ref=f24e2316]: PO
+                                            - text: generated--gallery--point_cloud--sg_execution_times
+                                        - generic [ref=f24e2318]: 2024年7月17日
+                                    - generic [ref=f24e2319]: 0 件の未翻訳の文字列 9 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--rectilinear--from_1d__oisst 2026年5月2日 6 件の未翻訳の文字列 7 件のレビュー待ちの文字列" [ref=f24e2325] [cursor=pointer]:
+                                - generic [ref=f24e2330]:
+                                    - generic [ref=f24e2331]:
+                                        - generic [ref=f24e2332]:
+                                            - generic [ref=f24e2333]: PO
+                                            - text: generated--gallery--rectilinear--from_1d__oisst
+                                        - generic [ref=f24e2335]: 2026年5月2日
+                                    - generic [ref=f24e2336]: 6 件の未翻訳の文字列 7 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--rectilinear--from_1d__oisst_eqc 2026年5月2日 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2342] [cursor=pointer]:
+                                - generic [ref=f24e2347]:
+                                    - generic [ref=f24e2348]:
+                                        - generic [ref=f24e2349]:
+                                            - generic [ref=f24e2350]: PO
+                                            - text: generated--gallery--rectilinear--from_1d__oisst_eqc
+                                        - generic [ref=f24e2352]: 2026年5月2日
+                                    - generic [ref=f24e2353]: 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--rectilinear--index 2026年3月23日 4 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e2359] [cursor=pointer]:
+                                - generic [ref=f24e2364]:
+                                    - generic [ref=f24e2365]:
+                                        - generic [ref=f24e2366]:
+                                            - generic [ref=f24e2367]: PO
+                                            - text: generated--gallery--rectilinear--index
+                                        - generic [ref=f24e2369]: 2026年3月23日
+                                    - generic [ref=f24e2370]: 4 件の未翻訳の文字列 0 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--rectilinear--sg_execution_times 2024年7月17日 0 件の未翻訳の文字列 9 件のレビュー待ちの文字列" [ref=f24e2375] [cursor=pointer]:
+                                - generic [ref=f24e2380]:
+                                    - generic [ref=f24e2381]:
+                                        - generic [ref=f24e2382]:
+                                            - generic [ref=f24e2383]: PO
+                                            - text: generated--gallery--rectilinear--sg_execution_times
+                                        - generic [ref=f24e2385]: 2024年7月17日
+                                    - generic [ref=f24e2386]: 0 件の未翻訳の文字列 9 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--scalar_data--earthquakes 2026年5月2日 2 件の未翻訳の文字列 33 件のレビュー待ちの文字列" [ref=f24e2392] [cursor=pointer]:
+                                - generic [ref=f24e2397]:
+                                    - generic [ref=f24e2398]:
+                                        - generic [ref=f24e2399]:
+                                            - generic [ref=f24e2400]: PO
+                                            - text: generated--gallery--scalar_data--earthquakes
+                                        - generic [ref=f24e2402]: 2026年5月2日
+                                    - generic [ref=f24e2403]: 2 件の未翻訳の文字列 33 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--scalar_data--earthquakes_wink1 2026年5月2日 2 件の未翻訳の文字列 33 件のレビュー待ちの文字列" [ref=f24e2409] [cursor=pointer]:
+                                - generic [ref=f24e2414]:
+                                    - generic [ref=f24e2415]:
+                                        - generic [ref=f24e2416]:
+                                            - generic [ref=f24e2417]: PO
+                                            - text: generated--gallery--scalar_data--earthquakes_wink1
+                                        - generic [ref=f24e2419]: 2026年5月2日
+                                    - generic [ref=f24e2420]: 2 件の未翻訳の文字列 33 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--scalar_data--from_tiff__dem 2026年5月2日 12 件の未翻訳の文字列 5 件のレビュー待ちの文字列" [ref=f24e2426] [cursor=pointer]:
+                                - generic [ref=f24e2431]:
+                                    - generic [ref=f24e2432]:
+                                        - generic [ref=f24e2433]:
+                                            - generic [ref=f24e2434]: PO
+                                            - text: generated--gallery--scalar_data--from_tiff__dem
+                                        - generic [ref=f24e2436]: 2026年5月2日
+                                    - generic [ref=f24e2437]: 12 件の未翻訳の文字列 5 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--scalar_data--from_tiff__rgb 2026年5月2日 9 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2443] [cursor=pointer]:
+                                - generic [ref=f24e2448]:
+                                    - generic [ref=f24e2449]:
+                                        - generic [ref=f24e2450]:
+                                            - generic [ref=f24e2451]: PO
+                                            - text: generated--gallery--scalar_data--from_tiff__rgb
+                                        - generic [ref=f24e2453]: 2026年5月2日
+                                    - generic [ref=f24e2454]: 9 件の未翻訳の文字列 6 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--scalar_data--index 2026年1月12日 6 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e2460] [cursor=pointer]:
+                                - generic [ref=f24e2465]:
+                                    - generic [ref=f24e2466]:
+                                        - generic [ref=f24e2467]:
+                                            - generic [ref=f24e2468]: PO
+                                            - text: generated--gallery--scalar_data--index
+                                        - generic [ref=f24e2470]: 2026年1月12日
+                                    - generic [ref=f24e2471]: 6 件の未翻訳の文字列 0 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--scalar_data--sg_execution_times 2024年7月17日 0 件の未翻訳の文字列 11 件のレビュー待ちの文字列" [ref=f24e2476] [cursor=pointer]:
+                                - generic [ref=f24e2481]:
+                                    - generic [ref=f24e2482]:
+                                        - generic [ref=f24e2483]:
+                                            - generic [ref=f24e2484]: PO
+                                            - text: generated--gallery--scalar_data--sg_execution_times
+                                        - generic [ref=f24e2486]: 2024年7月17日
+                                    - generic [ref=f24e2487]: 0 件の未翻訳の文字列 11 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--sg_execution_times 2024年7月17日 0 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2493] [cursor=pointer]:
+                                - generic [ref=f24e2498]:
+                                    - generic [ref=f24e2499]:
+                                        - generic [ref=f24e2500]:
+                                            - generic [ref=f24e2501]: PO
+                                            - text: generated--gallery--sg_execution_times
+                                        - generic [ref=f24e2503]: 2024年7月17日
+                                    - generic [ref=f24e2504]: 0 件の未翻訳の文字列 6 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--spatial_index--index 2026年1月12日 3 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e2510] [cursor=pointer]:
+                                - generic [ref=f24e2515]:
+                                    - generic [ref=f24e2516]:
+                                        - generic [ref=f24e2517]:
+                                            - generic [ref=f24e2518]: PO
+                                            - text: generated--gallery--spatial_index--index
+                                        - generic [ref=f24e2520]: 2026年1月12日
+                                    - generic [ref=f24e2521]: 3 件の未翻訳の文字列 0 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--spatial_index--sg_execution_times 2024年7月17日 0 件の未翻訳の文字列 8 件のレビュー待ちの文字列" [ref=f24e2526] [cursor=pointer]:
+                                - generic [ref=f24e2531]:
+                                    - generic [ref=f24e2532]:
+                                        - generic [ref=f24e2533]:
+                                            - generic [ref=f24e2534]: PO
+                                            - text: generated--gallery--spatial_index--sg_execution_times
+                                        - generic [ref=f24e2536]: 2024年7月17日
+                                    - generic [ref=f24e2537]: 0 件の未翻訳の文字列 8 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--spatial_index--uber_h3 2026年5月2日 37 件の未翻訳の文字列 4 件のレビュー待ちの文字列" [ref=f24e2543] [cursor=pointer]:
+                                - generic [ref=f24e2548]:
+                                    - generic [ref=f24e2549]:
+                                        - generic [ref=f24e2550]:
+                                            - generic [ref=f24e2551]: PO
+                                            - text: generated--gallery--spatial_index--uber_h3
+                                        - generic [ref=f24e2553]: 2026年5月2日
+                                    - generic [ref=f24e2554]: 37 件の未翻訳の文字列 4 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--unstructured--dynamico 2026年5月2日 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2560] [cursor=pointer]:
+                                - generic [ref=f24e2565]:
+                                    - generic [ref=f24e2566]:
+                                        - generic [ref=f24e2567]:
+                                            - generic [ref=f24e2568]: PO
+                                            - text: generated--gallery--unstructured--dynamico
+                                        - generic [ref=f24e2570]: 2026年5月2日
+                                    - generic [ref=f24e2571]: 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--unstructured--dynamico_poly 2026年5月2日 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列" [ref=f24e2577] [cursor=pointer]:
+                                - generic [ref=f24e2582]:
+                                    - generic [ref=f24e2583]:
+                                        - generic [ref=f24e2584]:
+                                            - generic [ref=f24e2585]: PO
+                                            - text: generated--gallery--unstructured--dynamico_poly
+                                        - generic [ref=f24e2587]: 2026年5月2日
+                                    - generic [ref=f24e2588]: 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--unstructured--icon 2026年5月2日 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2594] [cursor=pointer]:
+                                - generic [ref=f24e2599]:
+                                    - generic [ref=f24e2600]:
+                                        - generic [ref=f24e2601]:
+                                            - generic [ref=f24e2602]: PO
+                                            - text: generated--gallery--unstructured--icon
+                                        - generic [ref=f24e2604]: 2026年5月2日
+                                    - generic [ref=f24e2605]: 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--unstructured--icon_eqc 2026年5月2日 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列" [ref=f24e2611] [cursor=pointer]:
+                                - generic [ref=f24e2616]:
+                                    - generic [ref=f24e2617]:
+                                        - generic [ref=f24e2618]:
+                                            - generic [ref=f24e2619]: PO
+                                            - text: generated--gallery--unstructured--icon_eqc
+                                        - generic [ref=f24e2621]: 2026年5月2日
+                                    - generic [ref=f24e2622]: 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--unstructured--index 2026年3月23日 14 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e2628] [cursor=pointer]:
+                                - generic [ref=f24e2633]:
+                                    - generic [ref=f24e2634]:
+                                        - generic [ref=f24e2635]:
+                                            - generic [ref=f24e2636]: PO
+                                            - text: generated--gallery--unstructured--index
+                                        - generic [ref=f24e2638]: 2026年3月23日
+                                    - generic [ref=f24e2639]: 14 件の未翻訳の文字列 0 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--unstructured--lam_pacific 2026年5月2日 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2644] [cursor=pointer]:
+                                - generic [ref=f24e2649]:
+                                    - generic [ref=f24e2650]:
+                                        - generic [ref=f24e2651]:
+                                            - generic [ref=f24e2652]: PO
+                                            - text: generated--gallery--unstructured--lam_pacific
+                                        - generic [ref=f24e2654]: 2026年5月2日
+                                    - generic [ref=f24e2655]: 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--unstructured--lam_pacific_moll 2026年5月2日 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列" [ref=f24e2661] [cursor=pointer]:
+                                - generic [ref=f24e2666]:
+                                    - generic [ref=f24e2667]:
+                                        - generic [ref=f24e2668]:
+                                            - generic [ref=f24e2669]: PO
+                                            - text: generated--gallery--unstructured--lam_pacific_moll
+                                        - generic [ref=f24e2671]: 2026年5月2日
+                                    - generic [ref=f24e2672]: 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--unstructured--lfric_sst 2026年5月2日 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列" [ref=f24e2678] [cursor=pointer]:
+                                - generic [ref=f24e2683]:
+                                    - generic [ref=f24e2684]:
+                                        - generic [ref=f24e2685]:
+                                            - generic [ref=f24e2686]: PO
+                                            - text: generated--gallery--unstructured--lfric_sst
+                                        - generic [ref=f24e2688]: 2026年5月2日
+                                    - generic [ref=f24e2689]: 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--unstructured--lfric_sst_bonne 2026年5月2日 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列" [ref=f24e2695] [cursor=pointer]:
+                                - generic [ref=f24e2700]:
+                                    - generic [ref=f24e2701]:
+                                        - generic [ref=f24e2702]:
+                                            - generic [ref=f24e2703]: PO
+                                            - text: generated--gallery--unstructured--lfric_sst_bonne
+                                        - generic [ref=f24e2705]: 2026年5月2日
+                                    - generic [ref=f24e2706]: 8 件の未翻訳の文字列 5 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--unstructured--sg_execution_times 2024年7月17日 0 件の未翻訳の文字列 19 件のレビュー待ちの文字列" [ref=f24e2712] [cursor=pointer]:
+                                - generic [ref=f24e2717]:
+                                    - generic [ref=f24e2718]:
+                                        - generic [ref=f24e2719]:
+                                            - generic [ref=f24e2720]: PO
+                                            - text: generated--gallery--unstructured--sg_execution_times
+                                        - generic [ref=f24e2722]: 2024年7月17日
+                                    - generic [ref=f24e2723]: 0 件の未翻訳の文字列 19 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--unstructured--smc 2026年5月2日 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2729] [cursor=pointer]:
+                                - generic [ref=f24e2734]:
+                                    - generic [ref=f24e2735]:
+                                        - generic [ref=f24e2736]:
+                                            - generic [ref=f24e2737]: PO
+                                            - text: generated--gallery--unstructured--smc
+                                        - generic [ref=f24e2739]: 2026年5月2日
+                                    - generic [ref=f24e2740]: 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--unstructured--smc_sinu 2026年5月2日 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2746] [cursor=pointer]:
+                                - generic [ref=f24e2751]:
+                                    - generic [ref=f24e2752]:
+                                        - generic [ref=f24e2753]:
+                                            - generic [ref=f24e2754]: PO
+                                            - text: generated--gallery--unstructured--smc_sinu
+                                        - generic [ref=f24e2756]: 2026年5月2日
+                                    - generic [ref=f24e2757]: 7 件の未翻訳の文字列 6 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--unstructured--tri 2026年5月2日 2 件の未翻訳の文字列 11 件のレビュー待ちの文字列" [ref=f24e2763] [cursor=pointer]:
+                                - generic [ref=f24e2768]:
+                                    - generic [ref=f24e2769]:
+                                        - generic [ref=f24e2770]:
+                                            - generic [ref=f24e2771]: PO
+                                            - text: generated--gallery--unstructured--tri
+                                        - generic [ref=f24e2773]: 2026年5月2日
+                                    - generic [ref=f24e2774]: 2 件の未翻訳の文字列 11 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--unstructured--tri_hammer 2026年5月2日 6 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2780] [cursor=pointer]:
+                                - generic [ref=f24e2785]:
+                                    - generic [ref=f24e2786]:
+                                        - generic [ref=f24e2787]:
+                                            - generic [ref=f24e2788]: PO
+                                            - text: generated--gallery--unstructured--tri_hammer
+                                        - generic [ref=f24e2790]: 2026年5月2日
+                                    - generic [ref=f24e2791]: 6 件の未翻訳の文字列 6 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--vector_data--index 2026年3月23日 6 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e2797] [cursor=pointer]:
+                                - generic [ref=f24e2802]:
+                                    - generic [ref=f24e2803]:
+                                        - generic [ref=f24e2804]:
+                                            - generic [ref=f24e2805]: PO
+                                            - text: generated--gallery--vector_data--index
+                                        - generic [ref=f24e2807]: 2026年3月23日
+                                    - generic [ref=f24e2808]: 6 件の未翻訳の文字列 0 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--vector_data--sg_execution_times 2026年3月23日 5 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2813] [cursor=pointer]:
+                                - generic [ref=f24e2818]:
+                                    - generic [ref=f24e2819]:
+                                        - generic [ref=f24e2820]:
+                                            - generic [ref=f24e2821]: PO
+                                            - text: generated--gallery--vector_data--sg_execution_times
+                                        - generic [ref=f24e2823]: 2026年3月23日
+                                    - generic [ref=f24e2824]: 5 件の未翻訳の文字列 6 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--vector_data--true_winds 2026年5月2日 10 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e2830] [cursor=pointer]:
+                                - generic [ref=f24e2835]:
+                                    - generic [ref=f24e2836]:
+                                        - generic [ref=f24e2837]:
+                                            - generic [ref=f24e2838]: PO
+                                            - text: generated--gallery--vector_data--true_winds
+                                        - generic [ref=f24e2840]: 2026年5月2日
+                                    - generic [ref=f24e2841]: 10 件の未翻訳の文字列 2 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--vector_data--vectors 2026年3月20日 6 件の未翻訳の文字列 5 件のレビュー待ちの文字列" [ref=f24e2847] [cursor=pointer]:
+                                - generic [ref=f24e2852]:
+                                    - generic [ref=f24e2853]:
+                                        - generic [ref=f24e2854]:
+                                            - generic [ref=f24e2855]: PO
+                                            - text: generated--gallery--vector_data--vectors
+                                        - generic [ref=f24e2857]: 2026年3月20日
+                                    - generic [ref=f24e2858]: 6 件の未翻訳の文字列 5 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--vector_data--wind_arrows 2026年5月2日 13 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e2864] [cursor=pointer]:
+                                - generic [ref=f24e2869]:
+                                    - generic [ref=f24e2870]:
+                                        - generic [ref=f24e2871]:
+                                            - generic [ref=f24e2872]: PO
+                                            - text: generated--gallery--vector_data--wind_arrows
+                                        - generic [ref=f24e2874]: 2026年5月2日
+                                    - generic [ref=f24e2875]: 13 件の未翻訳の文字列 2 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--vector_data--wind_arrows_flow 2026年5月2日 14 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e2881] [cursor=pointer]:
+                                - generic [ref=f24e2886]:
+                                    - generic [ref=f24e2887]:
+                                        - generic [ref=f24e2888]:
+                                            - generic [ref=f24e2889]: PO
+                                            - text: generated--gallery--vector_data--wind_arrows_flow
+                                        - generic [ref=f24e2891]: 2026年5月2日
+                                    - generic [ref=f24e2892]: 14 件の未翻訳の文字列 2 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--vector_data--wind_arrows_uvw 2026年5月2日 12 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e2898] [cursor=pointer]:
+                                - generic [ref=f24e2903]:
+                                    - generic [ref=f24e2904]:
+                                        - generic [ref=f24e2905]:
+                                            - generic [ref=f24e2906]: PO
+                                            - text: generated--gallery--vector_data--wind_arrows_uvw
+                                        - generic [ref=f24e2908]: 2026年5月2日
+                                    - generic [ref=f24e2909]: 12 件の未翻訳の文字列 2 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--warp--from_unstructured__fvcom 2026年5月2日 10 件の未翻訳の文字列 5 件のレビュー待ちの文字列" [ref=f24e2915] [cursor=pointer]:
+                                - generic [ref=f24e2920]:
+                                    - generic [ref=f24e2921]:
+                                        - generic [ref=f24e2922]:
+                                            - generic [ref=f24e2923]: PO
+                                            - text: generated--gallery--warp--from_unstructured__fvcom
+                                        - generic [ref=f24e2925]: 2026年5月2日
+                                    - generic [ref=f24e2926]: 10 件の未翻訳の文字列 5 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--warp--from_unstructured__lfric_orog 2026年5月2日 4 件の未翻訳の文字列 9 件のレビュー待ちの文字列" [ref=f24e2932] [cursor=pointer]:
+                                - generic [ref=f24e2937]:
+                                    - generic [ref=f24e2938]:
+                                        - generic [ref=f24e2939]:
+                                            - generic [ref=f24e2940]: PO
+                                            - text: generated--gallery--warp--from_unstructured__lfric_orog
+                                        - generic [ref=f24e2942]: 2026年5月2日
+                                    - generic [ref=f24e2943]: 4 件の未翻訳の文字列 9 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--warp--from_unstructured__lfric_orog_eqc 2026年5月2日 8 件の未翻訳の文字列 6 件のレビュー待ちの文字列" [ref=f24e2949] [cursor=pointer]:
+                                - generic [ref=f24e2954]:
+                                    - generic [ref=f24e2955]:
+                                        - generic [ref=f24e2956]:
+                                            - generic [ref=f24e2957]: PO
+                                            - text: generated--gallery--warp--from_unstructured__lfric_orog_eqc
+                                        - generic [ref=f24e2959]: 2026年5月2日
+                                    - generic [ref=f24e2960]: 8 件の未翻訳の文字列 6 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--warp--index 2026年1月12日 5 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e2966] [cursor=pointer]:
+                                - generic [ref=f24e2971]:
+                                    - generic [ref=f24e2972]:
+                                        - generic [ref=f24e2973]:
+                                            - generic [ref=f24e2974]: PO
+                                            - text: generated--gallery--warp--index
+                                        - generic [ref=f24e2976]: 2026年1月12日
+                                    - generic [ref=f24e2977]: 5 件の未翻訳の文字列 0 件のレビュー待ちの文字列
+                            - button "PO generated--gallery--warp--sg_execution_times 2024年7月17日 0 件の未翻訳の文字列 10 件のレビュー待ちの文字列" [ref=f24e2982] [cursor=pointer]:
+                                - generic [ref=f24e2987]:
+                                    - generic [ref=f24e2988]:
+                                        - generic [ref=f24e2989]:
+                                            - generic [ref=f24e2990]: PO
+                                            - text: generated--gallery--warp--sg_execution_times
+                                        - generic [ref=f24e2992]: 2024年7月17日
+                                    - generic [ref=f24e2993]: 0 件の未翻訳の文字列 10 件のレビュー待ちの文字列
+                            - button "PO howtos 2024年7月2日 0 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e2999] [cursor=pointer]:
+                                - generic [ref=f24e3004]:
+                                    - generic [ref=f24e3005]:
+                                        - generic [ref=f24e3006]:
+                                            - generic [ref=f24e3007]: PO
+                                            - text: howtos
+                                        - generic [ref=f24e3009]: 2024年7月2日
+                                    - generic [ref=f24e3010]: 0 件の未翻訳の文字列 3 件のレビュー待ちの文字列
+                            - button "PO howtos--index 2025年3月19日 0 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e3016] [cursor=pointer]:
+                                - generic [ref=f24e3021]:
+                                    - generic [ref=f24e3022]:
+                                        - generic [ref=f24e3023]:
+                                            - generic [ref=f24e3024]: PO
+                                            - text: howtos--index
+                                        - generic [ref=f24e3026]: 2025年3月19日
+                                    - generic [ref=f24e3027]: 0 件の未翻訳の文字列 3 件のレビュー待ちの文字列
+                            - button "PO index 2026年4月10日 6 件の未翻訳の文字列 14 件のレビュー待ちの文字列" [ref=f24e3033] [cursor=pointer]:
+                                - generic [ref=f24e3038]:
+                                    - generic [ref=f24e3039]:
+                                        - generic [ref=f24e3040]:
+                                            - generic [ref=f24e3041]: PO
+                                            - text: index
+                                        - generic [ref=f24e3043]: 2026年4月10日
+                                    - generic [ref=f24e3044]: 6 件の未翻訳の文字列 14 件のレビュー待ちの文字列
+                            - button "PO installation 2026年4月10日 17 件の未翻訳の文字列 4 件のレビュー待ちの文字列" [ref=f24e3050] [cursor=pointer]:
+                                - generic [ref=f24e3055]:
+                                    - generic [ref=f24e3056]:
+                                        - generic [ref=f24e3057]:
+                                            - generic [ref=f24e3058]: PO
+                                            - text: installation
+                                        - generic [ref=f24e3060]: 2026年4月10日
+                                    - generic [ref=f24e3061]: 17 件の未翻訳の文字列 4 件のレビュー待ちの文字列
+                            - button "PO next_steps 2025年11月27日 16 件の未翻訳の文字列 15 件のレビュー待ちの文字列" [ref=f24e3067] [cursor=pointer]:
+                                - generic [ref=f24e3072]:
+                                    - generic [ref=f24e3073]:
+                                        - generic [ref=f24e3074]:
+                                            - generic [ref=f24e3075]: PO
+                                            - text: next_steps
+                                        - generic [ref=f24e3077]: 2025年11月27日
+                                    - generic [ref=f24e3078]: 16 件の未翻訳の文字列 15 件のレビュー待ちの文字列
+                            - button "PO overview 2026年2月7日 9 件の未翻訳の文字列 22 件のレビュー待ちの文字列" [ref=f24e3084] [cursor=pointer]:
+                                - generic [ref=f24e3089]:
+                                    - generic [ref=f24e3090]:
+                                        - generic [ref=f24e3091]:
+                                            - generic [ref=f24e3092]: PO
+                                            - text: overview
+                                        - generic [ref=f24e3094]: 2026年2月7日
+                                    - generic [ref=f24e3095]: 9 件の未翻訳の文字列 22 件のレビュー待ちの文字列
+                            - button "PO quick_start 2026年1月13日 34 件の未翻訳の文字列 7 件のレビュー待ちの文字列" [ref=f24e3101] [cursor=pointer]:
+                                - generic [ref=f24e3106]:
+                                    - generic [ref=f24e3107]:
+                                        - generic [ref=f24e3108]:
+                                            - generic [ref=f24e3109]: PO
+                                            - text: quick_start
+                                        - generic [ref=f24e3111]: 2026年1月13日
+                                    - generic [ref=f24e3112]: 34 件の未翻訳の文字列 7 件のレビュー待ちの文字列
+                            - button "PO reference 2024年7月15日 1323 件の未翻訳の文字列 87 件のレビュー待ちの文字列" [ref=f24e3118] [cursor=pointer]:
+                                - generic [ref=f24e3123]:
+                                    - generic [ref=f24e3124]:
+                                        - generic [ref=f24e3125]:
+                                            - generic [ref=f24e3126]: PO
+                                            - text: reference
+                                        - generic [ref=f24e3128]: 2024年7月15日
+                                    - generic [ref=f24e3129]: 1323 件の未翻訳の文字列 87 件のレビュー待ちの文字列
+                            - button "PO reference--about 2026年3月18日 42 件の未翻訳の文字列 8 件のレビュー待ちの文字列" [ref=f24e3135] [cursor=pointer]:
+                                - generic [ref=f24e3140]:
+                                    - generic [ref=f24e3141]:
+                                        - generic [ref=f24e3142]:
+                                            - generic [ref=f24e3143]: PO
+                                            - text: reference--about
+                                        - generic [ref=f24e3145]: 2026年3月18日
+                                    - generic [ref=f24e3146]: 42 件の未翻訳の文字列 8 件のレビュー待ちの文字列
+                            - button "PO reference--bindings 2026年1月11日 29 件の未翻訳の文字列 24 件のレビュー待ちの文字列" [ref=f24e3152] [cursor=pointer]:
+                                - generic [ref=f24e3157]:
+                                    - generic [ref=f24e3158]:
+                                        - generic [ref=f24e3159]:
+                                            - generic [ref=f24e3160]: PO
+                                            - text: reference--bindings
+                                        - generic [ref=f24e3162]: 2026年1月11日
+                                    - generic [ref=f24e3163]: 29 件の未翻訳の文字列 24 件のレビュー待ちの文字列
+                            - button "PO reference--changelog 2026年6月22日 3 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e3169] [cursor=pointer]:
+                                - generic [ref=f24e3174]:
+                                    - generic [ref=f24e3175]:
+                                        - generic [ref=f24e3176]:
+                                            - generic [ref=f24e3177]: PO
+                                            - text: reference--changelog
+                                        - generic [ref=f24e3179]: 2026年6月22日
+                                    - generic [ref=f24e3180]: 3 件の未翻訳の文字列 2 件のレビュー待ちの文字列
+                            - button "PO reference--cli--download 2026年5月24日 18 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e3186] [cursor=pointer]:
+                                - generic [ref=f24e3191]:
+                                    - generic [ref=f24e3192]:
+                                        - generic [ref=f24e3193]:
+                                            - generic [ref=f24e3194]: PO
+                                            - text: reference--cli--download
+                                        - generic [ref=f24e3196]: 2026年5月24日
+                                    - generic [ref=f24e3197]: 18 件の未翻訳の文字列 0 件のレビュー待ちの文字列
+                            - button "PO reference--cli--examples 2026年3月28日 9 件の未翻訳の文字列 1 件のレビュー待ちの文字列" [ref=f24e3202] [cursor=pointer]:
+                                - generic [ref=f24e3207]:
+                                    - generic [ref=f24e3208]:
+                                        - generic [ref=f24e3209]:
+                                            - generic [ref=f24e3210]: PO
+                                            - text: reference--cli--examples
+                                        - generic [ref=f24e3212]: 2026年3月28日
+                                    - generic [ref=f24e3213]: 9 件の未翻訳の文字列 1 件のレビュー待ちの文字列
+                            - button "PO reference--cli--index 2025年12月13日 12 件の未翻訳の文字列 0 件のレビュー待ちの文字列" [ref=f24e3219] [cursor=pointer]:
+                                - generic [ref=f24e3224]:
+                                    - generic [ref=f24e3225]:
+                                        - generic [ref=f24e3226]:
+                                            - generic [ref=f24e3227]: PO
+                                            - text: reference--cli--index
+                                        - generic [ref=f24e3229]: 2025年12月13日
+                                    - generic [ref=f24e3230]: 12 件の未翻訳の文字列 0 件のレビュー待ちの文字列
+                            - button "PO reference--cli--plot 2024年7月17日 0 件の未翻訳の文字列 4 件のレビュー待ちの文字列" [ref=f24e3235] [cursor=pointer]:
+                                - generic [ref=f24e3240]:
+                                    - generic [ref=f24e3241]:
+                                        - generic [ref=f24e3242]:
+                                            - generic [ref=f24e3243]: PO
+                                            - text: reference--cli--plot
+                                        - generic [ref=f24e3245]: 2024年7月17日
+                                    - generic [ref=f24e3246]: 0 件の未翻訳の文字列 4 件のレビュー待ちの文字列
+                            - button "PO reference--environment 2026年5月24日 29 件の未翻訳の文字列 25 件のレビュー待ちの文字列" [ref=f24e3252] [cursor=pointer]:
+                                - generic [ref=f24e3257]:
+                                    - generic [ref=f24e3258]:
+                                        - generic [ref=f24e3259]:
+                                            - generic [ref=f24e3260]: PO
+                                            - text: reference--environment
+                                        - generic [ref=f24e3262]: 2026年5月24日
+                                    - generic [ref=f24e3263]: 29 件の未翻訳の文字列 25 件のレビュー待ちの文字列
+                            - button "PO reference--generated--api--geovista--bridge--index 2026年4月29日 141 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e3269] [cursor=pointer]:
+                                - generic [ref=f24e3274]:
+                                    - generic [ref=f24e3275]:
+                                        - generic [ref=f24e3276]:
+                                            - generic [ref=f24e3277]: PO
+                                            - text: reference--generated--api--geovista--bridge--index
+                                        - generic [ref=f24e3279]: 2026年4月29日
+                                    - generic [ref=f24e3280]: 141 件の未翻訳の文字列 3 件のレビュー待ちの文字列
+                            - button "PO reference--generated--api--geovista--cache--index 2026年4月29日 34 件の未翻訳の文字列 2 件のレビュー待ちの文字列" [ref=f24e3286] [cursor=pointer]:
+                                - generic [ref=f24e3291]:
+                                    - generic [ref=f24e3292]:
+                                        - generic [ref=f24e3293]:
+                                            - generic [ref=f24e3294]: PO
+                                            - text: reference--generated--api--geovista--cache--index
+                                        - generic [ref=f24e3296]: 2026年4月29日
+                                    - generic [ref=f24e3297]: 34 件の未翻訳の文字列 2 件のレビュー待ちの文字列
+                            - button "PO reference--generated--api--geovista--common--index 2026年4月29日 229 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e3303] [cursor=pointer]:
+                                - generic [ref=f24e3308]:
+                                    - generic [ref=f24e3309]:
+                                        - generic [ref=f24e3310]:
+                                            - generic [ref=f24e3311]: PO
+                                            - text: reference--generated--api--geovista--common--index
+                                        - generic [ref=f24e3313]: 2026年4月29日
+                                    - generic [ref=f24e3314]: 229 件の未翻訳の文字列 3 件のレビュー待ちの文字列
+                            - button "PO reference--generated--api--geovista--config--index 2026年5月24日 13 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e3320] [cursor=pointer]:
+                                - generic [ref=f24e3325]:
+                                    - generic [ref=f24e3326]:
+                                        - generic [ref=f24e3327]:
+                                            - generic [ref=f24e3328]: PO
+                                            - text: reference--generated--api--geovista--config--index
+                                        - generic [ref=f24e3330]: 2026年5月24日
+                                    - generic [ref=f24e3331]: 13 件の未翻訳の文字列 3 件のレビュー待ちの文字列
+                            - button "PO reference--generated--api--geovista--core--index 2026年4月29日 113 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e3337] [cursor=pointer]:
+                                - generic [ref=f24e3342]:
+                                    - generic [ref=f24e3343]:
+                                        - generic [ref=f24e3344]:
+                                            - generic [ref=f24e3345]: PO
+                                            - text: reference--generated--api--geovista--core--index
+                                        - generic [ref=f24e3347]: 2026年4月29日
+                                    - generic [ref=f24e3348]: 113 件の未翻訳の文字列 3 件のレビュー待ちの文字列
+                            - button "PO reference--generated--api--geovista--crs--index 2026年4月29日 49 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e3354] [cursor=pointer]:
+                                - generic [ref=f24e3359]:
+                                    - generic [ref=f24e3360]:
+                                        - generic [ref=f24e3361]:
+                                            - generic [ref=f24e3362]: PO
+                                            - text: reference--generated--api--geovista--crs--index
+                                        - generic [ref=f24e3364]: 2026年4月29日
+                                    - generic [ref=f24e3365]: 49 件の未翻訳の文字列 3 件のレビュー待ちの文字列
+                            - button "PO reference--generated--api--geovista--filters--index 2026年4月29日 35 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e3371] [cursor=pointer]:
+                                - generic [ref=f24e3376]:
+                                    - generic [ref=f24e3377]:
+                                        - generic [ref=f24e3378]:
+                                            - generic [ref=f24e3379]: PO
+                                            - text: reference--generated--api--geovista--filters--index
+                                        - generic [ref=f24e3381]: 2026年4月29日
+                                    - generic [ref=f24e3382]: 35 件の未翻訳の文字列 3 件のレビュー待ちの文字列
+                            - button "PO reference--generated--api--geovista--geodesic--index 2026年4月29日 210 件の未翻訳の文字列 3 件のレビュー待ちの文字列" [ref=f24e3388] [cursor=pointer]:
+                                - generic [ref=f24e3393]:
+                                    - generic [ref=f24e3394]:
+                                        - generic [ref=f24e3395]:
+                                            - generic [ref=f24e3396]: PO
+                                            - text: reference--generated--api--geovista--geodesic--index
+                                        - generic [ref=f24e3398]: 2026年4月29日
+                                    - generic [ref=f24e3399]: 210 件の未翻訳の文字列 3 件のレビュー待ちの文字列
+                        - button "全リソース" [ref=f24e1625] [cursor=pointer]
+                - generic [ref=f24e1630]:
+                    - generic [ref=f24e1633]:
+                        - text: 始めるには
+                        - strong [ref=f24e1634]: リソース
+                        - text: を選択してください
+                    - generic [ref=f24e1638]:
+                        - generic [ref=f24e1639]:
+                            - generic [ref=f24e1640]:
+                                - generic:           
+                                - generic [ref=f24e1641]:
+                                    - generic [ref=f24e1642]: 未翻訳の文字列
+                                    - generic:
+                                        - list
+                                        - list
+                            - generic [ref=f24e1646]:
+                                - generic [ref=f24e1647]:
+                                    - list [ref=f24e1648]:
+                                        - listitem [ref=f24e1649]:
+                                            - button
+                                        - listitem [ref=f24e1650]:
+                                            - button
+                                        - listitem [ref=f24e1651]:
+                                            - button
+                                        - listitem [ref=f24e1652]:
+                                            - button
+                                        - listitem [ref=f24e1653]:
+                                            - button
+                                        - listitem [ref=f24e1654]:
+                                            - button
+                                    - list [ref=f24e1655]
+                                - generic [ref=f24e1666]:
+                                    - button "翻訳を保存" [ref=f24e1667] [cursor=pointer]
+                                    - generic [ref=f24e1668] [cursor=pointer]
+                        - generic [ref=f24e1673]:
+                            - generic [ref=f24e1674]:
+                                - button "文脈" [ref=f24e1675] [cursor=pointer]
+                                - button "提案" [ref=f24e1678] [cursor=pointer]
+                                - button "履歴" [ref=f24e1681] [cursor=pointer]
+                                - button "用語集" [ref=f24e1684] [cursor=pointer]
+                                - button "TQI" [ref=f24e1687] [cursor=pointer]
+                                - button "コメント" [ref=f24e1690] [cursor=pointer]
+                            - generic [ref=f24e1696]:
+                                - button "メモリ検索" [ref=f24e1698] [cursor=pointer]
+                                - generic [ref=f24e1699]: 提案はありません
+                    - text:  
+            - generic:
+                - generic:
+                    - generic [ref=f24e1704]:
+                        - generic [ref=f24e1705]:
+                            - checkbox "すべての対応付けされた文字列を見る" [ref=f24e1706]
+                            - generic [ref=f24e1707] [cursor=pointer]
+                        - generic [ref=f24e1708]: すべての対応付けされた文字列を見る
+                    - generic:
+                        - generic:
+                            - generic [ref=f24e1715] [cursor=pointer]
+                            - generic: 画像を取得中
+    - textbox [ref=f24e1721]
+    - iframe [ref=f24e3405]:
