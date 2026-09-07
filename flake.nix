@@ -76,6 +76,9 @@
             # Clean up conflicting backup files from previous attempts
             rm -f "$HOME/.pi/agent/models.json.backup"
 
+            # Remove nix profile packages that home-manager will manage
+            nix profile remove gh 2>/dev/null || true
+
             export NIX_CONFIG="extra-experimental-features = nix-command flakes"
             nix run --refresh nixpkgs#home-manager -- switch -b .pre-hm-backup --flake "${self}#${host}-${system}"
 
