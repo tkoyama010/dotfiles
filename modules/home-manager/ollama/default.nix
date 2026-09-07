@@ -13,7 +13,7 @@
   textModel = "qwen3:8b";
 
   # The code-focused model.
-  codeModel = "qwen3-coder";
+  codeModel = "qwen2.5-coder:7b";
 
   # Shared by both platform wrappers below. The ollama server is started by
   # its own unit/agent at the same time as this one, so wait for it to accept
