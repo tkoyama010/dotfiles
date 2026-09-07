@@ -9,5 +9,8 @@
 	"scripts": {
 		"check": "biome check",
 		"format": "biome check --write"
+	},
+	"dependencies": {
+		"pi-advisor": "^0.3.0"
 	}
 }
