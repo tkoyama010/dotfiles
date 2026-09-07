@@ -73,27 +73,9 @@
             echo "Setting up dotfiles..."
 
             export NIX_CONFIG="extra-experimental-features = nix-command flakes"
-            nix run --refresh nixpkgs#home-manager -- switch -b backup --flake "${self}#${host}-${system}"
+            nix run --refresh nixpkgs#home-manager -- switch -b backup --flake "${self}#default-${system}"
 
             echo "Dotfiles setup complete!"
-            echo "Run 'nix flake show' to see available apps"
-          '';
-        };
-
-        installScript = pkgs.writeShellApplication {
-          name = "dotfiles-install";
-          runtimeInputs = [ pkgs.git ];
-          text = ''
-            echo "Installing dotfiles via home-manager..."
-
-            REPO_DIR=$(mktemp -d)
-            git clone https://github.com/tkoyama010/dotfiles.git "$REPO_DIR" 2>/dev/null || true
-
-            export NIX_CONFIG="extra-experimental-features = nix-command flakes"
-            nix run --refresh nixpkgs#home-manager -- switch -b backup --flake "$REPO_DIR#default"
-
-            rm -rf "$REPO_DIR"
-            echo "Installation complete!"
           '';
         };
       in {
@@ -117,7 +99,6 @@
 
         packages.setup = setupScript;
         packages.default = setupScript;
-        packages.install = installScript;
         packages.istats = pkgs.callPackage ./pkgs/istats {};
 
         apps =
@@ -126,10 +107,6 @@
             setup = {
               type = "app";
               program = "${setupScript}/bin/dotfiles-setup";
-            };
-            install = {
-              type = "app";
-              program = "${installScript}/bin/dotfiles-install";
             };
             default = self.outputs.apps.${system}.setup;
           };
