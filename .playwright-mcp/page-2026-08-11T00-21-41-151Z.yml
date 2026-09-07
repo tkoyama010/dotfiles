@@ -1,0 +1,417 @@
+- generic [ref=f13e1]:
+  - generic:
+    - img:
+      - generic:
+        - generic "project_team_deleted"
+        - generic "project_maintainer_added"
+        - generic "project_joined_team"
+        - generic "language_added"
+        - generic "language_removed"
+        - generic "project_language_requested"
+        - generic "project_changed"
+        - generic "project_changed_team"
+        - generic "project_resource_changed"
+        - generic "project_resource_deleted"
+        - generic "announcements"
+        - generic "project_announcement_added"
+        - generic "resource_language_translated"
+        - generic "project_team_join_requested"
+        - generic "recommendation"
+        - generic "inbox"
+        - generic "project_archived"
+        - generic "organizations"
+        - generic "project_updates"
+        - generic "team_updates"
+        - generic "team_discussions"
+        - generic "tts_order_created_admins"
+        - generic "order_created"
+        - generic "tts_tts_order_cancelled_admins"
+        - generic "tts_order_other_error"
+        - generic "autofetch_failed"
+        - generic "canceled_because_of_failed_payments"
+        - generic "order_failed"
+        - generic "invoice_failed"
+        - generic "overquota"
+        - generic "locked"
+        - generic "locked_reminder"
+        - generic "old_client_used"
+        - generic "comment_received"
+        - generic "order_delivered"
+        - generic "lionbridge_order_delivered"
+        - generic "order_price_discrepancy"
+        - generic "organization_added"
+        - generic "organization_member_removed"
+        - generic "project_added"
+        - generic "project_removed"
+        - generic "project_announcement_posted"
+        - generic "project_left_team"
+        - generic "project_join_team"
+        - generic "project_deleted"
+        - generic "project_invitation_accepted"
+        - generic "language_deleted"
+        - generic "language_requested"
+        - generic "maintainer_added"
+        - generic "resource_added"
+        - generic "resource_removed"
+        - generic "team_join_request_approved"
+        - generic "team_join_request_denied"
+        - generic "team_join_requested"
+        - generic "user_left_team"
+        - generic "collaborator_added"
+        - generic "team_added"
+        - generic "team_deleted"
+        - generic "team_message_posted"
+        - generic "manager_added"
+        - generic "manager_removed"
+        - generic "e2f_order_accepted"
+        - generic "e2f_order_created"
+        - generic "e2f_order_canceled"
+        - generic "e2f_order_delivered"
+        - generic "e2f_order_delivery_time_changed"
+        - generic "e2f_order_edited"
+        - generic "recommentation_given"
+        - generic "recommentation_updated"
+        - generic "project_unarchived"
+        - generic "outgoing_project_transfer_rejected"
+        - generic "incoming_project_transfer_rejected"
+        - generic "project_left_organization"
+        - generic "project_join_organization"
+        - generic "project_transfer_accepted"
+        - generic "credit_card_expire_notify"
+        - generic "live_content_detected"
+        - generic "live_content_updated"
+        - generic "project_language_request_accepted"
+        - generic "project_language_request_rejected"
+        - generic "project_tranfser_request_received"
+        - generic "project_transfer_request_sent"
+        - generic "source_file_updated"
+        - generic "discussion_issue"
+        - generic "glossary_discussion_issue"
+        - generic "tasks_created"
+        - generic "language_tasks_created"
+        - generic "task_assigned"
+        - generic "task_delivered"
+  - generic:
+    - img:
+      - generic:
+        - generic "open_in_other_window"
+        - generic "slack_icon"
+        - generic "lexiqa_icon"
+        - generic "blocker_issue_type"
+        - generic "task-settings"
+        - generic "chart"
+        - generic "words-completed"
+        - generic "words-total"
+        - generic "sort"
+        - generic "task"
+        - generic "explore-full"
+        - generic "help-full"
+        - generic "slim-arrow-down"
+        - generic "slim-arrow-up"
+        - generic "status"
+        - generic "fit-screen"
+        - generic "add-widget"
+        - generic "symbol"
+        - generic "compare"
+        - generic "sidebar-toggler"
+        - generic "screen"
+        - generic "resize-marker"
+        - generic "drag-handle"
+        - generic "pan-arrows"
+        - generic "list-view"
+        - generic "grid-view"
+        - generic "priority-urgent"
+        - generic "priority-high"
+        - generic "priority-normal"
+        - generic "unwatch"
+        - generic "watch"
+        - generic "more-outline"
+        - generic "message-sent"
+        - generic "message-inbox"
+        - generic "save"
+        - generic "concordance"
+        - generic "view-online"
+        - generic "rigi-preview"
+        - generic "rigi-preview-off"
+        - generic "news"
+        - generic "bubble"
+        - generic "blog"
+        - generic "advanced"
+        - generic "word"
+        - generic "lock-open"
+        - generic "lock"
+        - generic "mail"
+        - generic "file-reviewed"
+        - generic "file"
+        - generic "location"
+        - generic "url"
+        - generic "clock"
+        - generic "tag"
+        - generic "release"
+        - generic "code"
+        - generic "stats"
+        - generic "trash"
+        - generic "project-list"
+        - generic "project-add"
+        - generic "project-remove"
+        - generic "minus"
+        - generic "tick"
+        - generic "remove"
+        - generic "add"
+        - generic "tick-outline"
+        - generic "edit-outline"
+        - generic "remove-outline"
+        - generic "add-outline"
+        - generic "add-filled"
+        - generic "facebook"
+        - generic "google"
+        - generic "linkedin"
+        - generic "feed"
+        - generic "trash"
+        - generic "infomsg"
+        - generic "error"
+        - generic "help"
+        - generic "alert"
+        - generic "license"
+        - generic "string-untrans"
+        - generic "arrow-left"
+        - generic "arrow-right"
+        - generic "arrow-right-long"
+        - generic "arrow-up"
+        - generic "arrow-down"
+        - generic "chevron-down"
+        - generic "chevron-up"
+        - generic "thumbs-up"
+        - generic "thumbs-down"
+        - generic "full-arrow-down"
+        - generic "full-arrow-up"
+        - generic "arrow-left-small"
+        - generic "arrow-right-small"
+        - generic "arrow-up-small"
+        - generic "arrow-down-small"
+        - generic "copy-source"
+        - generic "copy-translation"
+        - generic "edit"
+        - generic "bullet"
+        - generic "search"
+        - generic "menu"
+        - generic "more"
+        - generic "burger-menu"
+        - generic "replace"
+        - generic "update"
+        - generic "undo"
+        - generic "autotranslate"
+        - generic "autotranslate"
+        - generic "review"
+        - generic "details"
+        - generic "filter-outline"
+        - generic "filter-filled"
+        - generic "editor-trans"
+        - generic "glossary"
+        - generic "send_file"
+        - generic "get_file"
+        - generic "language"
+        - generic "tmx-file"
+        - generic "language-delete"
+        - generic "language-add"
+        - generic "lock-add"
+        - generic "lock-remove"
+        - generic "txicon"
+        - generic "share"
+        - generic "source-download"
+        - generic "child"
+        - generic "permission"
+        - generic "door"
+        - generic "shortcut"
+        - generic "emit"
+        - generic "project_resource_translated"
+        - generic "resource-add"
+        - generic "resource-remove"
+        - generic "omega"
+        - generic "clone"
+        - generic "empty_team"
+        - generic "modal_error"
+        - generic "user_reviewer"
+        - generic "user_translator"
+        - generic "user"
+        - generic "user_manager"
+        - generic "user_maintainer"
+        - generic "team-join"
+        - generic "user-remove"
+        - generic "users"
+        - generic "key"
+        - generic "success-filled"
+        - generic "icon-star-outline"
+        - generic "icon-star"
+        - generic "download-line"
+        - generic "team-users"
+        - generic "no-user-assigned"
+        - generic "tag-locked"
+        - generic "copy-variant"
+  - generic [ref=f13e2]:
+    - generic [ref=f13e3]:
+      - text:  
+      - generic [ref=f13e6]:
+        - generic [ref=f13e7]:
+          - generic [ref=f13e1450]:
+            - generic [ref=f13e1453]:
+              - checkbox [ref=f13e1454] [cursor=pointer]
+              - link [ref=f13e1459] [cursor=pointer]:
+                - /url: /home/
+            - link "mayavi-doc" [ref=f13e1465] [cursor=pointer]:
+              - /url: "#navigation-projects-dropdown"
+            - generic [ref=f13e1468]: /
+            - link "building_applications" [ref=f13e1473] [cursor=pointer]:
+              - /url: "#navigation-resources-dropdown"
+          - generic [ref=f13e36]:
+            - generic [ref=f13e37]: English (en)
+            - generic [ref=f13e40]: →
+          - generic [ref=f13e41]:
+            - generic [ref=f13e42]: Japanese (ja)
+            - generic [ref=f13e49]: 原文の編集
+        - generic [ref=f13e50]:
+          - button "新しい文字列" [ref=f13e1477] [cursor=pointer]
+          - link "品質チェック" [ref=f13e1483] [cursor=pointer]:
+            - /url: javascript:;
+          - button [ref=f13e61] [cursor=pointer]
+          - button [ref=f13e1484] [cursor=pointer]
+          - button [ref=f13e69] [cursor=pointer]
+    - generic [ref=f13e76]:
+      - generic [ref=f13e79]:
+        - generic [ref=f13e1491]:
+          - generic [ref=f13e1494]:
+            - list [ref=f13e3722]:
+              - button "58 すべて" [ref=f13e3723] [cursor=pointer]:
+                - generic [ref=f13e3724]: "58"
+                - text: すべて
+              - button "1 未翻訳" [ref=f13e3725] [cursor=pointer]:
+                - generic [ref=f13e3726]: "1"
+                - text: 未翻訳
+              - button "57 レビュー待ち" [ref=f13e3727] [cursor=pointer]:
+                - generic [ref=f13e3728]: "57"
+                - text: レビュー待ち
+            - generic [ref=f13e1506]:
+              - generic [ref=f13e1509]:
+                - generic [ref=f13e1510]: 絞り込み
+                - generic [ref=f13e1519]:
+                  - textbox "テキストまたは絞り込みで検索" [active] [ref=f13e1523]: translated:no
+                  - link:
+                    - /url: javascript:;
+                    - img [ref=f13e3292] [cursor=pointer]
+              - generic [ref=f13e1524]:
+                - generic [ref=f13e1526]:
+                  - link "次の原文を含む" [ref=f13e1531] [cursor=pointer]:
+                    - /url: "#text-filter"
+                  - link "状態" [ref=f13e3296] [cursor=pointer]:
+                    - /url: "#status-filter"
+                  - link "タグ" [ref=f13e1549] [cursor=pointer]:
+                    - /url: "#tags-filter"
+                  - link "ユーザー" [ref=f13e1558] [cursor=pointer]:
+                    - /url: "#users-filter"
+                  - link "日付" [ref=f13e1567] [cursor=pointer]:
+                    - /url: "#date-filter"
+                  - link "ラベル" [ref=f13e1576] [cursor=pointer]:
+                    - /url: "#label-filter"
+                  - link "もっと" [ref=f13e1585] [cursor=pointer]:
+                    - /url: "#more-filter"
+                - generic [ref=f13e1591]:
+                  - 'link "並び順: デフォルト" [ref=f13e1594] [cursor=pointer]':
+                    - /url: "#sorting"
+                    - 'generic "並び順: デフォルト" [ref=f13e1596]'
+                  - generic [ref=f13e3768]:
+                    - checkbox "Loading"
+                    - img "Loading" [ref=f13e3770]
+          - generic [ref=f13e1607]:
+            - generic [ref=f13e1610] [cursor=pointer]
+            - generic [ref=f13e1615]:
+              - generic [ref=f13e3546] [cursor=pointer]:
+                - generic [ref=f13e3548]:
+                  - generic [ref=f13e3549]: "42"
+                  - generic [ref=f13e3556]:
+                    - generic [ref=f13e3557]: "Before defining the `Visualization` class, you should set the toolkit used by Traits to the Wx backend, as it otherwise prefers Qt when both are installed and `edit_traits` then hands you a Qt widget that no wx sizer will accept::"
+                    - generic [ref=f13e3563]: "`Visualization` クラスを定義する前に，Traitsが使用するツールキットをWxバックエンドに設定する必要があります．そうしないと，両方がインストールされている場合はQtが優先され， `edit_traits` はwx sizerが受け付けないQtウィジェットを返します．"
+                - generic [ref=f13e3568]:
+                  - checkbox
+              - generic [ref=f13e3658] [cursor=pointer]:
+                - generic [ref=f13e3660]:
+                  - generic [ref=f13e3661]: "43"
+                  - generic [ref=f13e3668]:
+                    - generic [ref=f13e3669]: This has to happen before anything else reads the toolkit, so keep it at the top of the module, above the Traits and Mayavi imports.
+                    - generic [ref=f13e3671]: これは他の何かがツールキットを読み込む前に行う必要があるため，モジュールの先頭，TraitsとMayaviのインポートの前に置いてください．
+                - generic [ref=f13e3676]:
+                  - checkbox
+              - generic [ref=f13e3772] [cursor=pointer]:
+                - generic [ref=f13e3774]:
+                  - generic [ref=f13e3775]: "45"
+                  - generic [ref=f13e3782]:
+                    - generic [ref=f13e3783]: "TraitsUI pushes wx event handlers onto the panel it builds and onto its children, and pops them only in ``ui.dispose()``, which never runs for a frame that is simply closed; wx then asserts on destroying a window that still has one. Popping them as above is enough, and only over the panel TraitsUI built -- calling ``dispose()`` here instead schedules a second ``Destroy`` through ``wx.CallAfter``, and popping over widgets of your own removes handlers wx installed for itself. Both crash on close."
+                    - generic [ref=f13e3785]: "TraitsUIは，構築したパネルとその子要素にwxイベントハンドラをプッシュし， ``ui.dispose()`` 内でのみポップしますが，単に閉じられたフレームに対しては実行されません．wxは，まだハンドラを持っているウィンドウを破棄するとアサートします．上記のようにポップするだけで十分であり，TraitsUIが構築したパネル上でのみ行います．ここで ``dispose()`` を呼び出すと， ``wx.CallAfter`` による2回目の ``Destroy`` がスケジュールされ，独自のウィジェット上でポップするとwx自身がインストールしたハンドラが削除されます．どちらもクローズ時にクラッシュします．"
+                - generic [ref=f13e3790]:
+                  - checkbox
+              - generic [ref=f13e3793] [cursor=pointer]:
+                - generic [ref=f13e3795]:
+                  - generic [ref=f13e3796]: "46"
+                  - generic [ref=f13e3802]: "Pass the container the panel is going into as ``parent``, not the frame around it: a widget handed to a Qt layout is reparented for you, while wx expects it to be a child of the container already. Putting a Mayavi view in a notebook page therefore means ``parent=self.notebook`` -- with the frame as parent the page can come out mis-drawn, and recent wxWidgets assert on it outright rather than reparenting quietly as older ones did."
+                - generic [ref=f13e3811]:
+                  - checkbox
+        - generic [ref=f13e779]:
+          - generic [ref=f13e787]:
+            - generic [ref=f13e788]:
+              - generic [ref=f13e789]:
+                - generic:           
+                - generic [ref=f13e790]:
+                  - generic [ref=f13e791]: 未翻訳の文字列
+                  - generic:
+                    - list
+                    - list
+                - generic [ref=f13e794]: "Pass the container the panel is going into as ``parent``, not the frame around it: a widget handed to a Qt layout is reparented for you, while wx expects it to be a child of the container already. Putting a Mayavi view in a notebook page therefore means ``parent=self.notebook`` -- with the frame as parent the page can come out mis-drawn, and recent wxWidgets assert on it outright rather than reparenting quietly as older ones did."
+              - generic [ref=f13e795]:
+                - generic [ref=f13e796]:
+                  - list [ref=f13e797]:
+                    - listitem [ref=f13e798]:
+                      - button [ref=f13e3260] [cursor=pointer]
+                    - listitem [ref=f13e799]:
+                      - button
+                    - listitem [ref=f13e800]:
+                      - button
+                    - listitem [ref=f13e801]:
+                      - button [ref=f13e3263] [cursor=pointer]
+                    - listitem [ref=f13e802]:
+                      - button [ref=f13e3266] [cursor=pointer]
+                    - listitem [ref=f13e803]:
+                      - button [ref=f13e3269] [cursor=pointer]
+                  - list [ref=f13e804]
+                - generic [ref=f13e805]:
+                  - generic [ref=f13e806]: ここに翻訳文を入力
+                  - generic [ref=f13e3817]:
+                    - button "翻訳を保存" [ref=f13e3818] [cursor=pointer]
+                    - generic [ref=f13e3819] [cursor=pointer]
+            - generic [ref=f13e822]:
+              - generic [ref=f13e823]:
+                - button "文脈" [ref=f13e824] [cursor=pointer]
+                - button "提案" [ref=f13e3601] [cursor=pointer]
+                - button "履歴 1" [ref=f13e3602] [cursor=pointer]:
+                  - generic [ref=f13e831]:
+                    - generic [ref=f13e832]: 履歴
+                    - generic [ref=f13e3406]: "1"
+                - button "用語集" [ref=f13e3603] [cursor=pointer]
+                - button "TQI" [ref=f13e836] [cursor=pointer]
+                - button "コメント" [ref=f13e839] [cursor=pointer]
+              - generic [ref=f13e845]:
+                - button "メモリ検索" [ref=f13e847] [cursor=pointer]
+                - generic [ref=f13e848]: 提案はありません
+          - text:  
+      - generic:
+        - generic:
+          - generic [ref=f13e853]:
+            - generic [ref=f13e854]:
+              - checkbox "すべての対応付けされた文字列を見る" [ref=f13e855]
+              - generic [ref=f13e856] [cursor=pointer]
+            - generic [ref=f13e857]: すべての対応付けされた文字列を見る
+          - generic:
+            - generic:
+              - generic [ref=f13e864] [cursor=pointer]
+              - generic: 画像を取得中
+  - textbox [ref=f13e870]
+  - iframe [ref=f13e871]:
+    

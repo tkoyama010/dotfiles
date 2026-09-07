@@ -1,0 +1,760 @@
+- generic [active] [ref=f24e1]:
+  - generic:
+    - img:
+      - generic:
+        - generic "project_team_deleted"
+        - generic "project_maintainer_added"
+        - generic "project_joined_team"
+        - generic "language_added"
+        - generic "language_removed"
+        - generic "project_language_requested"
+        - generic "project_changed"
+        - generic "project_changed_team"
+        - generic "project_resource_changed"
+        - generic "project_resource_deleted"
+        - generic "announcements"
+        - generic "project_announcement_added"
+        - generic "resource_language_translated"
+        - generic "project_team_join_requested"
+        - generic "recommendation"
+        - generic "inbox"
+        - generic "project_archived"
+        - generic "organizations"
+        - generic "project_updates"
+        - generic "team_updates"
+        - generic "team_discussions"
+        - generic "tts_order_created_admins"
+        - generic "order_created"
+        - generic "tts_tts_order_cancelled_admins"
+        - generic "tts_order_other_error"
+        - generic "autofetch_failed"
+        - generic "canceled_because_of_failed_payments"
+        - generic "order_failed"
+        - generic "invoice_failed"
+        - generic "overquota"
+        - generic "locked"
+        - generic "locked_reminder"
+        - generic "old_client_used"
+        - generic "comment_received"
+        - generic "order_delivered"
+        - generic "lionbridge_order_delivered"
+        - generic "order_price_discrepancy"
+        - generic "organization_added"
+        - generic "organization_member_removed"
+        - generic "project_added"
+        - generic "project_removed"
+        - generic "project_announcement_posted"
+        - generic "project_left_team"
+        - generic "project_join_team"
+        - generic "project_deleted"
+        - generic "project_invitation_accepted"
+        - generic "language_deleted"
+        - generic "language_requested"
+        - generic "maintainer_added"
+        - generic "resource_added"
+        - generic "resource_removed"
+        - generic "team_join_request_approved"
+        - generic "team_join_request_denied"
+        - generic "team_join_requested"
+        - generic "user_left_team"
+        - generic "collaborator_added"
+        - generic "team_added"
+        - generic "team_deleted"
+        - generic "team_message_posted"
+        - generic "manager_added"
+        - generic "manager_removed"
+        - generic "e2f_order_accepted"
+        - generic "e2f_order_created"
+        - generic "e2f_order_canceled"
+        - generic "e2f_order_delivered"
+        - generic "e2f_order_delivery_time_changed"
+        - generic "e2f_order_edited"
+        - generic "recommentation_given"
+        - generic "recommentation_updated"
+        - generic "project_unarchived"
+        - generic "outgoing_project_transfer_rejected"
+        - generic "incoming_project_transfer_rejected"
+        - generic "project_left_organization"
+        - generic "project_join_organization"
+        - generic "project_transfer_accepted"
+        - generic "credit_card_expire_notify"
+        - generic "live_content_detected"
+        - generic "live_content_updated"
+        - generic "project_language_request_accepted"
+        - generic "project_language_request_rejected"
+        - generic "project_tranfser_request_received"
+        - generic "project_transfer_request_sent"
+        - generic "source_file_updated"
+        - generic "discussion_issue"
+        - generic "glossary_discussion_issue"
+        - generic "tasks_created"
+        - generic "language_tasks_created"
+        - generic "task_assigned"
+        - generic "task_delivered"
+  - generic:
+    - img:
+      - generic:
+        - generic "open_in_other_window"
+        - generic "slack_icon"
+        - generic "lexiqa_icon"
+        - generic "blocker_issue_type"
+        - generic "task-settings"
+        - generic "chart"
+        - generic "words-completed"
+        - generic "words-total"
+        - generic "sort"
+        - generic "task"
+        - generic "explore-full"
+        - generic "help-full"
+        - generic "slim-arrow-down"
+        - generic "slim-arrow-up"
+        - generic "status"
+        - generic "fit-screen"
+        - generic "add-widget"
+        - generic "symbol"
+        - generic "compare"
+        - generic "sidebar-toggler"
+        - generic "screen"
+        - generic "resize-marker"
+        - generic "drag-handle"
+        - generic "pan-arrows"
+        - generic "list-view"
+        - generic "grid-view"
+        - generic "priority-urgent"
+        - generic "priority-high"
+        - generic "priority-normal"
+        - generic "unwatch"
+        - generic "watch"
+        - generic "more-outline"
+        - generic "message-sent"
+        - generic "message-inbox"
+        - generic "save"
+        - generic "concordance"
+        - generic "view-online"
+        - generic "rigi-preview"
+        - generic "rigi-preview-off"
+        - generic "news"
+        - generic "bubble"
+        - generic "blog"
+        - generic "advanced"
+        - generic "word"
+        - generic "lock-open"
+        - generic "lock"
+        - generic "mail"
+        - generic "file-reviewed"
+        - generic "file"
+        - generic "location"
+        - generic "url"
+        - generic "clock"
+        - generic "tag"
+        - generic "release"
+        - generic "code"
+        - generic "stats"
+        - generic "trash"
+        - generic "project-list"
+        - generic "project-add"
+        - generic "project-remove"
+        - generic "minus"
+        - generic "tick"
+        - generic "remove"
+        - generic "add"
+        - generic "tick-outline"
+        - generic "edit-outline"
+        - generic "remove-outline"
+        - generic "add-outline"
+        - generic "add-filled"
+        - generic "facebook"
+        - generic "google"
+        - generic "linkedin"
+        - generic "feed"
+        - generic "trash"
+        - generic "infomsg"
+        - generic "error"
+        - generic "help"
+        - generic "alert"
+        - generic "license"
+        - generic "string-untrans"
+        - generic "arrow-left"
+        - generic "arrow-right"
+        - generic "arrow-right-long"
+        - generic "arrow-up"
+        - generic "arrow-down"
+        - generic "chevron-down"
+        - generic "chevron-up"
+        - generic "thumbs-up"
+        - generic "thumbs-down"
+        - generic "full-arrow-down"
+        - generic "full-arrow-up"
+        - generic "arrow-left-small"
+        - generic "arrow-right-small"
+        - generic "arrow-up-small"
+        - generic "arrow-down-small"
+        - generic "copy-source"
+        - generic "copy-translation"
+        - generic "edit"
+        - generic "bullet"
+        - generic "search"
+        - generic "menu"
+        - generic "more"
+        - generic "burger-menu"
+        - generic "replace"
+        - generic "update"
+        - generic "undo"
+        - generic "autotranslate"
+        - generic "autotranslate"
+        - generic "review"
+        - generic "details"
+        - generic "filter-outline"
+        - generic "filter-filled"
+        - generic "editor-trans"
+        - generic "glossary"
+        - generic "send_file"
+        - generic "get_file"
+        - generic "language"
+        - generic "tmx-file"
+        - generic "language-delete"
+        - generic "language-add"
+        - generic "lock-add"
+        - generic "lock-remove"
+        - generic "txicon"
+        - generic "share"
+        - generic "source-download"
+        - generic "child"
+        - generic "permission"
+        - generic "door"
+        - generic "shortcut"
+        - generic "emit"
+        - generic "project_resource_translated"
+        - generic "resource-add"
+        - generic "resource-remove"
+        - generic "omega"
+        - generic "clone"
+        - generic "empty_team"
+        - generic "modal_error"
+        - generic "user_reviewer"
+        - generic "user_translator"
+        - generic "user"
+        - generic "user_manager"
+        - generic "user_maintainer"
+        - generic "team-join"
+        - generic "user-remove"
+        - generic "users"
+        - generic "key"
+        - generic "success-filled"
+        - generic "icon-star-outline"
+        - generic "icon-star"
+        - generic "download-line"
+        - generic "team-users"
+        - generic "no-user-assigned"
+        - generic "tag-locked"
+        - generic "copy-variant"
+  - generic [ref=f24e2]:
+    - generic [ref=f24e3]:
+      - text:  
+      - generic [ref=f24e6]:
+        - generic [ref=f24e7]:
+          - generic [ref=f24e10]:
+            - generic [ref=f24e13]:
+              - checkbox [ref=f24e14] [cursor=pointer]
+              - link [ref=f24e19] [cursor=pointer]:
+                - /url: /home/
+            - link "geovista-doc" [ref=f24e25] [cursor=pointer]:
+              - /url: "#navigation-projects-dropdown"
+            - generic [ref=f24e28]: /
+            - link "リソースを選択" [ref=f24e33] [cursor=pointer]:
+              - /url: "#navigation-resources-dropdown"
+          - generic [ref=f24e36]:
+            - generic [ref=f24e37]: English (en)
+            - generic [ref=f24e40]: →
+          - generic [ref=f24e41]:
+            - generic [ref=f24e42]: Japanese (ja)
+            - generic [ref=f24e49]: 原文の編集
+        - generic [ref=f24e50]:
+          - button "新しい文字列" [ref=f24e52] [cursor=pointer]
+          - link "品質チェック" [ref=f24e59] [cursor=pointer]:
+            - /url: javascript:;
+          - button [ref=f24e61] [cursor=pointer]
+          - button [ref=f24e65] [cursor=pointer]
+          - button [ref=f24e69] [cursor=pointer]
+    - generic [ref=f24e76]:
+      - generic [ref=f24e79]:
+        - generic [ref=f24e81]:
+          - generic [ref=f24e82]: リソースの概要
+          - generic [ref=f24e86]:
+            - textbox "リソース名で検索" [ref=f24e93]
+            - generic [ref=f24e96]:
+              - generic [ref=f24e97] [cursor=pointer]: 名前（昇順）
+              - generic [ref=f24e102]:
+                - generic [ref=f24e103]: 名前（昇順）
+                - generic [ref=f24e104]: 名前（降順）
+                - generic [ref=f24e105]: 最も古い未翻訳から
+                - generic [ref=f24e106]: 最も古い未翻訳から
+                - generic [ref=f24e107]: 優先度（昇順）
+                - generic [ref=f24e108]: 優先度（降順）
+                - generic [ref=f24e109]: 原文の更新日（昇順）
+                - generic [ref=f24e110]: 原文の更新日（降順）
+                - generic [ref=f24e111]: 未翻訳（昇順）
+                - generic [ref=f24e112]: 未翻訳（降順）
+                - generic [ref=f24e113]: レビュー待ち（昇順）
+                - generic [ref=f24e114]: レビュー待ち（降順）
+          - generic [ref=f24e115]:
+            - generic [ref=f24e118] [cursor=pointer]
+            - generic [ref=f24e123]:
+              - button "PO developer" [ref=f24e125] [cursor=pointer]:
+                - generic [ref=f24e132]:
+                  - generic [ref=f24e133]: PO
+                  - text: developer
+              - button "PO developer--changelog" [ref=f24e140] [cursor=pointer]:
+                - generic [ref=f24e147]:
+                  - generic [ref=f24e148]: PO
+                  - text: developer--changelog
+              - button "PO developer--codecraft" [ref=f24e155] [cursor=pointer]:
+                - generic [ref=f24e162]:
+                  - generic [ref=f24e163]: PO
+                  - text: developer--codecraft
+              - button "PO developer--documentation" [ref=f24e170] [cursor=pointer]:
+                - generic [ref=f24e177]:
+                  - generic [ref=f24e178]: PO
+                  - text: developer--documentation
+              - button "PO developer--index" [ref=f24e185] [cursor=pointer]:
+                - generic [ref=f24e192]:
+                  - generic [ref=f24e193]: PO
+                  - text: developer--index
+              - button "PO developer--packaging" [ref=f24e200] [cursor=pointer]:
+                - generic [ref=f24e207]:
+                  - generic [ref=f24e208]: PO
+                  - text: developer--packaging
+              - button "PO developer--testing" [ref=f24e215] [cursor=pointer]:
+                - generic [ref=f24e222]:
+                  - generic [ref=f24e223]: PO
+                  - text: developer--testing
+              - button "PO developer--towncrier" [ref=f24e230] [cursor=pointer]:
+                - generic [ref=f24e237]:
+                  - generic [ref=f24e238]: PO
+                  - text: developer--towncrier
+              - button "PO explanation" [ref=f24e245] [cursor=pointer]:
+                - generic [ref=f24e252]:
+                  - generic [ref=f24e253]: PO
+                  - text: explanation
+              - button "PO explanation--index" [ref=f24e260] [cursor=pointer]:
+                - generic [ref=f24e267]:
+                  - generic [ref=f24e268]: PO
+                  - text: explanation--index
+              - button "PO generated" [ref=f24e275] [cursor=pointer]:
+                - generic [ref=f24e282]:
+                  - generic [ref=f24e283]: PO
+                  - text: generated
+              - button "PO generated--gallery--contour--banded_contour" [ref=f24e290] [cursor=pointer]:
+                - generic [ref=f24e297]:
+                  - generic [ref=f24e298]: PO
+                  - text: generated--gallery--contour--banded_contour
+              - button "PO generated--gallery--contour--index" [ref=f24e305] [cursor=pointer]:
+                - generic [ref=f24e312]:
+                  - generic [ref=f24e313]: PO
+                  - text: generated--gallery--contour--index
+              - button "PO generated--gallery--contour--sg_execution_times" [ref=f24e320] [cursor=pointer]:
+                - generic [ref=f24e327]:
+                  - generic [ref=f24e328]: PO
+                  - text: generated--gallery--contour--sg_execution_times
+              - button "PO generated--gallery--curvilinear--from_2d__orca" [ref=f24e335] [cursor=pointer]:
+                - generic [ref=f24e342]:
+                  - generic [ref=f24e343]: PO
+                  - text: generated--gallery--curvilinear--from_2d__orca
+              - button "PO generated--gallery--curvilinear--from_2d__orca_moll" [ref=f24e350] [cursor=pointer]:
+                - generic [ref=f24e357]:
+                  - generic [ref=f24e358]: PO
+                  - text: generated--gallery--curvilinear--from_2d__orca_moll
+              - button "PO generated--gallery--curvilinear--index" [ref=f24e365] [cursor=pointer]:
+                - generic [ref=f24e372]:
+                  - generic [ref=f24e373]: PO
+                  - text: generated--gallery--curvilinear--index
+              - button "PO generated--gallery--curvilinear--sg_execution_times" [ref=f24e380] [cursor=pointer]:
+                - generic [ref=f24e387]:
+                  - generic [ref=f24e388]: PO
+                  - text: generated--gallery--curvilinear--sg_execution_times
+              - button "PO generated--gallery--domain--clouds" [ref=f24e395] [cursor=pointer]:
+                - generic [ref=f24e402]:
+                  - generic [ref=f24e403]: PO
+                  - text: generated--gallery--domain--clouds
+              - button "PO generated--gallery--domain--clouds_robin" [ref=f24e410] [cursor=pointer]:
+                - generic [ref=f24e417]:
+                  - generic [ref=f24e418]: PO
+                  - text: generated--gallery--domain--clouds_robin
+              - button "PO generated--gallery--domain--index" [ref=f24e425] [cursor=pointer]:
+                - generic [ref=f24e432]:
+                  - generic [ref=f24e433]: PO
+                  - text: generated--gallery--domain--index
+              - button "PO generated--gallery--domain--sg_execution_times" [ref=f24e440] [cursor=pointer]:
+                - generic [ref=f24e447]:
+                  - generic [ref=f24e448]: PO
+                  - text: generated--gallery--domain--sg_execution_times
+              - button "PO generated--gallery--extraction--index" [ref=f24e455] [cursor=pointer]:
+                - generic [ref=f24e462]:
+                  - generic [ref=f24e463]: PO
+                  - text: generated--gallery--extraction--index
+              - button "PO generated--gallery--extraction--panel_manifold" [ref=f24e470] [cursor=pointer]:
+                - generic [ref=f24e477]:
+                  - generic [ref=f24e478]: PO
+                  - text: generated--gallery--extraction--panel_manifold
+              - button "PO generated--gallery--extraction--plotter_manifold" [ref=f24e485] [cursor=pointer]:
+                - generic [ref=f24e492]:
+                  - generic [ref=f24e493]: PO
+                  - text: generated--gallery--extraction--plotter_manifold
+              - button "PO generated--gallery--extraction--sg_execution_times" [ref=f24e500] [cursor=pointer]:
+                - generic [ref=f24e507]:
+                  - generic [ref=f24e508]: PO
+                  - text: generated--gallery--extraction--sg_execution_times
+              - button "PO generated--gallery--extraction--wedge_manifold" [ref=f24e515] [cursor=pointer]:
+                - generic [ref=f24e522]:
+                  - generic [ref=f24e523]: PO
+                  - text: generated--gallery--extraction--wedge_manifold
+              - button "PO generated--gallery--grid--index" [ref=f24e530] [cursor=pointer]:
+                - generic [ref=f24e537]:
+                  - generic [ref=f24e538]: PO
+                  - text: generated--gallery--grid--index
+              - button "PO generated--gallery--grid--reykjanes" [ref=f24e545] [cursor=pointer]:
+                - generic [ref=f24e552]:
+                  - generic [ref=f24e553]: PO
+                  - text: generated--gallery--grid--reykjanes
+              - button "PO generated--gallery--grid--reykjanes_contour" [ref=f24e560] [cursor=pointer]:
+                - generic [ref=f24e567]:
+                  - generic [ref=f24e568]: PO
+                  - text: generated--gallery--grid--reykjanes_contour
+              - button "PO generated--gallery--grid--sg_execution_times" [ref=f24e575] [cursor=pointer]:
+                - generic [ref=f24e582]:
+                  - generic [ref=f24e583]: PO
+                  - text: generated--gallery--grid--sg_execution_times
+              - button "PO generated--gallery--index" [ref=f24e590] [cursor=pointer]:
+                - generic [ref=f24e597]:
+                  - generic [ref=f24e598]: PO
+                  - text: generated--gallery--index
+              - button "PO generated--gallery--point_cloud--from_points__orca_cloud" [ref=f24e605] [cursor=pointer]:
+                - generic [ref=f24e612]:
+                  - generic [ref=f24e613]: PO
+                  - text: generated--gallery--point_cloud--from_points__orca_cloud
+              - button "PO generated--gallery--point_cloud--from_points__orca_cloud_eqc" [ref=f24e620] [cursor=pointer]:
+                - generic [ref=f24e627]:
+                  - generic [ref=f24e628]: PO
+                  - text: generated--gallery--point_cloud--from_points__orca_cloud_eqc
+              - button "PO generated--gallery--point_cloud--index" [ref=f24e635] [cursor=pointer]:
+                - generic [ref=f24e642]:
+                  - generic [ref=f24e643]: PO
+                  - text: generated--gallery--point_cloud--index
+              - button "PO generated--gallery--point_cloud--sg_execution_times" [ref=f24e650] [cursor=pointer]:
+                - generic [ref=f24e657]:
+                  - generic [ref=f24e658]: PO
+                  - text: generated--gallery--point_cloud--sg_execution_times
+              - button "PO generated--gallery--rectilinear--from_1d__oisst" [ref=f24e665] [cursor=pointer]:
+                - generic [ref=f24e672]:
+                  - generic [ref=f24e673]: PO
+                  - text: generated--gallery--rectilinear--from_1d__oisst
+              - button "PO generated--gallery--rectilinear--from_1d__oisst_eqc" [ref=f24e680] [cursor=pointer]:
+                - generic [ref=f24e687]:
+                  - generic [ref=f24e688]: PO
+                  - text: generated--gallery--rectilinear--from_1d__oisst_eqc
+              - button "PO generated--gallery--rectilinear--index" [ref=f24e695] [cursor=pointer]:
+                - generic [ref=f24e702]:
+                  - generic [ref=f24e703]: PO
+                  - text: generated--gallery--rectilinear--index
+              - button "PO generated--gallery--rectilinear--sg_execution_times" [ref=f24e710] [cursor=pointer]:
+                - generic [ref=f24e717]:
+                  - generic [ref=f24e718]: PO
+                  - text: generated--gallery--rectilinear--sg_execution_times
+              - button "PO generated--gallery--scalar_data--earthquakes" [ref=f24e725] [cursor=pointer]:
+                - generic [ref=f24e732]:
+                  - generic [ref=f24e733]: PO
+                  - text: generated--gallery--scalar_data--earthquakes
+              - button "PO generated--gallery--scalar_data--earthquakes_wink1" [ref=f24e740] [cursor=pointer]:
+                - generic [ref=f24e747]:
+                  - generic [ref=f24e748]: PO
+                  - text: generated--gallery--scalar_data--earthquakes_wink1
+              - button "PO generated--gallery--scalar_data--from_tiff__dem" [ref=f24e755] [cursor=pointer]:
+                - generic [ref=f24e762]:
+                  - generic [ref=f24e763]: PO
+                  - text: generated--gallery--scalar_data--from_tiff__dem
+              - button "PO generated--gallery--scalar_data--from_tiff__rgb" [ref=f24e770] [cursor=pointer]:
+                - generic [ref=f24e777]:
+                  - generic [ref=f24e778]: PO
+                  - text: generated--gallery--scalar_data--from_tiff__rgb
+              - button "PO generated--gallery--scalar_data--index" [ref=f24e785] [cursor=pointer]:
+                - generic [ref=f24e792]:
+                  - generic [ref=f24e793]: PO
+                  - text: generated--gallery--scalar_data--index
+              - button "PO generated--gallery--scalar_data--sg_execution_times" [ref=f24e800] [cursor=pointer]:
+                - generic [ref=f24e807]:
+                  - generic [ref=f24e808]: PO
+                  - text: generated--gallery--scalar_data--sg_execution_times
+              - button "PO generated--gallery--sg_execution_times" [ref=f24e815] [cursor=pointer]:
+                - generic [ref=f24e822]:
+                  - generic [ref=f24e823]: PO
+                  - text: generated--gallery--sg_execution_times
+              - button "PO generated--gallery--spatial_index--index" [ref=f24e830] [cursor=pointer]:
+                - generic [ref=f24e837]:
+                  - generic [ref=f24e838]: PO
+                  - text: generated--gallery--spatial_index--index
+              - button "PO generated--gallery--spatial_index--sg_execution_times" [ref=f24e845] [cursor=pointer]:
+                - generic [ref=f24e852]:
+                  - generic [ref=f24e853]: PO
+                  - text: generated--gallery--spatial_index--sg_execution_times
+              - button "PO generated--gallery--spatial_index--uber_h3" [ref=f24e860] [cursor=pointer]:
+                - generic [ref=f24e867]:
+                  - generic [ref=f24e868]: PO
+                  - text: generated--gallery--spatial_index--uber_h3
+              - button "PO generated--gallery--unstructured--dynamico" [ref=f24e875] [cursor=pointer]:
+                - generic [ref=f24e882]:
+                  - generic [ref=f24e883]: PO
+                  - text: generated--gallery--unstructured--dynamico
+              - button "PO generated--gallery--unstructured--dynamico_poly" [ref=f24e890] [cursor=pointer]:
+                - generic [ref=f24e897]:
+                  - generic [ref=f24e898]: PO
+                  - text: generated--gallery--unstructured--dynamico_poly
+              - button "PO generated--gallery--unstructured--icon" [ref=f24e905] [cursor=pointer]:
+                - generic [ref=f24e912]:
+                  - generic [ref=f24e913]: PO
+                  - text: generated--gallery--unstructured--icon
+              - button "PO generated--gallery--unstructured--icon_eqc" [ref=f24e920] [cursor=pointer]:
+                - generic [ref=f24e927]:
+                  - generic [ref=f24e928]: PO
+                  - text: generated--gallery--unstructured--icon_eqc
+              - button "PO generated--gallery--unstructured--index" [ref=f24e935] [cursor=pointer]:
+                - generic [ref=f24e942]:
+                  - generic [ref=f24e943]: PO
+                  - text: generated--gallery--unstructured--index
+              - button "PO generated--gallery--unstructured--lam_pacific" [ref=f24e950] [cursor=pointer]:
+                - generic [ref=f24e957]:
+                  - generic [ref=f24e958]: PO
+                  - text: generated--gallery--unstructured--lam_pacific
+              - button "PO generated--gallery--unstructured--lam_pacific_moll" [ref=f24e965] [cursor=pointer]:
+                - generic [ref=f24e972]:
+                  - generic [ref=f24e973]: PO
+                  - text: generated--gallery--unstructured--lam_pacific_moll
+              - button "PO generated--gallery--unstructured--lfric_sst" [ref=f24e980] [cursor=pointer]:
+                - generic [ref=f24e987]:
+                  - generic [ref=f24e988]: PO
+                  - text: generated--gallery--unstructured--lfric_sst
+              - button "PO generated--gallery--unstructured--lfric_sst_bonne" [ref=f24e995] [cursor=pointer]:
+                - generic [ref=f24e1002]:
+                  - generic [ref=f24e1003]: PO
+                  - text: generated--gallery--unstructured--lfric_sst_bonne
+              - button "PO generated--gallery--unstructured--sg_execution_times" [ref=f24e1010] [cursor=pointer]:
+                - generic [ref=f24e1017]:
+                  - generic [ref=f24e1018]: PO
+                  - text: generated--gallery--unstructured--sg_execution_times
+              - button "PO generated--gallery--unstructured--smc" [ref=f24e1025] [cursor=pointer]:
+                - generic [ref=f24e1032]:
+                  - generic [ref=f24e1033]: PO
+                  - text: generated--gallery--unstructured--smc
+              - button "PO generated--gallery--unstructured--smc_sinu" [ref=f24e1040] [cursor=pointer]:
+                - generic [ref=f24e1047]:
+                  - generic [ref=f24e1048]: PO
+                  - text: generated--gallery--unstructured--smc_sinu
+              - button "PO generated--gallery--unstructured--tri" [ref=f24e1055] [cursor=pointer]:
+                - generic [ref=f24e1062]:
+                  - generic [ref=f24e1063]: PO
+                  - text: generated--gallery--unstructured--tri
+              - button "PO generated--gallery--unstructured--tri_hammer" [ref=f24e1070] [cursor=pointer]:
+                - generic [ref=f24e1077]:
+                  - generic [ref=f24e1078]: PO
+                  - text: generated--gallery--unstructured--tri_hammer
+              - button "PO generated--gallery--vector_data--index" [ref=f24e1085] [cursor=pointer]:
+                - generic [ref=f24e1092]:
+                  - generic [ref=f24e1093]: PO
+                  - text: generated--gallery--vector_data--index
+              - button "PO generated--gallery--vector_data--sg_execution_times" [ref=f24e1100] [cursor=pointer]:
+                - generic [ref=f24e1107]:
+                  - generic [ref=f24e1108]: PO
+                  - text: generated--gallery--vector_data--sg_execution_times
+              - button "PO generated--gallery--vector_data--true_winds" [ref=f24e1115] [cursor=pointer]:
+                - generic [ref=f24e1122]:
+                  - generic [ref=f24e1123]: PO
+                  - text: generated--gallery--vector_data--true_winds
+              - button "PO generated--gallery--vector_data--vectors" [ref=f24e1130] [cursor=pointer]:
+                - generic [ref=f24e1137]:
+                  - generic [ref=f24e1138]: PO
+                  - text: generated--gallery--vector_data--vectors
+              - button "PO generated--gallery--vector_data--wind_arrows" [ref=f24e1145] [cursor=pointer]:
+                - generic [ref=f24e1152]:
+                  - generic [ref=f24e1153]: PO
+                  - text: generated--gallery--vector_data--wind_arrows
+              - button "PO generated--gallery--vector_data--wind_arrows_flow" [ref=f24e1160] [cursor=pointer]:
+                - generic [ref=f24e1167]:
+                  - generic [ref=f24e1168]: PO
+                  - text: generated--gallery--vector_data--wind_arrows_flow
+              - button "PO generated--gallery--vector_data--wind_arrows_uvw" [ref=f24e1175] [cursor=pointer]:
+                - generic [ref=f24e1182]:
+                  - generic [ref=f24e1183]: PO
+                  - text: generated--gallery--vector_data--wind_arrows_uvw
+              - button "PO generated--gallery--warp--from_unstructured__fvcom" [ref=f24e1190] [cursor=pointer]:
+                - generic [ref=f24e1197]:
+                  - generic [ref=f24e1198]: PO
+                  - text: generated--gallery--warp--from_unstructured__fvcom
+              - button "PO generated--gallery--warp--from_unstructured__lfric_orog" [ref=f24e1205] [cursor=pointer]:
+                - generic [ref=f24e1212]:
+                  - generic [ref=f24e1213]: PO
+                  - text: generated--gallery--warp--from_unstructured__lfric_orog
+              - button "PO generated--gallery--warp--from_unstructured__lfric_orog_eqc" [ref=f24e1220] [cursor=pointer]:
+                - generic [ref=f24e1227]:
+                  - generic [ref=f24e1228]: PO
+                  - text: generated--gallery--warp--from_unstructured__lfric_orog_eqc
+              - button "PO generated--gallery--warp--index" [ref=f24e1235] [cursor=pointer]:
+                - generic [ref=f24e1242]:
+                  - generic [ref=f24e1243]: PO
+                  - text: generated--gallery--warp--index
+              - button "PO generated--gallery--warp--sg_execution_times" [ref=f24e1250] [cursor=pointer]:
+                - generic [ref=f24e1257]:
+                  - generic [ref=f24e1258]: PO
+                  - text: generated--gallery--warp--sg_execution_times
+              - button "PO howtos" [ref=f24e1265] [cursor=pointer]:
+                - generic [ref=f24e1272]:
+                  - generic [ref=f24e1273]: PO
+                  - text: howtos
+              - button "PO howtos--index" [ref=f24e1280] [cursor=pointer]:
+                - generic [ref=f24e1287]:
+                  - generic [ref=f24e1288]: PO
+                  - text: howtos--index
+              - button "PO index" [ref=f24e1295] [cursor=pointer]:
+                - generic [ref=f24e1302]:
+                  - generic [ref=f24e1303]: PO
+                  - text: index
+              - button "PO installation" [ref=f24e1310] [cursor=pointer]:
+                - generic [ref=f24e1317]:
+                  - generic [ref=f24e1318]: PO
+                  - text: installation
+              - button "PO next_steps" [ref=f24e1325] [cursor=pointer]:
+                - generic [ref=f24e1332]:
+                  - generic [ref=f24e1333]: PO
+                  - text: next_steps
+              - button "PO overview" [ref=f24e1340] [cursor=pointer]:
+                - generic [ref=f24e1347]:
+                  - generic [ref=f24e1348]: PO
+                  - text: overview
+              - button "PO quick_start" [ref=f24e1355] [cursor=pointer]:
+                - generic [ref=f24e1362]:
+                  - generic [ref=f24e1363]: PO
+                  - text: quick_start
+              - button "PO reference" [ref=f24e1370] [cursor=pointer]:
+                - generic [ref=f24e1377]:
+                  - generic [ref=f24e1378]: PO
+                  - text: reference
+              - button "PO reference--about" [ref=f24e1385] [cursor=pointer]:
+                - generic [ref=f24e1392]:
+                  - generic [ref=f24e1393]: PO
+                  - text: reference--about
+              - button "PO reference--bindings" [ref=f24e1400] [cursor=pointer]:
+                - generic [ref=f24e1407]:
+                  - generic [ref=f24e1408]: PO
+                  - text: reference--bindings
+              - button "PO reference--changelog" [ref=f24e1415] [cursor=pointer]:
+                - generic [ref=f24e1422]:
+                  - generic [ref=f24e1423]: PO
+                  - text: reference--changelog
+              - button "PO reference--cli--download" [ref=f24e1430] [cursor=pointer]:
+                - generic [ref=f24e1437]:
+                  - generic [ref=f24e1438]: PO
+                  - text: reference--cli--download
+              - button "PO reference--cli--examples" [ref=f24e1445] [cursor=pointer]:
+                - generic [ref=f24e1452]:
+                  - generic [ref=f24e1453]: PO
+                  - text: reference--cli--examples
+              - button "PO reference--cli--index" [ref=f24e1460] [cursor=pointer]:
+                - generic [ref=f24e1467]:
+                  - generic [ref=f24e1468]: PO
+                  - text: reference--cli--index
+              - button "PO reference--cli--plot" [ref=f24e1475] [cursor=pointer]:
+                - generic [ref=f24e1482]:
+                  - generic [ref=f24e1483]: PO
+                  - text: reference--cli--plot
+              - button "PO reference--environment" [ref=f24e1490] [cursor=pointer]:
+                - generic [ref=f24e1497]:
+                  - generic [ref=f24e1498]: PO
+                  - text: reference--environment
+              - button "PO reference--generated--api--geovista--bridge--index" [ref=f24e1505] [cursor=pointer]:
+                - generic [ref=f24e1512]:
+                  - generic [ref=f24e1513]: PO
+                  - text: reference--generated--api--geovista--bridge--index
+              - button "PO reference--generated--api--geovista--cache--index" [ref=f24e1520] [cursor=pointer]:
+                - generic [ref=f24e1527]:
+                  - generic [ref=f24e1528]: PO
+                  - text: reference--generated--api--geovista--cache--index
+              - button "PO reference--generated--api--geovista--common--index" [ref=f24e1535] [cursor=pointer]:
+                - generic [ref=f24e1542]:
+                  - generic [ref=f24e1543]: PO
+                  - text: reference--generated--api--geovista--common--index
+              - button "PO reference--generated--api--geovista--config--index" [ref=f24e1550] [cursor=pointer]:
+                - generic [ref=f24e1557]:
+                  - generic [ref=f24e1558]: PO
+                  - text: reference--generated--api--geovista--config--index
+              - button "PO reference--generated--api--geovista--core--index" [ref=f24e1565] [cursor=pointer]:
+                - generic [ref=f24e1572]:
+                  - generic [ref=f24e1573]: PO
+                  - text: reference--generated--api--geovista--core--index
+              - button "PO reference--generated--api--geovista--crs--index" [ref=f24e1580] [cursor=pointer]:
+                - generic [ref=f24e1587]:
+                  - generic [ref=f24e1588]: PO
+                  - text: reference--generated--api--geovista--crs--index
+              - button "PO reference--generated--api--geovista--filters--index" [ref=f24e1595] [cursor=pointer]:
+                - generic [ref=f24e1602]:
+                  - generic [ref=f24e1603]: PO
+                  - text: reference--generated--api--geovista--filters--index
+              - button "PO reference--generated--api--geovista--geodesic--index" [ref=f24e1610] [cursor=pointer]:
+                - generic [ref=f24e1617]:
+                  - generic [ref=f24e1618]: PO
+                  - text: reference--generated--api--geovista--geodesic--index
+            - button "全リソース" [ref=f24e1625] [cursor=pointer]
+        - generic [ref=f24e1630]:
+          - generic [ref=f24e1633]:
+            - text: 始めるには
+            - strong [ref=f24e1634]: リソース
+            - text: を選択してください
+          - generic [ref=f24e1638]:
+            - generic [ref=f24e1639]:
+              - generic [ref=f24e1640]:
+                - generic:           
+                - generic [ref=f24e1641]:
+                  - generic [ref=f24e1642]: 未翻訳の文字列
+                  - generic:
+                    - list
+                    - list
+              - generic [ref=f24e1646]:
+                - generic [ref=f24e1647]:
+                  - list [ref=f24e1648]:
+                    - listitem [ref=f24e1649]:
+                      - button
+                    - listitem [ref=f24e1650]:
+                      - button
+                    - listitem [ref=f24e1651]:
+                      - button
+                    - listitem [ref=f24e1652]:
+                      - button
+                    - listitem [ref=f24e1653]:
+                      - button
+                    - listitem [ref=f24e1654]:
+                      - button
+                  - list [ref=f24e1655]
+                - generic [ref=f24e1666]:
+                  - button "翻訳を保存" [ref=f24e1667] [cursor=pointer]
+                  - generic [ref=f24e1668] [cursor=pointer]
+            - generic [ref=f24e1673]:
+              - generic [ref=f24e1674]:
+                - button "文脈" [ref=f24e1675] [cursor=pointer]
+                - button "提案" [ref=f24e1678] [cursor=pointer]
+                - button "履歴" [ref=f24e1681] [cursor=pointer]
+                - button "用語集" [ref=f24e1684] [cursor=pointer]
+                - button "TQI" [ref=f24e1687] [cursor=pointer]
+                - button "コメント" [ref=f24e1690] [cursor=pointer]
+              - generic [ref=f24e1696]:
+                - button "メモリ検索" [ref=f24e1698] [cursor=pointer]
+                - generic [ref=f24e1699]: 提案はありません
+          - text:  
+      - generic:
+        - generic:
+          - generic [ref=f24e1704]:
+            - generic [ref=f24e1705]:
+              - checkbox "すべての対応付けされた文字列を見る" [ref=f24e1706]
+              - generic [ref=f24e1707] [cursor=pointer]
+            - generic [ref=f24e1708]: すべての対応付けされた文字列を見る
+          - generic:
+            - generic:
+              - generic [ref=f24e1715] [cursor=pointer]
+              - generic: 画像を取得中
+  - textbox [ref=f24e1721]

@@ -1,0 +1,938 @@
+- generic [ref=f13e1]:
+  - generic:
+    - img:
+      - generic:
+        - generic "project_team_deleted"
+        - generic "project_maintainer_added"
+        - generic "project_joined_team"
+        - generic "language_added"
+        - generic "language_removed"
+        - generic "project_language_requested"
+        - generic "project_changed"
+        - generic "project_changed_team"
+        - generic "project_resource_changed"
+        - generic "project_resource_deleted"
+        - generic "announcements"
+        - generic "project_announcement_added"
+        - generic "resource_language_translated"
+        - generic "project_team_join_requested"
+        - generic "recommendation"
+        - generic "inbox"
+        - generic "project_archived"
+        - generic "organizations"
+        - generic "project_updates"
+        - generic "team_updates"
+        - generic "team_discussions"
+        - generic "tts_order_created_admins"
+        - generic "order_created"
+        - generic "tts_tts_order_cancelled_admins"
+        - generic "tts_order_other_error"
+        - generic "autofetch_failed"
+        - generic "canceled_because_of_failed_payments"
+        - generic "order_failed"
+        - generic "invoice_failed"
+        - generic "overquota"
+        - generic "locked"
+        - generic "locked_reminder"
+        - generic "old_client_used"
+        - generic "comment_received"
+        - generic "order_delivered"
+        - generic "lionbridge_order_delivered"
+        - generic "order_price_discrepancy"
+        - generic "organization_added"
+        - generic "organization_member_removed"
+        - generic "project_added"
+        - generic "project_removed"
+        - generic "project_announcement_posted"
+        - generic "project_left_team"
+        - generic "project_join_team"
+        - generic "project_deleted"
+        - generic "project_invitation_accepted"
+        - generic "language_deleted"
+        - generic "language_requested"
+        - generic "maintainer_added"
+        - generic "resource_added"
+        - generic "resource_removed"
+        - generic "team_join_request_approved"
+        - generic "team_join_request_denied"
+        - generic "team_join_requested"
+        - generic "user_left_team"
+        - generic "collaborator_added"
+        - generic "team_added"
+        - generic "team_deleted"
+        - generic "team_message_posted"
+        - generic "manager_added"
+        - generic "manager_removed"
+        - generic "e2f_order_accepted"
+        - generic "e2f_order_created"
+        - generic "e2f_order_canceled"
+        - generic "e2f_order_delivered"
+        - generic "e2f_order_delivery_time_changed"
+        - generic "e2f_order_edited"
+        - generic "recommentation_given"
+        - generic "recommentation_updated"
+        - generic "project_unarchived"
+        - generic "outgoing_project_transfer_rejected"
+        - generic "incoming_project_transfer_rejected"
+        - generic "project_left_organization"
+        - generic "project_join_organization"
+        - generic "project_transfer_accepted"
+        - generic "credit_card_expire_notify"
+        - generic "live_content_detected"
+        - generic "live_content_updated"
+        - generic "project_language_request_accepted"
+        - generic "project_language_request_rejected"
+        - generic "project_tranfser_request_received"
+        - generic "project_transfer_request_sent"
+        - generic "source_file_updated"
+        - generic "discussion_issue"
+        - generic "glossary_discussion_issue"
+        - generic "tasks_created"
+        - generic "language_tasks_created"
+        - generic "task_assigned"
+        - generic "task_delivered"
+  - generic:
+    - img:
+      - generic:
+        - generic "open_in_other_window"
+        - generic "slack_icon"
+        - generic "lexiqa_icon"
+        - generic "blocker_issue_type"
+        - generic "task-settings"
+        - generic "chart"
+        - generic "words-completed"
+        - generic "words-total"
+        - generic "sort"
+        - generic "task"
+        - generic "explore-full"
+        - generic "help-full"
+        - generic "slim-arrow-down"
+        - generic "slim-arrow-up"
+        - generic "status"
+        - generic "fit-screen"
+        - generic "add-widget"
+        - generic "symbol"
+        - generic "compare"
+        - generic "sidebar-toggler"
+        - generic "screen"
+        - generic "resize-marker"
+        - generic "drag-handle"
+        - generic "pan-arrows"
+        - generic "list-view"
+        - generic "grid-view"
+        - generic "priority-urgent"
+        - generic "priority-high"
+        - generic "priority-normal"
+        - generic "unwatch"
+        - generic "watch"
+        - generic "more-outline"
+        - generic "message-sent"
+        - generic "message-inbox"
+        - generic "save"
+        - generic "concordance"
+        - generic "view-online"
+        - generic "rigi-preview"
+        - generic "rigi-preview-off"
+        - generic "news"
+        - generic "bubble"
+        - generic "blog"
+        - generic "advanced"
+        - generic "word"
+        - generic "lock-open"
+        - generic "lock"
+        - generic "mail"
+        - generic "file-reviewed"
+        - generic "file"
+        - generic "location"
+        - generic "url"
+        - generic "clock"
+        - generic "tag"
+        - generic "release"
+        - generic "code"
+        - generic "stats"
+        - generic "trash"
+        - generic "project-list"
+        - generic "project-add"
+        - generic "project-remove"
+        - generic "minus"
+        - generic "tick"
+        - generic "remove"
+        - generic "add"
+        - generic "tick-outline"
+        - generic "edit-outline"
+        - generic "remove-outline"
+        - generic "add-outline"
+        - generic "add-filled"
+        - generic "facebook"
+        - generic "google"
+        - generic "linkedin"
+        - generic "feed"
+        - generic "trash"
+        - generic "infomsg"
+        - generic "error"
+        - generic "help"
+        - generic "alert"
+        - generic "license"
+        - generic "string-untrans"
+        - generic "arrow-left"
+        - generic "arrow-right"
+        - generic "arrow-right-long"
+        - generic "arrow-up"
+        - generic "arrow-down"
+        - generic "chevron-down"
+        - generic "chevron-up"
+        - generic "thumbs-up"
+        - generic "thumbs-down"
+        - generic "full-arrow-down"
+        - generic "full-arrow-up"
+        - generic "arrow-left-small"
+        - generic "arrow-right-small"
+        - generic "arrow-up-small"
+        - generic "arrow-down-small"
+        - generic "copy-source"
+        - generic "copy-translation"
+        - generic "edit"
+        - generic "bullet"
+        - generic "search"
+        - generic "menu"
+        - generic "more"
+        - generic "burger-menu"
+        - generic "replace"
+        - generic "update"
+        - generic "undo"
+        - generic "autotranslate"
+        - generic "autotranslate"
+        - generic "review"
+        - generic "details"
+        - generic "filter-outline"
+        - generic "filter-filled"
+        - generic "editor-trans"
+        - generic "glossary"
+        - generic "send_file"
+        - generic "get_file"
+        - generic "language"
+        - generic "tmx-file"
+        - generic "language-delete"
+        - generic "language-add"
+        - generic "lock-add"
+        - generic "lock-remove"
+        - generic "txicon"
+        - generic "share"
+        - generic "source-download"
+        - generic "child"
+        - generic "permission"
+        - generic "door"
+        - generic "shortcut"
+        - generic "emit"
+        - generic "project_resource_translated"
+        - generic "resource-add"
+        - generic "resource-remove"
+        - generic "omega"
+        - generic "clone"
+        - generic "empty_team"
+        - generic "modal_error"
+        - generic "user_reviewer"
+        - generic "user_translator"
+        - generic "user"
+        - generic "user_manager"
+        - generic "user_maintainer"
+        - generic "team-join"
+        - generic "user-remove"
+        - generic "users"
+        - generic "key"
+        - generic "success-filled"
+        - generic "icon-star-outline"
+        - generic "icon-star"
+        - generic "download-line"
+        - generic "team-users"
+        - generic "no-user-assigned"
+        - generic "tag-locked"
+        - generic "copy-variant"
+  - generic [ref=f13e2]:
+    - generic [ref=f13e3]:
+      - text:  
+      - generic [ref=f13e6]:
+        - generic [ref=f13e7]:
+          - generic [ref=f13e5151]:
+            - generic [ref=f13e5154]:
+              - checkbox [ref=f13e5155] [cursor=pointer]
+              - link [ref=f13e5160] [cursor=pointer]:
+                - /url: /home/
+            - link "mayavi-doc" [ref=f13e5166] [cursor=pointer]:
+              - /url: "#navigation-projects-dropdown"
+            - generic [ref=f13e5169]: /
+            - link "auto" [ref=f13e5174] [cursor=pointer]:
+              - /url: "#navigation-resources-dropdown"
+          - generic [ref=f13e36]:
+            - generic [ref=f13e37]: English (en)
+            - generic [ref=f13e40]: →
+          - generic [ref=f13e41]:
+            - generic [ref=f13e42]: Japanese (ja)
+            - generic [ref=f13e49]: 原文の編集
+        - generic [ref=f13e50]:
+          - button "新しい文字列" [ref=f13e5177] [cursor=pointer]
+          - link "品質チェック" [ref=f13e5183] [cursor=pointer]:
+            - /url: javascript:;
+          - button [ref=f13e61] [cursor=pointer]
+          - button [ref=f13e5184] [cursor=pointer]
+          - button [ref=f13e69] [cursor=pointer]
+    - generic [ref=f13e76]:
+      - generic [ref=f13e79]:
+        - generic [ref=f13e1491]:
+          - generic [ref=f13e1494]:
+            - list [ref=f13e5212]:
+              - button "1234 すべて" [ref=f13e5213] [cursor=pointer]:
+                - generic [ref=f13e5214]: "1234"
+                - text: すべて
+              - button "47 未翻訳" [ref=f13e5215] [cursor=pointer]:
+                - generic [ref=f13e5216]: "47"
+                - text: 未翻訳
+              - button "1187 レビュー待ち" [ref=f13e5217] [cursor=pointer]:
+                - generic [ref=f13e5218]: "1187"
+                - text: レビュー待ち
+            - generic [ref=f13e1506]:
+              - generic [ref=f13e1509]:
+                - generic [ref=f13e1510]: 絞り込み
+                - generic [ref=f13e1519]:
+                  - textbox "テキストまたは絞り込みで検索" [active] [ref=f13e1523]: translated:no
+                  - link:
+                    - /url: javascript:;
+                    - img [ref=f13e3292] [cursor=pointer]
+              - generic [ref=f13e1524]:
+                - generic [ref=f13e1526]:
+                  - link "次の原文を含む" [ref=f13e1531] [cursor=pointer]:
+                    - /url: "#text-filter"
+                  - link "状態" [ref=f13e3296] [cursor=pointer]:
+                    - /url: "#status-filter"
+                  - link "タグ" [ref=f13e1549] [cursor=pointer]:
+                    - /url: "#tags-filter"
+                  - link "ユーザー" [ref=f13e1558] [cursor=pointer]:
+                    - /url: "#users-filter"
+                  - link "日付" [ref=f13e1567] [cursor=pointer]:
+                    - /url: "#date-filter"
+                  - link "ラベル" [ref=f13e1576] [cursor=pointer]:
+                    - /url: "#label-filter"
+                  - link "もっと" [ref=f13e1585] [cursor=pointer]:
+                    - /url: "#more-filter"
+                - generic [ref=f13e1591]:
+                  - 'link "並び順: デフォルト" [ref=f13e1594] [cursor=pointer]':
+                    - /url: "#sorting"
+                    - 'generic "並び順: デフォルト" [ref=f13e1596]'
+                  - generic [ref=f13e5221]:
+                    - checkbox "Loading"
+                    - img "Loading" [ref=f13e5223]
+          - generic [ref=f13e1607]:
+            - generic [ref=f13e1610] [cursor=pointer]
+            - generic [ref=f13e1615]:
+              - generic [ref=f13e5226] [cursor=pointer]:
+                - generic [ref=f13e5228]:
+                  - generic [ref=f13e5229]: "186"
+                  - generic [ref=f13e5235]: Multi block example
+                - generic [ref=f13e5244]:
+                  - checkbox
+              - generic [ref=f13e5248] [cursor=pointer]:
+                - generic [ref=f13e5250]:
+                  - generic [ref=f13e5251]: "187"
+                  - generic [ref=f13e5257]: "**Python source code:** :download:`multi_block.py`"
+                - generic [ref=f13e5266]:
+                  - checkbox
+              - generic [ref=f13e5270] [cursor=pointer]:
+                - generic [ref=f13e5272]:
+                  - generic [ref=f13e5273]: "206"
+                  - generic [ref=f13e5279]: Normal flipping stl example
+                - generic [ref=f13e5288]:
+                  - checkbox
+              - generic [ref=f13e5292] [cursor=pointer]:
+                - generic [ref=f13e5294]:
+                  - generic [ref=f13e5295]: "207"
+                  - generic [ref=f13e5301]: This example shows how to read a stl file and flip it's normals.
+                - generic [ref=f13e5310]:
+                  - checkbox
+              - generic [ref=f13e5314] [cursor=pointer]:
+                - generic [ref=f13e5316]:
+                  - generic [ref=f13e5317]: "208"
+                  - generic [ref=f13e5323]: "**Python source code:** :download:`normal_flipping_stl.py`"
+                - generic [ref=f13e5332]:
+                  - checkbox
+              - generic [ref=f13e5336] [cursor=pointer]:
+                - generic [ref=f13e5338]:
+                  - generic [ref=f13e5339]: "250"
+                  - generic [ref=f13e5345]: We assign a scalar value for the atoms to differentiate the different types of atoms, but it does not correspond to the atomic mass. The size and the color of the atom on the visualization is therefore not chemically-significant.
+                - generic [ref=f13e5354]:
+                  - checkbox
+              - generic [ref=f13e5358] [cursor=pointer]:
+                - generic [ref=f13e5360]:
+                  - generic [ref=f13e5361]: "258"
+                  - generic [ref=f13e5367]: "For this use, Mayavi is embedded in a QWidget. To understand this example, please read section :ref:`building_applications`."
+                - generic [ref=f13e5376]:
+                  - checkbox
+              - generic [ref=f13e5380] [cursor=pointer]:
+                - generic [ref=f13e5382]:
+                  - generic [ref=f13e5383]: "306"
+                  - generic [ref=f13e5389]: This example uses MayaVi to show the evolution of a superquadric (http://en.wikipedia.org/wiki/Superquadrics), which are ellipsoidal surfaces parametrised by two parameters, *alpha* and *beta*.
+                - generic [ref=f13e5398]:
+                  - checkbox
+              - generic [ref=f13e5402] [cursor=pointer]:
+                - generic [ref=f13e5404]:
+                  - generic [ref=f13e5405]: "307"
+                  - generic [ref=f13e5411]: "The equations that determine the superquadric are, in spherical-polar coordinates::"
+                - generic [ref=f13e5420]:
+                  - checkbox
+              - generic [ref=f13e5424] [cursor=pointer]:
+                - generic [ref=f13e5426]:
+                  - generic [ref=f13e5427]: "308"
+                  - generic [ref=f13e5433]: "Note that when we set ``A = B = C = r`` and ``alpha = beta = 1``, we get the equation for a sphere in spherical polar coordinates."
+                - generic [ref=f13e5442]:
+                  - checkbox
+              - generic [ref=f13e5446] [cursor=pointer]:
+                - generic [ref=f13e5448]:
+                  - generic [ref=f13e5449]: "309"
+                  - generic [ref=f13e5455]: Use the controls at the bottom of the plot to adjust *alpha* and *beta*, and watch as the figure transforms accordingly!
+                - generic [ref=f13e5464]:
+                  - checkbox
+              - generic [ref=f13e5468] [cursor=pointer]:
+                - generic [ref=f13e5470]:
+                  - generic [ref=f13e5471]: "526"
+                  - generic [ref=f13e5477]: "0108"
+                - generic [ref=f13e5486]:
+                  - checkbox
+              - generic [ref=f13e5490] [cursor=pointer]:
+                - generic [ref=f13e5492]:
+                  - generic [ref=f13e5493]: "532"
+                  - generic [ref=f13e5499]: "0110"
+                - generic [ref=f13e5508]:
+                  - checkbox
+              - generic [ref=f13e5512] [cursor=pointer]:
+                - generic [ref=f13e5514]:
+                  - generic [ref=f13e5515]: "541"
+                  - generic [ref=f13e5521]: "0113"
+                - generic [ref=f13e5530]:
+                  - checkbox
+              - generic [ref=f13e5534] [cursor=pointer]:
+                - generic [ref=f13e5536]:
+                  - generic [ref=f13e5537]: "561"
+                  - generic [ref=f13e5543]: "0201"
+                - generic [ref=f13e5552]:
+                  - checkbox
+              - generic [ref=f13e5556] [cursor=pointer]:
+                - generic [ref=f13e5558]:
+                  - generic [ref=f13e5559]: "566"
+                  - generic [ref=f13e5565]: "0203"
+                - generic [ref=f13e5574]:
+                  - checkbox
+              - generic [ref=f13e5578] [cursor=pointer]:
+                - generic [ref=f13e5580]:
+                  - generic [ref=f13e5581]: "569"
+                  - generic [ref=f13e5587]: "0204"
+                - generic [ref=f13e5596]:
+                  - checkbox
+              - generic [ref=f13e5600] [cursor=pointer]:
+                - generic [ref=f13e5602]:
+                  - generic [ref=f13e5603]: "572"
+                  - generic [ref=f13e5609]: "0205"
+                - generic [ref=f13e5618]:
+                  - checkbox
+              - generic [ref=f13e5622] [cursor=pointer]:
+                - generic [ref=f13e5624]:
+                  - generic [ref=f13e5625]: "575"
+                  - generic [ref=f13e5631]: "0206"
+                - generic [ref=f13e5640]:
+                  - checkbox
+              - generic [ref=f13e5644] [cursor=pointer]:
+                - generic [ref=f13e5646]:
+                  - generic [ref=f13e5647]: "578"
+                  - generic [ref=f13e5653]: "0207"
+                - generic [ref=f13e5662]:
+                  - checkbox
+              - generic [ref=f13e5666] [cursor=pointer]:
+                - generic [ref=f13e5668]:
+                  - generic [ref=f13e5669]: "581"
+                  - generic [ref=f13e5675]: "0208"
+                - generic [ref=f13e5684]:
+                  - checkbox
+              - generic [ref=f13e5688] [cursor=pointer]:
+                - generic [ref=f13e5690]:
+                  - generic [ref=f13e5691]: "584"
+                  - generic [ref=f13e5697]: "0209"
+                - generic [ref=f13e5706]:
+                  - checkbox
+              - generic [ref=f13e5710] [cursor=pointer]:
+                - generic [ref=f13e5712]:
+                  - generic [ref=f13e5713]: "593"
+                  - generic [ref=f13e5719]: "0212"
+                - generic [ref=f13e5728]:
+                  - checkbox
+              - generic [ref=f13e5732] [cursor=pointer]:
+                - generic [ref=f13e5734]:
+                  - generic [ref=f13e5735]: "599"
+                  - generic [ref=f13e5741]: "0214"
+                - generic [ref=f13e5750]:
+                  - checkbox
+              - generic [ref=f13e5754] [cursor=pointer]:
+                - generic [ref=f13e5756]:
+                  - generic [ref=f13e5757]: "602"
+                  - generic [ref=f13e5763]: "0215"
+                - generic [ref=f13e5772]:
+                  - checkbox
+              - generic [ref=f13e5776] [cursor=pointer]:
+                - generic [ref=f13e5778]:
+                  - generic [ref=f13e5779]: "879"
+                  - generic [ref=f13e5785]: "**Fancy mesh**"
+                - generic [ref=f13e5794]:
+                  - checkbox
+              - generic [ref=f13e5798] [cursor=pointer]:
+                - generic [ref=f13e5800]:
+                  - generic [ref=f13e5801]: "880"
+                  - generic [ref=f13e5807]: Create a fancy looking mesh using mesh (example taken from octaviz).
+                - generic [ref=f13e5816]:
+                  - checkbox
+              - generic [ref=f13e5820] [cursor=pointer]:
+                - generic [ref=f13e5822]:
+                  - generic [ref=f13e5823]: "881"
+                  - generic [ref=f13e5829]: "**Mesh sphere**"
+                - generic [ref=f13e5838]:
+                  - checkbox
+              - generic [ref=f13e5842] [cursor=pointer]:
+                - generic [ref=f13e5844]:
+                  - generic [ref=f13e5845]: "882"
+                  - generic [ref=f13e5851]: Create a simple sphere.
+                - generic [ref=f13e5860]:
+                  - checkbox
+              - generic [ref=f13e5864] [cursor=pointer]:
+                - generic [ref=f13e5866]:
+                  - generic [ref=f13e5867]: "883"
+                  - generic [ref=f13e5873]: "**Mesh mask custom colors**"
+                - generic [ref=f13e5882]:
+                  - checkbox
+              - generic [ref=f13e5886] [cursor=pointer]:
+                - generic [ref=f13e5888]:
+                  - generic [ref=f13e5889]: "884"
+                  - generic [ref=f13e5895]: Create a sphere with masking and using a custom colormap.
+                - generic [ref=f13e5904]:
+                  - checkbox
+              - generic [ref=f13e5908] [cursor=pointer]:
+                - generic [ref=f13e5910]:
+                  - generic [ref=f13e5911]: "885"
+                  - generic [ref=f13e5917]: Note that masking works only when scalars are set. The custom colormap illustrates how one can completely customize the colors with numpy arrays. In this case we use a simple 2 color colormap.
+                - generic [ref=f13e5926]:
+                  - checkbox
+              - generic [ref=f13e5930] [cursor=pointer]:
+                - generic [ref=f13e5932]:
+                  - generic [ref=f13e5933]: "897"
+                  - generic [ref=f13e5939]: "**Molecule**"
+                - generic [ref=f13e5948]:
+                  - checkbox
+              - generic [ref=f13e5952] [cursor=pointer]:
+                - generic [ref=f13e5954]:
+                  - generic [ref=f13e5955]: "898"
+                  - generic [ref=f13e5961]: Generates and shows a Caffeine molecule.
+                - generic [ref=f13e5970]:
+                  - checkbox
+              - generic [ref=f13e5974] [cursor=pointer]:
+                - generic [ref=f13e5976]:
+                  - generic [ref=f13e5977]: "903"
+                  - generic [ref=f13e5983]: "**Quiver3d 2d data**"
+                - generic [ref=f13e5992]:
+                  - checkbox
+              - generic [ref=f13e5996] [cursor=pointer]:
+                - generic [ref=f13e5998]:
+                  - generic [ref=f13e5999]: "910"
+                  - generic [ref=f13e6005]: "**Simple surf**"
+                - generic [ref=f13e6014]:
+                  - checkbox
+              - generic [ref=f13e6018] [cursor=pointer]:
+                - generic [ref=f13e6020]:
+                  - generic [ref=f13e6021]: "911"
+                  - generic [ref=f13e6027]: Test Surf with a simple collection of points.
+                - generic [ref=f13e6036]:
+                  - checkbox
+              - generic [ref=f13e6040] [cursor=pointer]:
+                - generic [ref=f13e6042]:
+                  - generic [ref=f13e6043]: "1003"
+                  - generic [ref=f13e6049]: Parameters
+                - generic [ref=f13e6058]:
+                  - checkbox
+              - generic [ref=f13e6062] [cursor=pointer]:
+                - generic [ref=f13e6064]:
+                  - generic [ref=f13e6065]: "1004"
+                  - generic [ref=f13e6071]: A Mayavi visualization object, or a VTK dataset. The object describing the data you are interested in.
+                - generic [ref=f13e6080]:
+                  - checkbox
+              - generic [ref=f13e6084] [cursor=pointer]:
+                - generic [ref=f13e6086]:
+                  - generic [ref=f13e6087]: "1007"
+                  - generic [ref=f13e6093]: float or ndarray. The z position where you want to retrieve the data.
+                - generic [ref=f13e6102]:
+                  - checkbox
+        - generic [ref=f13e779]:
+          - generic [ref=f13e787]:
+            - generic [ref=f13e788]:
+              - generic [ref=f13e789]:
+                - generic:           
+                - generic [ref=f13e790]:
+                  - generic [ref=f13e791]: 未翻訳の文字列
+                  - generic:
+                    - list
+                    - list
+                - generic [ref=f13e794]: Multi block example
+              - generic [ref=f13e795]:
+                - generic [ref=f13e796]:
+                  - list [ref=f13e797]:
+                    - listitem [ref=f13e798]:
+                      - button [ref=f13e3260] [cursor=pointer]
+                    - listitem [ref=f13e799]:
+                      - button
+                    - listitem [ref=f13e800]:
+                      - button
+                    - listitem [ref=f13e801]:
+                      - button [ref=f13e3263] [cursor=pointer]
+                    - listitem [ref=f13e802]:
+                      - button [ref=f13e3266] [cursor=pointer]
+                    - listitem [ref=f13e803]:
+                      - button [ref=f13e3269] [cursor=pointer]
+                  - list [ref=f13e804]
+                - generic [ref=f13e805]:
+                  - generic [ref=f13e806]: ここに翻訳文を入力
+                  - generic [ref=f13e6108]:
+                    - button "翻訳を保存" [ref=f13e6109] [cursor=pointer]
+                    - generic [ref=f13e6110] [cursor=pointer]
+            - generic [ref=f13e822]:
+              - generic [ref=f13e823]:
+                - button "文脈" [ref=f13e824] [cursor=pointer]
+                - button "提案 18" [ref=f13e6114] [cursor=pointer]:
+                  - generic [ref=f13e828]:
+                    - generic [ref=f13e829]: 提案
+                    - generic [ref=f13e3484]: "18"
+                - button "履歴 1" [ref=f13e6115] [cursor=pointer]:
+                  - generic [ref=f13e831]:
+                    - generic [ref=f13e832]: 履歴
+                    - generic [ref=f13e3406]: "1"
+                - button "用語集" [ref=f13e3603] [cursor=pointer]
+                - button "TQI" [ref=f13e836] [cursor=pointer]
+                - button "コメント" [ref=f13e839] [cursor=pointer]
+              - generic [ref=f13e844]:
+                - generic [ref=f13e845]:
+                  - button "メモリ検索" [ref=f13e847] [cursor=pointer]
+                  - generic [ref=f13e848]: 18 件の提案があります
+                - generic [ref=f13e3486]:
+                  - generic [ref=f13e6118]:
+                    - generic [ref=f13e6120]:
+                      - generic [ref=f13e6121]: 57%
+                      - generic [ref=f13e6122]: match
+                    - generic [ref=f13e6123]:
+                      - generic [ref=f13e6124]: 複数エンジンの例
+                      - generic [ref=f13e6125]: Multiple engines example
+                      - generic [ref=f13e6127]:
+                        - link "tkoyama010" [ref=f13e6128] [cursor=pointer]:
+                          - /url: /user/profile/tkoyama010/
+                        - text: さんが 7年前 に
+                        - link "mayavi-doc / auto" [ref=f13e6129] [cursor=pointer]:
+                          - /url: /tkoyama010/mayavi/translate/#ja/auto/170931125
+                        - text: へ追加 •
+                        - generic [ref=f13e6130]: ja
+                        - link "すべての出現場所を表示" [ref=f13e6131] [cursor=pointer]:
+                          - /url: /tkoyama010/search/?q=source_text%3A%27%5BMultiple+engines+example%5D%27+project%3Amayavi+target_language%3Aja+source_language%3Aen
+                  - generic [ref=f13e6134]:
+                    - generic [ref=f13e6136]:
+                      - generic [ref=f13e6137]: 56%
+                      - generic [ref=f13e6138]: match
+                    - generic [ref=f13e6139]:
+                      - generic [ref=f13e6140]: Juliaのセット例
+                      - generic [ref=f13e6141]: Julia set example
+                      - generic [ref=f13e6143]:
+                        - link "tkoyama010" [ref=f13e6144] [cursor=pointer]:
+                          - /url: /user/profile/tkoyama010/
+                        - text: さんが 7年前 に
+                        - link "mayavi-doc / auto" [ref=f13e6145] [cursor=pointer]:
+                          - /url: /tkoyama010/mayavi/translate/#ja/auto/170931575
+                        - text: へ追加 •
+                        - generic [ref=f13e6146]: ja
+                        - link "すべての出現場所を表示" [ref=f13e6147] [cursor=pointer]:
+                          - /url: /tkoyama010/search/?q=source_text%3A%27%5BJulia+set+example%5D%27+project%3Amayavi+target_language%3Aja+source_language%3Aen
+                  - generic [ref=f13e6150]:
+                    - generic [ref=f13e6152]:
+                      - generic [ref=f13e6153]: 56%
+                      - generic [ref=f13e6154]: match
+                    - generic [ref=f13e6155]:
+                      - generic [ref=f13e6156]: ボリュームスライサの例
+                      - generic [ref=f13e6157]: Volume slicer example
+                      - generic [ref=f13e6159]:
+                        - link "tkoyama010" [ref=f13e6160] [cursor=pointer]:
+                          - /url: /user/profile/tkoyama010/
+                        - text: さんが 7年前 に
+                        - link "mayavi-doc / auto" [ref=f13e6161] [cursor=pointer]:
+                          - /url: /tkoyama010/mayavi/translate/#ja/auto/170930762
+                        - text: へ追加 •
+                        - generic [ref=f13e6162]: ja
+                        - link "すべての出現場所を表示" [ref=f13e6163] [cursor=pointer]:
+                          - /url: /tkoyama010/search/?q=source_text%3A%27%5BVolume+slicer+example%5D%27+project%3Amayavi+target_language%3Aja+source_language%3Aen
+                  - generic [ref=f13e6166]:
+                    - generic [ref=f13e6168]:
+                      - generic [ref=f13e6169]: 56%
+                      - generic [ref=f13e6170]: match
+                    - generic [ref=f13e6171]:
+                      - generic [ref=f13e6172]: カスタムカラーマップの例
+                      - generic [ref=f13e6173]: Custom colormap example
+                      - generic [ref=f13e6175]:
+                        - link "tkoyama010" [ref=f13e6176] [cursor=pointer]:
+                          - /url: /user/profile/tkoyama010/
+                        - text: さんが 7年前 に
+                        - link "mayavi-doc / auto" [ref=f13e6177] [cursor=pointer]:
+                          - /url: /tkoyama010/mayavi/translate/#ja/auto/170931496
+                        - text: へ追加 •
+                        - generic [ref=f13e6178]: ja
+                        - link "すべての出現場所を表示" [ref=f13e6179] [cursor=pointer]:
+                          - /url: /tkoyama010/search/?q=source_text%3A%27%5BCustom+colormap+example%5D%27+project%3Amayavi+target_language%3Aja+source_language%3Aen
+                  - generic [ref=f13e6182]:
+                    - generic [ref=f13e6184]:
+                      - generic [ref=f13e6185]: 55%
+                      - generic [ref=f13e6186]: match
+                    - generic [ref=f13e6187]:
+                      - generic [ref=f13e6188]: 散布図の例
+                      - generic [ref=f13e6189]: Scatter plot example
+                      - generic [ref=f13e6191]:
+                        - link "tkoyama010" [ref=f13e6192] [cursor=pointer]:
+                          - /url: /user/profile/tkoyama010/
+                        - text: さんが 7年前 に
+                        - link "mayavi-doc / auto" [ref=f13e6193] [cursor=pointer]:
+                          - /url: /tkoyama010/mayavi/translate/#ja/auto/170931846
+                        - text: へ追加 •
+                        - generic [ref=f13e6194]: ja
+                        - link "すべての出現場所を表示" [ref=f13e6195] [cursor=pointer]:
+                          - /url: /tkoyama010/search/?q=source_text%3A%27%5BScatter+plot+example%5D%27+project%3Amayavi+target_language%3Aja+source_language%3Aen
+                  - generic [ref=f13e6198]:
+                    - generic [ref=f13e6200]:
+                      - generic [ref=f13e6201]: 54%
+                      - generic [ref=f13e6202]: match
+                    - generic [ref=f13e6203]:
+                      - generic [ref=f13e6204]: 磁界の例
+                      - generic [ref=f13e6205]: Magnetic field example
+                      - generic [ref=f13e6207]:
+                        - link "tkoyama010" [ref=f13e6208] [cursor=pointer]:
+                          - /url: /user/profile/tkoyama010/
+                        - text: さんが 7年前 に
+                        - link "mayavi-doc / auto" [ref=f13e6209] [cursor=pointer]:
+                          - /url: /tkoyama010/mayavi/translate/#ja/auto/170930540
+                        - text: へ追加 •
+                        - generic [ref=f13e6210]: ja
+                        - link "すべての出現場所を表示" [ref=f13e6211] [cursor=pointer]:
+                          - /url: /tkoyama010/search/?q=source_text%3A%27%5BMagnetic+field+example%5D%27+project%3Amayavi+target_language%3Aja+source_language%3Aen
+                  - generic [ref=f13e6214]:
+                    - generic [ref=f13e6216]:
+                      - generic [ref=f13e6217]: 54%
+                      - generic [ref=f13e6218]: match
+                    - generic [ref=f13e6219]:
+                      - generic [ref=f13e6220]: 数値ソースの例
+                      - generic [ref=f13e6221]: Numeric source example
+                      - generic [ref=f13e6223]:
+                        - link "tkoyama010" [ref=f13e6224] [cursor=pointer]:
+                          - /url: /user/profile/tkoyama010/
+                        - text: さんが 7年前 に
+                        - link "mayavi-doc / auto" [ref=f13e6225] [cursor=pointer]:
+                          - /url: /tkoyama010/mayavi/translate/#ja/auto/170930629
+                        - text: へ追加 •
+                        - generic [ref=f13e6226]: ja
+                        - link "すべての出現場所を表示" [ref=f13e6227] [cursor=pointer]:
+                          - /url: /tkoyama010/search/?q=source_text%3A%27%5BNumeric+source+example%5D%27+project%3Amayavi+target_language%3Aja+source_language%3Aen
+                  - generic [ref=f13e6230]:
+                    - generic [ref=f13e6232]:
+                      - generic [ref=f13e6233]: 52%
+                      - generic [ref=f13e6234]: match
+                    - generic [ref=f13e6235]:
+                      - generic [ref=f13e6236]: その他の例
+                      - generic [ref=f13e6237]: Misc examples
+                      - generic [ref=f13e6239]:
+                        - link "tkoyama010" [ref=f13e6240] [cursor=pointer]:
+                          - /url: /user/profile/tkoyama010/
+                        - text: さんが 7年前 に
+                        - link "mayavi-doc / auto" [ref=f13e6241] [cursor=pointer]:
+                          - /url: /tkoyama010/mayavi/translate/#ja/auto/170932044
+                        - text: へ追加 •
+                        - generic [ref=f13e6242]: ja
+                        - link "すべての出現場所を表示" [ref=f13e6243] [cursor=pointer]:
+                          - /url: /tkoyama010/search/?q=source_text%3A%27%5BMisc+examples%5D%27+project%3Amayavi+target_language%3Aja+source_language%3Aen
+                  - generic [ref=f13e6246]:
+                    - generic [ref=f13e6248]:
+                      - generic [ref=f13e6249]: 52%
+                      - generic [ref=f13e6250]: match
+                    - generic [ref=f13e6251]:
+                      - generic [ref=f13e6252]: スタンドアロンの例
+                      - generic [ref=f13e6253]: Standalone example
+                      - generic [ref=f13e6255]:
+                        - link "tkoyama010" [ref=f13e6256] [cursor=pointer]:
+                          - /url: /user/profile/tkoyama010/
+                        - text: さんが 7年前 に
+                        - link "mayavi-doc / auto" [ref=f13e6257] [cursor=pointer]:
+                          - /url: /tkoyama010/mayavi/translate/#ja/auto/170932023
+                        - text: へ追加 •
+                        - generic [ref=f13e6258]: ja
+                        - link "すべての出現場所を表示" [ref=f13e6259] [cursor=pointer]:
+                          - /url: /tkoyama010/search/?q=source_text%3A%27%5BStandalone+example%5D%27+project%3Amayavi+target_language%3Aja+source_language%3Aen
+                  - generic [ref=f13e6262]:
+                    - generic [ref=f13e6264]:
+                      - generic [ref=f13e6265]: 52%
+                      - generic [ref=f13e6266]: match
+                    - generic [ref=f13e6267]:
+                      - generic [ref=f13e6268]: Mlab3Dと2Dの例
+                      - generic [ref=f13e6269]: Mlab 3D to 2D example
+                      - generic [ref=f13e6271]:
+                        - link "tkoyama010" [ref=f13e6272] [cursor=pointer]:
+                          - /url: /user/profile/tkoyama010/
+                        - text: さんが 7年前 に
+                        - link "mayavi-doc / auto" [ref=f13e6273] [cursor=pointer]:
+                          - /url: /tkoyama010/mayavi/translate/#ja/auto/170932302
+                        - text: へ追加 •
+                        - generic [ref=f13e6274]: ja
+                        - link "すべての出現場所を表示" [ref=f13e6275] [cursor=pointer]:
+                          - /url: /tkoyama010/search/?q=source_text%3A%27%5BMlab+3D+to+2D+example%5D%27+project%3Amayavi+target_language%3Aja+source_language%3Aen
+                  - generic [ref=f13e6278]:
+                    - generic [ref=f13e6280]:
+                      - generic [ref=f13e6281]: 52%
+                      - generic [ref=f13e6282]: match
+                    - generic [ref=f13e6283]:
+                      - generic [ref=f13e6284]: 輪郭の例
+                      - generic [ref=f13e6285]: Contour example
+                      - generic [ref=f13e6287]:
+                        - link "tkoyama010" [ref=f13e6288] [cursor=pointer]:
+                          - /url: /user/profile/tkoyama010/
+                        - text: さんが 7年前 に
+                        - link "mayavi-doc / auto" [ref=f13e6289] [cursor=pointer]:
+                          - /url: /tkoyama010/mayavi/translate/#ja/auto/170932485
+                        - text: へ追加 •
+                        - generic [ref=f13e6290]: ja
+                        - link "すべての出現場所を表示" [ref=f13e6291] [cursor=pointer]:
+                          - /url: /tkoyama010/search/?q=source_text%3A%27%5BContour+example%5D%27+project%3Amayavi+target_language%3Aja+source_language%3Aen
+                  - generic [ref=f13e6294]:
+                    - generic [ref=f13e6296]:
+                      - generic [ref=f13e6297]: 52%
+                      - generic [ref=f13e6298]: match
+                    - generic [ref=f13e6299]:
+                      - generic [ref=f13e6300]: Lucy の例
+                      - generic [ref=f13e6301]: Lucy example
+                      - generic [ref=f13e6303]:
+                        - link "tkoyama010" [ref=f13e6304] [cursor=pointer]:
+                          - /url: /user/profile/tkoyama010/
+                        - text: さんが 7年前 に
+                        - link "mayavi-doc / auto" [ref=f13e6305] [cursor=pointer]:
+                          - /url: /tkoyama010/mayavi/translate/#ja/auto/170931077
+                        - text: へ追加 •
+                        - generic [ref=f13e6306]: ja
+                        - link "すべての出現場所を表示" [ref=f13e6307] [cursor=pointer]:
+                          - /url: /tkoyama010/search/?q=source_text%3A%27%5BLucy+example%5D%27+project%3Amayavi+target_language%3Aja+source_language%3Aen
+                  - generic [ref=f13e6310]:
+                    - generic [ref=f13e6312]:
+                      - generic [ref=f13e6313]: 52%
+                      - generic [ref=f13e6314]: match
+                    - generic [ref=f13e6315]:
+                      - generic [ref=f13e6316]: Pollファイルの例
+                      - generic [ref=f13e6317]: Poll file example
+                      - generic [ref=f13e6319]:
+                        - link "tkoyama010" [ref=f13e6320] [cursor=pointer]:
+                          - /url: /user/profile/tkoyama010/
+                        - text: さんが 7年前 に
+                        - link "mayavi-doc / auto" [ref=f13e6321] [cursor=pointer]:
+                          - /url: /tkoyama010/mayavi/translate/#ja/auto/170932372
+                        - text: へ追加 •
+                        - generic [ref=f13e6322]: ja
+                        - link "すべての出現場所を表示" [ref=f13e6323] [cursor=pointer]:
+                          - /url: /tkoyama010/search/?q=source_text%3A%27%5BPoll+file+example%5D%27+project%3Amayavi+target_language%3Aja+source_language%3Aen
+                  - generic [ref=f13e6326]:
+                    - generic [ref=f13e6328]:
+                      - generic [ref=f13e6329]: 52%
+                      - generic [ref=f13e6330]: match
+                    - generic [ref=f13e6331]:
+                      - generic [ref=f13e6332]: Mriの例
+                      - generic [ref=f13e6333]: Mri example
+                      - generic [ref=f13e6335]:
+                        - link "tkoyama010" [ref=f13e6336] [cursor=pointer]:
+                          - /url: /user/profile/tkoyama010/
+                        - text: さんが 7年前 に
+                        - link "mayavi-doc / auto" [ref=f13e6337] [cursor=pointer]:
+                          - /url: /tkoyama010/mayavi/translate/#ja/auto/170932468
+                        - text: へ追加 •
+                        - generic [ref=f13e6338]: ja
+                        - link "すべての出現場所を表示" [ref=f13e6339] [cursor=pointer]:
+                          - /url: /tkoyama010/search/?q=source_text%3A%27%5BMri+example%5D%27+project%3Amayavi+target_language%3Aja+source_language%3Aen
+                  - generic [ref=f13e6342]:
+                    - generic [ref=f13e6344]:
+                      - generic [ref=f13e6345]: 52%
+                      - generic [ref=f13e6346]: match
+                    - generic [ref=f13e6347]:
+                      - generic [ref=f13e6348]: Mlabの視覚的な例
+                      - generic [ref=f13e6349]: Mlab visual example
+                      - generic [ref=f13e6351]:
+                        - link "tkoyama010" [ref=f13e6352] [cursor=pointer]:
+                          - /url: /user/profile/tkoyama010/
+                        - text: さんが 7年前 に
+                        - link "mayavi-doc / auto" [ref=f13e6353] [cursor=pointer]:
+                          - /url: /tkoyama010/mayavi/translate/#ja/auto/170930984
+                        - text: へ追加 •
+                        - generic [ref=f13e6354]: ja
+                        - link "すべての出現場所を表示" [ref=f13e6355] [cursor=pointer]:
+                          - /url: /tkoyama010/search/?q=source_text%3A%27%5BMlab+visual+example%5D%27+project%3Amayavi+target_language%3Aja+source_language%3Aen
+                  - generic [ref=f13e6358]:
+                    - generic [ref=f13e6360]:
+                      - generic [ref=f13e6361]: 50%
+                      - generic [ref=f13e6362]: match
+                    - generic [ref=f13e6363]:
+                      - generic [ref=f13e6364]: 赤いボールの選択例
+                      - generic [ref=f13e6365]: Select red balls example
+                      - generic [ref=f13e6367]:
+                        - link "tkoyama010" [ref=f13e6368] [cursor=pointer]:
+                          - /url: /user/profile/tkoyama010/
+                        - text: さんが 7年前 に
+                        - link "mayavi-doc / auto" [ref=f13e6369] [cursor=pointer]:
+                          - /url: /tkoyama010/mayavi/translate/#ja/auto/170931633
+                        - text: へ追加 •
+                        - generic [ref=f13e6370]: ja
+                        - link "すべての出現場所を表示" [ref=f13e6371] [cursor=pointer]:
+                          - /url: /tkoyama010/search/?q=source_text%3A%27%5BSelect+red+balls+example%5D%27+project%3Amayavi+target_language%3Aja+source_language%3Aen
+                  - generic [ref=f13e6374]:
+                    - generic [ref=f13e6376]:
+                      - generic [ref=f13e6377]: 50%
+                      - generic [ref=f13e6378]: match
+                    - generic [ref=f13e6379]:
+                      - generic [ref=f13e6380]: 原子軌道の例
+                      - generic [ref=f13e6381]: Atomic orbital example
+                      - generic [ref=f13e6383]:
+                        - link "tkoyama010" [ref=f13e6384] [cursor=pointer]:
+                          - /url: /user/profile/tkoyama010/
+                        - text: さんが 7年前 に
+                        - link "mayavi-doc / auto" [ref=f13e6385] [cursor=pointer]:
+                          - /url: /tkoyama010/mayavi/translate/#ja/auto/170931475
+                        - text: へ追加 •
+                        - generic [ref=f13e6386]: ja
+                        - link "すべての出現場所を表示" [ref=f13e6387] [cursor=pointer]:
+                          - /url: /tkoyama010/search/?q=source_text%3A%27%5BAtomic+orbital+example%5D%27+project%3Amayavi+target_language%3Aja+source_language%3Aen
+                  - generic [ref=f13e6390]:
+                    - generic [ref=f13e6392]:
+                      - generic [ref=f13e6393]: 50%
+                      - generic [ref=f13e6394]: match
+                    - generic [ref=f13e6395]:
+                      - generic [ref=f13e6396]: Probeフィルタの例
+                      - generic [ref=f13e6397]: Probe filter example
+                      - generic [ref=f13e6399]:
+                        - link "tkoyama010" [ref=f13e6400] [cursor=pointer]:
+                          - /url: /user/profile/tkoyama010/
+                        - text: さんが 7年前 に
+                        - link "mayavi-doc / auto" [ref=f13e6401] [cursor=pointer]:
+                          - /url: /tkoyama010/mayavi/translate/#ja/auto/170931620
+                        - text: へ追加 •
+                        - generic [ref=f13e6402]: ja
+                        - link "すべての出現場所を表示" [ref=f13e6403] [cursor=pointer]:
+                          - /url: /tkoyama010/search/?q=source_text%3A%27%5BProbe+filter+example%5D%27+project%3Amayavi+target_language%3Aja+source_language%3Aen
+          - text:  
+      - generic:
+        - generic:
+          - generic [ref=f13e853]:
+            - generic [ref=f13e854]:
+              - checkbox "すべての対応付けされた文字列を見る" [ref=f13e855]
+              - generic [ref=f13e856] [cursor=pointer]
+            - generic [ref=f13e857]: すべての対応付けされた文字列を見る
+          - generic:
+            - generic:
+              - generic [ref=f13e864] [cursor=pointer]
+              - generic: 画像を取得中
+  - textbox [ref=f13e870]
+  - iframe [ref=f13e871]:
+    

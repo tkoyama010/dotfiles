@@ -1,7 +1,8 @@
 {
 	"theme": "tkoyama010",
-	"defaultProvider": "opencode",
-	"defaultModel": "qwen3:8b",
+	"defaultProvider": "ollama",
+	"defaultModel": "qwen2.5-coder:7b",
+	"defaultTools": ["read", "bash", "edit", "write", "grep", "find", "ls"],
 	"defaultThinkingLevel": "high",
 	"tuiMode": "regular",
 	"steeringMode": "one-at-a-time",

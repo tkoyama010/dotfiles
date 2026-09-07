@@ -1,0 +1,79 @@
+- generic [ref=f35e2]:
+  - generic [ref=f35e4]:
+    - generic [ref=f35e5]:
+      - link [ref=f35e6] [cursor=pointer]:
+        - /url: /home/
+      - link "ダッシュボード" [ref=f35e10] [cursor=pointer]:
+        - /url: /tkoyama010/
+      - link "エディタ" [ref=f35e15] [cursor=pointer]:
+        - /url: /tkoyama010/editor/
+      - generic [ref=f35e20] [cursor=pointer]: タスク
+      - generic [ref=f35e25] [cursor=pointer]: レポート
+      - link "注文" [ref=f35e30] [cursor=pointer]:
+        - /url: /tkoyama010/orders/
+      - generic [ref=f35e35] [cursor=pointer]: もっと
+    - generic [ref=f35e41]:
+      - generic [ref=f35e42] [cursor=pointer]
+      - link [ref=f35e48] [cursor=pointer]:
+        - /url: /notices/list/
+      - img [ref=f35e55] [cursor=pointer]
+  - generic [ref=f35e60]:
+    - generic [ref=f35e61]: 組織の設定
+    - link "組織の詳細" [ref=f35e63] [cursor=pointer]:
+      - /url: /tkoyama010/settings/
+    - generic [ref=f35e64]: シングルサインオン(SSO)の設定
+    - generic [ref=f35e66]: 2段階認証の設定
+    - link "AI Settings" [ref=f35e70] [cursor=pointer]:
+      - /url: /tkoyama010/settings/ai_settings/general/
+    - link "エディタ設定" [ref=f35e72] [cursor=pointer]:
+      - /url: /tkoyama010/settings/editor_settings/discussion_categories/
+    - link "連携" [ref=f35e74] [cursor=pointer]:
+      - /url: /tkoyama010/settings/integrations/
+    - link "機械翻訳" [ref=f35e76] [cursor=pointer]:
+      - /url: /tkoyama010/settings/machine-translations/
+    - link "翻訳チェック" [ref=f35e78] [cursor=pointer]:
+      - /url: /tkoyama010/settings/validations/
+    - generic [ref=f35e79]: 翻訳メモリグループ
+    - link "凍結プロジェクト" [ref=f35e83] [cursor=pointer]:
+      - /url: /tkoyama010/settings/archive/
+    - link "組織の削除" [ref=f35e85] [cursor=pointer]:
+      - /url: /tkoyama010/settings/delete/
+  - generic [ref=f35e86]:
+    - generic [ref=f35e90]:
+      - generic [ref=f35e91]:
+        - generic [ref=f35e92]: tkoyama010
+        - generic [ref=f35e93]: 組織の詳細
+        - generic [ref=f35e94]: 組織は、あなたのすべてのプロジェクトを束ねる1本の傘です。 組織には管理権限を持った特定のユーザーが、独自の名前とURLを設定することができます。
+      - link "変更を保存" [ref=f35e98] [cursor=pointer]:
+        - /url: javascript:;
+    - generic [ref=f35e101]:
+      - generic [ref=f35e102]: 表示方法
+      - generic [ref=f35e103]: Name (必須)
+      - textbox [ref=f35e105]: tkoyama010
+      - generic [ref=f35e110]:
+        - generic [ref=f35e111]: Logo
+        - generic:
+          - textbox [disabled] [ref=f35e112]
+          - generic [ref=f35e113] [cursor=pointer]:
+            - text: Choose
+            - button "Choose File" [ref=f35e114]
+      - text: 説明
+      - textbox [ref=f35e117]
+      - generic [ref=f35e119]: 共有オプション
+      - text: 組織のURL
+      - generic [ref=f35e122]:
+        - generic [ref=f35e123]: app.transifex.com/
+        - textbox [ref=f35e125]: tkoyama010
+      - generic [ref=f35e127]:
+        - generic [ref=f35e128]:
+          - checkbox "Private organization"
+          - generic [ref=f35e129]: Private organization
+        - generic [ref=f35e130]: A private organization is visible only by you and your team.
+      - generic [ref=f35e132]: 管理者
+      - paragraph [ref=f35e133]:
+        - link "管理者を招待" [ref=f35e134] [cursor=pointer]:
+          - /url: javascript:;
+        - text: して、組織を管理する 協力者を追加しましょう。
+      - paragraph
+      - text: Administrators
+      - generic [ref=f35e135]: tkoyama010 - Tetsuo Koyama

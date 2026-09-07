@@ -1,3 +1,26 @@
 {
-	"providers": {}
+	"providers": {
+		"ollama": {
+			"baseUrl": "http://localhost:11434/v1",
+			"api": "openai-completions",
+			"apiKey": "ollama",
+			"compat": {
+				"supportsDeveloperRole": false,
+				"supportsReasoningEffort": false,
+				"supportsStrictTools": true,
+				"supportsStrictMode": true
+			},
+			"models": [
+				{
+					"id": "qwen2.5-coder:7b",
+					"name": "Qwen 2.5 Coder 7B",
+					"reasoning": false,
+					"input": ["text"],
+					"contextWindow": 128000,
+					"maxTokens": 32000,
+					"cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
+				}
+			]
+		}
+	}
 }

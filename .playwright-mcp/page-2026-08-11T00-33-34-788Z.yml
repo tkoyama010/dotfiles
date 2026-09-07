@@ -1,0 +1,235 @@
+- generic [active] [ref=f49e1]:
+  - generic [ref=f49e2]:
+    - generic [ref=f49e4]:
+      - generic [ref=f49e5]:
+        - link [ref=f49e6] [cursor=pointer]:
+          - /url: /home/
+        - link "ダッシュボード" [ref=f49e10] [cursor=pointer]:
+          - /url: /tkoyama010/
+        - link "エディタ" [ref=f49e15] [cursor=pointer]:
+          - /url: /tkoyama010/editor/
+        - generic [ref=f49e20] [cursor=pointer]: タスク
+        - generic [ref=f49e25] [cursor=pointer]: レポート
+        - link "注文" [ref=f49e30] [cursor=pointer]:
+          - /url: /tkoyama010/orders/
+        - generic [ref=f49e35] [cursor=pointer]: もっと
+      - generic [ref=f49e41]:
+        - generic [ref=f49e42] [cursor=pointer]
+        - link [ref=f49e48] [cursor=pointer]:
+          - /url: /notices/list/
+        - img [ref=f49e55] [cursor=pointer]
+    - generic [ref=f49e56]:
+      - generic [ref=f49e60]:
+        - img "ユーザーのアバター" [ref=f49e63]
+        - generic [ref=f49e64]:
+          - generic [ref=f49e65]:
+            - generic [ref=f49e66]: Tetsuo Koyama
+            - generic [ref=f49e67]: tkoyama010さんのプロフィール [プロフィール]
+          - generic [ref=f49e69]:
+            - text: "登録日:"
+            - strong [ref=f49e70]: 月 25 12月 2017
+        - link "ユーザー設定" [ref=f49e74] [cursor=pointer]:
+          - /url: /user/settings/
+      - generic [ref=f49e76]:
+        - generic [ref=f49e77]:
+          - generic [ref=f49e78]: まだ推薦を受けていません。
+          - generic [ref=f49e82]:
+            - heading "管理者として" [level=4] [ref=f49e83]
+            - generic [ref=f49e86]:
+              - heading "管理中" [level=5] [ref=f49e87]
+              - generic [ref=f49e88]:
+                - link "build123d-doc" [ref=f49e89] [cursor=pointer]:
+                  - /url: /tkoyama010/build123d-doc/
+                - text: プロジェクト
+              - generic [ref=f49e90]:
+                - link "build123d-doc-translations" [ref=f49e91] [cursor=pointer]:
+                  - /url: /tkoyama010/build123d-doc-translations/
+                - text: プロジェクト
+              - generic [ref=f49e92]:
+                - link "cadquery-doc" [ref=f49e93] [cursor=pointer]:
+                  - /url: /tkoyama010/cadquery-doc/
+                - text: プロジェクト
+              - generic [ref=f49e94]:
+                - link "CoFEA-doc" [ref=f49e95] [cursor=pointer]:
+                  - /url: /tkoyama010/cofea-doc/
+                - text: プロジェクト
+              - generic [ref=f49e96]:
+                - link "felupe-doc" [ref=f49e97] [cursor=pointer]:
+                  - /url: /tkoyama010/felupe-doc/
+                - text: プロジェクト
+              - generic [ref=f49e98]:
+                - link "foamlib-doc" [ref=f49e99] [cursor=pointer]:
+                  - /url: /tkoyama010/foamlib-doc/
+                - text: プロジェクト
+              - generic [ref=f49e100]:
+                - link "geovista-doc" [ref=f49e101] [cursor=pointer]:
+                  - /url: /tkoyama010/geovista-doc/
+                - text: プロジェクト
+              - generic [ref=f49e102]:
+                - link "getfem-binder" [ref=f49e103] [cursor=pointer]:
+                  - /url: /tkoyama010/getfem-binder/
+                - text: プロジェクト
+              - generic [ref=f49e104]:
+                - link "getfem-doc" [ref=f49e105] [cursor=pointer]:
+                  - /url: /tkoyama010/getfem-doc/
+                - text: プロジェクト
+              - generic [ref=f49e106]:
+                - link "LightGBM-docs" [ref=f49e107] [cursor=pointer]:
+                  - /url: /tkoyama010/lightgbm-docs/
+                - text: プロジェクト
+            - generic [ref=f49e109]:
+              - generic [ref=f49e110]: ‹‹ 前
+              - generic [ref=f49e111]: "1"
+              - link "2" [ref=f49e112] [cursor=pointer]:
+                - /url: "?page_manager_entries=2"
+              - link "3" [ref=f49e113] [cursor=pointer]:
+                - /url: "?page_manager_entries=3"
+              - link "4" [ref=f49e114] [cursor=pointer]:
+                - /url: "?page_manager_entries=4"
+              - link "5" [ref=f49e115] [cursor=pointer]:
+                - /url: "?page_manager_entries=5"
+              - link "次 ››" [ref=f49e116] [cursor=pointer]:
+                - /url: "?page_manager_entries=2"
+          - generic [ref=f49e117]:
+            - heading "翻訳者として" [level=4] [ref=f49e118]
+            - generic [ref=f49e119]:
+              - generic [ref=f49e120]:
+                - text: sphinx-doc-team チームの
+                - link "Japanese" [ref=f49e121] [cursor=pointer]:
+                  - /url: /sphinx-doc/teams/15434/ja/
+              - generic [ref=f49e122]:
+                - text: Deepin Desktop Environment チームの
+                - link "Japanese" [ref=f49e123] [cursor=pointer]:
+                  - /url: /linuxdeepin/teams/3617/ja/
+              - generic [ref=f49e124]:
+                - text: Deepin Software チームの
+                - link "Japanese" [ref=f49e125] [cursor=pointer]:
+                  - /url: /linuxdeepin/teams/3976/ja/
+              - generic [ref=f49e126]:
+                - text: sphinx core team チームの
+                - link "Japanese" [ref=f49e127] [cursor=pointer]:
+                  - /url: /sphinx-doc/teams/36659/ja/
+              - generic [ref=f49e128]:
+                - text: Python documentation translators チームの
+                - link "Japanese" [ref=f49e129] [cursor=pointer]:
+                  - /url: /python-doc/teams/5390/ja/
+              - generic [ref=f49e130]:
+                - text: Django team チームの
+                - link "Japanese" [ref=f49e131] [cursor=pointer]:
+                  - /url: /django/teams/17080/ja/
+              - generic [ref=f49e132]:
+                - text: Transifex team チームの
+                - link "Japanese" [ref=f49e133] [cursor=pointer]:
+                  - /url: /transifex/teams/17079/ja/
+              - generic [ref=f49e134]:
+                - text: pydata-sphinx-theme team チームの
+                - link "Japanese" [ref=f49e135] [cursor=pointer]:
+                  - /url: /12rambau/teams/166811/ja/
+          - generic [ref=f49e136]:
+            - heading "最新の活動" [level=4] [ref=f49e137]
+            - generic [ref=f49e139]:
+              - generic [ref=f49e144]:
+                - paragraph [ref=f49e145]:
+                  - text: The resource
+                  - link "operations" [ref=f49e146] [cursor=pointer]:
+                    - /url: https://app.transifex.com/tkoyama010/build123d-doc/operations/
+                  - text: in project
+                  - link "build123d-doc" [ref=f49e147] [cursor=pointer]:
+                    - /url: https://app.transifex.com/tkoyama010/build123d-doc/
+                  - text: was updated with new content.
+                - text: 14分 前
+              - generic [ref=f49e152]:
+                - paragraph [ref=f49e153]:
+                  - text: The resource
+                  - link "objects" [ref=f49e154] [cursor=pointer]:
+                    - /url: https://app.transifex.com/tkoyama010/build123d-doc/objects/
+                  - text: in project
+                  - link "build123d-doc" [ref=f49e155] [cursor=pointer]:
+                    - /url: https://app.transifex.com/tkoyama010/build123d-doc/
+                  - text: was updated with new content.
+                - text: 14分 前
+              - generic [ref=f49e160]:
+                - paragraph [ref=f49e161]:
+                  - text: The resource
+                  - link "tech_drawing_tutorial" [ref=f49e162] [cursor=pointer]:
+                    - /url: https://app.transifex.com/tkoyama010/build123d-doc/tech_drawing_tutorial/
+                  - text: in project
+                  - link "build123d-doc" [ref=f49e163] [cursor=pointer]:
+                    - /url: https://app.transifex.com/tkoyama010/build123d-doc/
+                  - text: was updated with new content.
+                - text: 15分 前
+              - generic [ref=f49e168]:
+                - paragraph [ref=f49e169]:
+                  - text: The resource
+                  - link "direct_api_reference" [ref=f49e170] [cursor=pointer]:
+                    - /url: https://app.transifex.com/tkoyama010/build123d-doc/direct_api_reference/
+                  - text: in project
+                  - link "build123d-doc" [ref=f49e171] [cursor=pointer]:
+                    - /url: https://app.transifex.com/tkoyama010/build123d-doc/
+                  - text: was updated with new content.
+                - text: 15分 前
+              - generic [ref=f49e176]:
+                - paragraph [ref=f49e177]:
+                  - text: The resource
+                  - link "introductory_examples" [ref=f49e178] [cursor=pointer]:
+                    - /url: https://app.transifex.com/tkoyama010/build123d-doc/introductory_examples/
+                  - text: in project
+                  - link "build123d-doc" [ref=f49e179] [cursor=pointer]:
+                    - /url: https://app.transifex.com/tkoyama010/build123d-doc/
+                  - text: was updated with new content.
+                - text: 15分 前
+              - generic [ref=f49e184]:
+                - paragraph [ref=f49e185]:
+                  - text: The resource
+                  - link "examples" [ref=f49e186] [cursor=pointer]:
+                    - /url: https://app.transifex.com/tkoyama010/pyvista-doc/examples/
+                  - text: in project
+                  - link "pyvista-doc" [ref=f49e187] [cursor=pointer]:
+                    - /url: https://app.transifex.com/tkoyama010/pyvista-doc/
+                  - text: was updated with new content.
+                - text: 25分 前
+              - generic [ref=f49e192]:
+                - paragraph [ref=f49e193]:
+                  - text: The resource
+                  - link "sg_execution_times.pot" [ref=f49e194] [cursor=pointer]:
+                    - /url: https://app.transifex.com/tkoyama010/pyvista-doc/sg_execution_times/
+                  - text: in project
+                  - link "pyvista-doc" [ref=f49e195] [cursor=pointer]:
+                    - /url: https://app.transifex.com/tkoyama010/pyvista-doc/
+                  - text: was updated with new content.
+                - text: 25分 前
+              - generic [ref=f49e200]:
+                - paragraph [ref=f49e201]:
+                  - text: The resource
+                  - link "api" [ref=f49e202] [cursor=pointer]:
+                    - /url: https://app.transifex.com/tkoyama010/pyvista-doc/api/
+                  - text: in project
+                  - link "pyvista-doc" [ref=f49e203] [cursor=pointer]:
+                    - /url: https://app.transifex.com/tkoyama010/pyvista-doc/
+                  - text: was updated with new content.
+                - text: 4時間, 9分 前
+              - generic [ref=f49e208]:
+                - paragraph [ref=f49e209]:
+                  - text: The resource
+                  - link "examples" [ref=f49e210] [cursor=pointer]:
+                    - /url: https://app.transifex.com/tkoyama010/pyvista-doc/examples/
+                  - text: in project
+                  - link "pyvista-doc" [ref=f49e211] [cursor=pointer]:
+                    - /url: https://app.transifex.com/tkoyama010/pyvista-doc/
+                  - text: was updated with new content.
+                - text: 4時間, 9分 前
+              - generic [ref=f49e216]:
+                - paragraph [ref=f49e217]:
+                  - text: The resource
+                  - link "sg_execution_times.pot" [ref=f49e218] [cursor=pointer]:
+                    - /url: https://app.transifex.com/tkoyama010/pyvista-doc/sg_execution_times/
+                  - text: in project
+                  - link "pyvista-doc" [ref=f49e219] [cursor=pointer]:
+                    - /url: https://app.transifex.com/tkoyama010/pyvista-doc/
+                  - text: was updated with new content.
+                - text: 4時間, 9分 前
+        - generic [ref=f49e221]:
+          - generic [ref=f49e222]: 言語：
+          - paragraph [ref=f49e223]: French, Japanese, Japanese (Japan)
+  - iframe [ref=f49e224]:
+    

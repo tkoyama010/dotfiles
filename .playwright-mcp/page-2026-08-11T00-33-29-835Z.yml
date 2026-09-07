@@ -1,0 +1,196 @@
+- generic [active] [ref=f42e1]:
+  - generic [ref=f42e2]:
+    - generic [ref=f42e4]:
+      - generic [ref=f42e5]:
+        - link [ref=f42e6] [cursor=pointer]:
+          - /url: /home/
+        - link "ダッシュボード" [ref=f42e10] [cursor=pointer]:
+          - /url: /tkoyama010/
+        - link "エディタ" [ref=f42e15] [cursor=pointer]:
+          - /url: /tkoyama010/editor/
+        - generic [ref=f42e20] [cursor=pointer]: タスク
+        - generic [ref=f42e25] [cursor=pointer]: レポート
+        - link "注文" [ref=f42e30] [cursor=pointer]:
+          - /url: /tkoyama010/orders/
+        - generic [ref=f42e35] [cursor=pointer]: もっと
+      - generic [ref=f42e41]:
+        - generic [ref=f42e42] [cursor=pointer]
+        - link [ref=f42e48] [cursor=pointer]:
+          - /url: /notices/list/
+          - generic "50+ 件の未読の通知があります" [ref=f42e49]
+        - img [ref=f42e58] [cursor=pointer]
+    - generic [ref=f42e63]:
+      - generic [ref=f42e64]: 組織の設定
+      - link "組織の詳細" [ref=f42e66] [cursor=pointer]:
+        - /url: /tkoyama010/settings/
+      - generic [ref=f42e67]: シングルサインオン(SSO)の設定
+      - generic [ref=f42e69]: 2段階認証の設定
+      - link "AI Settings" [ref=f42e73] [cursor=pointer]:
+        - /url: /tkoyama010/settings/ai_settings/general/
+      - link "エディタ設定" [ref=f42e75] [cursor=pointer]:
+        - /url: /tkoyama010/settings/editor_settings/discussion_categories/
+      - link "連携" [ref=f42e77] [cursor=pointer]:
+        - /url: /tkoyama010/settings/integrations/
+      - link "機械翻訳" [ref=f42e79] [cursor=pointer]:
+        - /url: /tkoyama010/settings/machine-translations/
+      - link "翻訳チェック" [ref=f42e81] [cursor=pointer]:
+        - /url: /tkoyama010/settings/validations/
+      - generic [ref=f42e82]: 翻訳メモリグループ
+      - link "凍結プロジェクト" [ref=f42e86] [cursor=pointer]:
+        - /url: /tkoyama010/settings/archive/
+      - link "組織の削除" [ref=f42e88] [cursor=pointer]:
+        - /url: /tkoyama010/settings/delete/
+    - generic [ref=f42e89]:
+      - generic [ref=f42e94]:
+        - generic [ref=f42e95]: tkoyama010
+        - generic [ref=f42e96]: 連携の管理
+        - generic [ref=f42e97]: 連携を管理します。連携により、コンテンツの流れを自動化できます。
+      - generic [ref=f42e100]:
+        - generic [ref=f42e103]:
+          - generic [ref=f42e104]:
+            - img "GitHub" [ref=f42e105]
+            - generic [ref=f42e106]: GitHub
+          - generic [ref=f42e107]:
+            - generic [ref=f42e108]:
+              - text: Automatically update files in Transifex when a change to a source translation file is committed to GitHub, and vice versa.
+              - paragraph [ref=f42e109]:
+                - generic [ref=f42e110]: "*"
+                - generic [ref=f42e111]: To install or manage the GitHub integration, go to Integrations in your project's settings.
+            - generic [ref=f42e112]:
+              - link:
+                - /url: javascript:;
+        - generic [ref=f42e115]:
+          - generic [ref=f42e116]:
+            - img "Bitbucket" [ref=f42e117]
+            - generic [ref=f42e118]: Bitbucket
+          - generic [ref=f42e119]:
+            - generic [ref=f42e120]:
+              - text: Seamlessly integrate your Bitbucket repository with your projects to sync localization efforts across platforms.
+              - paragraph [ref=f42e121]:
+                - generic [ref=f42e122]: "*"
+                - generic [ref=f42e123]: To install or manage the Bitbucket integration, go to Integrations in your project's settings.
+            - generic [ref=f42e124]:
+              - link:
+                - /url: javascript:;
+        - generic [ref=f42e127]:
+          - generic [ref=f42e128]:
+            - img "GitLab" [ref=f42e129]
+            - generic [ref=f42e130]: GitLab
+          - generic [ref=f42e131]:
+            - generic [ref=f42e132]:
+              - text: Improve developer-localization team collaboration with our GitLab integration for seamless translation management in your code.
+              - paragraph [ref=f42e133]:
+                - generic [ref=f42e134]: "*"
+                - generic [ref=f42e135]: To install or manage the GitLab integration, go to Integrations in your project's settings.
+            - generic [ref=f42e136]:
+              - link:
+                - /url: javascript:;
+        - generic [ref=f42e139]:
+          - generic [ref=f42e140]:
+            - img "Azure Repos" [ref=f42e141]
+            - generic [ref=f42e142]: Azure Repos
+          - generic [ref=f42e143]:
+            - generic [ref=f42e144]:
+              - text: Improve developer-localization team collaboration with our Azure integration for seamless translation management in your code.
+              - paragraph [ref=f42e145]:
+                - generic [ref=f42e146]: "*"
+                - generic [ref=f42e147]: To install or manage the Azure integration, go to Integrations in your project's settings.
+            - generic [ref=f42e148]:
+              - link:
+                - /url: javascript:;
+        - generic [ref=f42e155]:
+          - generic [ref=f42e156]:
+            - img "Zendesk" [ref=f42e157]
+            - generic [ref=f42e158]: Zendesk
+            - generic [ref=f42e159]: ADD-ON
+          - generic [ref=f42e160]:
+            - generic [ref=f42e161]: Transifexインターフェースを離れることなく、 ZendeskとTransifexプロジェクト間でコンテンツを簡単に同期できます。
+            - link "お問い合わせ" [ref=f42e164] [cursor=pointer]:
+              - /url: javascript:;
+        - generic [ref=f42e171]:
+          - generic [ref=f42e172]:
+            - img "contentful" [ref=f42e173]
+            - generic [ref=f42e174]: Contentful
+            - generic [ref=f42e175]: ADD-ON
+          - generic [ref=f42e176]:
+            - generic [ref=f42e177]: Easily sync web content between Contentful and Transifex projects to stay up-to-date with the latest translations.
+            - link "お問い合わせ" [ref=f42e179] [cursor=pointer]:
+              - /url: javascript:;
+        - generic [ref=f42e186]:
+          - generic [ref=f42e187]:
+            - img "sketch" [ref=f42e188]
+            - generic [ref=f42e189]: Sketch
+            - generic [ref=f42e190]: ADD-ON
+          - generic [ref=f42e191]:
+            - generic [ref=f42e192]: 当社のSketchプラグインを使用してデザインを翻訳し、さまざまな言語でプレビューすることで、ワークフローをスピードアップしましょう。
+            - link "お問い合わせ" [ref=f42e194] [cursor=pointer]:
+              - /url: javascript:;
+        - generic [ref=f42e201]:
+          - generic [ref=f42e202]:
+            - img "Figma" [ref=f42e203]
+            - generic [ref=f42e204]: Figma
+            - generic [ref=f42e205]: ADD-ON
+          - generic [ref=f42e206]:
+            - generic [ref=f42e207]: 設計段階で多国語化を開始します。製品、設計、多国語化の各チームを近づけることで、ワークフローを加速します。
+            - link "お問い合わせ" [ref=f42e209] [cursor=pointer]:
+              - /url: javascript:;
+        - generic [ref=f42e214]:
+          - generic [ref=f42e215]:
+            - img "Slack" [ref=f42e216]
+            - generic [ref=f42e217]: Slack
+          - generic [ref=f42e218]:
+            - generic [ref=f42e219]: Bring localization into your daily communication and increase project transparency with the Transifex Slack integration.
+            - link [ref=f42e221] [cursor=pointer]:
+              - /url: ""
+              - img "Add to Slack" [ref=f42e222]
+        - generic [ref=f42e227]:
+          - generic [ref=f42e228]:
+            - img "lexiQA" [ref=f42e229]
+            - generic [ref=f42e230]: lexiQA
+            - generic [ref=f42e231]: ADD-ON
+          - generic [ref=f42e232]:
+            - generic [ref=f42e233]: Get locale-specific checks and a streamlined workflow, using this API-based linguistic quality assurance tool for translation and localization.
+            - link "お問い合わせ" [ref=f42e235] [cursor=pointer]:
+              - /url: javascript:;
+        - generic [ref=f42e238]:
+          - generic [ref=f42e239]:
+            - img "Zapier" [ref=f42e240]
+            - generic [ref=f42e241]: Zapier
+          - generic [ref=f42e242]:
+            - generic [ref=f42e243]: さまざまなアプリケーションを接続し、”Zap" を設定して日常のタスクを自動化します。
+            - link "インストール方法" [ref=f42e245] [cursor=pointer]:
+              - /url: javascript:;
+        - generic [ref=f42e248]:
+          - generic [ref=f42e249]:
+            - img "Wordpress" [ref=f42e250]
+            - generic [ref=f42e251]: Wordpress
+          - generic [ref=f42e252]:
+            - generic [ref=f42e253]: プラグインを使用して Transifex Live を WordPress に簡単に追加し、複雑な設定なしでウェブサイトやブログを翻訳します。
+            - link "インストール方法" [ref=f42e255] [cursor=pointer]:
+              - /url: javascript:;
+        - generic [ref=f42e258]:
+          - generic [ref=f42e259]:
+            - img "Sanity" [ref=f42e260]
+            - generic [ref=f42e261]: Sanity
+          - generic [ref=f42e262]:
+            - generic [ref=f42e263]: Monitor ongoing translations, and import partial or complete translations from Transifex back into the studio.
+            - link "インストール方法" [ref=f42e265] [cursor=pointer]:
+              - /url: javascript:;
+        - generic [ref=f42e268]:
+          - generic [ref=f42e269]:
+            - img "Drupal" [ref=f42e270]
+            - generic [ref=f42e271]: Drupal
+          - generic [ref=f42e272]:
+            - generic [ref=f42e273]: Translate your website built on Drupal, using Transifex. Versions 7, 8, 9 and 10 are supported.
+            - link "インストール方法" [ref=f42e275] [cursor=pointer]:
+              - /url: javascript:;
+        - generic [ref=f42e282]:
+          - generic [ref=f42e283]:
+            - img "hubspot" [ref=f42e284]
+            - generic [ref=f42e285]: HubSpot
+          - generic [ref=f42e286]:
+            - generic [ref=f42e287]: Synchronize your email campaigns and blog posts with Transifex, and get translations back to HubSpot automatically.
+            - generic [ref=f42e288]: You can activate this integration from project settings.
+  - iframe [ref=f42e290]:
+    
+  - button "Open Intercom Messenger" [ref=f42e291] [cursor=pointer]
