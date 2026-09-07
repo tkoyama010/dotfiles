@@ -73,7 +73,7 @@
             echo "Setting up dotfiles..."
 
             export NIX_CONFIG="extra-experimental-features = nix-command flakes"
-            nix run --refresh nixpkgs#home-manager -- switch -b backup --flake "${self}#${host}-${system}"
+            nix run --refresh nixpkgs#home-manager -- switch -b .pre-hm-backup --flake "${self}#${host}-${system}"
 
             echo "Dotfiles setup complete!"
           '';
