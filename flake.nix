@@ -93,6 +93,7 @@
             curl
             alejandra
             opencode
+            pre-commit
           ];
 
           shellHook = ''

@@ -5,6 +5,11 @@
     executable = true;
   };
 
+  home.file.".local/share/git/hooks/pre-commit" = {
+    source = ./pre-commit;
+    executable = true;
+  };
+
   programs.git = {
     enable = true;
     settings = {
