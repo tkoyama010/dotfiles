@@ -1,6 +1,7 @@
 {...}: {
   home.file = {
-    ".pi/agent/themes/tkoyama010.json".source = ./tkoyama010-theme.json;
+    ".pi/agent/themes/default.json".source = ./theme.json;
+    ".pi/agent/zentui.json".source = ./zentui.json;
     ".pi/agent/settings.json" = {
       source = ./settings.json;
       force = true;

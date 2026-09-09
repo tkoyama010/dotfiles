@@ -12,22 +12,27 @@
   # The text model used as the default pi model.
   textModel = "qwen3:8b";
 
+  # The code-focused model.
+  codeModel = "qwen3-coder";
+
   # Shared by both platform wrappers below. The ollama server is started by
   # its own unit/agent at the same time as this one, so wait for it to accept
   # connections before pulling rather than assuming an ordering.
-  pullModel = model: pkgs.writeShellScript "ollama-pull-${model}" ''
-    for _ in $(seq 1 30); do
-      if ${pkgs.curl}/bin/curl -sf http://${cfg.host}:${toString cfg.port}/ >/dev/null; then
-        exec ${cfg.package}/bin/ollama pull ${model}
-      fi
-      sleep 1
-    done
-    echo "ollama did not accept connections within 30s; not pulling ${model}" >&2
-    exit 1
-  '';
+  pullModel = model:
+    pkgs.writeShellScript "ollama-pull-${model}" ''
+      for _ in $(seq 1 30); do
+        if ${pkgs.curl}/bin/curl -sf http://${cfg.host}:${toString cfg.port}/ >/dev/null; then
+          exec ${cfg.package}/bin/ollama pull ${model}
+        fi
+        sleep 1
+      done
+      echo "ollama did not accept connections within 30s; not pulling ${model}" >&2
+      exit 1
+    '';
 
   pullVisionModel = pullModel visionModel;
   pullTextModel = pullModel textModel;
+  pullCodeModel = pullModel codeModel;
 in {
   services.ollama = {
     enable = true;
@@ -63,6 +68,21 @@ in {
     };
   };
 
+  systemd.user.services.ollama-pull-qwen3-coder = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
+    Unit = {
+      Description = "Pull ${codeModel} code model for ollama";
+      After = ["ollama.service"];
+      Requires = ["ollama.service"];
+    };
+    Service = {
+      Type = "oneshot";
+      ExecStart = "${pullCodeModel}";
+    };
+    Install = {
+      WantedBy = ["default.target"];
+    };
+  };
+
   # systemd.user.services is silently ignored on darwin, which left the model
   # unpulled on macOS, so launchd agents are used instead.
   launchd.agents.ollama-pull-qwen2_5vl = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
@@ -77,6 +97,14 @@ in {
     enable = true;
     config = {
       ProgramArguments = ["${pullTextModel}"];
+      RunAtLoad = true;
+    };
+  };
+
+  launchd.agents.ollama-pull-qwen3-coder = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
+    enable = true;
+    config = {
+      ProgramArguments = ["${pullCodeModel}"];
       RunAtLoad = true;
     };
   };

@@ -24,19 +24,16 @@
       "aarch64-linux"
       "x86_64-linux"
     ];
-    mkHomeConfig = system:
+    mkHomeConfig = system: profile:
       home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {
-          inherit system;
-          overlays = [
-            (self: super: {
-              istats = super.callPackage ./pkgs/istats {};
-            })
-          ];
-        };
+        pkgs = nixpkgs.legacyPackages.${system}.appendOverlays [
+          (self: super: {
+            istats = super.callPackage ./pkgs/istats {};
+          })
+        ];
         extraSpecialArgs = {
           inherit system;
-          profile = import ./hosts/${host}/profile.nix {inherit system;};
+          profile = profile;
         };
         modules = [
           {
@@ -45,21 +42,44 @@
           ./modules/home-manager
         ];
       };
+    makeProfile = system: {
+      username = builtins.getEnv "USER";
+      homeDirectory = if builtins.match ".*-darwin" system != null
+        then "/Users/${builtins.getEnv "USER"}"
+        else "/home/${builtins.getEnv "USER"}";
+    };
   in
     (flake-utils.lib.eachSystem systems (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
 
+        # Generic profile: auto-detect username and home directory
+        genericProfile = {
+          username = builtins.getEnv "USER";
+          homeDirectory = if builtins.match ".*-darwin" system != null
+            then "/Users/${builtins.getEnv "USER"}"
+            else "/home/${builtins.getEnv "USER"}";
+        };
+
+        # Host-specific profile
+        hostProfile = import ./hosts/${host}/profile.nix {inherit system;};
+
         setupScript = pkgs.writeShellApplication {
           name = "dotfiles-setup";
+          runtimeInputs = [ pkgs.coreutils ];
           text = ''
             echo "Setting up dotfiles..."
 
+            # Clean up conflicting backup files from previous attempts
+            rm -f "$HOME/.pi/agent/models.json.backup"
+
+            # Remove nix profile packages that home-manager will manage
+            nix profile remove gh 2>/dev/null || true
+
             export NIX_CONFIG="extra-experimental-features = nix-command flakes"
-            nix run --refresh nixpkgs#home-manager -- switch -b backup --flake "${self}#${host}-${system}"
+            nix run --refresh nixpkgs#home-manager -- switch -b .pre-hm-backup --flake "${self}#${host}-${system}"
 
             echo "Dotfiles setup complete!"
-            echo "Run 'nix flake show' to see available apps"
           '';
         };
       in {
@@ -73,6 +93,7 @@
             curl
             alejandra
             opencode
+            pre-commit
           ];
 
           shellHook = ''
@@ -103,7 +124,13 @@
         builtins.listToAttrs
         (map (system: {
             name = "${host}-${system}";
-            value = mkHomeConfig system;
+            value = mkHomeConfig system (import ./hosts/${host}/profile.nix {inherit system;});
+          })
+          systems)
+        // builtins.listToAttrs
+        (map (system: {
+            name = "default-${system}";
+            value = mkHomeConfig system (makeProfile system);
           })
           systems);
     };

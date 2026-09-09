@@ -3,11 +3,11 @@
 in {
   username =
     if isDarwin
-    then "tetsuo.koyama"
+    then "tetsuokoyama"
     else "tetsuo-koyama";
   homeDirectory =
     if isDarwin
-    then "/Users/tetsuo.koyama"
+    then "/Users/tetsuokoyama"
     else "/home/tetsuo-koyama";
   gitName = "Tetsuo Koyama";
   gitEmail = "tkoyama010@gmail.com";

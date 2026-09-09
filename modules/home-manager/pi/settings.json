@@ -1,5 +1,5 @@
 {
-	"theme": "tkoyama010",
+	"theme": "default",
 	"defaultProvider": "opencode",
 	"defaultModel": "qwen3:8b",
 	"defaultThinkingLevel": "high",
