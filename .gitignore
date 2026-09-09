@@ -1,3 +1,6 @@
+!.pi/code-review-graph.json
+!.pi/code-review-graph/
+!.pi/code-review-graph/.gitignore
 # GitHub Copilot CLI - exclude sensitive data
 # Nix
 # Python cache
@@ -17,10 +20,7 @@
 .direnv
 .emacs.d/history
 .pi/
-!.pi/code-review-graph.json
-!.pi/code-review-graph/
 .pi/code-review-graph/*
-!.pi/code-review-graph/.gitignore
 .python-version
 .ruff_cache/
 .ssh
