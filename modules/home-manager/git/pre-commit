@@ -1,0 +1,10 @@
+#!/bin/bash
+# Pre-commit hook: run pre-commit framework checks before allowing commit.
+
+# Find pre-commit binary in PATH or common locations
+if command -v pre-commit &>/dev/null; then
+  exec pre-commit run --all-files "$@"
+fi
+
+echo "WARNING: pre-commit not found in PATH. Skipping checks."
+exit 0
