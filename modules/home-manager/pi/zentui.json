@@ -1,0 +1,13 @@
+{
+  "icons": {
+    "mode": "ascii"
+  },
+  "colorSources": {
+    "editor": "theme"
+  },
+  "components": {
+    "editor": {
+      "style": "minimalist"
+    }
+  }
+}
