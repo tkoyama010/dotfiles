@@ -26,14 +26,11 @@
     ];
     mkHomeConfig = system: profile:
       home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {
-          inherit system;
-          overlays = [
-            (self: super: {
-              istats = super.callPackage ./pkgs/istats {};
-            })
-          ];
-        };
+        pkgs = nixpkgs.legacyPackages.${system}.appendOverlays [
+          (self: super: {
+            istats = super.callPackage ./pkgs/istats {};
+          })
+        ];
         extraSpecialArgs = {
           inherit system;
           profile = profile;

@@ -3,7 +3,7 @@
   self,
 }: let
   host = "TetsuonoMacBook-Pro";
-  configName = "${host}-${pkgs.system}";
+  configName = "${host}-${pkgs.stdenv.hostPlatform.system}";
 
   homeManagerSwitch = pkgs.writeShellApplication {
     name = "home-manager-switch";
