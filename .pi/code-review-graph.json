@@ -1,0 +1,18 @@
+{
+  "enabled": true,
+  "include": ["**/*"],
+  "exclude": [".git/**", "node_modules/**", "dist/**", "build/**", ".venv/**"],
+  "enabledLanguages": ["typescript", "javascript", "python", "go", "rust"],
+  "experimentalLanguages": [],
+  "maxFileBytes": 300000,
+  "maxImpactDepth": 2,
+  "maxImpactNodes": 500,
+  "maxContextChars": 50000,
+  "autoInjectContext": true,
+  "autoUpdateAfterEdit": true,
+  "review": {
+    "includeAiSlopChecks": true,
+    "includeTestGaps": true,
+    "readinessScore": true
+  }
+}
