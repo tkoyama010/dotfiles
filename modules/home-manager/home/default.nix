@@ -10,7 +10,6 @@ in {
     username = profile.username;
     homeDirectory = profile.homeDirectory;
     stateVersion = "24.05";
-    backupFileExtension = "hm-back";
     packages = with pkgs;
       [
         awscli2
