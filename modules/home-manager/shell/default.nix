@@ -14,8 +14,6 @@
     sessionVariables = {
       EDITOR = "vim";
       CAVEMAN_DEFAULT_MODE = "full";
-      PI_MODEL = "qwen3.6-plus";
-      PI_CODING_AGENT = "true";
     };
     # Volta stays in .zshenv rather than .zshrc on purpose. path_helper in
     # /etc/zprofile demotes anything .zshenv prepends, which currently leaves
