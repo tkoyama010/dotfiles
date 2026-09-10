@@ -35,3 +35,8 @@ if command -v ttyd > /dev/null 2>&1; then
         ttyd -i 127.0.0.1 -p 7681 -W -t fontFamily='FiraCode Nerd Font Mono' bash > /dev/null 2>&1 &
     fi
 fi
+
+# home-manager session variables (PI_MODEL, etc.)
+if [ -f "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" ]; then
+    . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+fi
