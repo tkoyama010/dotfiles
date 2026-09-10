@@ -5,7 +5,30 @@
     nix-direnv.enable = true;
   };
 
-  programs.bash.enable = true;
+  programs.bash = {
+    enable = true;
+    profileExtra = ''
+      # set PATH so it includes user's private bin if it exists
+      if [ -d "$HOME/bin" ] ; then
+          PATH="$HOME/bin:$PATH"
+      fi
+
+      # set PATH so it includes user's private bin if it exists
+      if [ -d "$HOME/.local/bin" ] ; then
+          PATH="$HOME/.local/bin:$PATH"
+      fi
+
+      # uv
+      export PATH="$HOME/snap/code/194/.local/share/../bin:$PATH"
+
+      # Auto-run ttyd
+      if command -v ttyd > /dev/null 2>&1; then
+          if ! pgrep -f "ttyd -i 127.0.0.1 -p 7681" > /dev/null; then
+              ttyd -i 127.0.0.1 -p 7681 -W -t fontFamily='FiraCode Nerd Font Mono' bash > /dev/null 2>&1 &
+          fi
+      fi
+    '';
+  };
 
   programs.zsh = {
     enable = true;
