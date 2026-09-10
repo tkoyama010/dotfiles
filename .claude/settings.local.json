@@ -1,0 +1,10 @@
+{
+	"permissions": {
+		"allow": [
+			"Bash(gh api *)",
+			"WebFetch(domain:lsapy.readthedocs.io)",
+			"Read(//tmp/lsapy_repo/**)",
+			"Bash(rtk read *)"
+		]
+	}
+}
