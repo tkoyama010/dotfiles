@@ -1,10 +1,6 @@
----
-name: npm-publish
-description: |
-  Publish npm packages from pi's non-interactive bash environment. Use when `npm publish` needs browser-based 2FA (Touch ID, security key) — pi's bash tool has no TTY, so wrap npm in `script -q /dev/null` to restore the auth URL flow.
----
-
 # npm-publish
+
+Publish npm packages from pi's non-interactive bash environment.
 
 ## When to use
 
