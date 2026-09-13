@@ -33,6 +33,18 @@
 	},
 	"overrides": [
 		{
+			"includes": ["modules/home-manager/pi/extensions/advisor/**"],
+			"linter": {
+				"enabled": false
+			},
+			"formatter": {
+				"enabled": false
+			},
+			"assist": {
+				"enabled": false
+			}
+		},
+		{
 			"includes": ["modules/home-manager/pi/*.ts", "opencode/plugins/*.ts"],
 			"linter": {
 				"rules": {
