@@ -1,7 +1,7 @@
 {
 	"theme": "default",
 	"defaultProvider": "opencode",
-	"defaultModel": "glm-5.3-flash",
+	"defaultModel": "deepseek-v4-flash",
 	"defaultThinkingLevel": "high",
 	"tuiMode": "regular",
 	"steeringMode": "one-at-a-time",
