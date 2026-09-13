@@ -39,5 +39,5 @@
 		"code-simplifier@claude-plugins-official": true
 	},
 	"language": "Japanese",
-	"customInstructions": "## Global Project Guidelines\n\nSee ~/.claude/CLAUDE.md for complete global guidelines.\n\n### Key Rules:\n- Always use `uv` for Python (e.g., `uv run python`, `uv pip install`)\n- Use `logger` instead of `print()` in production code\n- Integrate new scripts into `__main__.py` as CLI subcommands\n- Stop and ask for guidance when stuck in error loops (2+ same errors)\n- Never commit data files without explicit approval"
+	"customInstructions": "## Global Project Guidelines\n\nSee ~/.claude/CLAUDE.md for complete global guidelines.\n\n### Key Rules:\n- Always use `uv` for Python (e.g., `uv run python`, `uv pip install`)\n- Use `logger` instead of `print()` in production code\n- Stop and ask for guidance when stuck in error loops (2+ same errors)\n- Never commit data files without explicit approval"
 }
