@@ -2,6 +2,7 @@
   home.file = {
     ".pi/agent/themes/default.json".source = ./theme.json;
     ".pi/agent/zentui.json".source = ./zentui.json;
+    ".pi/agent/advisor.json".source = ./advisor.json;
     ".pi/agent/settings.json" = {
       source = ./settings.json;
       force = true;
