@@ -1,0 +1,9 @@
+{
+  "enabled": false,
+  "provider": "opencode",
+  "model": "glm-5.3",
+  "maxUsesPerRun": 3,
+  "maxTokens": 16384,
+  "reasoning": "high",
+  "maxContextMessages": 18
+}
