@@ -19,7 +19,6 @@
 		"npm:pi-code-review-graph",
 		"git:github.com/tkoyama010/pi-webcam",
 		"npm:@tkoyama010/pi-zulip",
-		"npm:remote-pi",
 		"npm:pi-ollama",
 		"git:github.com/tkoyama010/pi-google-home@v0.1.0"
 	],
