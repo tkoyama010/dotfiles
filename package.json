@@ -4,11 +4,14 @@
 	"version": "0.0.0",
 	"devDependencies": {
 		"@biomejs/biome": "2.5.10",
-		"superpowers": "github:obra/superpowers"
+		"superpowers": "github:obra/superpowers",
+		"textlint": "^15.8.0",
+		"textlint-rule-preset-ai-words-ja": "^1.2.0"
 	},
 	"scripts": {
 		"check": "biome check",
-		"format": "biome check --write"
+		"format": "biome check --write",
+		"lint:ja": "textlint \"**/*.md\""
 	},
 	"dependencies": {
 		"pi-advisor": "^0.3.0"
