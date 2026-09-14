@@ -1,6 +1,7 @@
 ---
 description: Write a Conventional Commits message for the staged changes
 ---
+
 Write a commit message for the staged changes (`git diff --cached`).
 
 - Use Conventional Commits: `type(scope): description`

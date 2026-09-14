@@ -1,6 +1,7 @@
 ---
 description: Review the staged or current diff for bugs and design issues
 ---
+
 Review the current changes (`git diff HEAD`). Focus on:
 
 - Bugs and logic errors
