@@ -13,5 +13,6 @@
     ./pi
     ./shell
     ./starship
+    ./tmux
   ];
 }
