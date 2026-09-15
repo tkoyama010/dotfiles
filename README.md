@@ -232,6 +232,22 @@ nix run .#pi-sandbox
 nix run github:tkoyama010/dotfiles#pi-sandbox -- -p "list the failing tests"
 ```
 
+`nix run .#pi-sandbox` with no arguments starts pi in **interactive mode**
+(the TUI) in your current directory, just like running `pi` on the host. The
+TUI needs a real terminal, so run it directly in your shell — not from inside
+another agent or a captured-output environment:
+
+```bash
+cd ~/my-project
+nix run .#pi-sandbox
+
+# Interactive TUI with an extra pi flag (everything after `--` goes to pi)
+nix run .#pi-sandbox -- --no-session
+
+# Non-interactive (one-shot) mode instead
+nix run .#pi-sandbox -- -p "list the failing tests"
+```
+
 The first run builds the image from `pi/Dockerfile.pi` (Node.js 24 + ripgrep +
 pi). The current directory is mounted at `/workspace` in the container, so file
 changes write through to the host. Sessions and settings live in a named
