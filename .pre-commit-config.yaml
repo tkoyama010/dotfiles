@@ -13,6 +13,7 @@ repos:
     hooks:
       - id: codespell
         args: ["-L", ""]
+        exclude: ^package-lock\.json$
   - repo: https://github.com/biomejs/pre-commit
     rev: v2.5.13
     hooks:
