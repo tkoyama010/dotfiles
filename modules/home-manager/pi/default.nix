@@ -14,6 +14,7 @@
     ".pi/agent/extensions/pi-vision-handoff.json".source = ./pi-vision-handoff.json;
     ".pi/agent/extensions/rtk.ts".source = ./rtk.ts;
     ".pi/agent/models.json".source = ./models.json;
+    ".pi/agent/mcp.json".source = ./mcp.json;
     ".pi/agent/prompts/commit.md".source = ./prompts/commit.md;
     ".pi/agent/prompts/pr.md".source = ./prompts/pr.md;
     ".pi/agent/prompts/review.md".source = ./prompts/review.md;
