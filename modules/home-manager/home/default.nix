@@ -14,6 +14,7 @@ in {
       [
         awscli2
         gh
+        jira-cli-go
         terraform
         rtk
         vim
