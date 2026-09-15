@@ -131,6 +131,15 @@
     name = "pi-sandbox";
     runtimeInputs = with pkgs; [docker];
     text = ''
+      if ! docker info >/dev/null 2>&1; then
+        if command -v colima >/dev/null 2>&1; then
+          echo "Docker daemon not running; starting colima..."
+          colima start
+        else
+          echo "Docker daemon not reachable. Start Docker (or 'colima start')." >&2
+          exit 1
+        fi
+      fi
       dockerfile="${self}/pi/Dockerfile.pi"
       docker build -t pi-sandbox -f "$dockerfile" "$(dirname "$dockerfile")"
       exec docker run --rm -it \
