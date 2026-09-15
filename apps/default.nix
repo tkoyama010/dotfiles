@@ -110,7 +110,8 @@
         for skill_dir in "$tmp"/skills/*/; do
           if [ -f "$skill_dir/SKILL.md" ]; then
             name=$(basename "$skill_dir")
-            ln -sfn "$skill_dir" "$skills_dest/$name"
+            rm -rf "''${skills_dest:?}/''${name:?}"
+            cp -r "$skill_dir" "$skills_dest/$name"
             echo "Installed $name -> $skills_dest/$name"
           fi
         done
