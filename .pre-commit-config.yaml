@@ -13,8 +13,9 @@ repos:
     hooks:
       - id: codespell
         args: ["-L", ""]
+        exclude: ^package-lock\.json$
   - repo: https://github.com/biomejs/pre-commit
-    rev: v2.5.12
+    rev: v2.5.13
     hooks:
       - id: biome-check
         args: [--reporter=github]
@@ -45,7 +46,7 @@ repos:
         verbose: true
         files: ^(\.gitignore|vimrc)$
   - repo: https://github.com/scop/pre-commit-shfmt
-    rev: v3.13.1-1
+    rev: v3.14.1-1
     hooks:
       - id: shfmt
   - repo: https://github.com/ComPWA/taplo-pre-commit
@@ -58,11 +59,11 @@ repos:
     hooks:
       - id: alejandra-system
   - repo: https://github.com/NixOS/nixfmt
-    rev: v1.4.0
+    rev: v1.5.0
     hooks:
       - id: nixfmt
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.16.6
+    rev: v0.16.7
     hooks:
       - id: ruff
         args: ["--fix", "--exit-non-zero-on-fix"]
