@@ -127,6 +127,20 @@
     '';
   };
 
+  piSandbox = pkgs.writeShellApplication {
+    name = "pi-sandbox";
+    runtimeInputs = with pkgs; [docker];
+    text = ''
+      dockerfile="${self}/pi/Dockerfile.pi"
+      docker build -t pi-sandbox -f "$dockerfile" "$(dirname "$dockerfile")"
+      exec docker run --rm -it \
+        -e ANTHROPIC_API_KEY \
+        -v "$PWD:/workspace" \
+        -v pi-agent-home:/root/.pi/agent \
+        pi-sandbox "$@"
+    '';
+  };
+
   vimPlugins = pkgs.writeShellApplication {
     name = "vim-plugins";
     runtimeInputs = with pkgs; [git];
@@ -225,5 +239,9 @@ in {
   vim-plugins = {
     type = "app";
     program = "${vimPlugins}/bin/vim-plugins";
+  };
+  pi-sandbox = {
+    type = "app";
+    program = "${piSandbox}/bin/pi-sandbox";
   };
 }
