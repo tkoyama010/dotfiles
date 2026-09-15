@@ -137,6 +137,7 @@ All tasks are exposed as Nix flake apps. Run them with `nix run .#<name>` (or `n
 | `home-manager`           | Apply the home-manager configuration                                                           |
 | `setup` (default)        | Same as `home-manager`, the `nix run .` default                                                |
 | `install-claude-plugins` | Install Claude Code plugins (everything-claude-code, code-simplifier)                          |
+| `install-agent-skills`   | Install [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) for Claude Code and pi |
 | `claude-statusline`      | Configure the Claude Code custom status line                                                   |
 | `ruff-skill`             | Symlink the ruff-lint skill into a target project (`nix run .#ruff-skill -- /path/to/project`) |
 | `opencode`               | Migrate existing opencode config: back up real files, then symlink tracked config              |
@@ -177,6 +178,14 @@ nix run .#install-claude-plugins
 ```
 
 This installs both the `everything-claude-code` (comprehensive feature set) and `code-simplifier` plugins.
+
+You can install [Addy Osmani's Agent Skills](https://github.com/addyosmani/agent-skills) for both Claude Code and pi:
+
+```bash
+nix run .#install-agent-skills
+```
+
+This clones the repository and symlinks every skill (directories containing a `SKILL.md`) into both `~/.claude/skills/` and `~/.pi/agent/skills/`, making them available in Claude Code and the pi coding agent. Re-run the command to update to the latest version.
 
 The code-simplifier plugin provides:
 

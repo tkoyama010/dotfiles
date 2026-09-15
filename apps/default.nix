@@ -98,6 +98,26 @@
     '';
   };
 
+  agentSkills = pkgs.writeShellApplication {
+    name = "install-agent-skills";
+    runtimeInputs = with pkgs; [git];
+    text = ''
+      tmp=$(mktemp -d)
+      trap 'rm -rf "$tmp"' EXIT
+      git clone --depth 1 https://github.com/addyosmani/agent-skills.git "$tmp"
+      for skills_dest in "$HOME/.claude/skills" "$HOME/.pi/agent/skills"; do
+        mkdir -p "$skills_dest"
+        for skill_dir in "$tmp"/skills/*/; do
+          if [ -f "$skill_dir/SKILL.md" ]; then
+            name=$(basename "$skill_dir")
+            ln -sfn "$skill_dir" "$skills_dest/$name"
+            echo "Installed $name -> $skills_dest/$name"
+          fi
+        done
+      done
+    '';
+  };
+
   ttydApp = pkgs.writeShellApplication {
     name = "ttyd-web";
     runtimeInputs = with pkgs; [ttyd bash];
@@ -192,6 +212,10 @@ in {
   opencode-rtd-skills = {
     type = "app";
     program = "${opencodeRtdSkills}/bin/opencode-rtd-skills";
+  };
+  install-agent-skills = {
+    type = "app";
+    program = "${agentSkills}/bin/install-agent-skills";
   };
   ttyd = {
     type = "app";
