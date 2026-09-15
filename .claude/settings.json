@@ -1,6 +1,18 @@
 {
 	"$schema": "https://json.schemastore.org/claude-code-settings.json",
 	"hooks": {
+		"PostToolUse": [
+			{
+				"matcher": "Edit|Write",
+				"hooks": [
+					{
+						"type": "command",
+						"command": "bash -c 'f=$(jq -r \".tool_input.file_path // empty\"); case \"$f\" in *.md) cd \"$CLAUDE_PROJECT_DIR\" && npx textlint \"$f\" >&2 || exit 2;; esac'",
+						"timeout": 30
+					}
+				]
+			}
+		],
 		"Stop": [
 			{
 				"matcher": "",
