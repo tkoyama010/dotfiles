@@ -1,7 +1,6 @@
-{ ... }: {
+{ pkgs, lib, ... }: {
   home.file = {
     ".pi/agent/themes/default.json".source = ./theme.json;
-    ".pi/agent/zentui.json".source = ./zentui.json;
     ".pi/agent/advisor.json" = {
       source = ./advisor.json;
       force = true;
@@ -19,4 +18,11 @@
     ".pi/agent/prompts/pr.md".source = ./prompts/pr.md;
     ".pi/agent/prompts/review.md".source = ./prompts/review.md;
   };
+
+  # zentui writes to its own config file, so it must stay mutable.
+  home.activation.seedZentui = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    if [ ! -f "$HOME/.pi/agent/zentui.json" ]; then
+      ${pkgs.coreutils}/bin/install -Dm644 ${./zentui.json} "$HOME/.pi/agent/zentui.json"
+    fi
+  '';
 }
