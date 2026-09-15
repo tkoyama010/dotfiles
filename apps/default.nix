@@ -142,11 +142,17 @@
       fi
       dockerfile="${self}/pi/Dockerfile.pi"
       docker build -t pi-sandbox -f "$dockerfile" "$(dirname "$dockerfile")"
-      exec docker run --rm -it \
-        -e ANTHROPIC_API_KEY \
-        -v "$PWD:/workspace" \
-        -v pi-agent-home:/root/.pi/agent \
-        pi-sandbox "$@"
+      # ponytail: pty via `script` only when stdin is not a terminal (nix run / agent shells have none); drop if nix run forwards TTY
+      docker_cmd=$(printf ' %q' docker run --rm -it -e ANTHROPIC_API_KEY -v "$PWD:/workspace" -v pi-agent-home:/root/.pi/agent pi-sandbox "$@")
+      docker_cmd="''${docker_cmd# }"
+      if [ -t 0 ]; then
+        exec bash -c "$docker_cmd"
+      else
+        case "$(uname -s)" in
+          Darwin) exec script -q /dev/null bash -c "$docker_cmd" ;;
+          *) exec script -qec "$docker_cmd" /dev/null ;;
+        esac
+      fi
     '';
   };
 

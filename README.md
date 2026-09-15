@@ -234,8 +234,9 @@ nix run github:tkoyama010/dotfiles#pi-sandbox -- -p "list the failing tests"
 
 `nix run .#pi-sandbox` with no arguments starts pi in **interactive mode**
 (the TUI) in your current directory, just like running `pi` on the host. The
-TUI needs a real terminal, so run it directly in your shell — not from inside
-another agent or a captured-output environment:
+TUI needs a terminal: run it directly in your shell. The app automatically
+allocates a pty when stdin is not one (e.g. under `nix run`), so the command
+works from any shell:
 
 ```bash
 cd ~/my-project
