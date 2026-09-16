@@ -17,6 +17,7 @@ in {
         jira-cli-go
         rclone
         terraform
+        pi-coding-agent
         rtk
         vim
       ]
