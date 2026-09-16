@@ -5,17 +5,17 @@ set -euo pipefail
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 if ! command -v nix >/dev/null 2>&1; then
-  # Single-user Nix needs a writable /nix
-  if [ ! -w /nix ] && [ ! -d /nix ]; then
-    sudo install -d -m 0755 /nix
-    sudo chown "$(whoami)" /nix
-  fi
-  curl -L https://nixos.org/nix/install | sh -s -- --no-daemon
+	# Single-user Nix needs a writable /nix
+	if [ ! -w /nix ] && [ ! -d /nix ]; then
+		sudo install -d -m 0755 /nix
+		sudo chown "$(whoami)" /nix
+	fi
+	curl -L https://nixos.org/nix/install | sh -s -- --no-daemon
 fi
 
 # Load Nix environment (postCreateCommand shell does not source ~/.profile)
 if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
-  . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+	. "$HOME/.nix-profile/etc/profile.d/nix.sh"
 fi
 export NIX_CONFIG="extra-experimental-features = nix-command flakes"
 
