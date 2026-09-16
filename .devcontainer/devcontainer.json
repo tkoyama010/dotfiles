@@ -4,7 +4,10 @@
 	"features": {
 		"ghcr.io/devcontainers/features/git:1": {},
 		"ghcr.io/devcontainers/features/github-cli:1": {},
-		"ghcr.io/devcontainers/features/node:1": { "nodeVersion": "22" }
+		"ghcr.io/devcontainers/features/node:1": { "nodeVersion": "22" },
+		"ghcr.io/devcontainers/features/sshd:1": {
+			"version": "latest"
+		}
 	},
 	"postCreateCommand": "bash .devcontainer/setup-nix.sh",
 	"containerEnv": {
