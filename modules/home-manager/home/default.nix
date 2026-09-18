@@ -18,6 +18,7 @@ in {
         rclone
         terraform
         rtk
+        pi-coding-agent
         vim
       ]
       ++ pkgs.lib.optionals isDarwin [ruby istats];
