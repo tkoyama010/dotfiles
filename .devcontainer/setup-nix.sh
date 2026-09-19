@@ -4,6 +4,13 @@ set -euo pipefail
 
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
+# Mirror all output to a log so `codespace-ssh` waiters can stream progress.
+exec > >(tee /tmp/setup-nix.log) 2>&1
+
+# Marker files for `codespace-ssh` to detect completion or failure.
+rm -f /tmp/setup-nix.done /tmp/setup-nix.failed
+trap 'touch /tmp/setup-nix.failed' ERR
+
 if ! command -v nix >/dev/null 2>&1; then
 	# Single-user Nix needs a writable /nix
 	if [ ! -w /nix ] && [ ! -d /nix ]; then
@@ -26,4 +33,5 @@ nix run nixpkgs#home-manager -- switch -b .pre-hm-backup --flake "${DOTFILES_DIR
 # Install agent skills (pi, etc.)
 nix run "${DOTFILES_DIR}#install-agent-skills"
 
+touch /tmp/setup-nix.done
 echo "Dotfiles setup complete."
