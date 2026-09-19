@@ -37,10 +37,10 @@ gh codespace ssh
 
 Notes:
 
-- Creating the Codespace runs the `postCreateCommand`, which installs Nix and applies the dotfiles. The first setup takes a few minutes.
+- Creating the Codespace runs the `postCreateCommand`, which installs the agent skills. The heavy work (Nix install, home-manager switch) runs as `onCreateCommand` so prebuilds bake it into the image.
 - `pi` and `opencode` are available on PATH after setup. `OPENCODE_API_KEY` is not committed — add it via [Codespaces user secrets](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-repository-secrets-for-your-codespaces) (visibility restricted to this repository).
 - To connect while setup may still be running, use `nix run .#codespace-ssh` (or `nix run .#codespace-ssh -- <codespace-name>`). It streams the setup log and only drops you into a shell once the setup is complete.
-- To skip the wait entirely for new Codespaces, configure [prebuilds](https://docs.github.com/en/codespaces/prebuilding-your-codespaces/configuring-prebuilds) (repository Settings → Codespaces → Prebuilds). Prebuilds consume GitHub Actions minutes but make creation nearly instant.
+- To skip the wait entirely for new Codespaces, configure [prebuilds](https://docs.github.com/en/codespaces/prebuilding-your-codespaces/configuring-prebuilds) (repository Settings → Codespaces → Prebuilds). The prebuild machine type must match the machine you create the Codespace with (e.g. `standardLinux32gb`). Prebuilds consume GitHub Actions minutes but make creation nearly instant.
 
 ### Prerequisites
 
