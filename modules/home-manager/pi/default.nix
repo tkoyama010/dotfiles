@@ -1,6 +1,7 @@
 { pkgs, lib, ... }: {
   home.file = {
     ".pi/agent/themes/default.json".source = ./theme.json;
+    ".pi/agent/themes/colibri.json".source = ./themes/colibri.json;
     ".pi/agent/advisor.json" = {
       source = ./advisor.json;
       force = true;

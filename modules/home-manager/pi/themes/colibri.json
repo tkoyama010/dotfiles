@@ -1,0 +1,93 @@
+{
+	"$schema": "https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/src/modes/interactive/theme/theme-schema.json",
+	"name": "colibri",
+	"vars": {
+		"white": "#ffffff",
+		"lilac": "#dbbfef",
+		"lavender": "#a4a0e8",
+		"comet": "#5a5977",
+		"bossanova": "#452859",
+		"midnight": "#3b224c",
+		"revolver": "#281733",
+
+		"silver": "#cccccc",
+		"sirocco": "#697C81",
+		"mint": "#9ff28f",
+		"almond": "#eccdba",
+		"chamois": "#E8DCA0",
+		"honey": "#efba5d",
+
+		"apricot": "#f47868",
+		"lightning": "#ffcd1c",
+		"cedar": "#802F00"
+	},
+	"colors": {
+		"accent": "lilac",
+		"border": "bossanova",
+		"borderAccent": "lilac",
+		"borderMuted": "comet",
+		"success": "mint",
+		"error": "apricot",
+		"warning": "lightning",
+		"muted": "silver",
+		"dim": "sirocco",
+		"text": "lavender",
+		"thinkingText": "sirocco",
+
+		"selectedBg": "bossanova",
+		"scrollbarTrack": "comet",
+		"scrollbarThumb": "sirocco",
+		"searchMatchBg": "cedar",
+		"searchMatchText": "lavender",
+		"userMessageBg": "midnight",
+		"userMessageText": "lavender",
+		"customMessageBg": "midnight",
+		"customMessageText": "lavender",
+		"customMessageLabel": "lilac",
+		"toolPendingBg": "midnight",
+		"toolSuccessBg": "#2e3b2e",
+		"toolErrorBg": "#3b2424",
+		"toolTitle": "lilac",
+		"toolOutput": "silver",
+
+		"mdHeading": "lilac",
+		"mdLink": "almond",
+		"mdLinkUrl": "sirocco",
+		"mdCode": "mint",
+		"mdCodeBlock": "silver",
+		"mdCodeBlockBorder": "comet",
+		"mdQuote": "sirocco",
+		"mdQuoteBorder": "comet",
+		"mdHr": "comet",
+		"mdListBullet": "lilac",
+
+		"toolDiffAdded": "#35bf86",
+		"toolDiffRemoved": "#f22c86",
+		"toolDiffContext": "sirocco",
+
+		"syntaxComment": "sirocco",
+		"syntaxKeyword": "almond",
+		"syntaxFunction": "white",
+		"syntaxVariable": "lavender",
+		"syntaxString": "silver",
+		"syntaxNumber": "chamois",
+		"syntaxType": "white",
+		"syntaxOperator": "lilac",
+		"syntaxPunctuation": "lavender",
+
+		"thinkingOff": "comet",
+		"thinkingMinimal": "sirocco",
+		"thinkingLow": "lavender",
+		"thinkingMedium": "lilac",
+		"thinkingHigh": "mint",
+		"thinkingXhigh": "honey",
+		"thinkingMax": "#ff5fff",
+
+		"bashMode": "honey"
+	},
+	"export": {
+		"pageBg": "#281733",
+		"cardBg": "#3b224c",
+		"infoBg": "#452859"
+	}
+}
