@@ -15,6 +15,31 @@ This repository is for managing personal configuration files. It includes settin
 
 ## Setup Instructions
 
+### GitHub Codespaces
+
+The fastest way to try these dotfiles is a GitHub Codespace. The devcontainer (`.devcontainer/devcontainer.json`) installs single-user Nix, applies the home-manager configuration, and installs the agent skills automatically on creation.
+
+Launch from the browser:
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/tkoyama010/dotfiles)
+
+Or create one from the terminal with the GitHub CLI:
+
+```bash
+gh codespace create -R tkoyama010/dotfiles
+```
+
+To connect to the Codespace once it is ready:
+
+```bash
+gh codespace ssh
+```
+
+Notes:
+
+- Creating the Codespace runs the `postCreateCommand`, which installs Nix and applies the dotfiles. The first setup takes a few minutes.
+- `pi` and `opencode` are available on PATH after setup. `OPENCODE_API_KEY` is not committed — add it via [Codespaces user secrets](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-repository-secrets-for-your-codespaces) (visibility restricted to this repository).
+
 ### Prerequisites
 
 Install Nix package manager if you haven't already:
