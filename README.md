@@ -42,6 +42,14 @@ Notes:
 - To connect while setup may still be running, use `nix run .#codespace-ssh` (or `nix run .#codespace-ssh -- <codespace-name>`). It streams the setup log and only drops you into a shell once the setup is complete.
 - To skip the wait entirely for new Codespaces, configure [prebuilds](https://docs.github.com/en/codespaces/prebuilding-your-codespaces/configuring-prebuilds) (repository Settings → Codespaces → Prebuilds). The prebuild machine type must match the machine you create the Codespace with (e.g. `standardLinux32gb`). Prebuilds consume GitHub Actions minutes but make creation nearly instant.
 
+### Deleting Codespaces
+
+When you are done working, do not forget to delete your Codespaces to avoid unnecessary compute usage:
+
+```bash
+gh codespace delete --all
+```
+
 ### Prerequisites
 
 Install Nix package manager if you haven't already:
