@@ -20,6 +20,7 @@ in {
         terraform
         rtk
         pi-coding-agent
+        herdr
         vim
       ]
       ++ pkgs.lib.optionals isDarwin [ruby istats]
