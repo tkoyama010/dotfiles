@@ -5,6 +5,7 @@
   ...
 }: let
   isDarwin = builtins.match ".*-darwin" system != null;
+  isLinux = builtins.match ".*-linux" system != null;
 in {
   home = {
     username = profile.username;
@@ -19,9 +20,13 @@ in {
         terraform
         rtk
         pi-coding-agent
+        herdr
         vim
       ]
-      ++ pkgs.lib.optionals isDarwin [ruby istats];
+      ++ pkgs.lib.optionals isDarwin [ruby istats]
+      # opencode CLI: needed by the devcontainer (PI_PROVIDER=opencode);
+      # on darwin it is provided by the dev shell instead.
+      ++ pkgs.lib.optionals isLinux [opencode];
   };
 
   programs.home-manager.enable = true;

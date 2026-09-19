@@ -1,4 +1,23 @@
-{lib, ...}: {
+{
+  system,
+  lib,
+  ...
+}: {
+  # The devcontainer (Linux) needs home-manager to own ~/.profile so that
+  # hm-session-vars.sh (pi, opencode, nix on PATH) is sourced by login
+  # shells. On darwin the hand-maintained .profile from the files module
+  # wins, so home-manager's bash profile must stay off there.
+  programs.bash = lib.mkIf (builtins.match ".*-linux" system != null) {
+    enable = true;
+    profileExtra = ''
+      # Single-user Nix is not on PATH by default on the devcontainer image.
+      if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+        . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+      fi
+      export PATH="$HOME/.nix-profile/bin:$PATH"
+    '';
+  };
+
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;

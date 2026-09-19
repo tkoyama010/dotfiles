@@ -1,0 +1,25 @@
+{
+	"name": "dotfiles (nix)",
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+	"features": {
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/devcontainers/features/node:1": { "nodeVersion": "22" },
+		"ghcr.io/devcontainers/features/sshd:1": {
+			"version": "latest"
+		}
+	},
+	"onCreateCommand": "bash .devcontainer/setup-nix.sh install",
+	"postCreateCommand": "bash .devcontainer/setup-nix.sh post",
+	"containerEnv": {
+		"PI_PROVIDER": "opencode"
+	},
+	"remoteEnv": {
+		"NIX_CONFIG": "extra-experimental-features = nix-command flakes"
+	},
+	"customizations": {
+		"codespaces": {
+			"openFiles": ["README.md"]
+		}
+	}
+}

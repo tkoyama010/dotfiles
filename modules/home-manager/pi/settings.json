@@ -21,7 +21,8 @@
 		"git:github.com/tkoyama010/pi-zulip",
 		"npm:pi-btw",
 		"npm:pi-ollama",
-		"git:github.com/tkoyama010/pi-google-home@v0.1.0"
+		"git:github.com/tkoyama010/pi-google-home@v0.1.0",
+		"npm:pi-google-services"
 	],
 	"compaction": {
 		"enabled": true

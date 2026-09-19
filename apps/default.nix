@@ -127,6 +127,21 @@
     '';
   };
 
+  codespaceSsh = pkgs.writeShellApplication {
+    name = "codespace-ssh";
+    runtimeInputs = with pkgs; [gh];
+    text = ''
+      codespace="''${1:-}"
+      if [ $# -gt 0 ]; then shift; fi
+      if [ -z "$codespace" ]; then
+        codespace=$(gh codespace list --json name --jq '.[0].name')
+      fi
+      # Wait for first-time setup (streaming its log), then open an interactive shell.
+      gh codespace ssh -c "$codespace" -- bash /workspaces/dotfiles/.devcontainer/ssh-wait.sh || exit 1
+      exec gh codespace ssh -c "$codespace"
+    '';
+  };
+
   piSandbox = pkgs.writeShellApplication {
     name = "pi-sandbox";
     runtimeInputs = with pkgs; [docker];
@@ -250,6 +265,10 @@ in {
   ttyd = {
     type = "app";
     program = "${ttydApp}/bin/ttyd-web";
+  };
+  codespace-ssh = {
+    type = "app";
+    program = "${codespaceSsh}/bin/codespace-ssh";
   };
   vim-plugins = {
     type = "app";
