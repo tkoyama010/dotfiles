@@ -118,7 +118,15 @@
         // builtins.listToAttrs
         (map (system: {
             name = "default-${system}";
-            value = mkHomeConfig system (import ./hosts/${host}/profile.nix {inherit system;});
+            value = mkHomeConfig system (import
+              # default-* targets the generic devcontainer (Linux, user "vscode");
+              # the darwin default keeps the host profile.
+              (
+                if builtins.match ".*-linux" system != null
+                then ./hosts/devcontainer/profile.nix
+                else ./hosts/${host}/profile.nix
+              )
+              {inherit system;});
           })
           systems);
     };
