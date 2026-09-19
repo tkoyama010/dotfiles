@@ -127,6 +127,35 @@
     '';
   };
 
+  piSandbox = pkgs.writeShellApplication {
+    name = "pi-sandbox";
+    runtimeInputs = with pkgs; [docker];
+    text = ''
+      if ! docker info >/dev/null 2>&1; then
+        if command -v colima >/dev/null 2>&1; then
+          echo "Docker daemon not running; starting colima..."
+          colima start
+        else
+          echo "Docker daemon not reachable. Start Docker (or 'colima start')." >&2
+          exit 1
+        fi
+      fi
+      dockerfile="${self}/pi/Dockerfile.pi"
+      docker build -t pi-sandbox -f "$dockerfile" "$(dirname "$dockerfile")"
+      # ponytail: pty via `script` only when stdin is not a terminal (nix run / agent shells have none); drop if nix run forwards TTY
+      docker_cmd=$(printf ' %q' docker run --rm -it -e ANTHROPIC_API_KEY -v "$PWD:/workspace" -v pi-agent-home:/root/.pi/agent pi-sandbox "$@")
+      docker_cmd="''${docker_cmd# }"
+      if [ -t 0 ]; then
+        exec bash -c "$docker_cmd"
+      else
+        case "$(uname -s)" in
+          Darwin) exec script -q /dev/null bash -c "$docker_cmd" ;;
+          *) exec script -qec "$docker_cmd" /dev/null ;;
+        esac
+      fi
+    '';
+  };
+
   vimPlugins = pkgs.writeShellApplication {
     name = "vim-plugins";
     runtimeInputs = with pkgs; [git];
@@ -225,5 +254,9 @@ in {
   vim-plugins = {
     type = "app";
     program = "${vimPlugins}/bin/vim-plugins";
+  };
+  pi-sandbox = {
+    type = "app";
+    program = "${piSandbox}/bin/pi-sandbox";
   };
 }

@@ -144,6 +144,7 @@ All tasks are exposed as Nix flake apps. Run them with `nix run .#<name>` (or `n
 | `opencode-rtd-skills`    | Install the latest Read the Docs skills for opencode                                                 |
 | `vim-plugins`            | Install or update Vim plugins                                                                        |
 | `ttyd`                   | Start a ttyd web terminal on `127.0.0.1:7681`                                                        |
+| `pi-sandbox`             | Run the [pi coding agent](https://pi.dev) inside a Docker sandbox (`nix run .#pi-sandbox -- [args]`) |
 
 ## Usage Example
 
@@ -216,6 +217,43 @@ This starts [ttyd](https://github.com/tsl0922/ttyd) on `127.0.0.1:7681` running
 `bash`, with client write access enabled (`-W`) and the FiraCode Nerd Font Mono
 font. Open <http://127.0.0.1:7681> to use it. It listens on loopback only, so it
 is not reachable from other machines. Stop it with `Ctrl-C`.
+
+## pi sandbox
+
+You can run the [pi coding agent](https://pi.dev) inside a Docker container so
+its file and shell access is isolated from the host (the ["Plain Docker"
+pattern](https://pi.dev/docs/latest/containerization#plain-docker)):
+
+```bash
+# From the dotfiles directory
+nix run .#pi-sandbox
+
+# From anywhere, passing arguments to pi
+nix run github:tkoyama010/dotfiles#pi-sandbox -- -p "list the failing tests"
+```
+
+`nix run .#pi-sandbox` with no arguments starts pi in **interactive mode**
+(the TUI) in your current directory, just like running `pi` on the host. The
+TUI needs a terminal: run it directly in your shell. The app automatically
+allocates a pty when stdin is not one (e.g. under `nix run`), so the command
+works from any shell:
+
+```bash
+cd ~/my-project
+nix run .#pi-sandbox
+
+# Interactive TUI with an extra pi flag (everything after `--` goes to pi)
+nix run .#pi-sandbox -- --no-session
+
+# Non-interactive (one-shot) mode instead
+nix run .#pi-sandbox -- -p "list the failing tests"
+```
+
+The first run builds the image from `pi/Dockerfile.pi` (Node.js 24 + ripgrep +
+pi). The current directory is mounted at `/workspace` in the container, so file
+changes write through to the host. Sessions and settings live in a named
+Docker volume (`pi-agent-home`), and your `ANTHROPIC_API_KEY` is passed through
+from the host. Docker (or a compatible runtime) must be installed and running.
 
 **Note**: Authentication tokens are NOT stored in this repository for security reasons.
 
