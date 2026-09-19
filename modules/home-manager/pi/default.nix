@@ -17,6 +17,8 @@
     ".pi/agent/prompts/commit.md".source = ./prompts/commit.md;
     ".pi/agent/prompts/pr.md".source = ./prompts/pr.md;
     ".pi/agent/prompts/review.md".source = ./prompts/review.md;
+    ".pi/agent/skills/gemini-ja-polish/SKILL.md".source =
+      ../../../.agents/skills/gemini-ja-polish/SKILL.md;
   };
 
   # zentui writes to its own config file, so it must stay mutable.
