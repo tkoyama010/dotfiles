@@ -42,31 +42,17 @@
           ./modules/home-manager
         ];
       };
-    makeProfile = system: {
-      username = builtins.getEnv "USER";
-      homeDirectory = if builtins.match ".*-darwin" system != null
-        then "/Users/${builtins.getEnv "USER"}"
-        else "/home/${builtins.getEnv "USER"}";
-    };
   in
     (flake-utils.lib.eachSystem systems (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
-
-        # Generic profile: auto-detect username and home directory
-        genericProfile = {
-          username = builtins.getEnv "USER";
-          homeDirectory = if builtins.match ".*-darwin" system != null
-            then "/Users/${builtins.getEnv "USER"}"
-            else "/home/${builtins.getEnv "USER"}";
-        };
 
         # Host-specific profile
         hostProfile = import ./hosts/${host}/profile.nix {inherit system;};
 
         setupScript = pkgs.writeShellApplication {
           name = "dotfiles-setup";
-          runtimeInputs = [ pkgs.coreutils ];
+          runtimeInputs = [pkgs.coreutils];
           text = ''
             echo "Setting up dotfiles..."
 
@@ -132,7 +118,15 @@
         // builtins.listToAttrs
         (map (system: {
             name = "default-${system}";
-            value = mkHomeConfig system (makeProfile system);
+            value = mkHomeConfig system (import
+              # default-* targets the generic devcontainer (Linux, user "vscode");
+              # the darwin default keeps the host profile.
+              (
+                if builtins.match ".*-linux" system != null
+                then ./hosts/devcontainer/profile.nix
+                else ./hosts/${host}/profile.nix
+              )
+              {inherit system;});
           })
           systems);
     };
