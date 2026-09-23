@@ -19,6 +19,7 @@
 		"npm:pi-code-review-graph",
 		"git:github.com/tkoyama010/pi-webcam",
 		"git:github.com/tkoyama010/pi-zulip",
+		"npm:pi-btw",
 		"npm:pi-ollama",
 		"git:github.com/tkoyama010/pi-google-home@v0.1.0",
 		"npm:pi-google-services"
