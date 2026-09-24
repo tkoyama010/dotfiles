@@ -39,8 +39,10 @@ install_nix_and_apply_dotfiles() {
 	export NIX_CONFIG="extra-experimental-features = nix-command flakes"
 
 	# Apply dotfiles with the generic home-manager configuration.
-	# -b backs up conflicting files instead of failing.
-	nix run nixpkgs#home-manager -- switch -b .pre-hm-backup --flake "${DOTFILES_DIR}#default-x86_64-linux"
+	# Resolve the container's actual system (e.g. aarch64-linux) — the image
+	# runs on both arm64 and x64 hosts. -b backs up conflicting files.
+	local system="$(nix eval --impure --raw --expr 'builtins.currentSystem')"
+	nix run nixpkgs#home-manager -- switch -b .pre-hm-backup --flake "${DOTFILES_DIR}#default-${system}"
 }
 
 if [ "$MODE" = "install" ]; then
