@@ -11,7 +11,11 @@
     text = ''
       export NIX_CONFIG="extra-experimental-features = nix-command flakes"
       host="$(hostname -s 2>/dev/null || true)"
-      [ -d "${self}/hosts/$host" ] || host="${host}"
+      configs="${toString (builtins.attrNames self.homeConfigurations)}"
+      case " $configs " in
+        *" $host-${system} "*) ;;
+        *) host="${host}" ;;
+      esac
       nix run --refresh nixpkgs#home-manager -- switch -b backup --flake "${self}#$host-${system}"
     '';
   };

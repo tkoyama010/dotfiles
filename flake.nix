@@ -66,7 +66,11 @@
 
             export NIX_CONFIG="extra-experimental-features = nix-command flakes"
             host="$(hostname -s 2>/dev/null || true)"
-            [ -d "${self}/hosts/$host" ] || host="${host}"
+            configs="${toString (builtins.attrNames self.homeConfigurations)}"
+            case " $configs " in
+              *" $host-${system} "*) ;;
+              *) host="${host}" ;;
+            esac
             nix run --refresh nixpkgs#home-manager -- switch -b .pre-hm-backup --flake "${self}#$host-${system}"
 
             nix run ".#install-agent-skills"
@@ -115,10 +119,14 @@
       homeConfigurations =
         builtins.listToAttrs
         (nixpkgs.lib.concatMap (host:
-          map (system: {
-            name = "${host}-${system}";
-            value = mkHomeConfig system (import ./hosts/${host}/profile.nix {inherit system;});
-          })
+          nixpkgs.lib.concatMap (system: let
+            profile = import ./hosts/${host}/profile.nix {inherit system;};
+          in
+            # A profile returns null for systems it does not support.
+            nixpkgs.lib.optional (profile != null) {
+              name = "${host}-${system}";
+              value = mkHomeConfig system profile;
+            })
           systems)
         hosts)
         // builtins.listToAttrs
