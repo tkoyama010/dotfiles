@@ -85,6 +85,13 @@
     '';
   };
 
+  opencodeLogin = pkgs.writeShellApplication {
+    name = "opencode-login";
+    text = ''
+      opencode console login
+    '';
+  };
+
   opencodeRtdSkills = pkgs.writeShellApplication {
     name = "opencode-rtd-skills";
     runtimeInputs = with pkgs; [git];
@@ -264,6 +271,10 @@ in {
   opencode-rtd-skills = {
     type = "app";
     program = "${opencodeRtdSkills}/bin/opencode-rtd-skills";
+  };
+  opencode-login = {
+    type = "app";
+    program = "${opencodeLogin}/bin/opencode-login";
   };
   install-agent-skills = {
     type = "app";
