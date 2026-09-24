@@ -14,6 +14,7 @@ in {
     packages = with pkgs;
       [
         awscli2
+        devcontainer
         gh
         jira-cli-go
         rclone
