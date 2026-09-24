@@ -50,6 +50,30 @@ When you are done working, do not forget to delete your Codespaces to avoid unne
 gh codespace delete --all
 ```
 
+### Devcontainer CLI (local)
+
+You can build and run the same devcontainer locally with the [Devcontainer CLI](https://github.com/devcontainers/cli) — no Codespace needed.
+
+The CLI is already installed by these dotfiles (home-manager adds the `devcontainer` package, see `modules/home-manager/home/default.nix`). If you have the dotfiles applied, it is already on your PATH. Otherwise, run it directly from nixpkgs without installing:
+
+```bash
+nix run nixpkgs#devcontainer -- up --workspace-folder .
+nix run nixpkgs#devcontainer -- exec --workspace-folder . bash
+```
+
+`devcontainer up` builds the image from `.devcontainer/devcontainer.json` (installing Nix and applying the home-manager configuration via `onCreateCommand`), then starts the container. `devcontainer exec` runs commands inside it. Subsequent runs reuse the built image, so startup is fast.
+
+To rebuild from scratch after changing `.devcontainer/`:
+
+```bash
+nix run nixpkgs#devcontainer -- up --workspace-folder . --remove-existing-container
+```
+
+Notes:
+
+- Docker (or a compatible container runtime) must be running locally.
+- `pi` and `opencode` are available on PATH inside the container after setup. Set `OPENCODE_API_KEY` in your shell environment before running `devcontainer up` if needed.
+
 ### Prerequisites
 
 Install Nix package manager if you haven't already:
