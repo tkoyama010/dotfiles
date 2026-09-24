@@ -17,7 +17,9 @@
     flake-utils,
     ...
   }: let
+    # Fallback host when the machine's hostname has no directory under ./hosts.
     host = "TetsuonoMacBook-Pro";
+    hosts = builtins.filter (h: h != "devcontainer") (builtins.attrNames (builtins.readDir ./hosts));
     # Nixpkgs 26.11 dropped x86_64-darwin, so it is excluded here.
     systems = [
       "aarch64-darwin"
@@ -63,7 +65,9 @@
             nix profile remove gh 2>/dev/null || true
 
             export NIX_CONFIG="extra-experimental-features = nix-command flakes"
-            nix run --refresh nixpkgs#home-manager -- switch -b .pre-hm-backup --flake "${self}#${host}-${system}"
+            host="$(hostname -s 2>/dev/null || true)"
+            [ -d "${self}/hosts/$host" ] || host="${host}"
+            nix run --refresh nixpkgs#home-manager -- switch -b .pre-hm-backup --flake "${self}#$host-${system}"
 
             nix run ".#install-agent-skills"
 
@@ -110,11 +114,13 @@
     // {
       homeConfigurations =
         builtins.listToAttrs
-        (map (system: {
+        (nixpkgs.lib.concatMap (host:
+          map (system: {
             name = "${host}-${system}";
             value = mkHomeConfig system (import ./hosts/${host}/profile.nix {inherit system;});
           })
           systems)
+        hosts)
         // builtins.listToAttrs
         (map (system: {
             name = "default-${system}";
