@@ -11,6 +11,10 @@ set -euo pipefail
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 MODE="${1:-install}"
 
+# Nix fetches flakes from this repo via libgit2, which refuses repos not owned
+# by the current user (the workspace is often bind-mounted as another uid).
+git config --global --add safe.directory "$DOTFILES_DIR"
+
 # Mirror all output to a log so `codespace-ssh` waiters can stream progress.
 exec > >(tee -a /tmp/setup-nix.log) 2>&1
 
