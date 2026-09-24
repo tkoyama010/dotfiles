@@ -87,6 +87,7 @@
 
   opencodeLogin = pkgs.writeShellApplication {
     name = "opencode-login";
+    runtimeInputs = [pkgs.opencode];
     text = ''
       opencode console login
     '';
