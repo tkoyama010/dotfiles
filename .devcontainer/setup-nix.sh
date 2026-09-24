@@ -56,6 +56,11 @@ if [ ! -x "$HOME/.nix-profile/bin/nix" ]; then
 	echo "Nix not found (no prebuild was used); running full setup."
 	install_nix_and_apply_dotfiles
 fi
+
+# postCreateCommand runs in a fresh shell that has not sourced the Nix profile.
+if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+	. "$HOME/.nix-profile/etc/profile.d/nix.sh"
+fi
 export NIX_CONFIG="extra-experimental-features = nix-command flakes"
 nix run "${DOTFILES_DIR}#install-agent-skills"
 
