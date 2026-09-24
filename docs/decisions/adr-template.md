@@ -1,6 +1,6 @@
 ---
 # These are optional metadata elements. Feel free to remove any of them.
-status: "{proposed | rejected | accepted | deprecated | … | superseded by ADR-0123"
+status: "{proposed | rejected | accepted | deprecated | … | superseded by ADR-0123}"
 date: { YYYY-MM-DD when the decision was last updated: null }
 decision-makers: { list everyone involved in the decision: null }
 consulted:
