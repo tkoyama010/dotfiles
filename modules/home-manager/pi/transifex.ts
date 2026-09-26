@@ -147,12 +147,16 @@ export default function (pi: ExtensionAPI) {
 		name: "transifex_translate",
 		label: "Transifex: Save Translation",
 		description:
-			"Save translations for untranslated strings. Pass one entry per string: the slot id and translated text from transifex_get_untranslated.",
+			"Save translations for untranslated strings. Pass one entry per string: the slot id and translated text from transifex_get_untranslated. Omit text to copy the source string unchanged (for markup/identifier strings that must not be translated).",
 		parameters: Type.Object({
 			translations: Type.Array(
 				Type.Object({
 					id: Type.String({ description: "Resource translation slot id" }),
-					text: Type.String({ description: "Translated text" }),
+					text: Type.Optional(
+						Type.String({
+							description: "Translated text; omit to copy the source string",
+						}),
+					),
 				}),
 			),
 		}),
@@ -160,6 +164,19 @@ export default function (pi: ExtensionAPI) {
 			const saved: string[] = [];
 			const failed: Array<{ id: string; error: string }> = [];
 			for (const { id, text } of params.translations) {
+				let value = text;
+				if (value === undefined) {
+					// Copy source: fetch the slot with its resource_string.
+					try {
+						const json = await txGet(
+							`/resource_translations/${id}?include=resource_string`,
+						);
+						value = String(json.included?.[0]?.attributes.strings?.other ?? "");
+					} catch (error) {
+						failed.push({ id, error: String(error) });
+						continue;
+					}
+				}
 				const response = await fetch(`${API}/resource_translations/${id}`, {
 					method: "PATCH",
 					headers: {
@@ -171,7 +188,7 @@ export default function (pi: ExtensionAPI) {
 						data: {
 							id,
 							type: "resource_translations",
-							attributes: { strings: { other: text } },
+							attributes: { strings: { other: value } },
 						},
 					}),
 				});
