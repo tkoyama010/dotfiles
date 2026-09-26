@@ -1,10 +1,13 @@
+import fs from "node:fs";
+import os from "node:os";
 import process from "node:process";
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 import { Type } from "typebox";
 
 // Transifex API v3 extension: lets the agent list untranslated strings and
 // save translations via the public REST API. Requires TX_TOKEN (Bearer token
-// from https://app.transifex.com/user/settings/).
+// from https://app.transifex.com/user/settings/) or a token stored in
+// ~/.tx-token as a fallback.
 
 const API = "https://rest.api.transifex.com";
 
@@ -21,10 +24,19 @@ type JsonApiResponse = {
 };
 
 function token(): string {
-	const value = process.env.TX_TOKEN;
+	let value = process.env.TX_TOKEN;
+	if (!value) {
+		// Fallback: read token from a file in the user's home directory so a
+		// full pi restart is not required. os.homedir() is safe even when HOME
+		// is unset.
+		const tokenFile = `${os.homedir()}/.tx-token`;
+		if (fs.existsSync(tokenFile)) {
+			value = fs.readFileSync(tokenFile, "utf8").trim();
+		}
+	}
 	if (!value) {
 		throw new Error(
-			"TX_TOKEN is not set. Generate an API token at https://app.transifex.com/user/settings/ and export TX_TOKEN.",
+			"TX_TOKEN is not set. Generate an API token at https://app.transifex.com/user/settings/ and either export TX_TOKEN or store the token in ~/.tx-token.",
 		);
 	}
 	return value;
@@ -86,7 +98,7 @@ export default function (pi: ExtensionAPI) {
 		name: "transifex_list_resources",
 		label: "Transifex: List Resources",
 		description:
-			"List resources (slug, name, categories) in a Transifex project. Uses TX_TOKEN env var.",
+			"List resources (slug, name, categories) in a Transifex project. Uses TX_TOKEN env var or ~/.tx-token file.",
 		parameters: Type.Object({
 			org: Type.String({ description: "Organization slug" }),
 			project: Type.String({ description: "Project slug" }),
@@ -140,7 +152,8 @@ export default function (pi: ExtensionAPI) {
 				),
 				"filter[language]": `l:${params.lang}`,
 				include: "resource_string",
-				"page[limit]": "100",
+				// resource_translations rejects page[limit]/page[number]; it uses
+				// cursor pagination, which the links.next loop below follows.
 			});
 			const untranslated: Array<{ id: string; key: string; source: string }> =
 				[];
