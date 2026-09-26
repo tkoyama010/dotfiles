@@ -52,27 +52,24 @@ function resourceId(org: string, project: string, resource: string): string {
 	return `o:${org}:p:${project}:r:${resource}`;
 }
 
-/** Return the (key, source) pairs of untranslated strings from a resource_translations response. */
+/** Return the (slot id, key, source) triples of untranslated strings from a resource_translations response. */
 export function pickUntranslated(
 	response: JsonApiResponse,
-	lang: string,
-): Array<{ key: string; source: string }> {
+): Array<{ id: string; key: string; source: string }> {
 	const includedById = new Map<string, JsonApiItem>(
 		(response.included ?? []).map((item) => [item.id, item]),
 	);
-	const result: Array<{ key: string; source: string }> = [];
+	const result: Array<{ id: string; key: string; source: string }> = [];
 	for (const item of response.data) {
-		const strings = item.attributes.strings as
-			| Record<string, string>
-			| undefined;
-		if (strings && strings[lang]) continue;
+		if (item.attributes.strings?.other) continue;
 		const resourceString = includedById.get(
 			item.relationships?.resource_string?.data?.id ?? "",
 		);
 		if (!resourceString) continue;
 		result.push({
+			id: item.id,
 			key: String(resourceString.attributes.key ?? ""),
-			source: String(resourceString.attributes.string ?? ""),
+			source: String(resourceString.attributes.strings?.other ?? ""),
 		});
 	}
 	return result;
@@ -110,7 +107,7 @@ export default function (pi: ExtensionAPI) {
 		name: "transifex_get_untranslated",
 		label: "Transifex: Get Untranslated",
 		description:
-			"Fetch untranslated strings (key + source text) for one resource and language. Translate them with transifex_translate.",
+			"Fetch untranslated strings (slot id, key, source text) for one resource and language. Translate them with transifex_translate.",
 		parameters: Type.Object({
 			org: Type.String({ description: "Organization slug" }),
 			project: Type.String({ description: "Project slug" }),
@@ -132,12 +129,14 @@ export default function (pi: ExtensionAPI) {
 				include: "resource_string",
 				"page[limit]": "100",
 			});
-			const untranslated: Array<{ key: string; source: string }> = [];
+			const untranslated: Array<{ id: string; key: string; source: string }> =
+				[];
 			let path: string | undefined = `/resource_translations?${query}`;
 			while (path && untranslated.length < limit) {
 				const json = await txGet(path);
-				untranslated.push(...pickUntranslated(json, params.lang));
+				untranslated.push(...pickUntranslated(json));
 				path = json.links?.next ?? undefined;
+				if (path) path = path.startsWith("http") ? path : `${API}${path}`;
 			}
 			const text = JSON.stringify(untranslated.slice(0, limit), null, 2);
 			return { content: [{ type: "text", text }], details: {} };
@@ -148,51 +147,39 @@ export default function (pi: ExtensionAPI) {
 		name: "transifex_translate",
 		label: "Transifex: Save Translation",
 		description:
-			"Save translations for untranslated strings. Pass one entry per string: the key from transifex_get_untranslated and the translated text.",
+			"Save translations for untranslated strings. Pass one entry per string: the slot id and translated text from transifex_get_untranslated.",
 		parameters: Type.Object({
-			org: Type.String({ description: "Organization slug" }),
-			project: Type.String({ description: "Project slug" }),
-			resource: Type.String({ description: "Resource slug" }),
-			lang: Type.String({ description: "Target language code, e.g. ja" }),
 			translations: Type.Array(
 				Type.Object({
-					key: Type.String({ description: "Resource string key" }),
+					id: Type.String({ description: "Resource translation slot id" }),
 					text: Type.String({ description: "Translated text" }),
 				}),
 			),
 		}),
 		async execute(_toolCallId, params) {
 			const saved: string[] = [];
-			const failed: Array<{ key: string; error: string }> = [];
-			for (const { key, text } of params.translations) {
-				const body = {
-					data: {
-						type: "translations",
-						attributes: { key, strings: { [params.lang]: text } },
-						relationships: {
-							resource: {
-								data: {
-									id: resourceId(params.org, params.project, params.resource),
-									type: "resources",
-								},
-							},
-						},
-					},
-				};
-				const response = await fetch(`${API}/translations`, {
-					method: "POST",
+			const failed: Array<{ id: string; error: string }> = [];
+			for (const { id, text } of params.translations) {
+				const response = await fetch(`${API}/resource_translations/${id}`, {
+					method: "PATCH",
 					headers: {
 						"Content-Type": "application/vnd.api+json",
 						Accept: "application/vnd.api+json",
 						Authorization: `Bearer ${token()}`,
 					},
-					body: JSON.stringify(body),
+					body: JSON.stringify({
+						data: {
+							id,
+							type: "resource_translations",
+							attributes: { strings: { other: text } },
+						},
+					}),
 				});
 				if (response.ok) {
-					saved.push(key);
+					saved.push(id);
 				} else {
 					failed.push({
-						key,
+						id,
 						error: `${response.status}: ${await response.text()}`,
 					});
 				}
