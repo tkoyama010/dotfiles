@@ -15,7 +15,8 @@
 		"PI_PROVIDER": "opencode"
 	},
 	"remoteEnv": {
-		"NIX_CONFIG": "extra-experimental-features = nix-command flakes"
+		"NIX_CONFIG": "extra-experimental-features = nix-command flakes",
+		"OPENCODE_API_KEY": "${localEnv:OPENCODE_API_KEY}"
 	},
 	"customizations": {
 		"codespaces": {
