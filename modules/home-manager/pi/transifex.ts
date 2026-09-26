@@ -1,3 +1,4 @@
+import fs from "node:fs";
 import process from "node:process";
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 import { Type } from "typebox";
@@ -21,7 +22,14 @@ type JsonApiResponse = {
 };
 
 function token(): string {
-	const value = process.env.TX_TOKEN;
+	let value = process.env.TX_TOKEN;
+	if (!value) {
+		// Fallback: read token from file so a full pi restart is not required.
+		const tokenFile = `${process.env.HOME}/.tx-token`;
+		if (fs.existsSync(tokenFile)) {
+			value = fs.readFileSync(tokenFile, "utf8").trim();
+		}
+	}
 	if (!value) {
 		throw new Error(
 			"TX_TOKEN is not set. Generate an API token at https://app.transifex.com/user/settings/ and export TX_TOKEN.",
@@ -140,7 +148,8 @@ export default function (pi: ExtensionAPI) {
 				),
 				"filter[language]": `l:${params.lang}`,
 				include: "resource_string",
-				"page[limit]": "100",
+				// resource_translations rejects page[limit]/page[number]; it uses
+				// cursor pagination, which the links.next loop below follows.
 			});
 			const untranslated: Array<{ id: string; key: string; source: string }> =
 				[];
