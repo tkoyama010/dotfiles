@@ -2,14 +2,21 @@
   pkgs,
   self,
 }: let
+  # Fallback host when the machine's hostname has no directory under ./hosts.
   host = "TetsuonoMacBook-Pro";
-  configName = "${host}-${pkgs.stdenv.hostPlatform.system}";
+  system = pkgs.stdenv.hostPlatform.system;
 
   homeManagerSwitch = pkgs.writeShellApplication {
     name = "home-manager-switch";
     text = ''
       export NIX_CONFIG="extra-experimental-features = nix-command flakes"
-      nix run --refresh nixpkgs#home-manager -- switch -b backup --flake "${self}#${configName}"
+      host="$(hostname -s 2>/dev/null || true)"
+      configs="${toString (builtins.attrNames self.homeConfigurations)}"
+      case " $configs " in
+        *" $host-${system} "*) ;;
+        *) host="${host}" ;;
+      esac
+      nix run --refresh nixpkgs#home-manager -- switch -b backup --flake "${self}#$host-${system}"
     '';
   };
 
@@ -75,6 +82,14 @@
         ln -sf "$entry" "$target"
         echo "Linked $name"
       done
+    '';
+  };
+
+  opencodeLogin = pkgs.writeShellApplication {
+    name = "opencode-login";
+    runtimeInputs = [pkgs.opencode];
+    text = ''
+      opencode console login
     '';
   };
 
@@ -257,6 +272,10 @@ in {
   opencode-rtd-skills = {
     type = "app";
     program = "${opencodeRtdSkills}/bin/opencode-rtd-skills";
+  };
+  opencode-login = {
+    type = "app";
+    program = "${opencodeLogin}/bin/opencode-login";
   };
   install-agent-skills = {
     type = "app";

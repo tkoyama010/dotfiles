@@ -22,7 +22,7 @@
 		"npm:pi-ollama",
 		"git:github.com/tkoyama010/pi-google-home@v0.1.0",
 		"npm:pi-google-services",
-		"npm:pi-web-access"
+		"git:github.com/nicobailon/pi-web-access@v0.31.0"
 	],
 	"compaction": {
 		"enabled": true

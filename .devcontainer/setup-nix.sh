@@ -11,6 +11,10 @@ set -euo pipefail
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 MODE="${1:-install}"
 
+# Nix fetches flakes from this repo via libgit2, which refuses repos not owned
+# by the current user (the workspace is often bind-mounted as another uid).
+git config --global --add safe.directory "$DOTFILES_DIR"
+
 # Mirror all output to a log so `codespace-ssh` waiters can stream progress.
 exec > >(tee -a /tmp/setup-nix.log) 2>&1
 
@@ -35,8 +39,10 @@ install_nix_and_apply_dotfiles() {
 	export NIX_CONFIG="extra-experimental-features = nix-command flakes"
 
 	# Apply dotfiles with the generic home-manager configuration.
-	# -b backs up conflicting files instead of failing.
-	nix run nixpkgs#home-manager -- switch -b .pre-hm-backup --flake "${DOTFILES_DIR}#default-x86_64-linux"
+	# Resolve the container's actual system (e.g. aarch64-linux) — the image
+	# runs on both arm64 and x64 hosts. -b backs up conflicting files.
+	local system="$(nix eval --impure --raw --expr 'builtins.currentSystem')"
+	nix run nixpkgs#home-manager -- switch -b .pre-hm-backup --flake "${DOTFILES_DIR}#default-${system}"
 }
 
 if [ "$MODE" = "install" ]; then
@@ -49,6 +55,11 @@ if [ ! -x "$HOME/.nix-profile/bin/nix" ]; then
 	# No prebuild was used: fall back to the full setup.
 	echo "Nix not found (no prebuild was used); running full setup."
 	install_nix_and_apply_dotfiles
+fi
+
+# postCreateCommand runs in a fresh shell that has not sourced the Nix profile.
+if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+	. "$HOME/.nix-profile/etc/profile.d/nix.sh"
 fi
 export NIX_CONFIG="extra-experimental-features = nix-command flakes"
 nix run "${DOTFILES_DIR}#install-agent-skills"
