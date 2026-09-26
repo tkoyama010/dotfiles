@@ -72,7 +72,13 @@ nix run nixpkgs#devcontainer -- up --workspace-folder . --remove-existing-contai
 Notes:
 
 - Docker (or a compatible container runtime) must be running locally.
-- `pi` and `opencode` are available on PATH inside the container after setup. Set `OPENCODE_API_KEY` in your shell environment before running `devcontainer up` if needed.
+- `pi` and `opencode` are available on PATH inside the container after setup. To pass `OPENCODE_API_KEY` from your local shell into the container, forward it explicitly with the CLI's `--remote-env` flag (Codespaces picks up the key from [user secrets](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-repository-secrets-for-your-codespaces) instead — no flag needed):
+
+  ```bash
+  export OPENCODE_API_KEY=your-key-here
+  nix run nixpkgs#devcontainer -- up --workspace-folder . --remote-env OPENCODE_API_KEY="$OPENCODE_API_KEY"
+  nix run nixpkgs#devcontainer -- exec --workspace-folder . --remote-env OPENCODE_API_KEY="$OPENCODE_API_KEY" bash
+  ```
 
 ### Prerequisites
 
