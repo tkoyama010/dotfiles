@@ -61,7 +61,13 @@ export function pickUntranslated(
 	);
 	const result: Array<{ id: string; key: string; source: string }> = [];
 	for (const item of response.data) {
-		if (item.attributes.strings?.other) continue;
+		// Untranslated slots have strings null or all forms empty. Any populated
+		// plural form counts as translated.
+		const forms = item.attributes.strings as
+			| Record<string, string>
+			| null
+			| undefined;
+		if (forms && Object.values(forms).some(Boolean)) continue;
 		const resourceString = includedById.get(
 			item.relationships?.resource_string?.data?.id ?? "",
 		);
@@ -89,9 +95,16 @@ export default function (pi: ExtensionAPI) {
 			const query = new URLSearchParams({
 				"filter[project]": `o:${params.org}:p:${params.project}`,
 			});
-			const json = await txGet(`/resources?${query}`);
+			const resources: JsonApiItem[] = [];
+			let path: string | undefined = `/resources?${query}`;
+			while (path) {
+				const json = await txGet(path);
+				resources.push(...json.data);
+				path = json.links?.next ?? undefined;
+				if (path) path = path.startsWith("http") ? path : `${API}${path}`;
+			}
 			const text = JSON.stringify(
-				json.data.map((r) => ({
+				resources.map((r) => ({
 					slug: r.attributes.slug,
 					name: r.attributes.name,
 					categories: r.attributes.categories,
