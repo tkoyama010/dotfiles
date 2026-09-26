@@ -192,6 +192,7 @@ This applies the home-manager configuration for the current system (e.g. `Tetsuo
   - `plugins/rtk.ts`: Custom local plugin (RTK command rewriting).
   - Plugins installed from npm: `@dietrichgebert/ponytail`, `caveman-opencode-plugin`.
 - `apps/`: Nix flake apps — the task runner, replacing the former `justfile`. Run any task with `nix run .#<name>`.
+- `modules/home-manager/pi/transifex.ts`: pi extension that translates Transifex projects via the Transifex API v3 (set `TX_TOKEN`; tools: `transifex_list_resources`, `transifex_get_untranslated`, `transifex_translate`).
 
 ## Available Nix Apps
 
