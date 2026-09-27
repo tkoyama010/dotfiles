@@ -12,7 +12,12 @@
 					"input": ["text", "image"],
 					"contextWindow": 1048576,
 					"maxTokens": 65536,
-					"cost": { "input": 0.75, "output": 3.75, "cacheRead": 0.075, "cacheWrite": 0 }
+					"cost": {
+						"input": 0.75,
+						"output": 3.75,
+						"cacheRead": 0.075,
+						"cacheWrite": 0
+					}
 				}
 			]
 		}
