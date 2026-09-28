@@ -31,6 +31,7 @@
         pkgs = nixpkgs.legacyPackages.${system}.appendOverlays [
           (self: super: {
             istats = super.callPackage ./pkgs/istats {};
+            sbx = super.callPackage ./pkgs/sbx {};
           })
         ];
         extraSpecialArgs = {
@@ -101,6 +102,7 @@
         packages.setup = setupScript;
         packages.default = setupScript;
         packages.istats = pkgs.callPackage ./pkgs/istats {};
+        packages.sbx = pkgs.callPackage ./pkgs/sbx {};
 
         apps =
           (import ./apps {inherit pkgs self;})
