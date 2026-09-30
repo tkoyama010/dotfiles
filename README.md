@@ -204,6 +204,7 @@ All tasks are exposed as Nix flake apps. Run them with `nix run .#<name>` (or `n
 | `setup` (default)        | Same as `home-manager`, the `nix run .` default                                                      |
 | `install-claude-plugins` | Install Claude Code plugins (everything-claude-code, code-simplifier)                                |
 | `install-agent-skills`   | Install [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) for Claude Code and pi |
+| `install-graphify`       | Install [graphify](https://github.com/Graphify-Labs/graphify) for Claude Code and pi                 |
 | `claude-statusline`      | Configure the Claude Code custom status line                                                         |
 | `ruff-skill`             | Symlink the ruff-lint skill into a target project (`nix run .#ruff-skill -- /path/to/project`)       |
 | `opencode`               | Migrate existing opencode config: back up real files, then symlink tracked config                    |
@@ -254,6 +255,12 @@ nix run .#install-agent-skills
 ```
 
 This clones the repository and symlinks every skill (directories containing a `SKILL.md`) into both `~/.claude/skills/` and `~/.pi/agent/skills/`, making them available in Claude Code and the pi coding agent. Re-run the command to update to the latest version.
+
+[graphify](https://github.com/Graphify-Labs/graphify) is a Python CLI rather than a plugin. This app installs the `graphifyy` package with `uv tool` and registers its skill for both Claude Code (`graphify install`) and pi (`graphify install --platform pi`). Re-run it to upgrade:
+
+```bash
+nix run .#install-graphify
+```
 
 The code-simplifier plugin provides:
 
