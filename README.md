@@ -198,20 +198,21 @@ This applies the home-manager configuration for the current system (e.g. `Tetsuo
 
 All tasks are exposed as Nix flake apps. Run them with `nix run .#<name>` (or `nix run github:tkoyama010/dotfiles#<name>`):
 
-| App                      | Description                                                                                          |
-| ------------------------ | ---------------------------------------------------------------------------------------------------- |
-| `home-manager`           | Apply the home-manager configuration                                                                 |
-| `setup` (default)        | Same as `home-manager`, the `nix run .` default                                                      |
-| `install-claude-plugins` | Install Claude Code plugins (everything-claude-code, code-simplifier)                                |
-| `install-agent-skills`   | Install [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) for Claude Code and pi |
-| `claude-statusline`      | Configure the Claude Code custom status line                                                         |
-| `ruff-skill`             | Symlink the ruff-lint skill into a target project (`nix run .#ruff-skill -- /path/to/project`)       |
-| `opencode`               | Migrate existing opencode config: back up real files, then symlink tracked config                    |
-| `opencode-rtd-skills`    | Install the latest Read the Docs skills for opencode                                                 |
-| `vim-plugins`            | Install or update Vim plugins                                                                        |
-| `ttyd`                   | Start a ttyd web terminal on `127.0.0.1:7681`                                                        |
-| `codespace-ssh`          | SSH into a Codespace and wait for first-time setup, streaming logs before handing over the shell     |
-| `pi-sandbox`             | Run the [pi coding agent](https://pi.dev) inside a Docker sandbox (`nix run .#pi-sandbox -- [args]`) |
+| App                              | Description                                                                                                          |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `home-manager`                   | Apply the home-manager configuration                                                                                 |
+| `setup` (default)                | Same as `home-manager`, the `nix run .` default                                                                      |
+| `install-claude-plugins`         | Install Claude Code plugins (everything-claude-code, code-simplifier)                                                |
+| `install-agent-skills`           | Install [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) for Claude Code and pi                 |
+| `install-understand-anything-pi` | Install [Understand-Anything](https://github.com/Egonex-AI/Understand-Anything) for pi (Claude Code uses the plugin) |
+| `claude-statusline`              | Configure the Claude Code custom status line                                                                         |
+| `ruff-skill`                     | Symlink the ruff-lint skill into a target project (`nix run .#ruff-skill -- /path/to/project`)                       |
+| `opencode`                       | Migrate existing opencode config: back up real files, then symlink tracked config                                    |
+| `opencode-rtd-skills`            | Install the latest Read the Docs skills for opencode                                                                 |
+| `vim-plugins`                    | Install or update Vim plugins                                                                                        |
+| `ttyd`                           | Start a ttyd web terminal on `127.0.0.1:7681`                                                                        |
+| `codespace-ssh`                  | SSH into a Codespace and wait for first-time setup, streaming logs before handing over the shell                     |
+| `pi-sandbox`                     | Run the [pi coding agent](https://pi.dev) inside a Docker sandbox (`nix run .#pi-sandbox -- [args]`)                 |
 
 ## Usage Example
 
@@ -254,6 +255,12 @@ nix run .#install-agent-skills
 ```
 
 This clones the repository and symlinks every skill (directories containing a `SKILL.md`) into both `~/.claude/skills/` and `~/.pi/agent/skills/`, making them available in Claude Code and the pi coding agent. Re-run the command to update to the latest version.
+
+[Understand-Anything](https://github.com/Egonex-AI/Understand-Anything) is installed for Claude Code by `install-claude-plugins`. For pi, this app clones the repository to `~/.understand-anything/repo` and runs its official installer (`install.sh pi`), which symlinks the skills into `~/.agents/skills/` (a global skill location pi reads). Re-run it to update:
+
+```bash
+nix run .#install-understand-anything-pi
+```
 
 The code-simplifier plugin provides:
 
