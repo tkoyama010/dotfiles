@@ -134,6 +134,22 @@
     '';
   };
 
+  archifySkills = pkgs.writeShellApplication {
+    name = "install-archify-skills";
+    runtimeInputs = with pkgs; [git];
+    text = ''
+      tmp=$(mktemp -d)
+      trap 'rm -rf "$tmp"' EXIT
+      git clone --depth 1 https://github.com/tt-a1i/archify.git "$tmp"
+      for skills_dest in "$HOME/.claude/skills" "$HOME/.pi/agent/skills"; do
+        mkdir -p "$skills_dest"
+        rm -rf "''${skills_dest:?}/archify"
+        cp -r "$tmp/archify" "$skills_dest/archify"
+        echo "Installed archify -> $skills_dest/archify"
+      done
+    '';
+  };
+
   ttydApp = pkgs.writeShellApplication {
     name = "ttyd-web";
     runtimeInputs = with pkgs; [ttyd bash];
@@ -280,6 +296,10 @@ in {
   install-agent-skills = {
     type = "app";
     program = "${agentSkills}/bin/install-agent-skills";
+  };
+  install-archify-skills = {
+    type = "app";
+    program = "${archifySkills}/bin/install-archify-skills";
   };
   ttyd = {
     type = "app";

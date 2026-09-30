@@ -204,6 +204,7 @@ All tasks are exposed as Nix flake apps. Run them with `nix run .#<name>` (or `n
 | `setup` (default)        | Same as `home-manager`, the `nix run .` default                                                      |
 | `install-claude-plugins` | Install Claude Code plugins (everything-claude-code, code-simplifier)                                |
 | `install-agent-skills`   | Install [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) for Claude Code and pi |
+| `install-archify-skills` | Install [archify](https://github.com/tt-a1i/archify) for Claude Code and pi                          |
 | `claude-statusline`      | Configure the Claude Code custom status line                                                         |
 | `ruff-skill`             | Symlink the ruff-lint skill into a target project (`nix run .#ruff-skill -- /path/to/project`)       |
 | `opencode`               | Migrate existing opencode config: back up real files, then symlink tracked config                    |
@@ -254,6 +255,12 @@ nix run .#install-agent-skills
 ```
 
 This clones the repository and symlinks every skill (directories containing a `SKILL.md`) into both `~/.claude/skills/` and `~/.pi/agent/skills/`, making them available in Claude Code and the pi coding agent. Re-run the command to update to the latest version.
+
+[archify](https://github.com/tt-a1i/archify) is a plain skill (no Claude Code marketplace, no pi manifest). This app copies its `archify/` skill directory into both `~/.claude/skills/` and `~/.pi/agent/skills/`. The skill runs `node bin/archify.mjs`, so Node.js must be available:
+
+```bash
+nix run .#install-archify-skills
+```
 
 The code-simplifier plugin provides:
 
