@@ -26,6 +26,8 @@
       claude plugin marketplace add affaan-m/everything-claude-code
       claude plugin install everything-claude-code@everything-claude-code
       claude plugin install code-simplifier
+      claude plugin marketplace add pbakaus/impeccable
+      claude plugin install impeccable@impeccable
     '';
   };
 
@@ -130,6 +132,26 @@
             echo "Installed $name -> $skills_dest/$name"
           fi
         done
+      done
+    '';
+  };
+
+  impeccablePiSkills = pkgs.writeShellApplication {
+    name = "install-impeccable-pi-skills";
+    runtimeInputs = with pkgs; [git];
+    text = ''
+      tmp=$(mktemp -d)
+      trap 'rm -rf "$tmp"' EXIT
+      git clone --depth 1 https://github.com/pbakaus/impeccable.git "$tmp"
+      skills_dest="$HOME/.pi/agent/skills"
+      mkdir -p "$skills_dest"
+      for skill_dir in "$tmp"/.pi/skills/*/; do
+        if [ -f "$skill_dir/SKILL.md" ]; then
+          name=$(basename "$skill_dir")
+          rm -rf "''${skills_dest:?}/''${name:?}"
+          cp -r "$skill_dir" "$skills_dest/$name"
+          echo "Installed impeccable skill $name -> $skills_dest/$name"
+        fi
       done
     '';
   };
@@ -280,6 +302,10 @@ in {
   install-agent-skills = {
     type = "app";
     program = "${agentSkills}/bin/install-agent-skills";
+  };
+  install-impeccable-pi-skills = {
+    type = "app";
+    program = "${impeccablePiSkills}/bin/install-impeccable-pi-skills";
   };
   ttyd = {
     type = "app";
