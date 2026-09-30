@@ -26,6 +26,8 @@
       claude plugin marketplace add affaan-m/everything-claude-code
       claude plugin install everything-claude-code@everything-claude-code
       claude plugin install code-simplifier
+      claude plugin marketplace add Egonex-AI/Understand-Anything
+      claude plugin install understand-anything@understand-anything
     '';
   };
 
@@ -131,6 +133,19 @@
           fi
         done
       done
+    '';
+  };
+
+  understandAnythingPi = pkgs.writeShellApplication {
+    name = "install-understand-anything-pi";
+    runtimeInputs = with pkgs; [git bash];
+    text = ''
+      repo="$HOME/.understand-anything/repo"
+      if [ ! -d "$repo/.git" ]; then
+        git clone https://github.com/Egonex-AI/Understand-Anything.git "$repo"
+      fi
+      # The upstream installer pulls updates and symlinks the skills into ~/.agents/skills, which pi reads.
+      bash "$repo/install.sh" pi
     '';
   };
 
@@ -280,6 +295,10 @@ in {
   install-agent-skills = {
     type = "app";
     program = "${agentSkills}/bin/install-agent-skills";
+  };
+  install-understand-anything-pi = {
+    type = "app";
+    program = "${understandAnythingPi}/bin/install-understand-anything-pi";
   };
   ttyd = {
     type = "app";
