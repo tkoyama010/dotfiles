@@ -134,6 +134,29 @@
     '';
   };
 
+  awesomeClaudeSkills = pkgs.writeShellApplication {
+    name = "install-awesome-claude-skills";
+    runtimeInputs = with pkgs; [git];
+    text = ''
+      tmp=$(mktemp -d)
+      trap 'rm -rf "$tmp"' EXIT
+      git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git "$tmp"
+      for skills_dest in "$HOME/.claude/skills" "$HOME/.pi/agent/skills"; do
+        mkdir -p "$skills_dest"
+        for skill_dir in "$tmp"/*/; do
+          name=$(basename "$skill_dir")
+          # template-skill is a placeholder; skill-creator and mcp-builder duplicate existing skills.
+          case "$name" in template-skill | skill-creator | mcp-builder) continue ;; esac
+          if [ -f "$skill_dir/SKILL.md" ]; then
+            rm -rf "''${skills_dest:?}/''${name:?}"
+            cp -r "$skill_dir" "$skills_dest/$name"
+            echo "Installed awesome-claude-skills skill $name -> $skills_dest/$name"
+          fi
+        done
+      done
+    '';
+  };
+
   ttydApp = pkgs.writeShellApplication {
     name = "ttyd-web";
     runtimeInputs = with pkgs; [ttyd bash];
@@ -280,6 +303,10 @@ in {
   install-agent-skills = {
     type = "app";
     program = "${agentSkills}/bin/install-agent-skills";
+  };
+  install-awesome-claude-skills = {
+    type = "app";
+    program = "${awesomeClaudeSkills}/bin/install-awesome-claude-skills";
   };
   ttyd = {
     type = "app";
