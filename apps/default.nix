@@ -26,6 +26,8 @@
       claude plugin marketplace add affaan-m/everything-claude-code
       claude plugin install everything-claude-code@everything-claude-code
       claude plugin install code-simplifier
+      claude plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill
+      claude plugin install ui-ux-pro-max@ui-ux-pro-max-skill
     '';
   };
 
@@ -130,6 +132,26 @@
             echo "Installed $name -> $skills_dest/$name"
           fi
         done
+      done
+    '';
+  };
+
+  uiUxProMaxPiSkills = pkgs.writeShellApplication {
+    name = "install-ui-ux-pro-max-pi-skills";
+    runtimeInputs = with pkgs; [git];
+    text = ''
+      tmp=$(mktemp -d)
+      trap 'rm -rf "$tmp"' EXIT
+      git clone --depth 1 https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git "$tmp"
+      skills_dest="$HOME/.pi/agent/skills"
+      mkdir -p "$skills_dest"
+      for skill_dir in "$tmp"/.claude/skills/*/; do
+        if [ -f "$skill_dir/SKILL.md" ]; then
+          name=$(basename "$skill_dir")
+          rm -rf "''${skills_dest:?}/''${name:?}"
+          cp -r "$skill_dir" "$skills_dest/$name"
+          echo "Installed ui-ux-pro-max skill $name -> $skills_dest/$name"
+        fi
       done
     '';
   };
@@ -280,6 +302,10 @@ in {
   install-agent-skills = {
     type = "app";
     program = "${agentSkills}/bin/install-agent-skills";
+  };
+  install-ui-ux-pro-max-pi-skills = {
+    type = "app";
+    program = "${uiUxProMaxPiSkills}/bin/install-ui-ux-pro-max-pi-skills";
   };
   ttyd = {
     type = "app";
