@@ -134,6 +134,17 @@
     '';
   };
 
+  installGraphify = pkgs.writeShellApplication {
+    name = "install-graphify";
+    runtimeInputs = with pkgs; [uv];
+    text = ''
+      uv tool install --upgrade graphifyy
+      graphify="$(uv tool dir --bin)/graphify"
+      "$graphify" install
+      "$graphify" install --platform pi
+    '';
+  };
+
   ttydApp = pkgs.writeShellApplication {
     name = "ttyd-web";
     runtimeInputs = with pkgs; [ttyd bash];
@@ -280,6 +291,10 @@ in {
   install-agent-skills = {
     type = "app";
     program = "${agentSkills}/bin/install-agent-skills";
+  };
+  install-graphify = {
+    type = "app";
+    program = "${installGraphify}/bin/install-graphify";
   };
   ttyd = {
     type = "app";
