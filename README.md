@@ -247,6 +247,8 @@ nix run .#install-claude-plugins
 
 This installs both the `everything-claude-code` (comprehensive feature set) and `code-simplifier` plugins.
 
+It also installs [caveman](https://github.com/JuliusBrussee/caveman). For pi, caveman is already listed in `modules/home-manager/pi/settings.json`.
+
 You can install [Addy Osmani's Agent Skills](https://github.com/addyosmani/agent-skills) for both Claude Code and pi:
 
 ```bash
