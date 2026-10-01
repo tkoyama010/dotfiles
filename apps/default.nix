@@ -23,11 +23,11 @@
   installClaudePlugins = pkgs.writeShellApplication {
     name = "install-claude-plugins";
     text = ''
+      claude plugin marketplace add JuliusBrussee/caveman
+      claude plugin install caveman@caveman
       claude plugin marketplace add affaan-m/everything-claude-code
       claude plugin install everything-claude-code@everything-claude-code
       claude plugin install code-simplifier
-      claude plugin marketplace add JuliusBrussee/caveman
-      claude plugin install caveman@caveman
     '';
   };
 
