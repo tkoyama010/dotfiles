@@ -2,14 +2,21 @@
   pkgs,
   self,
 }: let
+  # Fallback host when the machine's hostname has no directory under ./hosts.
   host = "TetsuonoMacBook-Pro";
-  configName = "${host}-${pkgs.stdenv.hostPlatform.system}";
+  system = pkgs.stdenv.hostPlatform.system;
 
   homeManagerSwitch = pkgs.writeShellApplication {
     name = "home-manager-switch";
     text = ''
       export NIX_CONFIG="extra-experimental-features = nix-command flakes"
-      nix run --refresh nixpkgs#home-manager -- switch -b backup --flake "${self}#${configName}"
+      host="$(hostname -s 2>/dev/null || true)"
+      configs="${toString (builtins.attrNames self.homeConfigurations)}"
+      case " $configs " in
+        *" $host-${system} "*) ;;
+        *) host="${host}" ;;
+      esac
+      nix run --refresh nixpkgs#home-manager -- switch -b backup --flake "${self}#$host-${system}"
     '';
   };
 
@@ -78,6 +85,14 @@
     '';
   };
 
+  opencodeLogin = pkgs.writeShellApplication {
+    name = "opencode-login";
+    runtimeInputs = [pkgs.opencode];
+    text = ''
+      opencode console login
+    '';
+  };
+
   opencodeRtdSkills = pkgs.writeShellApplication {
     name = "opencode-rtd-skills";
     runtimeInputs = with pkgs; [git];
@@ -124,6 +139,21 @@
     runtimeInputs = with pkgs; [ttyd bash];
     text = ''
       ttyd -i 127.0.0.1 -p 7681 -W -t fontFamily='FiraCode Nerd Font Mono' bash
+    '';
+  };
+
+  codespaceSsh = pkgs.writeShellApplication {
+    name = "codespace-ssh";
+    runtimeInputs = with pkgs; [gh];
+    text = ''
+      codespace="''${1:-}"
+      if [ $# -gt 0 ]; then shift; fi
+      if [ -z "$codespace" ]; then
+        codespace=$(gh codespace list --json name --jq '.[0].name')
+      fi
+      # Wait for first-time setup (streaming its log), then open an interactive shell.
+      gh codespace ssh -c "$codespace" -- bash /workspaces/dotfiles/.devcontainer/ssh-wait.sh || exit 1
+      exec gh codespace ssh -c "$codespace"
     '';
   };
 
@@ -243,6 +273,10 @@ in {
     type = "app";
     program = "${opencodeRtdSkills}/bin/opencode-rtd-skills";
   };
+  opencode-login = {
+    type = "app";
+    program = "${opencodeLogin}/bin/opencode-login";
+  };
   install-agent-skills = {
     type = "app";
     program = "${agentSkills}/bin/install-agent-skills";
@@ -250,6 +284,10 @@ in {
   ttyd = {
     type = "app";
     program = "${ttydApp}/bin/ttyd-web";
+  };
+  codespace-ssh = {
+    type = "app";
+    program = "${codespaceSsh}/bin/codespace-ssh";
   };
   vim-plugins = {
     type = "app";

@@ -9,7 +9,8 @@
 			"version": "latest"
 		}
 	},
-	"postCreateCommand": "bash .devcontainer/setup-nix.sh",
+	"onCreateCommand": "bash .devcontainer/setup-nix.sh install",
+	"postCreateCommand": "bash .devcontainer/setup-nix.sh post",
 	"containerEnv": {
 		"PI_PROVIDER": "opencode"
 	},

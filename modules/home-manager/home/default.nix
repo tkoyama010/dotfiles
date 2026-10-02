@@ -14,12 +14,14 @@ in {
     packages = with pkgs;
       [
         awscli2
+        devcontainer
         gh
         jira-cli-go
         rclone
         terraform
         rtk
         pi-coding-agent
+        herdr
         vim
       ]
       ++ pkgs.lib.optionals isDarwin [ruby istats]

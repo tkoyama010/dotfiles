@@ -37,8 +37,48 @@ gh codespace ssh
 
 Notes:
 
-- Creating the Codespace runs the `postCreateCommand`, which installs Nix and applies the dotfiles. The first setup takes a few minutes.
+- Creating the Codespace runs the `postCreateCommand`, which installs the agent skills. The heavy work (Nix install, home-manager switch) runs as `onCreateCommand` so prebuilds bake it into the image.
 - `pi` and `opencode` are available on PATH after setup. `OPENCODE_API_KEY` is not committed — add it via [Codespaces user secrets](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-repository-secrets-for-your-codespaces) (visibility restricted to this repository).
+- To connect while setup may still be running, use `nix run .#codespace-ssh` (or `nix run .#codespace-ssh -- <codespace-name>`). It streams the setup log and only drops you into a shell once the setup is complete.
+- To skip the wait entirely for new Codespaces, configure [prebuilds](https://docs.github.com/en/codespaces/prebuilding-your-codespaces/configuring-prebuilds) (repository Settings → Codespaces → Prebuilds). The prebuild machine type must match the machine you create the Codespace with (e.g. `standardLinux32gb`). Prebuilds consume GitHub Actions minutes but make creation nearly instant.
+
+### Deleting Codespaces
+
+When you are done working, do not forget to delete your Codespaces to avoid unnecessary compute usage:
+
+```bash
+gh codespace delete --all
+```
+
+### Devcontainer CLI (local)
+
+You can build and run the same devcontainer locally with the [Devcontainer CLI](https://github.com/devcontainers/cli) — no Codespace needed.
+
+The CLI is already installed by these dotfiles (home-manager adds the `devcontainer` package, see `modules/home-manager/home/default.nix`). If you have the dotfiles applied, it is already on your PATH. Otherwise, run it directly from nixpkgs without installing:
+
+```bash
+nix run nixpkgs#devcontainer -- up --workspace-folder .
+nix run nixpkgs#devcontainer -- exec --workspace-folder . bash
+```
+
+`devcontainer up` builds the image from `.devcontainer/devcontainer.json` (installing Nix and applying the home-manager configuration via `onCreateCommand`), then starts the container. `devcontainer exec` runs commands inside it. Subsequent runs reuse the built image, so startup is fast.
+
+To rebuild from scratch after changing `.devcontainer/`:
+
+```bash
+nix run nixpkgs#devcontainer -- up --workspace-folder . --remove-existing-container
+```
+
+Notes:
+
+- Docker (or a compatible container runtime) must be running locally.
+- `pi` and `opencode` are available on PATH inside the container after setup. To pass `OPENCODE_API_KEY` from your local shell into the container, forward it explicitly with the CLI's `--remote-env` flag (Codespaces picks up the key from [user secrets](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-repository-secrets-for-your-codespaces) instead — no flag needed):
+
+  ```bash
+  export OPENCODE_API_KEY=your-key-here
+  nix run nixpkgs#devcontainer -- up --workspace-folder . --remote-env OPENCODE_API_KEY="$OPENCODE_API_KEY"
+  nix run nixpkgs#devcontainer -- exec --workspace-folder . --remote-env OPENCODE_API_KEY="$OPENCODE_API_KEY" bash
+  ```
 
 ### Prerequisites
 
@@ -152,6 +192,7 @@ This applies the home-manager configuration for the current system (e.g. `Tetsuo
   - `plugins/rtk.ts`: Custom local plugin (RTK command rewriting).
   - Plugins installed from npm: `@dietrichgebert/ponytail`, `caveman-opencode-plugin`.
 - `apps/`: Nix flake apps — the task runner, replacing the former `justfile`. Run any task with `nix run .#<name>`.
+- `modules/home-manager/pi/transifex.ts`: pi extension that translates Transifex projects via the Transifex API v3 (set `TX_TOKEN`; tools: `transifex_list_resources`, `transifex_get_untranslated`, `transifex_translate`).
 
 ## Available Nix Apps
 
@@ -169,6 +210,7 @@ All tasks are exposed as Nix flake apps. Run them with `nix run .#<name>` (or `n
 | `opencode-rtd-skills`    | Install the latest Read the Docs skills for opencode                                                 |
 | `vim-plugins`            | Install or update Vim plugins                                                                        |
 | `ttyd`                   | Start a ttyd web terminal on `127.0.0.1:7681`                                                        |
+| `codespace-ssh`          | SSH into a Codespace and wait for first-time setup, streaming logs before handing over the shell     |
 | `pi-sandbox`             | Run the [pi coding agent](https://pi.dev) inside a Docker sandbox (`nix run .#pi-sandbox -- [args]`) |
 
 ## Usage Example
