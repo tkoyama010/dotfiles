@@ -17,6 +17,7 @@ in {
         postgresql
         devcontainer
         gh
+        lsd
         jira-cli-go
         rclone
         terraform
