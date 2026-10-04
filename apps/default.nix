@@ -119,10 +119,11 @@
     text = ''
       tmp=$(mktemp -d)
       trap 'rm -rf "$tmp"' EXIT
-      git clone --depth 1 https://github.com/addyosmani/agent-skills.git "$tmp"
+      git clone --depth 1 https://github.com/addyosmani/agent-skills.git "$tmp/agent-skills"
+      git clone --depth 1 https://github.com/nanaism/yomiyasu.git "$tmp/yomiyasu"
       for skills_dest in "$HOME/.claude/skills" "$HOME/.pi/agent/skills"; do
         mkdir -p "$skills_dest"
-        for skill_dir in "$tmp"/skills/*/; do
+        for skill_dir in "$tmp"/*/skills/*/; do
           if [ -f "$skill_dir/SKILL.md" ]; then
             name=$(basename "$skill_dir")
             rm -rf "''${skills_dest:?}/''${name:?}"
