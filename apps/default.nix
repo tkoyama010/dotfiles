@@ -134,6 +134,20 @@
     '';
   };
 
+  iHaveAdhd = pkgs.writeShellApplication {
+    name = "install-i-have-adhd";
+    runtimeInputs = with pkgs; [coreutils];
+    text = ''
+      # https://github.com/ayghri/i-have-adhd/blob/main/INSTALL.md
+      claude plugin marketplace add ayghri/i-have-adhd
+      claude plugin install i-have-adhd@i-have-adhd
+      pi install https://github.com/ayghri/i-have-adhd
+      # Always-on flags
+      mkdir -p "$HOME/.claude" "$HOME/.pi/agent"
+      touch "$HOME/.claude/.i-have-adhd-always" "$HOME/.pi/agent/.i-have-adhd-always"
+    '';
+  };
+
   ttydApp = pkgs.writeShellApplication {
     name = "ttyd-web";
     runtimeInputs = with pkgs; [ttyd bash];
@@ -280,6 +294,10 @@ in {
   install-agent-skills = {
     type = "app";
     program = "${agentSkills}/bin/install-agent-skills";
+  };
+  install-i-have-adhd = {
+    type = "app";
+    program = "${iHaveAdhd}/bin/install-i-have-adhd";
   };
   ttyd = {
     type = "app";
