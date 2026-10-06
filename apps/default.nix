@@ -119,19 +119,10 @@
     text = ''
       tmp=$(mktemp -d)
       trap 'rm -rf "$tmp"' EXIT
-      git clone --depth 1 https://github.com/addyosmani/agent-skills.git "$tmp/agent-skills"
+      git clone --depth 1 https://github.com/addyosmani/agent-skills.git "$tmp"
       for skills_dest in "$HOME/.claude/skills" "$HOME/.pi/agent/skills"; do
         mkdir -p "$skills_dest"
-        for skill_dir in "$tmp"/*/skills/*/; do
-          if [ -f "$skill_dir/SKILL.md" ]; then
-            name=$(basename "$skill_dir")
-            rm -rf "''${skills_dest:?}/''${name:?}"
-            cp -r "$skill_dir" "$skills_dest/$name"
-            echo "Installed $name -> $skills_dest/$name"
-          fi
-        done
-        # Vendored skills from this repo (e.g. .agents/skills/i-have-adhd).
-        for skill_dir in ${self}/.agents/skills/*/; do
+        for skill_dir in "$tmp"/skills/*/; do
           if [ -f "$skill_dir/SKILL.md" ]; then
             name=$(basename "$skill_dir")
             rm -rf "''${skills_dest:?}/''${name:?}"
@@ -140,6 +131,20 @@
           fi
         done
       done
+    '';
+  };
+
+  iHaveAdhd = pkgs.writeShellApplication {
+    name = "install-i-have-adhd";
+    runtimeInputs = with pkgs; [coreutils];
+    text = ''
+      # https://github.com/ayghri/i-have-adhd/blob/main/INSTALL.md
+      claude plugin marketplace add ayghri/i-have-adhd
+      claude plugin install i-have-adhd@i-have-adhd
+      pi install https://github.com/ayghri/i-have-adhd
+      # Always-on flags
+      mkdir -p "$HOME/.claude" "$HOME/.pi/agent"
+      touch "$HOME/.claude/.i-have-adhd-always" "$HOME/.pi/agent/.i-have-adhd-always"
     '';
   };
 
@@ -289,6 +294,10 @@ in {
   install-agent-skills = {
     type = "app";
     program = "${agentSkills}/bin/install-agent-skills";
+  };
+  install-i-have-adhd = {
+    type = "app";
+    program = "${iHaveAdhd}/bin/install-i-have-adhd";
   };
   ttyd = {
     type = "app";
