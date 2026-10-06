@@ -139,9 +139,9 @@
     runtimeInputs = with pkgs; [coreutils];
     text = ''
       # https://github.com/ayghri/i-have-adhd/blob/main/INSTALL.md
-      claude plugin marketplace add ayghri/i-have-adhd
-      claude plugin install i-have-adhd@i-have-adhd
-      pi install https://github.com/ayghri/i-have-adhd
+      claude plugin marketplace add ayghri/i-have-adhd || true
+      claude plugin install i-have-adhd@i-have-adhd || true
+      pi install https://github.com/ayghri/i-have-adhd || true
       # Always-on flags
       mkdir -p "$HOME/.claude" "$HOME/.pi/agent"
       touch "$HOME/.claude/.i-have-adhd-always" "$HOME/.pi/agent/.i-have-adhd-always"
