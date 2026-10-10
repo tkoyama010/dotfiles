@@ -30,7 +30,9 @@ in {
       ++ pkgs.lib.optionals isDarwin [ruby istats colima docker-client]
       # opencode CLI: needed by the devcontainer (PI_PROVIDER=opencode);
       # on darwin it is provided by the dev shell instead.
-      ++ pkgs.lib.optionals isLinux [opencode];
+      ++ pkgs.lib.optionals isLinux [opencode]
+      # PrePoMax command-line tool (PrePoMax.com) via Wine; x86_64-linux only.
+      ++ pkgs.lib.optionals (isLinux && system == "x86_64-linux") [prepomax-cmd];
   };
 
   programs.home-manager.enable = true;
