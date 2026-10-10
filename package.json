@@ -14,6 +14,7 @@
 		"lint:ja": "textlint \"**/*.md\""
 	},
 	"dependencies": {
+		"oh-my-mermaid": "^0.2.0",
 		"pi-advisor": "^0.3.0"
 	}
 }
