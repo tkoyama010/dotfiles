@@ -202,7 +202,7 @@ All tasks are exposed as Nix flake apps. Run them with `nix run .#<name>` (or `n
 | ------------------------ | ---------------------------------------------------------------------------------------------------- |
 | `home-manager`           | Apply the home-manager configuration                                                                 |
 | `setup` (default)        | Same as `home-manager`, the `nix run .` default                                                      |
-| `install-claude-plugins` | Install Claude Code plugins (everything-claude-code, code-simplifier)                                |
+| `install-claude-plugins` | Install Claude Code plugins (everything-claude-code, code-simplifier, fast-jev-compaction)           |
 | `install-agent-skills`   | Install [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) for Claude Code and pi |
 | `claude-statusline`      | Configure the Claude Code custom status line                                                         |
 | `ruff-skill`             | Symlink the ruff-lint skill into a target project (`nix run .#ruff-skill -- /path/to/project`)       |
