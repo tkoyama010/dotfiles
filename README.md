@@ -245,7 +245,7 @@ You can install Claude Code plugins with the following command:
 nix run .#install-claude-plugins
 ```
 
-This installs both the `everything-claude-code` (comprehensive feature set) and `code-simplifier` plugins.
+This installs the `everything-claude-code` (comprehensive feature set), `code-simplifier`, and `fast-jev-compaction` plugins. `fast-jev-compaction` needs `CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1` and `TYPESAFE_API_KEY` in the environment.
 
 You can install [Addy Osmani's Agent Skills](https://github.com/addyosmani/agent-skills) for both Claude Code and pi:
 
