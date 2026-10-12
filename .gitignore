@@ -19,6 +19,7 @@
 .copilot/session-state/
 .direnv
 .emacs.d/history
+.jscpd-baseline.json
 .pi/
 .pi/code-review-graph/*
 .python-version

@@ -19,6 +19,11 @@
 				"hooks": [
 					{
 						"type": "command",
+						"command": "bash -c 'jq -e .stop_hook_active >/dev/null && exit 0; cd \"$CLAUDE_PROJECT_DIR\" && npx jscpd --changed --fail-on-new-clones 0 . >&2 || exit 2'",
+						"timeout": 60
+					},
+					{
+						"type": "command",
 						"command": "bash -lc 'repo=$(basename \"$CLAUDE_PROJECT_DIR\"); terminal-notifier -title \"Claude Code\" -message \"${repo:-(no name)} のタスクが完了しました。\" -contentImage ~/.claude/claude.png -execute \"osascript ~/.claude/scripts/focus_code.scpt \\\"${repo}\\\"\"'"
 					},
 					{
