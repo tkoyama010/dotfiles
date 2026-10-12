@@ -24,7 +24,7 @@
     name = "install-claude-plugins";
     text = ''
       claude plugin marketplace add affaan-m/everything-claude-code
-      claude plugin install everything-claude-code@everything-claude-code
+      claude plugin install ecc@ecc
       claude plugin install code-simplifier
       claude plugin marketplace add HKUDS/CLI-Anything
       claude plugin install cli-anything@cli-anything
