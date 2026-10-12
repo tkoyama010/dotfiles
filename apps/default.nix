@@ -26,6 +26,10 @@
       claude plugin marketplace add affaan-m/everything-claude-code
       claude plugin install everything-claude-code@everything-claude-code
       claude plugin install code-simplifier
+      # https://github.com/tamaratran/fast-jev-compaction#install-in-claude-code
+      # Needs CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1 and TYPESAFE_API_KEY in the environment.
+      claude plugin marketplace add tamaratran/fast-jev-compaction
+      claude plugin install fast-jev-compaction@fast-jev-compaction
     '';
   };
 
