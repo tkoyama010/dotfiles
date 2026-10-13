@@ -247,6 +247,8 @@ nix run .#install-claude-plugins
 
 This installs the `ecc` (formerly `everything-claude-code`, comprehensive feature set), `code-simplifier`, `cli-anything`, and `fast-jev-compaction` plugins. `fast-jev-compaction` needs `CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1` and `TYPESAFE_API_KEY` in the environment.
 
+It also installs [ponytail](https://github.com/DietrichGebert/ponytail). For pi, ponytail is already listed in `modules/home-manager/pi/settings.json`.
+
 You can install [Addy Osmani's Agent Skills](https://github.com/addyosmani/agent-skills) for both Claude Code and pi:
 
 ```bash
