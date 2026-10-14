@@ -1,0 +1,3 @@
+[submodule "modules/home-manager/pi/extensions/slack-draft-reply"]
+	path = modules/home-manager/pi/extensions/slack-draft-reply
+	url = https://github.com/tkoyama010/pi-slack-app
