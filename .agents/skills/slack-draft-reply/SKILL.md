@@ -52,6 +52,7 @@ Append to `~/.pi/slack-drafts.md` under a heading with the thread URL and date:
 
 ```markdown
 ## <YYYY-MM-DD> <thread URL>
+
 <draft text>
 ```
 
