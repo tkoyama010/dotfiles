@@ -44,6 +44,15 @@
     '';
   };
 
+  installSolidcraftMcp = pkgs.writeShellApplication {
+    name = "install-solidcraft-mcp";
+    text = ''
+      # https://github.com/bherbruck/solidcraft/blob/main/docs/mcp.md
+      # The first server start builds solidcraft-cli from source via the upstream flake.
+      claude mcp add --scope user solidcraft -- nix run github:bherbruck/solidcraft#cli -- mcp
+    '';
+  };
+
   claudeStatusline = pkgs.writeShellApplication {
     name = "claude-statusline";
     runtimeInputs = with pkgs; [jq];
@@ -276,6 +285,10 @@ in {
   install-code-review-graph = {
     type = "app";
     program = "${installCodeReviewGraph}/bin/install-code-review-graph";
+  };
+  install-solidcraft-mcp = {
+    type = "app";
+    program = "${installSolidcraftMcp}/bin/install-solidcraft-mcp";
   };
   claude-statusline = {
     type = "app";
