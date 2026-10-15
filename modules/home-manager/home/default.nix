@@ -26,6 +26,7 @@ in {
         herdr
         vim
         ssm-session-manager-plugin
+        (python3.withPackages (ps: [ps.smlibpy]))
       ]
       ++ pkgs.lib.optionals isDarwin [ruby istats colima docker-client]
       # opencode CLI: needed by the devcontainer (PI_PROVIDER=opencode);
