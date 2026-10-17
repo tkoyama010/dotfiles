@@ -76,8 +76,6 @@
 
             nix run ".#install-agent-skills"
 
-            nix run ".#install-i-have-adhd"
-
             echo "Dotfiles setup complete!"
           '';
         };
