@@ -32,6 +32,7 @@
           (self: super: {
             istats = super.callPackage ./pkgs/istats {};
             sbx = super.callPackage ./pkgs/sbx {};
+            prepomax-cmd = super.callPackage ./pkgs/prepomax-cmd {};
           })
         ];
         extraSpecialArgs = {
@@ -105,6 +106,7 @@
         packages.default = setupScript;
         packages.istats = pkgs.callPackage ./pkgs/istats {};
         packages.sbx = pkgs.callPackage ./pkgs/sbx {};
+        packages.prepomax-cmd = pkgs.callPackage ./pkgs/prepomax-cmd {};
 
         apps =
           (import ./apps {inherit pkgs self;})
