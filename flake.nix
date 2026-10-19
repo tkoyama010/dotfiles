@@ -74,8 +74,6 @@
             esac
             nix run --refresh nixpkgs#home-manager -- switch -b .pre-hm-backup --flake "${self}#$host-${system}"
 
-            nix run ".#install-agent-skills"
-
             echo "Dotfiles setup complete!"
           '';
         };

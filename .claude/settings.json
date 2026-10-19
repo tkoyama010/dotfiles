@@ -51,7 +51,6 @@
 		"command": "~/.claude/statusline.sh"
 	},
 	"enabledPlugins": {
-		"ecc@ecc": true,
 		"code-review@claude-plugins-official": true,
 		"code-simplifier@claude-plugins-official": true
 	},
