@@ -8,6 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-utils.url = "github:numtide/flake-utils";
+    hermes-agent.url = "github:NousResearch/hermes-agent";
   };
 
   outputs = inputs @ {
@@ -35,7 +36,7 @@
           })
         ];
         extraSpecialArgs = {
-          inherit system;
+          inherit inputs system;
           profile = profile;
         };
         modules = [
