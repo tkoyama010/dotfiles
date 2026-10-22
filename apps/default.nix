@@ -24,8 +24,14 @@
     name = "install-claude-plugins";
     text = ''
       claude plugin marketplace add affaan-m/everything-claude-code
-      claude plugin install everything-claude-code@everything-claude-code
+      claude plugin install ecc@ecc
       claude plugin install code-simplifier
+      claude plugin marketplace add HKUDS/CLI-Anything
+      claude plugin install cli-anything@cli-anything
+      # https://github.com/tamaratran/fast-jev-compaction#install-in-claude-code
+      # Needs CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1 and TYPESAFE_API_KEY in the environment.
+      claude plugin marketplace add tamaratran/fast-jev-compaction
+      claude plugin install fast-jev-compaction@fast-jev-compaction
     '';
   };
 
@@ -131,20 +137,6 @@
           fi
         done
       done
-    '';
-  };
-
-  iHaveAdhd = pkgs.writeShellApplication {
-    name = "install-i-have-adhd";
-    runtimeInputs = with pkgs; [coreutils];
-    text = ''
-      # https://github.com/ayghri/i-have-adhd/blob/main/INSTALL.md
-      claude plugin marketplace add ayghri/i-have-adhd
-      claude plugin install i-have-adhd@i-have-adhd
-      pi install https://github.com/ayghri/i-have-adhd
-      # Always-on flags
-      mkdir -p "$HOME/.claude" "$HOME/.pi/agent"
-      touch "$HOME/.claude/.i-have-adhd-always" "$HOME/.pi/agent/.i-have-adhd-always"
     '';
   };
 
@@ -294,10 +286,6 @@ in {
   install-agent-skills = {
     type = "app";
     program = "${agentSkills}/bin/install-agent-skills";
-  };
-  install-i-have-adhd = {
-    type = "app";
-    program = "${iHaveAdhd}/bin/install-i-have-adhd";
   };
   ttyd = {
     type = "app";
