@@ -14,6 +14,7 @@
     ".pi/agent/extensions/pi-vision-handoff.json".source = ./pi-vision-handoff.json;
     ".pi/agent/extensions/rtk.ts".source = ./rtk.ts;
     ".pi/agent/extensions/transifex.ts".source = ./transifex.ts;
+    ".pi/agent/extensions/tryhackme.ts".source = ./tryhackme.ts;
     ".pi/agent/models.json".source = ./models.json;
     ".pi/agent/prompts/commit.md".source = ./prompts/commit.md;
     ".pi/agent/prompts/pr.md".source = ./prompts/pr.md;
