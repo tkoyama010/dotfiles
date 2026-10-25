@@ -346,6 +346,27 @@ You can install the Read the Docs skills for opencode separately:
 nix run .#opencode-rtd-skills
 ```
 
+## OpenClaw (opt-in)
+
+The [OpenClaw](https://openclaw.ai) CLI is installed by home-manager only on hosts that opt in. Add `openclaw = true;` to the host's `hosts/<host>/profile.nix` (for a macOS-only host, inside the non-null branch), then apply the configuration:
+
+```nix
+{system}: {
+  # ...
+  openclaw = true;
+}
+```
+
+```bash
+nix run .#home-manager
+```
+
+Hosts without the flag, the devcontainer and the `default-*` configurations do not get it. nixpkgs marks openclaw as insecure because it parses untrusted content with an LLM while having full system access by default, so setting the flag also permits that one package; opt in only on machines where you accept that risk. Since it is not in the binary cache, the first switch builds it from source. Only the CLI is installed; the gateway daemon and its Heartbeat are not started. Set them up by hand when you want them:
+
+```bash
+openclaw onboard --install-daemon
+```
+
 ## License
 
 This repository is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.

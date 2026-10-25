@@ -10,6 +10,7 @@
     ./home
     ./neovim
     ./ollama
+    ./openclaw
     ./pi
     ./shell
     ./starship
