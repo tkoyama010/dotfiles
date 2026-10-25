@@ -1,8 +1,23 @@
 {
   system,
   lib,
+  pkgs,
   ...
-}: {
+}: let
+  # eMudhra leaked the private keys of eight intermediates under this root
+  # (Mozilla, 2026-10-20). The Nix default profile ships an older nss-cacert
+  # that still trusts it, so point Nix-built tools at a bundle without it.
+  # Overridden here rather than in an overlay so fetchurl's cacert, and with
+  # it every package, is not rebuilt.
+  caBundle = "${pkgs.cacert.override {
+    blacklist = ["emSign ECC Root CA - G3"];
+  }}/etc/ssl/certs/ca-bundle.crt";
+in {
+  home.sessionVariables = {
+    NIX_SSL_CERT_FILE = caBundle;
+    SSL_CERT_FILE = caBundle;
+  };
+
   # The devcontainer (Linux) needs home-manager to own ~/.profile so that
   # hm-session-vars.sh (pi, opencode, nix on PATH) is sourced by login
   # shells. On darwin the hand-maintained .profile from the files module
