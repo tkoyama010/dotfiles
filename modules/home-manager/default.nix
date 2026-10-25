@@ -7,6 +7,7 @@
     ./files
     ./opencode
     ./git
+    ./hermes
     ./home
     ./neovim
     ./ollama
