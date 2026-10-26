@@ -19,7 +19,7 @@ const MIN_SUPPORTED_RTK_MINOR = 23;
 
 // Parse "X.Y.Z" semver, return [major, minor, patch] or null.
 function parseSemver(raw: string): [number, number, number] | null {
-	const m = raw.trim().match(/(\d+)\.(\d+)\.(\d+)/);
+	const m = raw.trim().match(/(\d+)\.(\d+)\.(\d+)/u);
 	if (!m) {
 		return null;
 	}
@@ -59,7 +59,7 @@ export default async function (pi: ExtensionAPI) {
 	}
 
 	// Warn and bail if rtk predates 0.23.0 (when `rtk rewrite` was introduced).
-	const parsed = parseSemver(ver.stdout.replace(/^rtk\s+/, ""));
+	const parsed = parseSemver(ver.stdout.replace(/^rtk\s+/u, ""));
 	if (parsed) {
 		const [major, minor] = parsed;
 		if (major === 0 && minor < MIN_SUPPORTED_RTK_MINOR) {
