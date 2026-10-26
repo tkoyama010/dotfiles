@@ -19,7 +19,7 @@ function skillBody(): string {
 	try {
 		const raw = readFileSync(SKILL_PATH, "utf8");
 		// strip frontmatter so only instructions enter the system prompt
-		cached = raw.replace(/^---[\s\S]*?---\s*/, "");
+		cached = raw.replace(/^---[\s\S]*?---\s*/u, "");
 	} catch {
 		cached = "";
 	}
