@@ -58,6 +58,16 @@ in {
       export VOLTA_HOME="$HOME/.volta"
       export PATH="$VOLTA_HOME/bin:$PATH"
     '';
+    # Homebrew's installer only tells you to add this to ~/.zprofile; it never
+    # touches /etc/paths.d, so on a fresh machine /opt/homebrew/bin is missing
+    # until something runs brew shellenv. .zprofile runs after path_helper in
+    # /etc/zprofile, so homebrew lands ahead of /usr/bin and Volta, and the
+    # nix-profile prepend in .zshrc below still wins over it.
+    profileExtra = ''
+      if [ -x /opt/homebrew/bin/brew ]; then
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+      fi
+    '';
     # These must live in .zshrc rather than home.sessionPath: session
     # variables are sourced from .zshenv, which runs before /etc/zprofile,
     # and /etc/zprofile runs path_helper -- which rebuilds PATH with the
