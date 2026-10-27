@@ -7,7 +7,7 @@
 				"hooks": [
 					{
 						"type": "command",
-						"command": "bash -c 'f=$(jq -r \".tool_input.file_path // empty\"); case \"$f\" in *.md) cd \"$CLAUDE_PROJECT_DIR\" && npx textlint \"$f\" >&2 || exit 2;; esac'",
+						"command": "bash -c 'command -v npx >/dev/null || exit 0; f=$(jq -r \".tool_input.file_path // empty\"); case \"$f\" in *.md) cd \"$CLAUDE_PROJECT_DIR\" && npx textlint \"$f\" >&2 || exit 2;; esac'",
 						"timeout": 30
 					}
 				]
@@ -19,7 +19,7 @@
 				"hooks": [
 					{
 						"type": "command",
-						"command": "bash -c 'jq -e .stop_hook_active >/dev/null && exit 0; cd \"$CLAUDE_PROJECT_DIR\" && npx jscpd --changed --fail-on-new-clones 0 . >&2 || exit 2'",
+						"command": "bash -c 'jq -e .stop_hook_active >/dev/null && exit 0; command -v npx >/dev/null || exit 0; cd \"$CLAUDE_PROJECT_DIR\" && npx jscpd --changed --fail-on-new-clones 0 . >&2 || exit 2'",
 						"timeout": 60
 					},
 					{
