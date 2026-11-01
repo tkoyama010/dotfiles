@@ -1,0 +1,12 @@
+{
+	"mcpServers": {
+		"google-services": {
+			"command": "/Users/tetsuokoyama/.local/bin/pi-google-services",
+			"args": ["serve"]
+		},
+		"headroom": {
+			"command": "uvx",
+			"args": ["--from", "headroom-ai[mcp]", "headroom", "mcp", "serve"]
+		}
+	}
+}
