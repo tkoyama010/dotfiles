@@ -92,7 +92,7 @@ export function roomUrl(roomCode: string): string {
 }
 
 export function readerUrl(roomCode: string, readerBase: string): string {
-	return `${readerBase.replace(/\/$/, "")}/${roomUrl(roomCode)}`;
+	return `${readerBase.replace(/\/$/u, "")}/${roomUrl(roomCode)}`;
 }
 
 export default function (pi: ExtensionAPI) {
