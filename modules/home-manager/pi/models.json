@@ -1,3 +1,25 @@
 {
-	"providers": {}
+	"providers": {
+		"colibri": {
+			"name": "Colibri",
+			"baseUrl": "http://localhost:8000/v1",
+			"api": "openai-completions",
+			"apiKey": "local",
+			"compat": {
+				"supportsDeveloperRole": false,
+				"supportsReasoningEffort": false
+			},
+			"models": [
+				{
+					"id": "glm-5.2-colibri",
+					"name": "GLM-5.2 (Colibri)",
+					"reasoning": false,
+					"input": ["text"],
+					"cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+					"contextWindow": 131072,
+					"maxTokens": 1024
+				}
+			]
+		}
+	}
 }
