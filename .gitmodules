@@ -1,0 +1,3 @@
+[submodule ".agents/skills/slack-draft-reply"]
+	path = .agents/skills/slack-draft-reply
+	url = https://github.com/tkoyama010/pi-slack-app
