@@ -247,6 +247,14 @@ nix run .#install-claude-plugins
 
 This installs the `ecc` (formerly `everything-claude-code`, comprehensive feature set), `code-simplifier`, `cli-anything`, and `fast-jev-compaction` plugins. `fast-jev-compaction` needs `CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1` and `TYPESAFE_API_KEY` in the environment.
 
+You can register the [SolidCraft](https://github.com/bherbruck/solidcraft) MCP server (parametric 3D CAD) for Claude Code:
+
+```bash
+nix run .#install-solidcraft-mcp
+```
+
+The server runs `solidcraft-cli mcp` through the upstream flake, so the first start builds it from source. File access is limited to the open design's folder; see [docs/mcp.md](https://github.com/bherbruck/solidcraft/blob/main/docs/mcp.md) for `--allow-path` and `--connect` to drive the running app.
+
 You can install [Addy Osmani's Agent Skills](https://github.com/addyosmani/agent-skills) for both Claude Code and pi:
 
 ```bash
