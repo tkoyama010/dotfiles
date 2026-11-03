@@ -32,6 +32,13 @@
           (self: super: {
             istats = super.callPackage ./pkgs/istats {};
             sbx = super.callPackage ./pkgs/sbx {};
+            pythonPackagesExtensions =
+              super.pythonPackagesExtensions
+              ++ [
+                (pyself: _: {
+                  smlibpy = pyself.callPackage ./pkgs/smlibpy {};
+                })
+              ];
           })
         ];
         extraSpecialArgs = {
