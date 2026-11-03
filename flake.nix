@@ -32,6 +32,7 @@
           (self: super: {
             istats = super.callPackage ./pkgs/istats {};
             sbx = super.callPackage ./pkgs/sbx {};
+            dtrans = super.callPackage ./pkgs/dtrans {};
           })
         ];
         extraSpecialArgs = {
@@ -103,6 +104,7 @@
         packages.default = setupScript;
         packages.istats = pkgs.callPackage ./pkgs/istats {};
         packages.sbx = pkgs.callPackage ./pkgs/sbx {};
+        packages.dtrans = pkgs.callPackage ./pkgs/dtrans {};
 
         apps =
           (import ./apps {inherit pkgs self;})

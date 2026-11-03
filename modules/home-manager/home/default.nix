@@ -24,6 +24,7 @@ in {
         rtk
         pi-coding-agent
         herdr
+        dtrans
         vim
         ssm-session-manager-plugin
       ]
