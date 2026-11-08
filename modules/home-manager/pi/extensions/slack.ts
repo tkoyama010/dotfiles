@@ -71,9 +71,15 @@ async function userName(userId: string): Promise<string> {
 	}
 	try {
 		const data = await call("users.info", { user: userId });
-		const user = data.user as { name?: string; profile?: { display_name?: string; real_name?: string } };
+		const user = data.user as {
+			name?: string;
+			profile?: { display_name?: string; real_name?: string };
+		};
 		const name =
-			user?.profile?.display_name || user?.profile?.real_name || user?.name || userId;
+			user?.profile?.display_name ||
+			user?.profile?.real_name ||
+			user?.name ||
+			userId;
 		cachedUsers.set(userId, name);
 		return name;
 	} catch {
@@ -87,16 +93,19 @@ function tsToDate(ts: string): string {
 	});
 }
 
-async function formatMessages(messages: {
-	ts: string;
-	user?: string;
-	text?: string;
-	messages?: { text?: string }[];
-}[]): Promise<string> {
+async function formatMessages(
+	messages: {
+		ts: string;
+		user?: string;
+		text?: string;
+		messages?: { text?: string }[];
+	}[],
+): Promise<string> {
 	const lines: string[] = [];
 	for (const message of messages) {
 		const who = message.user ? await userName(message.user) : "bot";
-		const text = message.messages?.map((m) => m.text).join(" ") ?? message.text ?? "";
+		const text =
+			message.messages?.map((m) => m.text).join(" ") ?? message.text ?? "";
 		lines.push(`[${tsToDate(message.ts)}] ${who}: ${text}`);
 	}
 	return lines.join("\n");
@@ -140,10 +149,11 @@ export default function (pi: ExtensionAPI) {
 				channel: params.channel_id,
 				limit: String(params.limit ?? 10),
 			});
-			const text = await formatMessages(
-				(data.messages as never[]) ?? [],
-			);
-			return { content: [{ type: "text", text: text || "(no messages)" }], details: {} };
+			const text = await formatMessages((data.messages as never[]) ?? []);
+			return {
+				content: [{ type: "text", text: text || "(no messages)" }],
+				details: {},
+			};
 		},
 	});
 
@@ -153,19 +163,34 @@ export default function (pi: ExtensionAPI) {
 		description:
 			"Search messages across the user's Slack workspace. Returns [time] name: text with channel id in brackets.",
 		parameters: Type.Object({
-			query: Type.String({ description: "Slack search query, e.g. 'PyCon' or 'in:general'" }),
+			query: Type.String({
+				description: "Slack search query, e.g. 'PyCon' or 'in:general'",
+			}),
 		}),
 		async execute(_id, params) {
 			const data = await call("search.messages", { query: params.query });
 			const matches =
-				(data.messages as { matches?: { ts: string; user?: string; text?: string; channel?: { id: string } }[] })
-					?.matches ?? [];
+				(
+					data.messages as {
+						matches?: {
+							ts: string;
+							user?: string;
+							text?: string;
+							channel?: { id: string };
+						}[];
+					}
+				)?.matches ?? [];
 			const lines: string[] = [];
 			for (const match of matches) {
 				const who = match.user ? await userName(match.user) : "bot";
-				lines.push(`[${match.channel?.id ?? "?"} ${tsToDate(match.ts)}] ${who}: ${match.text ?? ""}`);
+				lines.push(
+					`[${match.channel?.id ?? "?"} ${tsToDate(match.ts)}] ${who}: ${match.text ?? ""}`,
+				);
 			}
-			return { content: [{ type: "text", text: lines.join("\n") }], details: {} };
+			return {
+				content: [{ type: "text", text: lines.join("\n") }],
+				details: {},
+			};
 		},
 	});
 
@@ -176,7 +201,9 @@ export default function (pi: ExtensionAPI) {
 			"Post a message to a Slack channel as the user. channel_id from slack_list_channels.",
 		parameters: Type.Object({
 			channel_id: Type.String({ description: "Channel id, e.g. C024G2ZEE" }),
-			text: Type.String({ description: "Message text (Slack mrkdwn supported)" }),
+			text: Type.String({
+				description: "Message text (Slack mrkdwn supported)",
+			}),
 		}),
 		async execute(_id, params) {
 			await call(
