@@ -54,6 +54,10 @@
 			"includes": ["modules/home-manager/pi/extensions/*.ts"],
 			"linter": {
 				"rules": {
+					"correctness": {
+						"noUnresolvedImports": "off",
+						"noUndeclaredDependencies": "off"
+					},
 					"performance": {
 						"noAwaitInLoops": "off"
 					},
