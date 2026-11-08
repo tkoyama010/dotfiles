@@ -19,6 +19,10 @@
     ".pi/agent/prompts/commit.md".source = ./prompts/commit.md;
     ".pi/agent/prompts/pr.md".source = ./prompts/pr.md;
     ".pi/agent/prompts/review.md".source = ./prompts/review.md;
+    # Official FastAPI agent skill, vendored from fastapi/fastapi
+    # fastapi/.agents/skills/fastapi @ 0.162.2 (MIT, see LICENSE).
+    # Only prettier formatting differs from upstream.
+    ".pi/agent/skills/fastapi".source = ./skills/fastapi;
   };
 
   # zentui writes to its own config file, so it must stay mutable.
