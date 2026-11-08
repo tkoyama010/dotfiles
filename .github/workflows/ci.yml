@@ -39,7 +39,9 @@ jobs:
               '.#homeConfigurations."TetsuonoMacBook-Pro-${{ matrix.system }}".activationPackage'; then
               exit 0
             fi
-            echo "Build attempt $attempt failed, retrying in 30s..."
-            sleep 30
+            if [ "$attempt" -lt 3 ]; then
+              echo "Build attempt $attempt failed, retrying in 30s..."
+              sleep 30
+            fi
           done
           exit 1
