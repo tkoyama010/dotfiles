@@ -1,3 +1,4 @@
+import { randomUUID } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { join } from "node:path";
@@ -195,34 +196,67 @@ export default function (pi: ExtensionAPI) {
 	});
 
 	pi.registerTool({
-		// never posts to the target channel. If SLACK_DRAFT_CHANNEL is set, the
-		// draft lands there instead; otherwise the text is just returned for the
-		// user to review and post manually.
-		name: "slack_draft",
-		label: "Slack: Draft Message",
+		// Saves the draft into the target channel's (or thread's) composer, where
+		// it shows up in Drafts & Sent for the user to review and send.
+		// Never sends the message itself.
+		name: "slack_save_draft",
+		label: "Slack: Save Draft",
 		description:
-			"Compose a Slack message for a channel WITHOUT posting it. Returns the formatted mrkdwn text for manual review. Posts the draft only to the SLACK_DRAFT_CHANNEL channel when that env var is set; the target channel is never touched. Use instead of posting when unsure.",
+			"Save a message as a native Slack draft in the target channel (or thread with thread_ts). Shows up in Drafts & Sent for review; the message is NEVER sent. Use instead of posting unless told to send.",
 		parameters: Type.Object({
 			channel_id: Type.String({
-				description:
-					"Target channel id, e.g. C024G2ZEE (destination shown in draft only)",
+				description: "Target channel id, e.g. C024G2ZEE",
 			}),
 			text: Type.String({
 				description: "Message text (Slack mrkdwn supported)",
 			}),
+			thread_ts: Type.Optional(
+				Type.String({
+					description: "Parent message ts to draft a thread reply",
+				}),
+			),
 		}),
 		async execute(_id, params) {
-			const draftChannel = process.env.SLACK_DRAFT_CHANNEL;
-			let body = `Draft for <#${params.channel_id}>:\n---\n${params.text}\n---`;
-			if (draftChannel) {
-				await call(
-					"chat.postMessage",
-					{ channel: draftChannel, text: body },
-					"POST",
-				);
-				body += `\n(posted to SLACK_DRAFT_CHANNEL <#${draftChannel}>)`;
+			const destination: Record<string, string> = {
+				channel_id: params.channel_id,
+			};
+			if (params.thread_ts) {
+				destination.thread_ts = params.thread_ts;
 			}
-			return { content: [{ type: "text", text: body }], details: {} };
+			const data = await call(
+				"drafts.create",
+				{
+					client_msg_id: randomUUID(),
+					destinations: JSON.stringify([destination]),
+					blocks: JSON.stringify([
+						{
+							type: "rich_text",
+							elements: [
+								{
+									type: "rich_text_section",
+									elements: [{ type: "text", text: params.text }],
+								},
+							],
+						},
+					]),
+					file_ids: "[]",
+					is_from_composer: "true",
+				},
+				"POST",
+			);
+			const draft = data.draft as { id?: string };
+			const where = params.thread_ts
+				? `thread ${params.thread_ts}`
+				: `<#${params.channel_id}>`;
+			return {
+				content: [
+					{
+						type: "text",
+						text: `Draft ${draft.id ?? ""} saved for ${where}. User reviews and sends from Slack Drafts & Sent.`,
+					},
+				],
+				details: {},
+			};
 		},
 	});
 }
