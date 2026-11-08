@@ -195,23 +195,31 @@ export default function (pi: ExtensionAPI) {
 	});
 
 	pi.registerTool({
-		name: "slack_post",
-		label: "Slack: Post Message",
+		// never posts to the target channel. If SLACK_DRAFT_CHANNEL is set, the
+		// draft lands there instead; otherwise the text is just returned for the
+		// user to review and post manually.
+		name: "slack_draft",
+		label: "Slack: Draft Message",
 		description:
-			"Post a message to a Slack channel as the user. channel_id from slack_list_channels.",
+			"Compose a Slack message for a channel WITHOUT posting it. Returns the formatted mrkdwn text for manual review. Posts the draft only to the SLACK_DRAFT_CHANNEL channel when that env var is set; the target channel is never touched. Use instead of posting when unsure.",
 		parameters: Type.Object({
-			channel_id: Type.String({ description: "Channel id, e.g. C024G2ZEE" }),
+			channel_id: Type.String({ description: "Target channel id, e.g. C024G2ZEE (destination shown in draft only)" }),
 			text: Type.String({
 				description: "Message text (Slack mrkdwn supported)",
 			}),
 		}),
 		async execute(_id, params) {
-			await call(
-				"chat.postMessage",
-				{ channel: params.channel_id, text: params.text },
-				"POST",
-			);
-			return { content: [{ type: "text", text: "posted" }], details: {} };
+			const draftChannel = process.env.SLACK_DRAFT_CHANNEL;
+			let body = `Draft for <#${params.channel_id}>:\n---\n${params.text}\n---`;
+			if (draftChannel) {
+				await call(
+					"chat.postMessage",
+					{ channel: draftChannel, text: body },
+					"POST",
+				);
+				body += `\n(posted to SLACK_DRAFT_CHANNEL <#${draftChannel}>)`;
+			}
+			return { content: [{ type: "text", text: body }], details: {} };
 		},
 	});
 }
