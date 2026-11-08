@@ -99,9 +99,12 @@ async function userName(userId: string): Promise<string> {
 const MS_PER_SECOND = 1000;
 
 function tsToDate(ts: string): string {
-	return new Date(Number.parseFloat(ts) * MS_PER_SECOND).toLocaleString("ja-JP", {
-		timeZone: "Asia/Tokyo",
-	});
+	return new Date(Number.parseFloat(ts) * MS_PER_SECOND).toLocaleString(
+		"ja-JP",
+		{
+			timeZone: "Asia/Tokyo",
+		},
+	);
 }
 
 async function formatMessages(
@@ -137,23 +140,23 @@ export default function (pi: ExtensionAPI) {
 			const channels: { id: string; name: string }[] = [];
 			let cursor = "";
 			do {
-			const listParams: Record<string, string> = {
-				types: "public_channel,private_channel",
-				exclude_archived: "true",
-				limit: "200",
-			};
-			if (cursor) {
-				listParams.cursor = cursor;
-			}
-			const data = await call("conversations.list", listParams);
-			channels.push(
-				...((data.channels as { id: string; name: string }[]) ?? []),
-			);
-			const metadata = data.response_metadata as {
-				next_cursor?: string;
-			};
-			cursor = metadata?.next_cursor ?? "";
-		} while (cursor);
+				const listParams: Record<string, string> = {
+					types: "public_channel,private_channel",
+					exclude_archived: "true",
+					limit: "200",
+				};
+				if (cursor) {
+					listParams.cursor = cursor;
+				}
+				const data = await call("conversations.list", listParams);
+				channels.push(
+					...((data.channels as { id: string; name: string }[]) ?? []),
+				);
+				const metadata = data.response_metadata as {
+					next_cursor?: string;
+				};
+				cursor = metadata?.next_cursor ?? "";
+			} while (cursor);
 			const text = channels
 				.map((channel) => `${channel.id} ${channel.name}`)
 				.join("\n");
