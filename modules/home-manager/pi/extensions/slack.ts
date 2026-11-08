@@ -276,7 +276,10 @@ export default function (pi: ExtensionAPI) {
 						},
 					]),
 					file_ids: "[]",
-					is_from_composer: "true",
+					// "false" is required for thread drafts: with "true" Slack keeps
+					// the thread_ts server-side but the client shows the draft in
+					// the channel composer instead of the thread composer.
+					is_from_composer: "false",
 				},
 				"POST",
 			);
