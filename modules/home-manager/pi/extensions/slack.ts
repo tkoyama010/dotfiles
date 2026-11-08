@@ -50,13 +50,17 @@ async function call(
 			url.searchParams.set(key, value);
 		}
 	}
+	let body: string | undefined;
+	if (method_ === "POST") {
+		body = JSON.stringify(params);
+	}
 	const response = await fetch(url, {
 		method: method_,
 		headers: {
 			Authorization: `Bearer ${token()}`,
 			"Content-Type": "application/json; charset=utf-8",
 		},
-		body: method_ === "POST" ? JSON.stringify(params) : undefined,
+		body,
 	});
 	const data = (await response.json()) as SlackResponse;
 	if (!data.ok) {
@@ -91,8 +95,11 @@ async function userName(userId: string): Promise<string> {
 	}
 }
 
+// Slack timestamps are epoch seconds; JS Date wants milliseconds.
+const MS_PER_SECOND = 1000;
+
 function tsToDate(ts: string): string {
-	return new Date(Number.parseFloat(ts) * 1000).toLocaleString("ja-JP", {
+	return new Date(Number.parseFloat(ts) * MS_PER_SECOND).toLocaleString("ja-JP", {
 		timeZone: "Asia/Tokyo",
 	});
 }
@@ -107,7 +114,10 @@ async function formatMessages(
 ): Promise<string> {
 	const lines: string[] = [];
 	for (const message of messages) {
-		const who = message.user ? await userName(message.user) : "bot";
+		let who = "bot";
+		if (message.user) {
+			who = await userName(message.user);
+		}
 		const text =
 			message.messages?.map((m) => m.text).join(" ") ?? message.text ?? "";
 		lines.push(`[${tsToDate(message.ts)}] ${who}: ${text}`);
@@ -127,20 +137,23 @@ export default function (pi: ExtensionAPI) {
 			const channels: { id: string; name: string }[] = [];
 			let cursor = "";
 			do {
-				const data = await call("conversations.list", {
-					types: "public_channel,private_channel",
-					exclude_archived: "true",
-					limit: "200",
-					...(cursor ? { cursor } : {}),
-				});
-				channels.push(
-					...((data.channels as { id: string; name: string }[]) ?? []),
-				);
-				const metadata = data.response_metadata as {
-					next_cursor?: string;
-				};
-				cursor = metadata?.next_cursor ?? "";
-			} while (cursor);
+			const listParams: Record<string, string> = {
+				types: "public_channel,private_channel",
+				exclude_archived: "true",
+				limit: "200",
+			};
+			if (cursor) {
+				listParams.cursor = cursor;
+			}
+			const data = await call("conversations.list", listParams);
+			channels.push(
+				...((data.channels as { id: string; name: string }[]) ?? []),
+			);
+			const metadata = data.response_metadata as {
+				next_cursor?: string;
+			};
+			cursor = metadata?.next_cursor ?? "";
+		} while (cursor);
 			const text = channels
 				.map((channel) => `${channel.id} ${channel.name}`)
 				.join("\n");
@@ -200,7 +213,10 @@ export default function (pi: ExtensionAPI) {
 				)?.matches ?? [];
 			const lines: string[] = [];
 			for (const match of matches) {
-				const who = match.user ? await userName(match.user) : "bot";
+				let who = "bot";
+				if (match.user) {
+					who = await userName(match.user);
+				}
 				lines.push(
 					`[${match.channel?.id ?? "?"} ${tsToDate(match.ts)}] ${who}: ${match.text ?? ""}`,
 				);
@@ -262,9 +278,10 @@ export default function (pi: ExtensionAPI) {
 				"POST",
 			);
 			const draft = data.draft as { id?: string };
-			const where = params.thread_ts
-				? `thread ${params.thread_ts}`
-				: `<#${params.channel_id}>`;
+			let where = `<#${params.channel_id}>`;
+			if (params.thread_ts) {
+				where = `thread ${params.thread_ts}`;
+			}
 			return {
 				content: [
 					{
