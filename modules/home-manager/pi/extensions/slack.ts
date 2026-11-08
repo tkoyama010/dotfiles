@@ -17,21 +17,24 @@ let cachedUsers: Map<string, string> | undefined;
 // SLACK_TOKEN env. Move to a dedicated SLACK_TOKEN file if mcp.json goes away.
 function token(): string {
 	if (cachedToken === undefined) {
-		if (process.env.SLACK_TOKEN) {
-			cachedToken = process.env.SLACK_TOKEN;
-		} else {
-			const mcp = JSON.parse(readFileSync(MCP_JSON, "utf8")) as {
-				mcpServers?: Record<string, { env?: Record<string, string> }>;
-			};
-			cachedToken = mcp.mcpServers?.slack?.env?.SLACK_MCP_XOXP_TOKEN ?? "";
-		}
-		if (!cachedToken) {
+		const found = process.env.SLACK_TOKEN ?? readTokenFromMcpJson();
+		if (!found) {
+			// Do not cache the miss: retry resolution on the next call so a
+			// fixed mcp.json takes effect without an extension reload.
 			throw new Error(
 				"No Slack token. Set SLACK_TOKEN env or SLACK_MCP_XOXP_TOKEN in ~/.pi/agent/mcp.json.",
 			);
 		}
+		cachedToken = found;
 	}
 	return cachedToken;
+}
+
+function readTokenFromMcpJson(): string {
+	const mcp = JSON.parse(readFileSync(MCP_JSON, "utf8")) as {
+		mcpServers?: Record<string, { env?: Record<string, string> }>;
+	};
+	return mcp.mcpServers?.slack?.env?.SLACK_MCP_XOXP_TOKEN ?? "";
 }
 
 type SlackResponse = { ok: boolean; error?: string } & Record<string, unknown>;
@@ -121,12 +124,24 @@ export default function (pi: ExtensionAPI) {
 
 		parameters: Type.Object({}),
 		async execute() {
-			const data = await call("conversations.list", {
-				types: "public_channel,private_channel",
-				exclude_archived: "true",
-				limit: "200",
-			});
-			const text = (data.channels as { id: string; name: string }[])
+			const channels: { id: string; name: string }[] = [];
+			let cursor = "";
+			do {
+				const data = await call("conversations.list", {
+					types: "public_channel,private_channel",
+					exclude_archived: "true",
+					limit: "200",
+					...(cursor ? { cursor } : {}),
+				});
+				channels.push(
+					...((data.channels as { id: string; name: string }[]) ?? []),
+				);
+				const metadata = data.response_metadata as {
+					next_cursor?: string;
+				};
+				cursor = metadata?.next_cursor ?? "";
+			} while (cursor);
+			const text = channels
 				.map((channel) => `${channel.id} ${channel.name}`)
 				.join("\n");
 			return { content: [{ type: "text", text }], details: {} };
@@ -140,10 +155,12 @@ export default function (pi: ExtensionAPI) {
 			"Fetch recent messages from a Slack channel as [time] name: text lines. Pass the channel id from slack_list_channels. Use this to check workspace activity.",
 		parameters: Type.Object({
 			channel_id: Type.String({ description: "Channel id, e.g. C024G2ZEE" }),
-			limit: Type.Number({
-				description: "Max messages to fetch (default 10)",
-				default: 10,
-			}),
+			limit: Type.Optional(
+				Type.Number({
+					description: "Max messages to fetch (default 10)",
+					default: 10,
+				}),
+			),
 		}),
 		async execute(_id, params) {
 			const data = await call("conversations.history", {
