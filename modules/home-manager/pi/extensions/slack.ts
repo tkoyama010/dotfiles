@@ -203,7 +203,10 @@ export default function (pi: ExtensionAPI) {
 		description:
 			"Compose a Slack message for a channel WITHOUT posting it. Returns the formatted mrkdwn text for manual review. Posts the draft only to the SLACK_DRAFT_CHANNEL channel when that env var is set; the target channel is never touched. Use instead of posting when unsure.",
 		parameters: Type.Object({
-			channel_id: Type.String({ description: "Target channel id, e.g. C024G2ZEE (destination shown in draft only)" }),
+			channel_id: Type.String({
+				description:
+					"Target channel id, e.g. C024G2ZEE (destination shown in draft only)",
+			}),
 			text: Type.String({
 				description: "Message text (Slack mrkdwn supported)",
 			}),
