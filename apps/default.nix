@@ -44,6 +44,13 @@
     '';
   };
 
+  installChromeDevtoolsMcp = pkgs.writeShellApplication {
+    name = "install-chrome-devtools-mcp";
+    text = ''
+      claude mcp add --scope user chrome-devtools -- npx chrome-devtools-mcp@latest
+    '';
+  };
+
   claudeStatusline = pkgs.writeShellApplication {
     name = "claude-statusline";
     runtimeInputs = with pkgs; [jq];
@@ -262,6 +269,14 @@ in {
   install-code-review-graph = {
     type = "app";
     program = "${installCodeReviewGraph}/bin/install-code-review-graph";
+  };
+  install-chrome-devtools-mcp = {
+    type = "app";
+    program = "${installChromeDevtoolsMcp}/bin/install-chrome-devtools-mcp";
+  };
+  install-chrome-devtools-mcp = {
+    type = "app";
+    program = "${installChromeDevtoolsMcp}/bin/install-chrome-devtools-mcp";
   };
   claude-statusline = {
     type = "app";
