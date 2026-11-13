@@ -31,6 +31,17 @@ jobs:
         run: nix flake check --no-build
 
       - name: Build home configuration
+        # Upstream source mirrors occasionally return transient 503/504
+        # (e.g. terraform 1.16.0 in run 42478593378). Retry to ride them out.
         run: |
-          nix build --no-link --print-out-paths \
-            '.#homeConfigurations."TetsuonoMacBook-Pro-${{ matrix.system }}".activationPackage'
+          for attempt in 1 2 3; do
+            if nix build --no-link --print-out-paths \
+              '.#homeConfigurations."TetsuonoMacBook-Pro-${{ matrix.system }}".activationPackage'; then
+              exit 0
+            fi
+            if [ "$attempt" -lt 3 ]; then
+              echo "Build attempt $attempt failed, retrying in 30s..."
+              sleep 30
+            fi
+          done
+          exit 1
