@@ -119,7 +119,11 @@ const sleep = (ms: number) =>
 		setTimeout(resolve, ms);
 	});
 
-async function waitFor(cdp: Cdp, expression: string, ms = 20_000): Promise<void> {
+async function waitFor(
+	cdp: Cdp,
+	expression: string,
+	ms = 20_000,
+): Promise<void> {
 	const deadline = Date.now() + ms;
 	while (Date.now() < deadline) {
 		if (await cdp.eval<boolean>(`!!(${expression})`)) {
