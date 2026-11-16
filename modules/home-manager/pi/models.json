@@ -1,3 +1,11 @@
 {
-	"providers": {}
+	"providers": {
+		"openrouter": {
+			"compat": {
+				"openRouterRouting": {
+					"only": ["deepinfra"]
+				}
+			}
+		}
+	}
 }
