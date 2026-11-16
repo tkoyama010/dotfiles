@@ -1,7 +1,7 @@
 {
 	"theme": "default",
-	"defaultProvider": "opencode",
-	"defaultModel": "deepseek-v4.1-flash",
+	"defaultProvider": "openrouter",
+	"defaultModel": "deepseek/deepseek-v4.1-flash",
 	"defaultThinkingLevel": "high",
 	"tuiMode": "regular",
 	"steeringMode": "one-at-a-time",
