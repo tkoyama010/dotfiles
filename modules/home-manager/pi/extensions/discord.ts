@@ -252,29 +252,90 @@ async function withPage<T>(
 	}
 }
 
+// Discord opens a channel at the first unread message, so everything newer than
+// that stays unmounted and unreadable. Jump to the end of the list first. The
+// jump-to-present button is the reliable route when it is on screen; the scroll
+// assignments cover the case where the bar has not rendered yet.
+const SCROLL_TO_LATEST = `(() => {
+	const list = document.querySelector('[data-list-id="chat-messages"]');
+	if (!list) return false;
+	const jump = document.querySelector('[class*="jumpToPresentBar"] button');
+	if (jump) jump.click();
+	// The list element itself carries a "scrollerInner" class, so a
+	// closest('[class*="scroller"]') lookup matches the list and never scrolls.
+	// Walk up to the first ancestor that actually overflows instead.
+	let scroller = list;
+	while (scroller && scroller.scrollHeight <= scroller.clientHeight) {
+		scroller = scroller.parentElement;
+	}
+	if (!scroller) return false;
+	scroller.scrollTop = scroller.scrollHeight;
+	scroller.dispatchEvent(new Event('scroll', { bubbles: true }));
+	const rows = [...list.querySelectorAll('li[id^="chat-messages-"]')];
+	const last = rows[rows.length - 1];
+	if (last) last.scrollIntoView({ block: 'end' });
+	return true;
+})()`;
+
+// The id of the newest mounted row, used to detect that a jump brought in more.
+const LAST_MESSAGE_ID = `(() => {
+	const list = document.querySelector('[data-list-id="chat-messages"]');
+	const rows = list ? [...list.querySelectorAll('li[id^="chat-messages-"]')] : [];
+	return rows.length ? rows[rows.length - 1].id : '';
+})()`;
+
+// Discord can stop one row short of the end when it only scrolls as far as the
+// unread marker, so the last mounted row is scrolled into view as well: that
+// pushes the window down far enough for the virtualised list to mount the next
+// row, and the loop repeats until the last row stops changing.
+async function scrollToLatest(cdp: Cdp): Promise<void> {
+	let previous = "";
+	for (let attempt = 0; attempt < 8; attempt += 1) {
+		await cdp.eval<boolean>(SCROLL_TO_LATEST);
+		await sleep(PAGE_SETTLE_MS);
+		const lastId = await cdp.eval<string>(LAST_MESSAGE_ID);
+		if (lastId !== "" && lastId === previous) {
+			return;
+		}
+		previous = lastId;
+	}
+}
+
 // Runs in the page. Discord's class names are hashed, so rely on stable
 // attributes: list id, message ids, message-content ids, <time>, username prefix.
+// One row can hold several messages: Discord groups consecutive messages by the
+// same author into a single li. Every [id^="message-content-"] inside a row is a
+// message, so the rows are expanded into one entry per content, deduplicated by
+// content id and ordered by timestamp.
 const READ_MESSAGES = `(() => {
-	const list = document.querySelector('[data-list-id="chat-messages"]') || document.querySelector('[class*="messagesWrapper"] [role="list"]');
-	if (!list) return { error: 'no message list rendered (still loading, or not a text channel)' };
-	const rows = [...list.querySelectorAll('li[id^="chat-messages-"]')];
-	let author = '?';
-	const messages = [];
+	const rows = [...document.querySelectorAll('li[id^="chat-messages-"]')];
+	if (rows.length === 0) return { error: 'no message list rendered (still loading, or not a text channel)' };
+	const seen = new Set();
+	const parsed = [];
 	for (const row of rows) {
 		// Scope the username to the message header. A bare [class*="username"] also
 		// matches mention chips inside the message body, which attributed the
-		// message to whoever it mentioned. Grouped messages have no header, so
-		// they inherit the author of the row above.
+		// message to whoever it mentioned.
 		const header = row.querySelector('[class*="header"] [class*="username"], h3 [class*="username"]');
-		let name = (header?.textContent || '').trim();
-		if (!name && author === '?') {
-			name = (row.querySelector('img[alt]')?.getAttribute('alt') || '').trim();
-		}
-		if (name) author = name;
-		const body = row.querySelector('[id^="message-content-"]');
-		const text = (body?.innerText || '').trim();
+		const name = (header?.textContent || '').trim();
+		const avatar = (row.querySelector('img[alt]')?.getAttribute('alt') || '').trim();
+		const time = row.querySelector('time')?.getAttribute('datetime') || '';
 		const reply = row.querySelector('[id*="repliedTextContent"]') !== null;
-		messages.push({ author, time: row.querySelector('time')?.getAttribute('datetime') || '', text: reply ? '(reply) ' + text : text });
+		for (const content of row.querySelectorAll('[id^="message-content-"]')) {
+			if (seen.has(content.id)) continue;
+			seen.add(content.id);
+			parsed.push({ name, avatar, time, text: (content.innerText || '').trim(), reply });
+		}
+	}
+	if (parsed.length === 0) return { error: 'no messages rendered' };
+	parsed.sort((a, b) => (a.time < b.time ? -1 : a.time > b.time ? 1 : 0));
+	let author = '?';
+	const messages = [];
+	for (const row of parsed) {
+		// Grouped messages have no header, so they inherit the author of the row above.
+		if (row.name) author = row.name;
+		else if (author === '?') author = row.avatar || '?';
+		messages.push({ author, time: row.time, text: row.reply ? '(reply) ' + row.text : row.text });
 	}
 	return { messages };
 })()`;
@@ -324,8 +385,7 @@ export default function (pi: ExtensionAPI) {
 		}),
 		async execute(_id, params) {
 			const text = await withPage(params.channel, async (cdp) => {
-				// Nudge the list so a fresh navigation has messages mounted.
-				await sleep(PAGE_SETTLE_MS);
+				await scrollToLatest(cdp);
 				const result = await cdp.eval<{
 					messages?: PageMessage[];
 					error?: string;
