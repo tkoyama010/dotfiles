@@ -261,7 +261,15 @@ const READ_MESSAGES = `(() => {
 	let author = '?';
 	const messages = [];
 	for (const row of rows) {
-		const name = (row.querySelector('[class*="username"]')?.textContent || '').trim() || row.querySelector('img[alt]')?.getAttribute('alt') || '';
+		// Scope the username to the message header. A bare [class*="username"] also
+		// matches mention chips inside the message body, which attributed the
+		// message to whoever it mentioned. Grouped messages have no header, so
+		// they inherit the author of the row above.
+		const header = row.querySelector('[class*="header"] [class*="username"], h3 [class*="username"]');
+		let name = (header?.textContent || '').trim();
+		if (!name && author === '?') {
+			name = (row.querySelector('img[alt]')?.getAttribute('alt') || '').trim();
+		}
 		if (name) author = name;
 		const body = row.querySelector('[id^="message-content-"]');
 		const text = (body?.innerText || '').trim();
