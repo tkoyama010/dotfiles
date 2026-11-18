@@ -1,32 +1,35 @@
+import { spawn } from "node:child_process";
 import process from "node:process";
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 import { Type } from "typebox";
 
-// Discord tools for pi without a bot: drive the user's own logged-in Discord
-// web client over the Chrome DevTools Protocol. Reads what is rendered on the
-// page and leaves reply text in the composer, which Discord persists as a
-// native draft. No bot token, no user token, no Discord API calls.
-// ponytail: UI scraping, not the REST API. Discord has no draft endpoint, so
-// the composer is the only place a draft can live. Add the REST API later only
-// if reading far history matters more than ToS risk.
+// Discord tools for pi that stay inside what the Discord client itself shows and
+// does. The previous version scraped the DOM and typed into the composer over the
+// Chrome DevTools Protocol, which is an automated client and a scrape: both are
+// against Discord's terms.
+//
+// What is left is deliberately small:
+//
+// - discord_history opens the channel in the Discord tab and screenshots it, then
+//   hands the image to the model, which reads the messages from the picture.
+//   Nothing is read out of the page.
+// - discord_copy_draft puts a reply on the system clipboard. The human pastes it
+//   into Discord.
+//
+// Opening a tab and navigating it is what a user does with a browser, so that
+// stays. What is gone is reading the DOM, dispatching keystrokes, and calling any
+// Discord API.
 const CDP_BASE = process.env.DISCORD_CDP_URL ?? "http://127.0.0.1:9222";
-const WAIT_TIMEOUT_MS = 20_000;
 const CALL_TIMEOUT_MS = 15_000;
-const POLL_MS = 250;
-const PAGE_SETTLE_MS = 500;
+const PAGE_SETTLE_MS = 1500;
+const NAVIGATE_SETTLE_MS = 6000;
 
-// The page is usable once the message list or the composer is mounted.
-const READY_EXPRESSION = `document.querySelector('[data-list-id="chat-messages"]') || document.querySelector('[role="textbox"][data-slate-editor="true"]')`;
-
-// The tab we navigate to is the tab that receives the typed draft, so only
-// Discord hosts may be navigated to. Anything else is a leak.
 const DISCORD_HOSTS = new Set([
 	"discord.com",
 	"canary.discord.com",
 	"ptb.discord.com",
 ]);
 const URL_SCHEME = /^https?:\/\//;
-const BARE_ID = /^\d{5,}$/;
 const CHANNEL_PATH = /\/channels\/(@me|\d+)\/(\d+)/;
 
 const SETUP_HINT = `Chrome DevTools Protocol not reachable at ${CDP_BASE}. Start Chrome with a separate profile (Chrome 136+ ignores the flag on the default profile), then open https://discord.com/channels/@me and log in:
@@ -87,8 +90,8 @@ class Cdp {
 				pending.resolve(message.result);
 			}
 		});
-		// A closed tab leaves every outstanding command unsettled, so settle
-		// them here instead of letting a tool wait forever.
+		// A closed tab leaves every outstanding command unsettled, so settle them
+		// here instead of letting a tool wait forever.
 		ws.addEventListener("close", () => {
 			this.#fail(new Error("CDP socket closed"));
 		});
@@ -132,21 +135,6 @@ class Cdp {
 		});
 	}
 
-	async eval<T>(expression: string): Promise<T> {
-		const result = (await this.call("Runtime.evaluate", {
-			expression,
-			awaitPromise: true,
-			returnByValue: true,
-		})) as {
-			result?: { value?: T };
-			exceptionDetails?: { text?: string };
-		};
-		if (result.exceptionDetails) {
-			throw new Error(`page script failed: ${result.exceptionDetails.text}`);
-		}
-		return result.result?.value as T;
-	}
-
 	close(): void {
 		this.#ws.close();
 	}
@@ -158,298 +146,138 @@ const sleep = (ms: number) =>
 		setTimeout(resolve, ms);
 	});
 
-async function waitFor(
-	cdp: Cdp,
-	expression: string,
-	ms = WAIT_TIMEOUT_MS,
-): Promise<void> {
-	const deadline = Date.now() + ms;
-	while (Date.now() < deadline) {
-		if (await cdp.eval<boolean>(`!!(${expression})`)) {
-			return;
-		}
-		await sleep(POLL_MS);
-	}
-	throw new Error(`timed out waiting for ${expression} on the Discord page`);
-}
-
-function toAbsoluteUrl(input: string): URL {
-	if (URL_SCHEME.test(input)) {
-		return new URL(input);
-	}
-	return new URL(`https://${input}`);
-}
-
-// Accepts a full Discord channel URL, a scheme-less path, or a bare channel id.
-// Anything else is rejected: a channel that cannot be resolved must not fall
-// back to whatever tab happens to be open, or a draft lands in the wrong place.
-// Direct messages use @me in place of a guild id.
-function parseChannelPath(input: string): { guild: string; channel: string } {
-	if (BARE_ID.test(input)) {
-		return { guild: "", channel: input };
-	}
-	const parsed = toAbsoluteUrl(input);
+// Only Discord channel URLs are accepted: the tab is navigated to whatever the
+// caller passes, so anything else would open an unrelated page in the browser the
+// user is logged into.
+function channelUrl(input: string): string {
+	const parsed = new URL(URL_SCHEME.test(input) ? input : `https://${input}`);
 	if (!DISCORD_HOSTS.has(parsed.hostname)) {
 		throw new Error(`Refusing to open a non-Discord URL: ${input}`);
 	}
-	const match = parsed.pathname.match(CHANNEL_PATH);
-	if (!match) {
+	if (!CHANNEL_PATH.test(parsed.pathname)) {
 		throw new Error(`No channel id in URL: ${input}`);
 	}
-	return { guild: match[1], channel: match[2] };
+	return parsed.href;
 }
 
-async function resolveChannelUrl(cdp: Cdp, input: string): Promise<string> {
-	const { guild, channel } = parseChannelPath(input.trim());
-	if (guild) {
-		return `https://discord.com/channels/${guild}/${channel}`;
-	}
-	// A bare id resolves against the guild of the tab's current channel.
-	const [, , currentGuild] = (
-		await cdp.eval<string>("location.pathname")
-	).split("/");
-	if (!currentGuild) {
-		throw new Error("Pass a full channel URL so the guild id is known.");
-	}
-	return `https://discord.com/channels/${currentGuild}/${channel}`;
-}
-
-async function withPage<T>(
-	channel: string,
-	run: (cdp: Cdp, url: string) => Promise<T>,
-): Promise<T> {
+// The tab is chosen from Chrome's own target list. A Discord tab is reused when
+// there is one; otherwise a tab is opened, which is a browser action rather than
+// anything Discord-specific. The page is never asked for its content: only
+// Page.navigate and Page.captureScreenshot are used.
+async function captureDiscordTab(
+	url: string,
+): Promise<{ url: string; data: string }> {
 	const open = (await targets()).filter(
 		(target) => target.type === "page" && target.webSocketDebuggerUrl,
 	);
-	let target = open.find((item) => item.url.includes("discord.com/channels"));
-	if (!target) {
-		target = open.find((item) => item.url.includes("discord.com"));
-	}
-	if (!target) {
+	let target =
+		open.find((item) => item.url.includes("discord.com/channels")) ??
+		open.find((item) => item.url.includes("discord.com"));
+	let navigate = true;
+	if (target?.url.startsWith(url)) {
+		navigate = false;
+	} else if (!target) {
 		const created = await fetch(
-			`${CDP_BASE}/json/new?${encodeURIComponent("https://discord.com/channels/@me")}`,
+			`${CDP_BASE}/json/new?${encodeURIComponent(url)}`,
 			{ method: "PUT" },
 		).catch((error) => {
 			throw new Error(SETUP_HINT, { cause: error });
 		});
 		target = (await created.json()) as Target;
+		// The new tab is already loading the URL.
+		navigate = false;
 	}
 	if (!target?.webSocketDebuggerUrl) {
-		throw new Error(`No Discord tab in Chrome at ${CDP_BASE}.`);
+		throw new Error(`Could not open a Discord tab in Chrome at ${CDP_BASE}.`);
 	}
 	const cdp = await Cdp.connect(target.webSocketDebuggerUrl);
 	try {
-		const url = await resolveChannelUrl(cdp, channel);
-		const current = await cdp.eval<string>("location.href");
-		if (!current.startsWith(url)) {
+		if (navigate) {
 			await cdp.call("Page.navigate", { url });
-			await waitFor(cdp, `location.href.startsWith(${JSON.stringify(url)})`);
+			await sleep(NAVIGATE_SETTLE_MS);
+		} else {
+			// Give a channel that is still painting a moment to finish.
+			await sleep(PAGE_SETTLE_MS);
 		}
-		await waitFor(cdp, READY_EXPRESSION);
-		return await run(cdp, url);
+		const shot = (await cdp.call("Page.captureScreenshot", {
+			format: "png",
+		})) as { data?: string };
+		if (!shot.data) {
+			throw new Error("Page.captureScreenshot returned no image data");
+		}
+		return { url, data: shot.data };
 	} finally {
 		cdp.close();
 	}
 }
 
-// Discord opens a channel at the first unread message, so everything newer than
-// that stays unmounted and unreadable. Jump to the end of the list first. The
-// jump-to-present button is the reliable route when it is on screen; the scroll
-// assignments cover the case where the bar has not rendered yet.
-const SCROLL_TO_LATEST = `(() => {
-	const list = document.querySelector('[data-list-id="chat-messages"]');
-	if (!list) return false;
-	const jump = document.querySelector('[class*="jumpToPresentBar"] button');
-	if (jump) jump.click();
-	// The list element itself carries a "scrollerInner" class, so a
-	// closest('[class*="scroller"]') lookup matches the list and never scrolls.
-	// Walk up to the first ancestor that actually overflows instead.
-	let scroller = list;
-	while (scroller && scroller.scrollHeight <= scroller.clientHeight) {
-		scroller = scroller.parentElement;
+const CLIPBOARD_COMMANDS: Record<string, string[]> = {
+	darwin: ["pbcopy"],
+	win32: ["clip"],
+	linux: ["wl-copy"],
+};
+
+function copyToClipboard(text: string): Promise<void> {
+	const command = CLIPBOARD_COMMANDS[process.platform];
+	if (!command) {
+		throw new Error(`No clipboard command known for ${process.platform}`);
 	}
-	if (!scroller) return false;
-	scroller.scrollTop = scroller.scrollHeight;
-	scroller.dispatchEvent(new Event('scroll', { bubbles: true }));
-	const rows = [...list.querySelectorAll('li[id^="chat-messages-"]')];
-	const last = rows[rows.length - 1];
-	if (last) last.scrollIntoView({ block: 'end' });
-	return true;
-})()`;
-
-// The id of the newest mounted row, used to detect that a jump brought in more.
-const LAST_MESSAGE_ID = `(() => {
-	const list = document.querySelector('[data-list-id="chat-messages"]');
-	const rows = list ? [...list.querySelectorAll('li[id^="chat-messages-"]')] : [];
-	return rows.length ? rows[rows.length - 1].id : '';
-})()`;
-
-// Discord can stop one row short of the end when it only scrolls as far as the
-// unread marker, so the last mounted row is scrolled into view as well: that
-// pushes the window down far enough for the virtualised list to mount the next
-// row, and the loop repeats until the last row stops changing.
-async function scrollToLatest(cdp: Cdp): Promise<void> {
-	let previous = "";
-	for (let attempt = 0; attempt < 8; attempt += 1) {
-		await cdp.eval<boolean>(SCROLL_TO_LATEST);
-		await sleep(PAGE_SETTLE_MS);
-		const lastId = await cdp.eval<string>(LAST_MESSAGE_ID);
-		if (lastId !== "" && lastId === previous) {
-			return;
-		}
-		previous = lastId;
-	}
-}
-
-// Runs in the page. Discord's class names are hashed, so rely on stable
-// attributes: list id, message ids, message-content ids, <time>, username prefix.
-// One row can hold several messages: Discord groups consecutive messages by the
-// same author into a single li. Every [id^="message-content-"] inside a row is a
-// message, so the rows are expanded into one entry per content, deduplicated by
-// content id and ordered by timestamp.
-const READ_MESSAGES = `(() => {
-	const rows = [...document.querySelectorAll('li[id^="chat-messages-"]')];
-	if (rows.length === 0) return { error: 'no message list rendered (still loading, or not a text channel)' };
-	const seen = new Set();
-	const parsed = [];
-	for (const row of rows) {
-		// Scope the username to the message header. A bare [class*="username"] also
-		// matches mention chips inside the message body, which attributed the
-		// message to whoever it mentioned.
-		const header = row.querySelector('[class*="header"] [class*="username"], h3 [class*="username"]');
-		const name = (header?.textContent || '').trim();
-		const avatar = (row.querySelector('img[alt]')?.getAttribute('alt') || '').trim();
-		const time = row.querySelector('time')?.getAttribute('datetime') || '';
-		const reply = row.querySelector('[id*="repliedTextContent"]') !== null;
-		for (const content of row.querySelectorAll('[id^="message-content-"]')) {
-			if (seen.has(content.id)) continue;
-			seen.add(content.id);
-			parsed.push({ name, avatar, time, text: (content.innerText || '').trim(), reply });
-		}
-	}
-	if (parsed.length === 0) return { error: 'no messages rendered' };
-	parsed.sort((a, b) => (a.time < b.time ? -1 : a.time > b.time ? 1 : 0));
-	let author = '?';
-	const messages = [];
-	for (const row of parsed) {
-		// Grouped messages have no header, so they inherit the author of the row above.
-		if (row.name) author = row.name;
-		else if (author === '?') author = row.avatar || '?';
-		messages.push({ author, time: row.time, text: row.reply ? '(reply) ' + row.text : row.text });
-	}
-	return { messages };
-})()`;
-
-// Focuses the composer, puts the caret at the end, and returns its text, so one
-// call covers both "can I type here" and "what is already typed". Discord has no
-// draft endpoint, so the composer itself is the only draft storage.
-const COMPOSER_STATE = `(() => {
-	const box = document.querySelector('[class*="channelTextArea"] [role="textbox"]') || document.querySelector('[role="textbox"][data-slate-editor="true"]');
-	if (!box) return null;
-	box.focus();
-	const selection = window.getSelection();
-	if (selection) { selection.selectAllChildren(box); selection.collapseToEnd(); }
-	return box.innerText;
-})()`;
-
-interface PageMessage {
-	author: string;
-	time: string;
-	text: string;
-}
-
-function formatTime(iso: string): string {
-	if (!iso) {
-		return "??:??";
-	}
-	return new Date(iso).toLocaleString("ja-JP", {
-		timeZone: "Asia/Tokyo",
-		month: "2-digit",
-		day: "2-digit",
-		hour: "2-digit",
-		minute: "2-digit",
+	return new Promise((resolve, reject) => {
+		const child = spawn(command[0], command.slice(1));
+		child.on("error", reject);
+		child.on("close", (code) => {
+			if (code === 0) {
+				resolve();
+			} else {
+				reject(new Error(`${command[0]} exited with status ${code}`));
+			}
+		});
+		child.stdin.end(text);
 	});
 }
 
 export default function (pi: ExtensionAPI) {
 	pi.registerTool({
 		name: "discord_history",
-		label: "Discord: Channel History",
+		label: "Discord: Read Channel Screenshot",
 		description:
-			"Read messages rendered in a Discord channel of the user's logged-in Discord web tab in Chrome (no bot, UI scrape). Pass a channel URL from the browser. Returns [time] author: text lines, oldest first.",
+			"Open a Discord channel in the user's logged-in Discord tab in Chrome, screenshot it, and return the image. Read the messages from the image; the newest message is at the bottom. Nothing is read out of the page and nothing is typed into Discord, so the user keeps driving Discord and this only opens the channel and looks at the screen.",
 		parameters: Type.Object({
 			channel: Type.String({
 				description:
-					"Channel URL, e.g. https://discord.com/channels/123/456 (a bare channel id also works inside a guild)",
+					"Discord channel URL, e.g. https://discord.com/channels/123/456. Direct messages use /channels/@me/<id>.",
 			}),
 		}),
 		async execute(_id, params) {
-			const text = await withPage(params.channel, async (cdp) => {
-				await scrollToLatest(cdp);
-				const result = await cdp.eval<{
-					messages?: PageMessage[];
-					error?: string;
-				}>(READ_MESSAGES);
-				if (result.error) {
-					throw new Error(result.error);
-				}
-				const lines = (result.messages ?? []).map(
-					(message) =>
-						`[${formatTime(message.time)}] ${message.author}: ${message.text || "(embed/attachment)"}`,
-				);
-				return lines.join("\n");
-			});
+			const shot = await captureDiscordTab(channelUrl(params.channel));
 			return {
-				content: [{ type: "text", text: text || "(no messages rendered)" }],
+				content: [
+					{
+						type: "text",
+						text: `Screenshot of ${shot.url}. Read the messages from the image, oldest at the top, newest at the bottom.`,
+					},
+					{ type: "image", data: shot.data, mimeType: "image/png" },
+				],
 				details: {},
 			};
 		},
 	});
 
 	pi.registerTool({
-		// Types into the Discord composer and leaves it there. Discord keeps
-		// unsent composer text as a draft (DRAFT badge in the channel list).
-		// Enter is never sent, so the message stays unsent.
-		name: "discord_save_draft",
-		label: "Discord: Save Draft",
+		name: "discord_copy_draft",
+		label: "Discord: Copy Draft",
 		description:
-			"Type a reply into the target Discord channel's composer in the user's logged-in Chrome tab and leave it unsent, so Discord stores it as a native draft. NEVER sends the message. Use this instead of posting. Refuses to run if the composer already holds text.",
+			"Copy a reply to the system clipboard so the user can paste it into Discord themselves. Nothing is sent to Discord and nothing is typed into it.",
 		parameters: Type.Object({
-			channel: Type.String({
-				description:
-					"Channel URL, e.g. https://discord.com/channels/123/456 (a bare channel id also works inside a guild)",
-			}),
-			text: Type.String({ description: "Draft text, newlines allowed" }),
+			text: Type.String({ description: "Text to copy to the clipboard" }),
 		}),
 		async execute(_id, params) {
-			const report = await withPage(params.channel, async (cdp) => {
-				const existing = await cdp.eval<string | null>(COMPOSER_STATE);
-				if (existing === null) {
-					throw new Error(
-						"composer not found: is this a channel you can post in?",
-					);
-				}
-				if (existing.trim() !== "") {
-					throw new Error(`composer already holds text:\n${existing}`);
-				}
-				// Insert the whole draft in one call. Discord's Slate editor drops
-				// the line breaks when each line is typed separately.
-				const text = params.text.replace(/\r\n/g, "\n");
-				await cdp.call("Input.insertText", { text });
-				const composed = await cdp.eval<string | null>(COMPOSER_STATE);
-				const probe = text.split("\n").find((line) => line.trim() !== "");
-				if (!(composed && probe && composed.includes(probe))) {
-					throw new Error(
-						`text did not land in the composer (composer now: ${JSON.stringify(composed)})`,
-					);
-				}
-				return composed;
-			});
+			await copyToClipboard(params.text);
 			return {
 				content: [
 					{
 						type: "text",
-						text: `Draft left in the composer, unsent:\n${report}\nReview and press Enter in Discord yourself to send.`,
+						text: `Copied ${params.text.length} characters to the clipboard. Paste it into Discord yourself.`,
 					},
 				],
 				details: {},
