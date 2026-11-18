@@ -38,7 +38,7 @@ gh codespace ssh
 Notes:
 
 - Creating the Codespace runs the `postCreateCommand`, which installs the agent skills. The heavy work (Nix install, home-manager switch) runs as `onCreateCommand` so prebuilds bake it into the image.
-- `pi` and `opencode` are available on PATH after setup. `OPENCODE_API_KEY` is not committed — add it via [Codespaces user secrets](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-repository-secrets-for-your-codespaces) (visibility restricted to this repository).
+- `pi` and `opencode` are available on PATH after setup, as is `tau`. `OPENCODE_API_KEY` is not committed — add it via [Codespaces user secrets](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-repository-secrets-for-your-codespaces) (visibility restricted to this repository).
 - To connect while setup may still be running, use `nix run .#codespace-ssh` (or `nix run .#codespace-ssh -- <codespace-name>`). It streams the setup log and only drops you into a shell once the setup is complete.
 - To skip the wait entirely for new Codespaces, configure [prebuilds](https://docs.github.com/en/codespaces/prebuilding-your-codespaces/configuring-prebuilds) (repository Settings → Codespaces → Prebuilds). The prebuild machine type must match the machine you create the Codespace with (e.g. `standardLinux32gb`). Prebuilds consume GitHub Actions minutes but make creation nearly instant.
 
@@ -72,7 +72,7 @@ nix run nixpkgs#devcontainer -- up --workspace-folder . --remove-existing-contai
 Notes:
 
 - Docker (or a compatible container runtime) must be running locally.
-- `pi` and `opencode` are available on PATH inside the container after setup. To pass `OPENCODE_API_KEY` from your local shell into the container, forward it explicitly with the CLI's `--remote-env` flag (Codespaces picks up the key from [user secrets](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-repository-secrets-for-your-codespaces) instead — no flag needed):
+- `pi`, `opencode`, and `tau` are available on PATH inside the container after setup. To pass `OPENCODE_API_KEY` from your local shell into the container, forward it explicitly with the CLI's `--remote-env` flag (Codespaces picks up the key from [user secrets](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-repository-secrets-for-your-codespaces) instead — no flag needed):
 
   ```bash
   export OPENCODE_API_KEY=your-key-here
@@ -192,6 +192,7 @@ This applies the home-manager configuration for the current system (e.g. `Tetsuo
   - `plugins/rtk.ts`: Custom local plugin (RTK command rewriting).
   - Plugins installed from npm: `@dietrichgebert/ponytail`, `caveman-opencode-plugin`.
 - `apps/`: Nix flake apps — the task runner, replacing the former `justfile`. Run any task with `nix run .#<name>`.
+- `pkgs/tau/`: Nix build of [tau](https://github.com/huggingface/tau) (PyPI `tau-ai`), installed on PATH by home-manager.
 - `modules/home-manager/pi/transifex.ts`: pi extension that translates Transifex projects via the Transifex API v3 (set `TX_TOKEN`; tools: `transifex_list_resources`, `transifex_get_untranslated`, `transifex_translate`).
 
 ## Available Nix Apps
@@ -345,6 +346,19 @@ You can install the Read the Docs skills for opencode separately:
 ```bash
 nix run .#opencode-rtd-skills
 ```
+
+## tau
+
+[tau](https://github.com/huggingface/tau) (PyPI `tau-ai`) is a Python coding-agent
+harness inspired by pi. It is not in nixpkgs, so `pkgs/tau/` builds the published
+sdist and home-manager installs it as `tau` on PATH (`nix run .#home-manager`).
+
+Tau stores state in `~/.tau/` (sessions, models store, skills, extensions) and
+discovers user skills from `~/.agents/skills`, which this repository already
+provides. No config is tracked yet: connect a provider with `/login` on first run.
+
+To bump the version, update `version` and the sdist `url`/`hash` in
+`pkgs/tau/default.nix`, then run `nix build .#tau`.
 
 ## License
 
