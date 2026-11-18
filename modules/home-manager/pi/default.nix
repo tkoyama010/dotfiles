@@ -16,6 +16,7 @@
     ".pi/agent/extensions/transifex.ts".source = ./transifex.ts;
     ".pi/agent/extensions/tryhackme.ts".source = ./tryhackme.ts;
     ".pi/agent/extensions/slack.ts".source = ./extensions/slack.ts;
+    ".pi/agent/extensions/discord.ts".source = ./extensions/discord.ts;
     ".pi/agent/models.json".source = ./models.json;
     ".pi/agent/prompts/commit.md".source = ./prompts/commit.md;
     ".pi/agent/prompts/pr.md".source = ./prompts/pr.md;

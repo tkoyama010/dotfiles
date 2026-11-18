@@ -63,7 +63,8 @@
 					},
 					"style": {
 						"noProcessEnv": "off",
-						"useNamingConvention": "off"
+						"useNamingConvention": "off",
+						"noExcessiveLinesPerFile": "off"
 					},
 					"complexity": {
 						"noExcessiveLinesPerFunction": "off"
