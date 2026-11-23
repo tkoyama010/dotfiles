@@ -29,8 +29,8 @@ const DISCORD_HOSTS = new Set([
 	"canary.discord.com",
 	"ptb.discord.com",
 ]);
-const URL_SCHEME = /^https?:\/\//;
-const CHANNEL_PATH = /\/channels\/(@me|\d+)\/(\d+)/;
+const URL_SCHEME = /^https?:\/\//u;
+const CHANNEL_PATH = /\/channels\/(@me|\d+)\/(\d+)/u;
 
 const SETUP_HINT = `Chrome DevTools Protocol not reachable at ${CDP_BASE}. Start Chrome with a separate profile (Chrome 136+ ignores the flag on the default profile), then open https://discord.com/channels/@me and log in:
 
