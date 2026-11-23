@@ -16,6 +16,11 @@
 			"url": "https://mcp.notion.com/mcp",
 			"enabled": true
 		},
+		"kody": {
+			"type": "remote",
+			"url": "https://kody.codes/mcp",
+			"enabled": true
+		},
 		"openrouter-image": {
 			"type": "local",
 			"command": ["npx", "-y", "openrouter-image-mcp"],
