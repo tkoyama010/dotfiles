@@ -23,6 +23,7 @@ in {
         terraform
         rtk
         pi-coding-agent
+        tau
         herdr
         vim
         ssm-session-manager-plugin
